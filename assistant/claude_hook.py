@@ -78,8 +78,8 @@ def main():
         state = state_for(data)
         if state:
             subprocess.run(['gdbus', 'call', '--session', '--dest', 'org.gnome.Shell',
-                            '--object-path', '/org/avalon/AirplayIsland', '--method',
-                            'org.avalon.AirplayIsland.ClaudeState', state],
+                            '--object-path', '/org/avalon/CartoonIsland', '--method',
+                            'org.avalon.CartoonIsland.ClaudeState', state],
                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=2)
     except (ValueError, OSError, subprocess.TimeoutExpired):
         pass  # An unavailable desktop must never block Claude.
