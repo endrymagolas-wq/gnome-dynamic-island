@@ -1,8 +1,10 @@
 # Cartoon island live wallpaper
 
 This feature is **a full-screen animated desktop wallpaper**, not a panel widget.
-The island has a turquoise ocean, palms, a desk, a growing little house and a
-cartoon worker. Application windows and desktop icons stay above the scene.
+The island is now a low-poly 3D scene with raised terrain, palms, a desk, a
+growing house and a cartoon worker. The worker walks on the ground plane in
+both directions and follows the terrain height. Water uses a shared GLSL shader
+for animated wave normals, sun glints, shallow-water caustics and shoreline foam. Application windows and desktop icons stay above the scene.
 It is a separate optional GNOME 46 extension; AirPlay/Dynamic Island is not
 required or changed by its standalone installer.
 
@@ -22,7 +24,7 @@ gnome-extensions enable cartoon-island@avalon.local
 
 The existing background settings are preserved. Disabling the extension reveals
 your previous wallpaper. Each monitor gets its own scene; aspect ratios are
-preserved with centered cropping. The screen lock does not show the scene.
+preserved by fitting the island; the ocean fills the surrounding space. The screen lock does not show the scene.
 GNOME's animation preference is respected. Native GNOME 46 placement, desktop
 icon ordering and lifecycle still need testing on a real session.
 
@@ -78,8 +80,12 @@ python3 -m http.server 8000 --bind 127.0.0.1
 # Open http://127.0.0.1:8000/preview/cartoon-island.html
 ```
 
-The preview uses the same world model and drawing function as the GNOME
-extension. Buttons simulate events; they do not read local application activity.
+The preview uses the same 3D model, projection and drawing function as the GNOME
+extension, plus the same GLSL ocean function through WebGL. Drag the scene to
+orbit the camera in the preview; the native wallpaper has a fixed isometric
+camera to keep desktop input available. WebGL is required for preview water;
+if unavailable, the scene still renders over a plain ocean backdrop. Native
+water requires GNOME Shell GLSLEffect support. Buttons simulate events; they do not read local application activity.
 
 For a native smoke check:
 
@@ -91,7 +97,10 @@ gdbus call --session --dest org.gnome.Shell \
 
 Repeat with `starting`, `testing`, `failed`, `permission`, `done`; check screen
 lock, multiple monitors, animations disabled, monitor reconnection, and
-extension disable/re-enable.
+extension disable/re-enable. Verify shader compilation and CPU/GPU cost on your
+hardware: native rendering is limited to about 12 frames per second, the browser
+preview to 30. The 3D geometry is projected and painted with depth sorting, not a
+full GPU depth-buffer renderer; complex overlaps can still need refinement.
 
 ## Disable / remove
 
