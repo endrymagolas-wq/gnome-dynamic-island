@@ -39,9 +39,9 @@ for(const state of ['idle','starting','editing','testing','failed','permission',
 }
 console.log('PASS resort registration/routes, sprite bounds/baking, idle/covered/reduced-motion policy, floor cap, expiry and monitor fitting');
 
-for(let i=0;i<24;i++){const f=waterFrame((i+.1)/12);assert.equal(f.index,i);assert(f.bank<2);assert(f.x>=0&&f.x+WATER.width<=WATER.bankWidth);assert(f.y>=0&&f.y+WATER.height<=WATER.bankHeight);}
-assert.deepEqual(waterFrame(2),waterFrame(0));assert.deepEqual(waterFrame(4),waterFrame(0));
-console.log('PASS baked water indexing, bank bounds and exact 2-second wrap');
+for(let i=0;i<24;i++){const f=waterFrame((i+.1)/WATER.fps);assert.equal(f.index,i);assert(f.bank<2);assert(f.x>=0&&f.x+WATER.width<=WATER.bankWidth);assert(f.y>=0&&f.y+WATER.height<=WATER.bankHeight);}
+assert.deepEqual(waterFrame(6),waterFrame(0));assert.deepEqual(waterFrame(12),waterFrame(0));
+console.log('PASS baked water indexing, bank bounds and exact 6-second wrap');
 
 const full={x:0,y:0,width:1920,height:1080},work={x:0,y:32,width:1920,height:1048};
 assert(coveredByWindows(intersectRegion(full,work),[work]),'maximized window covers backdrop excluding panel struts');

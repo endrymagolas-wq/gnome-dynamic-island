@@ -10,7 +10,7 @@ It is a separate optional GNOME 46 extension; the panel extension is not require
 - The background is one decoded image texture, reused on every monitor. It is
   never re-rendered as 3D geometry or processed by a full-screen shader at runtime.
 - Character poses, walking directions and smoke are baked into a transparent
-  atlas. Water is a separate masked 24-frame, 2-second loop at 12 fps. Runtime
+  atlas. Water is a separate masked 24-frame, 6-second loop at 4 fps (three times slower than the original water). Runtime
   animation changes texture offsets and actor positions, without video decoding
   or live water shaders.
 - A small guest cabana changes its cached construction stage only after edits.

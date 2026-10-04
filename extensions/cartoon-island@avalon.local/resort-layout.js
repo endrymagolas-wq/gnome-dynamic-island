@@ -34,8 +34,8 @@ export function coveredByWindows(region,windows){
     }
     return false;
 }
-/** Baked 2-second water loop. Two bounded banks are shared by all monitors. */
-export const WATER={width:768,height:512,frames:24,fps:12,columns:4,framesPerBank:12,bankWidth:3072,bankHeight:1536};
+/** Baked 6-second water loop. Two bounded banks are shared by all monitors. */
+export const WATER={width:768,height:512,frames:24,fps:4,columns:4,framesPerBank:12,bankWidth:3072,bankHeight:1536};
 export function waterFrame(now){
     const index=Math.floor(Math.max(0,now)*WATER.fps)%WATER.frames;
     const cell=index%WATER.framesPerBank;
