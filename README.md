@@ -154,6 +154,6 @@ Node 22+ is needed for development tests and the optional Netflix phone remote. 
 
 Code is GPL-3.0-or-later; upstream theme notices are retained. See [third-party notices](THIRD_PARTY_NOTICES.md). This project is unofficial and is not affiliated with Apple, GNOME, Ubuntu or the Laya authors.
 
-### Claude Code worker
+### Cartoon island live wallpaper
 
-An optional animated worker builds while Claude edits, inspects tests, waves for permissions and drinks coffee when finished. See [setup and event mapping](docs/CLAUDE.md).
+A separate, full-screen cartoon island lives behind your application windows. The worker reacts to active applications and optional Claude Code events. Install it independently with `python3 install_wallpaper.py`; see [setup and preview](docs/CLAUDE.md).
