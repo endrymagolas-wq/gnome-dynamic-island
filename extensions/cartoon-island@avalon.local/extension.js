@@ -4,7 +4,9 @@ import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 import {Extension} from 'resource:///org/gnome/shell/extensions/extension.js';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
-import {IslandWorld, applicationState, drawWorld} from './world.js';
+import {IslandWorld, applicationState} from './world.js';
+import {drawWorld} from './scene-3d.js';
+import {OceanEffect} from './ocean-effect.js';
 import {CairoCanvas} from './cairo-canvas.js';
 
 const API='<node><interface name="org.avalon.CartoonIsland"><method name="ClaudeState"><arg type="s" direction="in"/><arg type="b" direction="out"/></method></interface></node>';
@@ -25,14 +27,16 @@ export default class CartoonIsland extends Extension {
             },
         });
         this.bridge.export(Gio.DBus.session,'/org/avalon/CartoonIsland');
-        this.build();this.focus();this.last=GLib.get_monotonic_time()/1000000;
+        this.epoch=GLib.get_monotonic_time()/1000000;
+        this.build();this.focus();this.last=this.epoch;
         this.timer=GLib.timeout_add(GLib.PRIORITY_DEFAULT,83,()=>{
             const now=GLib.get_monotonic_time()/1000000;
             if(!Main.sessionMode.isLocked && !Main.sessionMode.isGreeter){
                 const previous=this.world.source;
-                this.world.step(now,now-this.last,this.settings.get_boolean('enable-animations'));
+                const motion=this.settings.get_boolean('enable-animations');
+                this.world.step(now,now-this.last,motion);
                 if(previous==='claude'&&this.world.source==='desktop')this.focus();
-                this.repaint();
+                if(motion||motion!==this.lastMotion)this.repaint();this.lastMotion=motion;
             }
             this.last=now;return GLib.SOURCE_CONTINUE;
         });
@@ -45,31 +49,40 @@ export default class CartoonIsland extends Extension {
         this.repaint();
     }
     build(){
-        for(const actor of this.actors)actor.destroy();this.actors=[];
+        for(const item of this.actors)item.group.destroy();this.actors=[];
         for(const monitor of Main.layoutManager.monitors){
-            const actor=new St.DrawingArea({reactive:false,can_focus:false,x:monitor.x,y:monitor.y,width:monitor.width,height:monitor.height});
+            const group=new St.Widget({reactive:false,can_focus:false,x:monitor.x,y:monitor.y,width:monitor.width,height:monitor.height});
+            const ocean=new St.Widget({reactive:false,width:monitor.width,height:monitor.height,style:'background-color: #1b6c77;'});
+            const effect=new OceanEffect();ocean.add_effect_with_name('cartoon-ocean',effect);group.add_child(ocean);
+            const actor=new St.DrawingArea({reactive:false,can_focus:false,width:monitor.width,height:monitor.height});
+            group.add_child(actor);
             actor.connect('repaint',area=>{
                 const cr=area.get_context();const [w,h]=area.get_surface_size();
-                // Cover without stretching; wide displays crop sky/ocean, not the worker.
-                const scale=Math.max(w/1000,h/650);
+                // Fit the 3D island on every aspect ratio; the shader fills the ocean around it.
+                const scale=Math.min(w/1000,h/650);
                 cr.translate((w-1000*scale)/2,(h-650*scale)/2);cr.scale(scale,scale);
                 try{drawWorld(new CairoCanvas(cr),this.world,1000,650);}finally{cr.$dispose();}
             });
             // This is a background actor: windows, desktop icons and panels stay above it.
-            Main.layoutManager._backgroundGroup.add_child(actor);
-            this.actors.push(actor);
+            Main.layoutManager._backgroundGroup.add_child(group);
+            this.actors.push({group,actor,ocean,effect});
         }
         this.visibility();this.repaint();
     }
-    visibility(){for(const actor of this.actors)actor.visible=!Main.sessionMode.isLocked&&!Main.sessionMode.isGreeter;}
-    repaint(){for(const actor of this.actors)if(actor.mapped)actor.queue_repaint();}
+    visibility(){for(const item of this.actors)item.group.visible=!Main.sessionMode.isLocked&&!Main.sessionMode.isGreeter;}
+    repaint(){
+        if(!this.settings.get_boolean('enable-animations'))this.world.step(GLib.get_monotonic_time()/1000000,0,false);
+        for(const item of this.actors)if(item.group.mapped){
+        item.effect.update(this.world.motion?Math.max(0,this.world.t-this.epoch):0,item.group.width,item.group.height);
+        item.ocean.queue_redraw();item.actor.queue_repaint();
+    }}
     disable(){
         if(this.timer)GLib.Source.remove(this.timer);this.timer=0;
         if(this.focusId)global.display.disconnect(this.focusId);
         if(this.monitorsId)Main.layoutManager.disconnect(this.monitorsId);
         if(this.sessionId)Main.sessionMode.disconnect(this.sessionId);
         this.bridge?.unexport();this.bridge=null;
-        for(const actor of this.actors??[])actor.destroy();this.actors=[];
+        for(const item of this.actors??[])item.group.destroy();this.actors=[];
         this.world=null;this.settings=null;this.tracker=null;
     }
 }
