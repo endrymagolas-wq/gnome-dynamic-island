@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="uk"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Живий мультяшний острів</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#4eabbf;font:14px system-ui;color:#263f44}canvas{position:fixed;width:100%;height:100%;inset:0}aside{position:fixed;top:18px;left:18px;max-width:430px;background:#fff8e9ee;padding:18px;border-radius:20px;box-shadow:0 6px 30px #294d5122}h1{font-size:18px;margin:0 0 6px}p{margin:0 0 12px;line-height:1.5}nav{display:flex;gap:7px;flex-wrap:wrap}button{border:0;border-radius:12px;padding:9px 12px;background:#e4eee0;color:#354c3c;cursor:pointer}button[aria-pressed=true]{background:#edaf6e}label{display:block;margin-top:12px}aside.hidden{opacity:0;pointer-events:none}#controls{position:fixed;right:16px;top:16px;background:#fff8e9dd}
+</style>
+<canvas aria-label="Мультяшний острів: чоловічок реагує на дії програм"></canvas>
+<aside><h1>Твій маленький острів 🌴</h1><p>Живі шпалери. Спробуй події нижче — це демонстрація реакцій.</p><nav></nav><label><input id="motion" type="checkbox" checked> Анімація</label></aside>
+<button id="controls">Сховати керування</button>
+<script type="module">
+import {IslandWorld,drawWorld} from '../extensions/cartoon-island@avalon.local/world.js';
+const canvas=document.querySelector('canvas'),ctx=canvas.getContext('2d'),world=new IslandWorld();
+const options=[['starting','Почав задачу'],['editing','Редагує'],['testing','Тести'],['failed','Тести впали'],['permission','Дозвіл'],['done','Завершив'],['browsing','Браузер'],['idle','Відпочинок']];
+const params=new URLSearchParams(location.search);
+if(params.has('state')){world.floors=3;world.present(params.get('state'),performance.now()/1000);world.x=world.target();}
+if(params.has('clean')){document.querySelector('aside').classList.add('hidden');document.querySelector('#controls').style.display='none';}
+const nav=document.querySelector('nav');
+for(const [state,label] of options){const b=document.createElement('button');b.textContent=label;b.setAttribute('aria-pressed','false');b.onclick=()=>{world.present(state,performance.now()/1000,['browsing','idle'].includes(state)?'desktop':'claude');for(const item of nav.children)item.setAttribute('aria-pressed',String(item===b));};nav.append(b);}
+const control=document.querySelector('#controls');control.onclick=()=>{const hidden=document.querySelector('aside').classList.toggle('hidden');control.textContent=hidden?'Показати керування':'Сховати керування';};
+document.querySelector('#motion').checked=!matchMedia('(prefers-reduced-motion: reduce)').matches;
+function resize(){const dpr=Math.min(devicePixelRatio,2);canvas.width=innerWidth*dpr;canvas.height=innerHeight*dpr;}addEventListener('resize',resize);resize();
+let last=performance.now()/1000;
+function frame(ms){const now=ms/1000;world.step(now,now-last,document.querySelector('#motion').checked);last=now;
+const s=Math.max(canvas.width/1000,canvas.height/650);ctx.setTransform(s,0,0,s,(canvas.width-1000*s)/2,(canvas.height-650*s)/2);drawWorld(ctx,world,1000,650);requestAnimationFrame(frame);}
+requestAnimationFrame(frame);
+</script></html>
