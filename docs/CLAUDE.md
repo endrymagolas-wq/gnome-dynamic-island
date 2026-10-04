@@ -9,21 +9,29 @@ It is a separate optional GNOME 46 extension; the panel extension is not require
 
 - The background is one decoded image texture, reused on every monitor. It is
   never re-rendered as 3D geometry or processed by a full-screen shader at runtime.
-- Character poses, walking directions, smoke and subtle water glints are baked
-  into a transparent atlas. Animation changes texture offsets and actor positions.
+- Character poses, walking directions and smoke are baked into a transparent
+  atlas. Water is a separate masked 24-frame, 2-second loop at 12 fps. Runtime
+  animation changes texture offsets and actor positions, without video decoding
+  or live water shaders.
 - A small guest cabana changes its cached construction stage only after edits.
   The main resort bungalow and the rest of the island remain in the background.
 - Native animation is capped at approximately 12 frames per second. There is no
-  animation timer when the worker is stationary without a looping action.
+  animation timer when water is switched off and the worker is stationary without
+  a looping action.
 - Lock/greeter and coverage by opaque maximized/fullscreen windows pause animation.
   Window and workspace events wake it again. A single expiration timer still
   returns a Claude event to ordinary application focus when its time expires.
-- Water is a still pre-rendered sea by default. Optional glints animate only
-  three small patches at 8 frames per second, without a shader or full-screen redraw.
+- Water animation is on by default. Two cached PNG banks contain the complete
+  masked loop: waves, shore foam and reflections. The island, house, beach, palms
+  and rocks are protected by the alpha mask. Switching water off reveals the
+  original still sea. The full water plane is composited while visible; it is
+  not merely three small glint patches.
 - GNOME's animation preference freezes poses and disables water glints.
 
-The background texture is 1536×1024; the atlas is 1280×2084. Their decoded RGBA
-size is about 17 MiB before compositor buffers and implementation overhead.
+The background texture is 1536×1024; the character atlas is 1280×2084. Water
+uses two 3072×1536 banks (each a 4×3 grid of 768×512 frames). All decoded RGBA
+textures total about 53 MiB before compositor buffers and implementation overhead.
+The indexed banks share a palette and take about 2.5 MiB on disk together.
 Actual CPU/GPU usage on native GNOME remains unmeasured. Screen composition still
 costs work whenever something moves, particularly on high-resolution monitors.
 This design reduces wallpaper work; it does not guarantee zero system load.
@@ -107,7 +115,7 @@ gdbus call --session --dest org.gnome.Shell \
   --method org.avalon.CartoonIsland.ClaudeState editing
 ```
 
-Repeat with `starting`, `testing`, `failed`, `permission`, `done`. Optional water:
+Repeat with `starting`, `testing`, `failed`, `permission`, `done`. Water control:
 
 ```sh
 gdbus call --session --dest org.gnome.Shell \
@@ -115,7 +123,7 @@ gdbus call --session --dest org.gnome.Shell \
   --method org.avalon.CartoonIsland.WaterAnimation true
 ```
 
-Use `false` to return to still water. This choice resets to off when the extension
+Use `false` to return to still water. This choice resets to on when the extension
 is re-enabled. Check lock, maximized/fullscreen coverage, workspace switches,
 multiple monitors, reduced motion, and extension disable/re-enable. The worker
 uses registered walkable routes; the baked scenery has no general 3D depth buffer.
@@ -133,7 +141,22 @@ files are backed up under `~/.local/share/cartoon-island/backups/` on reinstall.
 ## Asset rebuilding
 
 `assets/resort.jpg` is an original AI-generated background exported to JPEG.
-`assets/sprites.png` contains 3D character renders plus authored smoke/water/cabana
-frames. The build-time renderer is `scene-3d.js`; it is not loaded by the wallpaper
+`assets/sprites.png` contains 3D character renders plus authored smoke/cabana
+frames (the old glint strip is unused). `assets/water-0.png` and `water-1.png`
+contain the masked water loop; `water-mask.svg` protects the static scene. The build-time renderer is `scene-3d.js`; it is not loaded by the wallpaper
 or its ordinary preview. `preview/bake-atlas.html` produces the atlas in a canvas
 for asset authoring. It is not part of runtime animation.
+
+To rebuild water, serve the repository and start Chromium with a local
+DevTools endpoint, then run:
+
+```sh
+python3 tools/bake_water.py --frames /tmp/resort-water-frames
+```
+
+This optional build tool requires `websockets` and Pillow.
+`preview/bake-water.html` uses WebGL only during authoring to produce periodic
+water displacement/reflections from the plate and mask. The normal preview and
+GNOME extension load only its exported PNG frames. The mask and both banks are
+validated by portable tests, including fixed scenery, changing sea pixels, a
+bounded loop seam and matching palettes.

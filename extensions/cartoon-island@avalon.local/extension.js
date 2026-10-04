@@ -9,7 +9,7 @@ import Meta from 'gi://Meta';
 import {Extension} from 'resource:///org/gnome/shell/extensions/extension.js';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import {IslandWorld,applicationState} from './world.js';
-import {VIEW,ATLAS,fitPlate,projectGround,characterFrame,needsFrames,animationBounds,coveredByWindows} from './resort-layout.js';
+import {VIEW,ATLAS,WATER,waterFrame,fitPlate,projectGround,characterFrame,needsFrames,animationBounds,coveredByWindows,intersectRegion} from './resort-layout.js';
 
 const API='<node><interface name="org.avalon.CartoonIsland"><method name="ClaudeState"><arg type="s" direction="in"/><arg type="b" direction="out"/></method><method name="WaterAnimation"><arg type="b" direction="in"/></method></interface></node>';
 function texture(path){
@@ -25,10 +25,11 @@ function sprite(parent,image,width,height,scale){
 }
 export default class CartoonIsland extends Extension {
     enable(){
-        this.world=new IslandWorld();this.actors=[];this.connections=[];this.windows=new Map();this.water=false;
+        this.world=new IslandWorld();this.actors=[];this.connections=[];this.windows=new Map();this.water=true;
         this.settings=new Gio.Settings({schema_id:'org.gnome.desktop.interface'});
         this.tracker=Shell.WindowTracker.get_default();
         this.plate=texture(`${this.path}/assets/resort.jpg`);this.atlas=texture(`${this.path}/assets/sprites.png`);
+        this.waterBanks=[0,1].map(i=>texture(`${this.path}/assets/water-${i}.png`));
         this.connect(global.display,'notify::focus-window',()=>{this.focus();this.wake();});
         this.connect(global.display,'restacked',()=>this.wake());
         this.connect(global.display,'window-created',(_display,window)=>{this.watch(window);this.wake();});
@@ -74,17 +75,17 @@ export default class CartoonIsland extends Extension {
             const fit=fitPlate(monitor.width,monitor.height),group=new St.Widget({reactive:false,x:monitor.x,y:monitor.y,width:monitor.width,height:monitor.height,style:'background-color: #126174;'});
             const plate=new St.Widget({reactive:false,x:fit.x,y:fit.y,width:VIEW.width*fit.scale,height:VIEW.height*fit.scale,content:this.plate,content_gravity:Clutter.ContentGravity.RESIZE_FILL});
             group.add_child(plate);
+            const waterClip=new St.Widget({reactive:false,clip_to_allocation:true,x:fit.x,y:fit.y,width:VIEW.width*fit.scale,height:VIEW.height*fit.scale});
+            group.add_child(waterClip);const waterScale=VIEW.width/WATER.width*fit.scale;
+            const waterSheets=this.waterBanks.map(content=>{const sheet=new St.Widget({reactive:false,visible:false,width:WATER.bankWidth*waterScale,height:WATER.bankHeight*waterScale,content,content_gravity:Clutter.ContentGravity.RESIZE_FILL});waterClip.add_child(sheet);return sheet;});
             const worker=sprite(group,this.atlas,80,100,.65*fit.scale);
             const building=sprite(group,this.atlas,160,128,.85*fit.scale);
             building.clip.set_position(fit.x+(552-80*.85)*fit.scale,fit.y+(430-120*.85)*fit.scale);
             const smoke=sprite(group,this.atlas,160,128,.65*fit.scale);
             smoke.clip.set_position(fit.x+560*fit.scale,fit.y+150*fit.scale);
             const bubble=new St.Label({visible:false,style:'background-color: #fff2dc; color: #67503f; border-radius: 12px; padding: 5px 9px; font-size: 12px;'});group.add_child(bubble);
-            const ripples=[];for(const [x,y] of [[160,455],[825,560],[898,260]]){
-                const s=sprite(group,this.atlas,160,128,.6*fit.scale);s.clip.set_position(fit.x+x*fit.scale,fit.y+y*fit.scale);ripples.push(s);
-            }
             Main.layoutManager._backgroundGroup.add_child(group);
-            this.actors.push({group,monitor,fit,worker,building,smoke,bubble,ripples,buildingStage:-1});
+            this.actors.push({group,monitor,fit,worker,building,smoke,bubble,waterClip,waterSheets,waterScale,waterIndex:-1,buildingStage:-1});
         }
         this.visibility();
     }
@@ -95,14 +96,16 @@ export default class CartoonIsland extends Extension {
         // Conservative: only opaque maximized/fullscreen windows are blockers.
         const rectangles=global.workspace_manager.get_active_workspace().list_windows().filter(w=>!w.minimized&&w.showing_on_its_workspace()&&(w.is_fullscreen()||w.get_maximized()===Meta.MaximizeFlags.BOTH)&&(w.get_compositor_private()?.opacity??255)===255).map(w=>w.get_frame_rect());
         return this.actors.filter(item=>{
-            const r=animationBounds();if(this.water){r.x=140;r.y=210;r.width=850;r.height=420;}
+            const r=animationBounds();if(this.water){r.x=0;r.y=0;r.width=VIEW.width;r.height=VIEW.height;}
             const region={x:item.monitor.x+item.fit.x+r.x*item.fit.scale,y:item.monitor.y+item.fit.y+r.y*item.fit.scale,width:r.width*item.fit.scale,height:r.height*item.fit.scale};
-            return !coveredByWindows(region,rectangles);
+            const workArea=global.workspace_manager.get_active_workspace().get_work_area_for_monitor(item.monitor.index);
+            const exposed=intersectRegion(region,workArea);
+            return exposed.width>0&&exposed.height>0&&!coveredByWindows(exposed,rectangles);
         });
     }
     paint(items,now){
         const p=projectGround(this.world.x,this.world.z),frame=characterFrame(this.world,now),effectFrame=this.world.motion?Math.floor(now*8)%8:0;
-        for(const item of items){const {fit,worker,building,smoke,bubble,ripples}=item;
+        for(const item of items){const {fit,worker,building,smoke,bubble,waterClip,waterSheets,waterScale}=item;
             worker.clip.set_position(fit.x+(p.x-ATLAS.anchorX*.65)*fit.scale,fit.y+(p.y-ATLAS.anchorY*.65)*fit.scale);worker.frame(frame.x,frame.y);
             if(item.buildingStage!==this.world.floors){building.frame(this.world.floors*160,1956);building.clip.visible=this.world.floors>0;item.buildingStage=this.world.floors;}
             // Painter order at the new cabana, while the main resort is baked.
@@ -110,7 +113,11 @@ export default class CartoonIsland extends Extension {
             smoke.clip.visible=this.world.state==='failed';if(smoke.clip.visible)smoke.frame(effectFrame*160,1828);
             bubble.visible=['permission','failed'].includes(this.world.state)&&this.world.path.length===0;
             if(bubble.visible){const text=this.world.state==='failed'?'блять…':'Гей! Дозвіл?';if(bubble.text!==text)bubble.text=text;bubble.set_position(fit.x+(p.x-28)*fit.scale,fit.y+(p.y-90)*fit.scale);}
-            for(const s of ripples){s.clip.visible=this.water&&this.world.motion;if(s.clip.visible)s.frame(effectFrame*160,1700);}
+            waterClip.visible=this.water&&this.world.motion;
+            if(waterClip.visible){const f=waterFrame(now);if(item.waterIndex!==f.index){
+                for(let i=0;i<waterSheets.length;i++)waterSheets[i].visible=i===f.bank;
+                waterSheets[f.bank].set_position(-f.x*waterScale,-f.y*waterScale);item.waterIndex=f.index;
+            }}
         }
     }
     wake(){
@@ -132,6 +139,6 @@ export default class CartoonIsland extends Extension {
         for(const [object,id] of this.connections??[])object.disconnect(id);this.connections=[];
         for(const [window,ids] of this.windows??[])for(const id of ids)window.disconnect(id);this.windows?.clear();
         this.bridge?.unexport();this.bridge=null;
-        for(const item of this.actors??[])item.group.destroy();this.actors=[];this.world=null;this.plate=null;this.atlas=null;
+        for(const item of this.actors??[])item.group.destroy();this.actors=[];this.world=null;this.plate=null;this.atlas=null;this.waterBanks=null;
     }
 }

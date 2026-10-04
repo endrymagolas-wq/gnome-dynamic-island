@@ -11,6 +11,7 @@ with tempfile.TemporaryDirectory() as td:
     subprocess.run([sys.executable, str(root / 'tests/check_claude.py')], check=True, env=env)
     subprocess.run([sys.executable, str(root / 'tests/check_wallpaper.py')], check=True, env=env)
     subprocess.run(['node', str(root / 'tests/cartoon-island.mjs')], check=True, env=env)
+    subprocess.run([sys.executable, str(root / 'tests/check_water.py')], check=True, env=env)
     subprocess.run(['node', str(root / 'tests/panel-intent.js')], check=True, env=env)
     subprocess.run([sys.executable, str(root / 'tests/check_desktop.py')], check=True, env=env)
     subprocess.run(['node', str(root / 'tests/media.mjs')], check=True, env=env)

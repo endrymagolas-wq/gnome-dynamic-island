@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {IslandWorld,applicationState,terrainHeight} from '../extensions/cartoon-island@avalon.local/world.js';
 import {drawAtlasCharacter} from '../extensions/cartoon-island@avalon.local/scene-3d.js';
-import {TARGETS,ATLAS,groundPoint,projectGround,characterFrame,needsFrames,coveredByWindows,fitPlate,VIEW} from '../extensions/cartoon-island@avalon.local/resort-layout.js';
+import {TARGETS,ATLAS,WATER,waterFrame,groundPoint,projectGround,characterFrame,needsFrames,coveredByWindows,intersectRegion,fitPlate,VIEW} from '../extensions/cartoon-island@avalon.local/resort-layout.js';
 const w=new IslandWorld();
 assert.equal(w.present('invalid',0),false);assert.equal(w.present('editing',NaN),false);
 w.present('starting',0);assert.equal(w.x,TARGETS.idle.x);assert.equal(w.floors,0);
@@ -38,3 +38,12 @@ for(const state of ['idle','starting','editing','testing','failed','permission',
  assert.equal(calls[0],'save');assert.equal(calls.at(-1),'restore');assert(calls.includes('fill'));
 }
 console.log('PASS resort registration/routes, sprite bounds/baking, idle/covered/reduced-motion policy, floor cap, expiry and monitor fitting');
+
+for(let i=0;i<24;i++){const f=waterFrame((i+.1)/12);assert.equal(f.index,i);assert(f.bank<2);assert(f.x>=0&&f.x+WATER.width<=WATER.bankWidth);assert(f.y>=0&&f.y+WATER.height<=WATER.bankHeight);}
+assert.deepEqual(waterFrame(2),waterFrame(0));assert.deepEqual(waterFrame(4),waterFrame(0));
+console.log('PASS baked water indexing, bank bounds and exact 2-second wrap');
+
+const full={x:0,y:0,width:1920,height:1080},work={x:0,y:32,width:1920,height:1048};
+assert(coveredByWindows(intersectRegion(full,work),[work]),'maximized window covers backdrop excluding panel struts');
+assert.deepEqual(intersectRegion({x:0,y:0,width:10,height:10},{x:20,y:20,width:10,height:10}),{x:20,y:20,width:0,height:0});
+console.log('PASS work-area clipping for maximized-window water pause');
