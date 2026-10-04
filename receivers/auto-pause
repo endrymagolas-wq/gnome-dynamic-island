@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+set -u
+
+airplay_service="org.mpris.MediaPlayer2.ShairportSync"
+player_path="/org/mpris/MediaPlayer2"
+player_interface="org.mpris.MediaPlayer2.Player"
+
+get_playback_status() {
+    local service_name="$1"
+    busctl --user get-property \
+        "$service_name" \
+        "$player_path" \
+        "$player_interface" \
+        PlaybackStatus 2>/dev/null | sed -n 's/^s "\([^"]*\)"$/\1/p'
+}
+
+while true; do
+    browser_is_playing=false
+
+    while IFS= read -r browser_service; do
+        if [[ "$(get_playback_status "$browser_service")" == "Playing" ]]; then
+            browser_is_playing=true
+            break
+        fi
+    done < <(
+        busctl --user list --no-legend 2>/dev/null |
+            awk '$1 ~ /^org\.mpris\.MediaPlayer2\.(chromium|chrome|firefox)/ { print $1 }'
+    )
+
+    if $browser_is_playing && [[ "$(get_playback_status "$airplay_service")" == "Playing" ]]; then
+        busctl --user call \
+            "$airplay_service" \
+            "$player_path" \
+            "$player_interface" \
+            Pause >/dev/null 2>&1 || true
+        printf '%s Browser playback started; paused the AirPlay source.\n' "$(date --iso-8601=seconds)"
+    fi
+
+    sleep 1
+done

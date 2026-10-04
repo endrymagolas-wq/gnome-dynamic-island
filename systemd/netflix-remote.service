@@ -1,0 +1,17 @@
+[Unit]
+Description=Island desktop Netflix phone remote
+After=graphical-session.target network.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+Environment=ISLAND_NODE=node
+EnvironmentFile=-%h/.config/island-desktop/media.env
+ExecStart=/usr/bin/env ${ISLAND_NODE} %h/.local/share/netflix-remote/server.mjs
+Restart=on-failure
+RestartSec=3
+KillMode=process
+UMask=0077
+
+[Install]
+WantedBy=graphical-session.target

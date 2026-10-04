@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#121315"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><title>Кінопульт</title><link rel="icon" href="/icon.svg"><link rel="manifest" href="/manifest.webmanifest"><link rel="stylesheet" href="/style.css"><script defer src="/app.js"></script></head>
+<body><main>
+<header><a class="brand" href="/" aria-label="Кінопульт, головна"><span class="brandmark" aria-hidden="true">◒</span>Кінопульт</a><span class="connection" id="connection" role="status"><i></i><span>Підключення</span></span></header>
+<section id="pairing" class="notice" hidden><h2>Підключимо телефон</h2><p>Відскануй QR-код у вікні «Кінопульт» на комп’ютері. Телефон і ПК мають бути в одній Wi-Fi мережі.</p><form id="pairForm"><label for="pairLink">Уже зберіг на початковий екран?</label><div class="pair-input"><input id="pairLink" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Встав посилання підключення" aria-describedby="pairError"><button type="submit">Підключити</button></div><p id="pairError" role="alert" hidden></p></form></section>
+<section class="player" aria-label="Зараз на екрані">
+<div class="source"><span class="source-icon" data-icon="screen"></span><div><span class="source-name">Ubuntu PC</span><span class="source-service">Netflix</span></div><span class="activity" aria-hidden="true"><b></b><b></b><b></b><b></b></span></div>
+<div class="now"><h1 id="title">Обери своє кіно</h1><p id="subtitle">Встав посилання з Netflix нижче.</p><div id="profiles" class="profiles"></div></div>
+<div class="timeline"><div class="track" role="progressbar" aria-label="Перегляд фільму" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progress"></div></div><div class="time"><span id="elapsed">0:00</span><span id="remaining">−0:00</span></div></div>
+<section class="transport" aria-label="Керування відтворенням"><button class="skip" data-action="seek" data-seconds="-10" aria-label="Назад на 10 секунд"><span data-icon="back10"></span></button><div class="play-ring"><button class="play" id="play" data-action="toggle" aria-label="Відтворити"><span data-icon="play"></span></button></div><button class="skip" data-action="seek" data-seconds="10" aria-label="Вперед на 10 секунд"><span data-icon="forward10"></span></button></section>
+<div class="volume-label"><label for="volume">Гучність</label><output id="volumeValue" for="volume">50%</output></div>
+<section class="volume" aria-label="Гучність відео"><button data-action="mute" id="mute" aria-label="Вимкнути звук"><span data-icon="volume"></span></button><input id="volume" type="range" min="0" max="100" value="50" aria-label="Гучність відео"></section>
+</section>
+<div class="utilities"><button data-action="fullscreen"><span data-icon="expand"></span>Весь екран</button><button data-action="home"><span data-icon="grid"></span>Netflix</button></div>
+<section id="episodeControls" class="episode-controls" aria-label="Епізоди" hidden>
+  <div class="episode-actions"><button id="episodesToggle" data-action="episodes" aria-expanded="false" aria-controls="episodePanel"><span data-icon="episodes"></span>Серії</button><button data-action="next"><span data-icon="next"></span>Наступна серія</button></div>
+  <div id="episodePanel" class="episode-panel" hidden><div class="episode-heading"><h2 id="seasonTitle">Серії</h2><span id="episodeCount"></span></div><div id="seasonButtons" class="season-buttons" role="group" aria-label="Сезони"></div><div id="episodeItems" class="episode-list" aria-label="Серії"></div></div>
+</section>
+<form id="openForm" novalidate><label for="url">Що дивимося?</label><div class="input-wrap"><span data-icon="link" aria-hidden="true"></span><input id="url" type="text" inputmode="url" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Посилання з Netflix" aria-describedby="urlHelp urlError"><button type="submit" aria-label="Відкрити фільм на ПК"><span data-icon="arrow"></span></button></div><p id="urlError" class="field-error" role="alert" hidden></p><p id="urlHelp">У Netflix: Поділитися → Копіювати посилання</p></form>
+<button class="launch" id="launch" data-action="open">Відкрити Netflix на ПК <span data-icon="arrow"></span></button>
+<footer><span data-icon="phone"></span><span>Телефон можна відкласти.<br>Кіно продовжується на комп’ютері.</span></footer>
+<div id="toast" role="status" aria-live="polite" hidden></div>
+</main></body></html>

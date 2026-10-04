@@ -1,0 +1,15 @@
+[Unit]
+Description=AirPlay screen and YouTube HLS receiver
+After=graphical-session.target pipewire-pulse.service
+PartOf=graphical-session.target
+Wants=pipewire-pulse.service
+
+[Service]
+Type=simple
+Environment=UXPLAYRC=%h/.config/airplay-island/uxplayrc
+ExecStart=%h/.local/share/island-desktop/receivers/bin/uxplay -n "Ubuntu Screen" -nh -p 7100 -fps 30 -avdec -as pulsesink -fs -hls 2 -lang -scrsv 1
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=graphical-session.target

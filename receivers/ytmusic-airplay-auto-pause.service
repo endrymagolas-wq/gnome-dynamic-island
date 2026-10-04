@@ -1,0 +1,12 @@
+[Unit]
+Description=Pause phone music when a browser starts playing
+After=ytmusic-airplay.service
+PartOf=ytmusic-airplay.service
+
+[Service]
+ExecStart=/bin/bash %h/.local/share/island-desktop/receivers/auto-pause
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target

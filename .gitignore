@@ -9,3 +9,9 @@ status.json
 history.json
 *.log
 .env*
+
+remote-key
+connect.png
+connect.html
+chrome/
+youtube-browser/

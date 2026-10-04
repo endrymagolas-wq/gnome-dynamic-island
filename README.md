@@ -1,8 +1,8 @@
 # Dynamic Island for GNOME
 
-A floating **Dynamic Island for Linux and Ubuntu**, built as a native **GNOME Shell 46 extension**. Media controls through **MPRIS**, optional **AirPlay** integration, an **Ink** quick-settings theme, volume indicators and an optional offline **Laya system monitor**.
+A floating **Dynamic Island for Linux and Ubuntu**, built as a native **GNOME Shell 46 extension**. Media controls through **MPRIS**, optional **AirPlay** integration, an **Ink** quick-settings theme, volume indicators and an optional offline **Laya system monitor**. An optional **full GNOME desktop customization profile** adds traffic-light buttons, wallpaper, a floating dock and Netflix/YouTube browser players.
 
-**First public beta: 0.1.0-beta.1.** Tested on Ubuntu 24.04.5 / GNOME 46 / Wayland. This is a separate desktop project. The interface currently uses Ukrainian labels.
+**Desktop-profile beta: 0.2.0-beta.1.** Tested on Ubuntu 24.04.5 / GNOME 46 / Wayland. This is a separate desktop project. The interface currently uses Ukrainian labels.
 
 ## What it does
 
@@ -36,7 +36,17 @@ python3 install.py install
 
 The installer copies files into your own home, enables the two bundled extensions and GNOME User Themes, and selects Island-Ink. It prints a recovery manifest before you log out. Save your work, then **log out and back in** to load the new JavaScript. It never logs you out automatically. Disable conflicting top-bar/autohide extensions such as Hide Top Bar before testing.
 
-`--no-activate` copies files without changing desktop settings or services. The package does not install receivers, wallpapers, docks, GTK application themes or a Netflix phone remote. It does not modify application vendor files or upgrade Ubuntu. Existing receiver units are discovered; absent units are hidden.
+`--no-activate` copies files without changing desktop settings or services. The default mode keeps the rest of your desktop appearance; full customization is optional. It does not modify application vendor files or upgrade Ubuntu. Existing receiver units are discovered; absent units are hidden.
+
+## Optional complete desktop
+
+For **traffic-light buttons, light GTK application themes, matching icons, Inter, wallpaper, music-responsive waves and a floating bottom dock**, use `python3 install.py install --desktop`. It includes Netflix and YouTube browser-app launchers plus the Netflix phone-remote source; the remote starts OFF on a fresh installation. The appearance installer runs offline, backs up replaced files and records changed settings for restoration.
+
+See the [full desktop installation guide](docs/DESKTOP.md) for dependencies, optional phone music/screen/YouTube video setup, pairing and limits. AirPlay setup builds UxPlay from pinned source and uses Ubuntu's Shairport Sync package; this is an explicit optional stage.
+
+![Desktop profile in an isolated GNOME 46 fixture](docs/images/desktop-profile.png)
+
+This screenshot shows actual native GTK buttons, the bundled wallpaper, floating dock and island in a disposable compositor; music features were injected for rendering validation.
 
 ## Optional offline assistant
 
@@ -65,7 +75,7 @@ journalctl --user -u island-assistant.service -n 30
 
 Ordinary MPRIS players do not require the assistant or AirPlay. Receiver support is integration with separately installed software: [Shairport Sync](https://github.com/mikebrady/shairport-sync) for audio and [UxPlay](https://github.com/FDH2/UxPlay) for screen mirroring. Follow their upstream installation instructions. The phone and receiver must be on the same LAN.
 
-This beta recognizes existing user units named `ytmusic-airplay.service` (audio) and `airplay-screen.service` (screen). Shairport needs its D-Bus/MPRIS metadata support for phone track data, artwork and volume. A phone audio receiver is selected in the phone's audio AirPlay menu; screen mirroring uses a separate receiver. No firewall rules or network configuration are changed by this installer.
+This beta recognizes existing user units named `ytmusic-airplay.service` (audio) and `airplay-screen.service` (screen). The optional `--receivers` installation configures user units after `setup_receivers.py`; see the desktop guide. Shairport needs its D-Bus/MPRIS metadata support for phone track data, artwork and volume. A phone audio receiver is selected in the phone's audio AirPlay menu; screen mirroring uses a separate receiver. No firewall rules or network configuration are changed by this installer.
 
 ## Restore / remove
 
@@ -95,6 +105,6 @@ python3 -m compileall -q assistant install.py setup_assistant.py
 find extensions -name '*.js' -exec node --check {} \;
 ```
 
-Node is only needed for development tests. There are no npm runtime dependencies. Native rendering needs GNOME 46; portable tests do not stand in for compositor or physical-device verification.
+Node 22+ is needed for development tests and the optional Netflix phone remote. There are no npm runtime dependencies. Native rendering needs GNOME 46; portable tests do not stand in for compositor or physical-device verification.
 
 Code is GPL-3.0-or-later; upstream theme notices are retained. See [third-party notices](THIRD_PARTY_NOTICES.md). This project is unofficial and is not affiliated with Apple, GNOME, Ubuntu or the Laya authors.

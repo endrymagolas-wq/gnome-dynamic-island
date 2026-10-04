@@ -1,0 +1,13 @@
+[Unit]
+Description=AirPlay audio with session MPRIS metadata
+After=pipewire.service pipewire-pulse.service wireplumber.service
+Wants=pipewire.service pipewire-pulse.service wireplumber.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/shairport-sync --configfile=%h/.config/ytmusic-airplay/shairport-sync.conf --use-stderr
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target

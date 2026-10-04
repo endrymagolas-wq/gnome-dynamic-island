@@ -1,0 +1,9 @@
+{
+  "uuid": "layerlight@avalon.local",
+  "name": "Layerlight · живі хвилі",
+  "description": "Adaptive layered wallpaper: estimated BPM, four audio bands and optional local Laya scene selection. Smooth automatic, lofi and energetic modes.",
+  "shell-version": [
+    "46"
+  ],
+  "version": 7
+}

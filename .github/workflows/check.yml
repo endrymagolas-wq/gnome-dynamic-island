@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: python3 -m compileall -q assistant install.py setup_assistant.py
+      - run: python3 -m compileall -q assistant desktop receivers install.py desktop_profile.py receiver_profile.py setup_assistant.py setup_receivers.py
       - run: python3 tests/run.py
       - name: Parse JavaScript
         run: find extensions -name '*.js' -exec node --check {} \;
