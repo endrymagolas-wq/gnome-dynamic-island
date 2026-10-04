@@ -1,12 +1,32 @@
-# Cartoon island live wallpaper
+# Resort island live wallpaper
 
-This feature is **a full-screen animated desktop wallpaper**, not a panel widget.
-The island is now a low-poly 3D scene with raised terrain, palms, a desk, a
-growing house and a cartoon worker. The worker walks on the ground plane in
-both directions and follows the terrain height. Water uses a shared GLSL shader
-for animated wave normals, sun glints, shallow-water caustics and shoreline foam. Application windows and desktop icons stay above the scene.
-It is a separate optional GNOME 46 extension; AirPlay/Dynamic Island is not
-required or changed by its standalone installer.
+This is a full-screen resort wallpaper, behind windows and desktop icons. Its
+3D appearance is baked into an image: a Mediterranean bungalow, terrace, palms,
+beach and clear sea. A small animated worker reacts to programs on your computer.
+It is a separate optional GNOME 46 extension; the panel extension is not required.
+
+## Performance approach
+
+- The background is one decoded image texture, reused on every monitor. It is
+  never re-rendered as 3D geometry or processed by a full-screen shader at runtime.
+- Character poses, walking directions, smoke and subtle water glints are baked
+  into a transparent atlas. Animation changes texture offsets and actor positions.
+- A small guest cabana changes its cached construction stage only after edits.
+  The main resort bungalow and the rest of the island remain in the background.
+- Native animation is capped at approximately 12 frames per second. There is no
+  animation timer when the worker is stationary without a looping action.
+- Lock/greeter and coverage by opaque maximized/fullscreen windows pause animation.
+  Window and workspace events wake it again. A single expiration timer still
+  returns a Claude event to ordinary application focus when its time expires.
+- Water is a still pre-rendered sea by default. Optional glints animate only
+  three small patches at 8 frames per second, without a shader or full-screen redraw.
+- GNOME's animation preference freezes poses and disables water glints.
+
+The background texture is 1536×1024; the atlas is 1280×2084. Their decoded RGBA
+size is about 17 MiB before compositor buffers and implementation overhead.
+Actual CPU/GPU usage on native GNOME remains unmeasured. Screen composition still
+costs work whenever something moves, particularly on high-resolution monitors.
+This design reduces wallpaper work; it does not guarantee zero system load.
 
 ## Install
 
@@ -16,78 +36,70 @@ From the repository root:
 python3 install_wallpaper.py
 ```
 
-Log out and back in so GNOME discovers the new extension, then enable it:
+Log out and back in, then enable:
 
 ```sh
 gnome-extensions enable cartoon-island@avalon.local
 ```
 
-The existing background settings are preserved. Disabling the extension reveals
-your previous wallpaper. Each monitor gets its own scene; aspect ratios are
-preserved by fitting the island; the ocean fills the surrounding space. The screen lock does not show the scene.
-GNOME's animation preference is respected. Native GNOME 46 placement, desktop
-icon ordering and lifecycle still need testing on a real session.
+Existing background settings are preserved. Disabling the extension reveals your
+previous wallpaper. Each monitor fits the plate without stretching or clipping
+its walkable area. Native GNOME 46 texture loading, desktop-icon ordering, window
+coverage, monitor lifecycle and disable/re-enable still need a real-session check.
 
-## React to programs
-
-By default the worker responds to **application focus**:
+## Program reactions
 
 | Active program | Worker |
 | --- | --- |
-| Code editor or terminal | Goes to the desk |
-| Browser | Reads a little map |
-| Other application / desktop | Relaxes with coffee |
+| Code editor or terminal | Walks to the outdoor desk |
+| Browser | Walks to the back lawn and reads a map |
+| Other application / desktop | Relaxes with coffee at the bench |
 
-This does not inspect screen content or infer whether a program is editing or
-running tests. Precise actions need application events. Claude Code is the
-first such integration:
+This observes application focus, not screen contents. Precise editing and test
+actions require application events. Claude Code is the first integration:
 
 ```sh
 python3 ~/.local/share/cartoon-island/claude_hook.py --install
 ```
 
-Restart Claude Code to load the hooks. Existing settings and hooks are preserved;
-the first existing settings file is backed up as
-`~/.claude/settings.json.before-island`. For project-specific hooks, pass
-`--settings /path/to/project/.claude/settings.local.json`.
+Restart Claude Code. Existing settings and hooks are preserved; the first existing
+settings file is backed up as `~/.claude/settings.json.before-island`. For project
+hooks, pass `--settings /path/to/project/.claude/settings.local.json`.
 
-| Claude event | Wallpaper scene |
+| Claude event | Scene |
 | --- | --- |
 | Prompt submitted | Walks to the desk |
-| Edit / Write / MultiEdit / NotebookEdit | Types; another floor grows (up to four) |
-| Recognized test command starts | Walks to the house and inspects it |
+| Edit / Write / MultiEdit / NotebookEdit | Types; the guest cabana gains a construction stage |
+| Recognized test command starts | Walks over and inspects the bungalow |
 | Test tool fails | Smoke and «блять…» |
-| Permission requested | Walks to the edge of the island and waves |
-| Claude stops | Sits down with coffee for 20 seconds |
+| Permission requested | Walks to the lookout and waves |
+| Claude stops | Sits at the bench with coffee |
 
-Claude events temporarily take priority over application focus. Only a fixed
-state name crosses the session bus; prompt text, filenames, commands and tool
-output never reach the wallpaper. Hooks never approve permissions and fail
-silently if the extension is unavailable. Activity expires after three minutes
-without another event. With multiple sessions, the most recent event wins.
+Claude events take priority over focus. Only a fixed state name crosses the
+session bus, never prompt text, filenames, commands or output. Hooks do not approve
+permissions and fail silently when the extension is unavailable. Activity expires
+after three minutes without another event; completion expires after 20 seconds.
+The latest event wins across multiple Claude sessions. Construction has four
+stages and resets at the start of a new task.
 
 Test detection covers pytest/Jest/Vitest/Mocha/CTest, package-manager `test`
 scripts, Cargo/Go/.NET tests, Python unittest and scripts under `tests/`.
 Custom scripts may appear as ordinary work. Failure relies on
 `PostToolUseFailure` or a nonzero exit code / error flag in the tool response.
 
-## Preview
-
-Serve the repository locally and open the interactive preview:
+## Preview and native checks
 
 ```sh
 python3 -m http.server 8000 --bind 127.0.0.1
 # Open http://127.0.0.1:8000/preview/cartoon-island.html
 ```
 
-The preview uses the same 3D model, projection and drawing function as the GNOME
-extension, plus the same GLSL ocean function through WebGL. Drag the scene to
-orbit the camera in the preview; the native wallpaper has a fixed isometric
-camera to keep desktop input available. WebGL is required for preview water;
-if unavailable, the scene still renders over a plain ocean backdrop. Native
-water requires GNOME Shell GLSLEffect support. Buttons simulate events; they do not read local application activity.
+The browser preview uses the same atlas, layout and reaction model. Its controls
+simulate events. The camera is fixed because the background is pre-rendered.
+The preview does not use WebGL or draw a full-screen canvas. It pauses when the
+tab is hidden and stops its animation interval in idle/reduced-motion states.
 
-For a native smoke check:
+Native smoke check:
 
 ```sh
 gdbus call --session --dest org.gnome.Shell \
@@ -95,12 +107,18 @@ gdbus call --session --dest org.gnome.Shell \
   --method org.avalon.CartoonIsland.ClaudeState editing
 ```
 
-Repeat with `starting`, `testing`, `failed`, `permission`, `done`; check screen
-lock, multiple monitors, animations disabled, monitor reconnection, and
-extension disable/re-enable. Verify shader compilation and CPU/GPU cost on your
-hardware: native rendering is limited to about 12 frames per second, the browser
-preview to 30. The 3D geometry is projected and painted with depth sorting, not a
-full GPU depth-buffer renderer; complex overlaps can still need refinement.
+Repeat with `starting`, `testing`, `failed`, `permission`, `done`. Optional water:
+
+```sh
+gdbus call --session --dest org.gnome.Shell \
+  --object-path /org/avalon/CartoonIsland \
+  --method org.avalon.CartoonIsland.WaterAnimation true
+```
+
+Use `false` to return to still water. This choice resets to off when the extension
+is re-enabled. Check lock, maximized/fullscreen coverage, workspace switches,
+multiple monitors, reduced motion, and extension disable/re-enable. The worker
+uses registered walkable routes; the baked scenery has no general 3D depth buffer.
 
 ## Disable / remove
 
@@ -108,7 +126,14 @@ full GPU depth-buffer renderer; complex overlaps can still need refinement.
 gnome-extensions disable cartoon-island@avalon.local
 ```
 
-Delete only hook entries referencing `claude_hook.py` from your Claude settings
-if you also want to stop sending events. The wallpaper does not change panel
-settings. Existing extension files are backed up under
-`~/.local/share/cartoon-island/backups/` when installed over a previous version.
+Delete only hook entries referencing `claude_hook.py` if you also want to stop
+sending events. The wallpaper does not change panel settings. Existing extension
+files are backed up under `~/.local/share/cartoon-island/backups/` on reinstall.
+
+## Asset rebuilding
+
+`assets/resort.jpg` is an original AI-generated background exported to JPEG.
+`assets/sprites.png` contains 3D character renders plus authored smoke/water/cabana
+frames. The build-time renderer is `scene-3d.js`; it is not loaded by the wallpaper
+or its ordinary preview. `preview/bake-atlas.html` produces the atlas in a canvas
+for asset authoring. It is not part of runtime animation.

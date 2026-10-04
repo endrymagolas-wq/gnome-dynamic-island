@@ -156,4 +156,4 @@ Code is GPL-3.0-or-later; upstream theme notices are retained. See [third-party 
 
 ### Cartoon island live wallpaper
 
-A separate, full-screen low-poly 3D island with shader water lives behind your application windows. The worker reacts to active applications and optional Claude Code events. Install it independently with `python3 install_wallpaper.py`; see [setup and preview](docs/CLAUDE.md).
+A separate, full-screen pre-rendered resort island lives behind your application windows. Only small cached sprites animate; the background stays static. The worker reacts to active applications and optional Claude Code events. Install it independently with `python3 install_wallpaper.py`; see [setup and preview](docs/CLAUDE.md).

@@ -143,3 +143,46 @@ export function drawWorld(c,w,width,height,camera=CAMERA){
     c.fillStyle='#e1f8f2';c.font='16px Sans';c.fillText(labels[w.state],35,613);
     c.restore();
 }
+
+/** Build-time only: bake poses into a transparent sprite atlas. */
+export function drawAtlasCharacter(c,state,frame,direction=null){
+    const speed=state==='permission'?8:state==='editing'?17:10;
+    const w={state,x:0,z:0,path:direction===null?[]:[{}],heading:direction??0,t:frame/8*Math.PI*2/speed,motion:true};
+    const list=[];worker(list,w);
+    const ground=project([0,terrainHeight(0,0),0]);
+    c.save();c.translate(40-ground.x,88-ground.y);
+    const camera=CAMERA,view=[Math.sin(camera.yaw)*Math.cos(camera.pitch),Math.sin(camera.pitch),Math.cos(camera.yaw)*Math.cos(camera.pitch)],light=[-.38,.82,.43];
+    const faces=list.map(face=>{let n=cross(sub(face.v[1],face.v[0]),sub(face.v[2],face.v[0]));const len=Math.hypot(...n);if(len<.000001)return null;n=n.map(v=>v/len);if(dot(n,view)<=0)return null;const shade=.57+.43*Math.max(0,dot(n,light));const p=face.v.map(v=>project(v));return {p,depth:p.reduce((s,v)=>s+v.depth,0)/3,color:`rgb(${face.color.map(v=>Math.round(v*shade*255)).join(',')})`};}).filter(Boolean).sort((a,b)=>a.depth-b.depth);
+    for(const f of faces){c.beginPath();c.moveTo(f.p[0].x,f.p[0].y);for(const p of f.p.slice(1))c.lineTo(p.x,p.y);c.closePath();c.fillStyle=f.color;c.fill();c.strokeStyle=f.color;c.lineWidth=.3;c.stroke();}
+    c.restore();
+}
+
+export function drawAtlasCabana(c,stage){
+    const list=[],y=terrainHeight(0,0),color=[.93,.87,.72];
+    box(list,0,y,0,.95,.04,.82,[.72,.64,.48]);
+    if(stage>0)for(const x of [-.35,.35])for(const z of [-.3,.3])box(list,x,y,z,.045,.62,.045,[.64,.47,.29]);
+    if(stage>1){
+        box(list,0,y+.04,0,.74,.61,.63,color);
+        box(list,-.13,y+.04,.321,.17,.36,.012,[.49,.35,.22]);box(list,.20,y+.31,.323,.16,.17,.012,[.38,.66,.70]);
+        box(list,.378,y+.28,.03,.013,.19,.20,[.35,.63,.66]);
+    }
+    if(stage>2){
+        const top=y+.67,a=[-.46,top,-.40],b=[.46,top,-.40],d=[-.46,top,.4],e=[0,top+.26,-.4],f=[0,top+.26,.4],right=[.46,top,.4];
+        quad(list,a,d,f,e,[.69,.35,.23]);quad(list,e,f,right,b,[.77,.41,.26]);triangle(list,d,right,f,color);triangle(list,b,a,e,color);
+        // Individual terracotta tile strips are baked once, never animated meshes.
+        for(let side of [-1,1])for(let i=0;i<5;i++)for(let j=0;j<8;j++){
+            const x1=side*(i*.09),x2=side*((i+1)*.09),z1=-.395+j*.10,z2=z1+.095,yy1=top+.26-Math.abs(x1)/.46*.26+.006,yy2=top+.26-Math.abs(x2)/.46*.26+.006;
+            const points=[[x1,yy1,z1],[x1,yy1,z2],[x2,yy2,z2],[x2,yy2,z1]];
+            if(side<0)points.reverse();quad(list,...points,[.71+(j%3)*.025,.36+(i%2)*.02,.23]);
+        }
+    }
+    if(stage>3){
+        box(list,0,y+.03,.49,.82,.045,.24,[.68,.49,.31]);
+        for(const x of [-.29,.29]){cylinder(list,[x,y+.04,.50],[x,y+.14,.50],.075,[.69,.43,.29]);sphere(list,x,y+.19,.50,.09,.13,.09,[.32,.53,.26],8,5);}
+    }
+    const ground=project([0,y,0]),view=[Math.sin(CAMERA.yaw)*Math.cos(CAMERA.pitch),Math.sin(CAMERA.pitch),Math.cos(CAMERA.yaw)*Math.cos(CAMERA.pitch)],light=[-.38,.82,.43];
+    c.save();c.translate(80-ground.x,116-ground.y);
+    const faces=list.map(face=>{let n=cross(sub(face.v[1],face.v[0]),sub(face.v[2],face.v[0]));const len=Math.hypot(...n);if(len<.000001)return null;n=n.map(v=>v/len);if(dot(n,view)<=0)return null;const shade=.62+.38*Math.max(0,dot(n,light)),p=face.v.map(v=>project(v));return {p,depth:p.reduce((s,v)=>s+v.depth,0)/3,color:`rgb(${face.color.map(v=>Math.round(v*shade*255)).join(',')})`};}).filter(Boolean).sort((a,b)=>a.depth-b.depth);
+    for(const f of faces){c.beginPath();c.moveTo(f.p[0].x,f.p[0].y);for(const p of f.p.slice(1))c.lineTo(p.x,p.y);c.closePath();c.fillStyle=f.color;c.fill();c.strokeStyle=f.color;c.lineWidth=.3;c.stroke();}
+    c.restore();
+}
