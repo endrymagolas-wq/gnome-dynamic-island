@@ -153,3 +153,7 @@ find extensions -name '*.js' -exec node --check {} \;
 Node 22+ is needed for development tests and the optional Netflix phone remote. There are no npm runtime dependencies. Native rendering needs GNOME 46; portable tests do not stand in for compositor or physical-device verification.
 
 Code is GPL-3.0-or-later; upstream theme notices are retained. See [third-party notices](THIRD_PARTY_NOTICES.md). This project is unofficial and is not affiliated with Apple, GNOME, Ubuntu or the Laya authors.
+
+### Claude Code worker
+
+An optional animated worker builds while Claude edits, inspects tests, waves for permissions and drinks coffee when finished. See [setup and event mapping](docs/CLAUDE.md).
