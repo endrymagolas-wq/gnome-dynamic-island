@@ -1,54 +1,99 @@
-# Dynamic Island for GNOME
+<div align="center">
 
-A floating **Dynamic Island for Linux and Ubuntu**, built as a native **GNOME Shell 46 extension**. Media controls through **MPRIS**, optional **AirPlay** integration, an **Ink** quick-settings theme, volume indicators and an optional offline **Laya system monitor**. An optional **full GNOME desktop customization profile** adds traffic-light buttons, wallpaper, a floating dock and Netflix/YouTube browser players.
+# Island Desktop for GNOME
 
-**Desktop-profile beta: 0.2.0-beta.1.** Tested on Ubuntu 24.04.5 / GNOME 46 / Wayland. This is a separate desktop project. The interface currently uses Ukrainian labels.
+**A complete Ubuntu desktop look, with Dynamic Island at its center.**
 
-## What it does
+Light application themes · Floating dock · Music-responsive wallpaper · Media controls · Optional offline Laya monitoring
 
-- A centered clock becomes a compact media island with rounded album art and animated playback indicators. Track controls wait 0.3 seconds before sending previous/next commands.
-- The top bar reveals after a 300 ms ceiling hover above the island or empty desktop. Hover over another window's titlebar stays quiet; Shift at the top edge or continued pointer pressure explicitly reveals the bar. Window dragging and fullscreen suppress it.
-- Horizontal phone-volume feedback below the island and a draggable vertical desktop-volume HUD. Native quick settings retain normal slider interactions, with an Ink palette and wide rounded tracks.
-- Optional traffic-light overlays for the configured Codex/ChatGPT, Claude and Antigravity custom titlebars. This is an explicit compatibility list, not universal support for every application.
-- Focus timer, per-application audio controls, manual resource diagnosis, notification history and category muting.
-- Optional CPU-only Laya classification for observed downloads, long tasks, service failures, disk space, network changes and sustained CPU/RAM pressure. Fixed short messages, fullscreen/focus suppression and a maximum of three notices per five minutes.
+![GNOME 46](https://img.shields.io/badge/GNOME-46-4a86cf?style=flat-square)
+![Ubuntu 24.04](https://img.shields.io/badge/Ubuntu-24.04-E95420?style=flat-square)
+![Beta](https://img.shields.io/badge/status-0.2.0--beta.1-f2b544?style=flat-square)
+![License](https://img.shields.io/badge/license-GPL--3.0--or--later-667085?style=flat-square)
 
-The assistant recommends actions. It does not close applications, kill other processes, delete files or run commands chosen by a model. Its economic mode releases the owned model process after 60 seconds idle. Full OFF disables the assistant service and monitoring. Manual diagnosis and media controls remain available.
+[Install](#choose-your-installation) · [Desktop guide](docs/DESKTOP.md) · [Laya](#optional-offline-assistant) · [Validation](docs/VALIDATION.md) · [Report an issue](https://github.com/endrymagolas-wq/gnome-dynamic-island/issues)
 
-## Install
+</div>
 
-Check `gnome-shell --version` first. GNOME **46 only** is supported in this beta; do not disable GNOME's version validation. KDE, Hyprland and other shells are unsupported.
+![Island Desktop: light GTK window, floating dock, wallpaper and centered island](docs/images/desktop-profile.png)
 
-On Ubuntu 24.04, install the standard dependencies if absent:
+*Native GNOME 46 preview from an isolated compositor. Audio features were injected to validate the wallpaper rendering; this is a desktop fixture, not a recording of a daily-use session.*
+
+## Your desktop, brought together
+
+Island Desktop combines the shell, application appearance, dock, wallpaper and media controls into one coordinated GNOME setup. Start with the full look, then adjust it to your taste. A smaller installation is available if you only want the island and its shell integration.
+
+Built for **Ubuntu 24.04 / GNOME Shell 46 / Wayland**. Tested on Ubuntu 24.04.5. The interface currently uses **Ukrainian labels**. This beta supports GNOME 46 only.
+
+| Part of the desktop | What you get |
+| --- | --- |
+| **Appearance** | Light GTK3/GTK4 application themes, matching icons, Inter typography and traffic-light window buttons. |
+| **Dock & wallpaper** | A floating bottom dock, bundled wallpaper and optional music-responsive Layerlight waves. |
+| **Dynamic Island** | A centered clock that becomes a compact media control with album art and animated playback indicators. |
+| **Sound & focus** | Desktop and phone-volume feedback, per-application audio controls, a focus timer and notification history. |
+| **Media & phone** | Netflix/YouTube browser-app launchers, an optional Netflix phone remote and optional AirPlay receiver integration. |
+| **Laya** | Optional local monitoring for disk space, sustained CPU/RAM pressure, long tasks, downloads, network changes and service failures. |
+
+Custom-titlebar overlays cover configured Codex/ChatGPT, Claude and Antigravity profiles. Application appearance and controls depend on compatibility; see the [desktop guide](docs/DESKTOP.md).
+
+## Choose your installation
+
+Both options currently use the same repository or [release archive](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases). The commands below select what gets installed.
+
+| Option | Includes | Command |
+| --- | --- | --- |
+| **Full desktop** | Island and shell integration, light application themes, icons, Inter, dock, wallpaper, waves and browser-player launchers. | `python3 install.py install --desktop` |
+| **Island & shell** | Island, Ink shell theme, compatibility window controls and assistant helpers; keeps the rest of your desktop appearance. | `python3 install.py install` |
+
+**Laya, AirPlay receiver setup and the phone remote are optional.** Laya and the phone remote start OFF on a fresh installation. Ordinary MPRIS media controls work without them.
+
+### 1. Get the project
+
+Check `gnome-shell --version` first. KDE, Hyprland and other shells are unsupported; keep GNOME's version validation enabled.
 
 ```sh
 sudo apt install git python3 python3-venv gnome-shell-extensions
-```
-
-Download the [release archive](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases) and extract it, or clone:
-
-```sh
 git clone https://github.com/endrymagolas-wq/gnome-dynamic-island.git
 cd gnome-dynamic-island
+```
+
+### 2. Install the full desktop
+
+On Ubuntu 24.04, install the desktop-profile dependencies, preview the changes, then install:
+
+```sh
+sudo apt install python3-gi gir1.2-gtk-3.0 gnome-shell-extension-ubuntu-dock \
+  pipewire-bin fontconfig qrencode
+python3 install.py install --desktop --dry-run
+python3 install.py install --desktop
+```
+
+For the smaller **island & shell** option instead:
+
+```sh
 python3 install.py install --dry-run
 python3 install.py install
 ```
 
-The installer copies files into your own home, enables the two bundled extensions and GNOME User Themes, and selects Island-Ink. It prints a recovery manifest before you log out. Save your work, then **log out and back in** to load the new JavaScript. It never logs you out automatically. Disable conflicting top-bar/autohide extensions such as Hide Top Bar before testing.
+### 3. Load your new desktop
 
-`--no-activate` copies files without changing desktop settings or services. The default mode keeps the rest of your desktop appearance; full customization is optional. It does not modify application vendor files or upgrade Ubuntu. Existing receiver units are discovered; absent units are hidden.
+Save your work, then **log out and back in** to load the new JavaScript. The installer prints a recovery manifest: keep its path for [restoring your previous setup](#restore--remove). Disable conflicting top-bar/autohide extensions such as Hide Top Bar before testing.
 
-## Optional complete desktop
+The appearance assets install offline. Replaced files are backed up and changed settings are recorded. `--no-activate` copies files without changing desktop settings or services. See the [full desktop guide](docs/DESKTOP.md) for browser requirements, optional receivers, phone pairing and compatibility details.
 
-For **traffic-light buttons, light GTK application themes, matching icons, Inter, wallpaper, music-responsive waves and a floating bottom dock**, use `python3 install.py install --desktop`. It includes Netflix and YouTube browser-app launchers plus the Netflix phone-remote source; the remote starts OFF on a fresh installation. The appearance installer runs offline, backs up replaced files and records changed settings for restoration.
+## Make it yours
 
-See the [full desktop installation guide](docs/DESKTOP.md) for dependencies, optional phone music/screen/YouTube video setup, pairing and limits. AirPlay setup builds UxPlay from pinned source and uses Ubuntu's Shairport Sync package; this is an explicit optional stage.
+Use GNOME's appearance settings and your dock's settings to adjust fonts, wallpaper and dock preferences. The top-panel moon control selects automatic, calm or energetic wallpaper motion and its intensity; you can switch waves off. Island desktop controls provide focus, audio, notification and assistant settings.
 
-![Desktop profile in an isolated GNOME 46 fixture](docs/images/desktop-profile.png)
-
-This screenshot shows actual native GTK buttons, the bundled wallpaper, floating dock and island in a disposable compositor; music features were injected for rendering validation.
+The profile uses ordinary GNOME settings and installed theme/extension files. Further theme changes can be made in those files; there is no all-in-one visual theme editor in this beta. Restore retains later per-key appearance choices; manually edited installed source files cause restore to stop before overwriting them.
 
 ## Optional offline assistant
+
+### Laya: keep an eye on resources while you work
+
+Local models, builds and parallel development tasks can put pressure on RAM, CPU and disk space. Laya classifies observed system events and surfaces short notices for supported conditions, so you can spot resource pressure or service failures while working on a project.
+
+Monitoring includes sustained CPU/RAM pressure, disk-space changes, long tasks, downloads and network changes. Notices respect fullscreen/focus contexts, category muting and a maximum of three notices per five minutes. The assistant recommends actions; it does not close applications, kill other processes, delete files or run model-selected commands. Its economic mode releases the owned model process after 60 seconds idle. Full OFF disables its service and monitoring; manual diagnosis and media controls remain available.
 
 The assistant starts **OFF on a fresh install**. Existing preferences are retained when reinstalling.
 
