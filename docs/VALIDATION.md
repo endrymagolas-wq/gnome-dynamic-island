@@ -19,10 +19,13 @@ The local prototype was exercised with real phone AirPlay artwork, phone-volume 
 
 The user's current prototype reports smart-edge and modelBridge enabled after relogin. These observations apply to this workstation/prototype; they are not a broad compatibility certification of the renamed public package.
 
+## Public release verification
+
+The public prerelease `v0.1.0-beta.1` is published from commit `d81fb71baa79d82d89fe9c7e880bbed665ae307b`. GitHub CI passed on both main and the version tag. Its ZIP and SHA256SUMS were downloaded from the public release URLs and compared with the local artifacts. ZIP SHA-256: `f634a72fc666558845d478778183b228cc3b70294797668d536d8b5d3870588e`. Tests also passed after extracting that ZIP. The validation notes inside the immutable release ZIP predate the public CI run; the release page records the final CI result.
+
 ## Not verified / open beta work
 
 - A completely fresh online setup of all model dependencies on a separate user's computer. The optional setup pins the main SDK/runtime versions and warms tokenizer/config caches; future package-index availability may change.
-- Public CI completion until GitHub runs the workflow.
 - Reliable physical lock/unlock, suspend/resume and long sessions after previous crashes.
 - Hardware game/video fullscreen behavior, multi-monitor scaling/layout combinations and physical gesture feel across devices.
 - Authenticated custom titlebars across all releases of each configured application, unknown applications, and all GNOME versions outside 46.
