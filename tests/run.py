@@ -8,6 +8,7 @@ with tempfile.TemporaryDirectory() as td:
     for test in sorted((root / 'tests/policy').glob('*.py')):
         subprocess.run([sys.executable, str(test)], check=True, env=env)
     subprocess.run([sys.executable, str(root / 'tests/check_install.py')], check=True, env=env, stdout=subprocess.DEVNULL)
+    subprocess.run([sys.executable, str(root / 'tests/check_claude.py')], check=True, env=env)
     subprocess.run(['node', str(root / 'tests/panel-intent.js')], check=True, env=env)
     subprocess.run([sys.executable, str(root / 'tests/check_desktop.py')], check=True, env=env)
     subprocess.run(['node', str(root / 'tests/media.mjs')], check=True, env=env)
