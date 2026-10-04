@@ -16,13 +16,12 @@ import {DesktopTools} from './desktop-tools.js';
 import {AlbumArt} from './album-art.js';
 import {roundArtwork} from './rounded-art.js';
 import {MediaPlayers} from './media-players.js';
-import {ClaudeScene} from './claude-scene.js';
 
 const PLAYER = 'org.mpris.MediaPlayer2.ShairportSync';
 const PATH = '/org/mpris/MediaPlayer2';
 const IFACE = 'org.mpris.MediaPlayer2.Player';
 const API = `<node><interface name="org.avalon.AirplayIsland">
-<method name="ClaudeState"><arg type="s" direction="in"/><arg type="b" direction="out"/></method><method name="Present"><arg type="s" direction="in"/><arg type="b" direction="out"/></method><method name="Show"/><method name="PreviewVolume"><arg type="d" direction="in"/></method><method name="Focus"><arg type="i" direction="in"/></method><method name="GetState"><arg type="s" direction="out"/></method>
+<method name="Present"><arg type="s" direction="in"/><arg type="b" direction="out"/></method><method name="Show"/><method name="PreviewVolume"><arg type="d" direction="in"/></method><method name="Focus"><arg type="i" direction="in"/></method><method name="GetState"><arg type="s" direction="out"/></method>
 </interface></node>`;
 
 export default class AirPlayIsland extends Extension {
@@ -47,7 +46,6 @@ export default class AirPlayIsland extends Extension {
             style:'padding: 0; margin: 0;',clip_to_allocation:true,child:this._smallIcon});
 
         mediaRow.add_child(this._miniFrame);
-        this._mediaRow = mediaRow;
         this._pill.add_child(mediaRow);
         this._focusLabel = new St.Label({text:'', visible:false, style_class:'ai-focus-time', style:'margin:0; text-align:center;',x_align:Clutter.ActorAlign.CENTER, y_align:Clutter.ActorAlign.CENTER});
         this._pill.add_child(this._focusLabel);
@@ -82,7 +80,6 @@ export default class AirPlayIsland extends Extension {
         this._bridge = Gio.DBusExportedObject.wrapJSObject(API, {
             Show: () => { this._indicator.menu.open(); this._autoClose(); },
             GetState: () => JSON.stringify(this._state()),
-            ClaudeState: state => this._claude?.present(state) ?? false,
             Present: payload => {
                 if(typeof payload!=='string'||payload.length>4096)return false;
                 try {const data=JSON.parse(payload);
@@ -99,7 +96,6 @@ export default class AirPlayIsland extends Extension {
         this._liquid = new LiquidIsland(this);
         this._live = new LiveStates(this);
         this._players = new MediaPlayers(this);
-        this._claude = new ClaudeScene(this);
         this._timer = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, 2, () => {
             this._update(); return GLib.SOURCE_CONTINUE;
         });
@@ -243,7 +239,6 @@ export default class AirPlayIsland extends Extension {
         this._wave.visible = this._playing && !this._live?.active;
         this._wave.queue_repaint();
         this._updateRoute();
-        this._claude?.sync();
     }
     _setMiniArtwork(gicon) {
         this._smallIcon.gicon=gicon;
@@ -367,7 +362,7 @@ export default class AirPlayIsland extends Extension {
         const [x,y] = this._pill.get_transformed_position();
         const [width,height] = this._pill.get_transformed_size();
         return {menuOpen:this._indicator.menu.isOpen, title:this._title.text, artist:this._artist.text,
-            claudeState:this._claude?.state ?? "", foregroundPid:global.display.focus_window?.get_pid() ?? 0, modelBridge:true, modelStatus:this._modelStatus(), route:this._routeName, status:this._status, pill:{x,y,width,height},
+            foregroundPid:global.display.focus_window?.get_pid() ?? 0, modelBridge:true, modelStatus:this._modelStatus(), route:this._routeName, status:this._status, pill:{x,y,width,height},
             overview:{visible:Main.overview.visible,search:(()=>{const a=Main.overview.searchEntry;const [x,y]=a.get_transformed_position();const [width,height]=a.get_transformed_size();return {x,y,width,height};})()},
             clockRight:this._clock.get_parent() === Main.panel._rightBox,
             panelReveal:{trigger:this._floating?.hoverRevealMode??(this._floating?.edgeIntent?'pressure':'hover'),barriers:this._floating?.barriers?.length??0},
@@ -380,7 +375,6 @@ export default class AirPlayIsland extends Extension {
             reducedMotion:!this._settings.get_boolean('enable-animations')};
     }
     disable() {
-        this._claude?.destroy();this._claude=null;
         if(this._commandTimer) GLib.Source.remove(this._commandTimer);this._commandTimer=0;
         this._live?.destroy();this._live=null;
         this._title?.remove_all_transitions();this._artist?.remove_all_transitions();
