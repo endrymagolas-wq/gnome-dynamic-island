@@ -2,7 +2,7 @@ import Cairo from 'cairo';
 /** Small adapter so the very same scene renders in GNOME and in the preview. */
 export class CairoCanvas {
     constructor(cr){this.cr=cr;this.fillStyle='#000000';this.strokeStyle='#000000';this.lineWidth=1;this.font='16px Sans';}
-    color(value){const s=value.replace('#','');const n=parseInt(s.slice(0,6),16);this.cr.setSourceRGBA((n>>16&255)/255,(n>>8&255)/255,(n&255)/255,s.length===8?parseInt(s.slice(6),16)/255:1);}
+    color(value){if(value.startsWith('rgb(')){const rgb=value.slice(4,-1).split(',').map(Number);this.cr.setSourceRGBA(rgb[0]/255,rgb[1]/255,rgb[2]/255,1);return;}const s=value.replace('#','');const n=parseInt(s.slice(0,6),16);this.cr.setSourceRGBA((n>>16&255)/255,(n>>8&255)/255,(n&255)/255,s.length===8?parseInt(s.slice(6),16)/255:1);}
     save(){this.cr.save();} restore(){this.cr.restore();} scale(x,y){this.cr.scale(x,y);}
     beginPath(){this.cr.newPath();} moveTo(x,y){this.cr.moveTo(x,y);} lineTo(x,y){this.cr.lineTo(x,y);} closePath(){this.cr.closePath();}
     ellipse(x,y,rx,ry){this.cr.save();this.cr.translate(x,y);this.cr.scale(rx,ry);this.cr.arc(0,0,1,0,Math.PI*2);this.cr.restore();}
