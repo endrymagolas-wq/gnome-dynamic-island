@@ -1,0 +1,10 @@
+{
+  "uuid": "island-window-controls@avalon.local",
+  "name": "Island window controls",
+  "description": "Per-window traffic lights for compatible custom titlebars",
+  "shell-version": [
+    "46"
+  ],
+  "version": 3,
+  "url": "https://github.com/endrymagolas-wq/gnome-dynamic-island"
+}

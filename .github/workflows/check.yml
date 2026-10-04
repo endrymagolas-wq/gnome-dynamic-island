@@ -1,0 +1,19 @@
+name: Checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  portable-tests:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python3 -m compileall -q assistant install.py setup_assistant.py
+      - run: python3 tests/run.py
+      - name: Parse JavaScript
+        run: find extensions -name '*.js' -exec node --check {} \;

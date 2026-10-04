@@ -1,0 +1,10 @@
+{
+  "uuid": "airplay-island@avalon.local",
+  "name": "Dynamic Island for GNOME",
+  "description": "Floating media island, desktop controls and optional local assistant for GNOME 46.",
+  "shell-version": [
+    "46"
+  ],
+  "version": 4,
+  "url": "https://github.com/endrymagolas-wq/gnome-dynamic-island"
+}

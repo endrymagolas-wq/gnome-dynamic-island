@@ -1,0 +1,21 @@
+[Unit]
+Description=Local Laya event classifier for Dynamic Island
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/share/island-desktop/assistant/venv/bin/python %h/.local/share/island-desktop/assistant/monitor.py
+Environment=USE_TF=0
+Environment=HF_HUB_OFFLINE=1
+Environment=TOKENIZERS_PARALLELISM=false
+Environment=OMP_NUM_THREADS=2
+Restart=on-failure
+RestartSec=10
+Nice=10
+CPUQuota=100%
+MemoryMax=2G
+UMask=0077
+
+[Install]
+WantedBy=graphical-session.target

@@ -1,0 +1,4 @@
+.cw-button { padding: 0; margin: 0; border: none; background: transparent; }
+.cw-glyph { color: transparent; font-size: 12px; font-weight: bold; }
+.cw-button:hover .cw-glyph, .cw-button:focus .cw-glyph { color: rgba(30,30,30,0.75); }
+.cw-button:active { opacity: 0.65; }

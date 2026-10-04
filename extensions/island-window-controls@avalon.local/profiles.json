@@ -1,0 +1,20 @@
+[
+  {
+    "match": "^(chatgpt|codex|openai-codex)(\\.|$)",
+    "height": 40,
+    "width": 108,
+    "background": "#171717"
+  },
+  {
+    "match": "^(claude|com\\.anthropic\\.claude)(\\.|$)",
+    "height": 36,
+    "width": 138,
+    "background": "#faf9f5"
+  },
+  {
+    "match": "^(antigravity|com\\.google\\.antigravity)(\\.|$)",
+    "height": 35,
+    "width": 138,
+    "background": "#1f1f1f"
+  }
+]
