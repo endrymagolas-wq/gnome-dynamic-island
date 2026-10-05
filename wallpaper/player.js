@@ -58,7 +58,7 @@ document.addEventListener('visibilitychange',updatePause);matchMedia('(prefers-r
 document.querySelector('#waterToggle').onchange=e=>window.livelyPropertyListener('water',e.target.checked);
 document.querySelector('#quality').onchange=e=>setQuality(e.target.value);
 document.querySelector('#send').onclick=()=>{model.event({state:document.querySelector('#event').value,seq:++seq});draw();};
-async function poll(){try{const e=await fetch('/events').then(r=>r.json());if(!debug)model.event(e);observerPause=e.paused;updatePause();}catch{}setTimeout(poll,1000);}
+async function poll(){try{const e=await fetch('/events').then(r=>r.json());if(!debug)model.event(e);observerPause=!debug&&e.paused;updatePause();}catch{}setTimeout(poll,1000);}
 setQuality('high');poll();
 // Public diagnostics contain scene state only, never application text.
 window.resortDiagnostics=()=>({state:model.state,stage:model.stage,position:[...model.position],paused,waterEnabled,quality,videoFrames:video.getVideoPlaybackQuality?.(),time:model.time});

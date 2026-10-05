@@ -30,6 +30,9 @@ references this repository's `assistant/claude_hook.py`; keep unrelated hooks.
 
 Open `http://127.0.0.1:18765/wallpaper/index.html?preview=1` for manual reaction
 controls. The actual desktop URL omits those controls.
+The preview ignores desktop coverage so it can animate inside an application
+window; hidden-page and reduced-motion pause still apply. The ordinary desktop
+continues to honor coverage pause.
 
 ## Events and privacy
 
