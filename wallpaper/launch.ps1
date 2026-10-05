@@ -22,10 +22,9 @@ $livelyLibrary = Join-Path $env:LOCALAPPDATA 'Lively Wallpaper/Library/wallpaper
 $actualLibrary = Join-Path $env:LOCALAPPDATA ('Packages/' + $livelyApp.PackageFamilyName + '/LocalCache/Local/Lively Wallpaper/Library/wallpapers/resort-island-blender')
 New-Item -ItemType Directory -Force -Path $actualLibrary | Out-Null
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'LivelyInfo.json'),(Join-Path $PSScriptRoot 'bootstrap.html') -Destination $actualLibrary
-# Keep the user's saved water/quality choices on subsequent launches.
-if(-not (Test-Path -LiteralPath (Join-Path $actualLibrary 'LivelyProperties.json'))){
-    Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'LivelyProperties.json') -Destination $actualLibrary
-}
+# Add new controls while retaining the user's saved values.
+. (Join-Path $PSScriptRoot 'sync-properties.ps1')
+Sync-ResortProperties (Join-Path $PSScriptRoot 'LivelyProperties.json') (Join-Path $actualLibrary 'LivelyProperties.json')
 $layout = Join-Path $env:LOCALAPPDATA ('Packages/' + $livelyApp.PackageFamilyName + '/LocalCache/Local/Lively Wallpaper/WallpaperLayout.json')
 if ((Test-Path -LiteralPath $layout) -and -not (Test-Path -LiteralPath (Join-Path $islandState 'previous-layout.json'))) { Copy-Item -LiteralPath $layout -Destination (Join-Path $islandState 'previous-layout.json') }
 Start-Process -FilePath $livelyExe -ArgumentList 'app','--showApp','false' -WindowStyle Hidden
@@ -38,6 +37,15 @@ if(Test-Path -LiteralPath $layout){
     }
 }
 # Store package path translation is documented by Lively's CLI.
+$savedProperties = Join-Path $env:LOCALAPPDATA ('Packages/' + $livelyApp.PackageFamilyName + '/LocalCache/Local/Lively Wallpaper/Library/SaveData/wpdata/resort-island-blender')
+if (Test-Path -LiteralPath $savedProperties) {
+    foreach ($monitor in Get-ChildItem -LiteralPath $savedProperties -Directory) {
+        $propertyFile = Join-Path $monitor.FullName 'LivelyProperties.json'
+        if (Test-Path -LiteralPath $propertyFile) {
+            Sync-ResortProperties (Join-Path $PSScriptRoot 'LivelyProperties.json') $propertyFile
+        }
+    }
+}
 Start-Process -FilePath $livelyCli -ArgumentList ('setwp --file "' + $livelyLibrary + '"') -WindowStyle Hidden -Wait
 Start-Sleep -Seconds 2
 $liveLayout = Get-Content -LiteralPath $layout -Raw | ConvertFrom-Json

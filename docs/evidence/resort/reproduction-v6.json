@@ -1,0 +1,15 @@
+{
+  "rebuiltFrom": "art/island/resort-v5.blend",
+  "recipe": [
+    "tools/build_resort_v6.py",
+    "art/island/fairy_palette.py",
+    "art/island/resort_time_of_day.py"
+  ],
+  "sourceSha256": "7947f9e998678308cfbd930fcc773bed045be6624b52200fb18d34aa88ec538b",
+  "frameSize": [
+    1920,
+    1080
+  ],
+  "rgbMAE": 0.011125417952674896,
+  "method": "Independent rebuilt environment rendered at 48 samples with OptiX; compare actual final source frame 1."
+}

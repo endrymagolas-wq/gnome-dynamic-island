@@ -33,7 +33,18 @@ the V3 worker used the credited Snow mesh and rig above. The island image
 is not used as a distorted water background. Flow's two sand generations failed;
 the actual sand shader uses the licensed PBR scan.
 
-## Current V5 mascot: Pip
+## V6 fairy palette and ambient actions
+
+V6 retains the licensed environment and generated Pip mesh documented below.
+It adds no purchased kit or newly downloaded model. Painted material colors,
+submerged terrain adjustments, four lighting recipes and the offline glow are
+project-authored in `island/fairy_palette.py` and `island/resort_time_of_day.py`.
+The retained Quaternius skeleton and original motions support the new seated
+transitions, drinking, nodding and hand-cover yawn gesture. These additions do
+not change the mesh or generator license. No facial animation or eating clip
+is currently provided. `island/resort-v6.blend` packs all used file images.
+
+## V5 mascot retained in V6: Pip
 
 V5 uses a new image-reconstructed mesh from the accepted cute fantasy creature
 reference, with a large rounded head, floppy ears and hibiscus swim shorts.

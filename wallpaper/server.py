@@ -120,8 +120,33 @@ class Handler(BaseHTTPRequestHandler):
                     elif key=='position':
                         if not isinstance(value,list) or len(value)!=3 or not all(isinstance(v,(int,float)) and math.isfinite(v) and abs(v)<=100 for v in value):raise ValueError()
                         clean[key]=value
-                    elif key in ('clock','frames','totalVideoFrames','droppedVideoFrames','meanFrameMs','p95FrameMs','paused','videoPaused','videoWidth','videoHeight','stage','smokeVisiblePixels'):
+                    elif key in ('clock','frames','totalVideoFrames','droppedVideoFrames','meanFrameMs','p95FrameMs','paused','videoPaused','videoWidth','videoHeight','stage','smokeVisiblePixels','actorVisiblePixels','restTime'):
                         if not isinstance(value,(int,float,bool)) or not math.isfinite(value) or not 0<=value<=1e9:raise ValueError()
+                        clean[key]=value
+                    elif key=='seated':
+                        if not isinstance(value,bool):raise ValueError()
+                        clean[key]=value
+                    elif key=='ambient':
+                        if value not in (None,'drink','nod','yawn'):raise ValueError()
+                        clean[key]=value
+                    elif key=='actorRect':
+                        if not isinstance(value,list) or len(value)!=4 or not all(isinstance(v,(int,float)) and math.isfinite(v) and 0<=v<=4096 for v in value):raise ValueError()
+                        clean[key]=value
+                    elif key=='transition':
+                        if value is not None:
+                            if not isinstance(value,dict) or value.get('kind') not in ('sit','stand'):raise ValueError()
+                            elapsed=value.get('elapsed')
+                            if not isinstance(elapsed,(int,float)) or not math.isfinite(elapsed) or not 0<=elapsed<=10:raise ValueError()
+                            value={'kind':value['kind'],'elapsed':elapsed}
+                        clean[key]=value
+                    elif key=='lighting':
+                        if value is not None:
+                            phases=('morning','day','evening','night')
+                            if not isinstance(value,dict) or value.get('mode') not in ('auto',*phases) or value.get('a') not in phases or value.get('b') not in (None,*phases):raise ValueError()
+                            for field,limit in (('mix',1),('decoderCount',2),('clockDelta',12)):
+                                number=value.get(field)
+                                if not isinstance(number,(int,float)) or not math.isfinite(number) or not 0<=number<=limit:raise ValueError()
+                            value={field:value[field] for field in ('mode','a','b','mix','decoderCount','clockDelta')}
                         clean[key]=value
                 BENCH.clear();BENCH.update(clean)
                 self.send(200,b'{}')

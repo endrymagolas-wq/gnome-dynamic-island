@@ -17,5 +17,18 @@ try:
  req=urllib.request.Request(url+'/event',data=b'{"state":"failed"}')
  try:urllib.request.urlopen(req);raise AssertionError('Missing token accepted')
  except urllib.error.HTTPError as e:assert e.code==403
+ telemetry={'format':'video','state':'done','position':[-.61,-2.12,.64],'seated':True,'transition':None,
+            'ambient':'yawn','actorRect':[128,2560,128,160],'restTime':33,'actorVisiblePixels':12000,
+            'lighting':{'mode':'auto','a':'morning','b':'day','mix':.5,'decoderCount':2,'clockDelta':.02},
+            'privateText':'must not be retained'}
+ req=urllib.request.Request(url+'/bench-metrics',data=json.dumps(telemetry).encode(),headers={'Origin':url})
+ assert urllib.request.urlopen(req).status==200
+ recorded=json.load(urllib.request.urlopen(url+'/bench-metrics'))
+ assert recorded.get('lighting')==telemetry['lighting'] and recorded.get('actorRect')==telemetry['actorRect'],'New lighting/actor telemetry was dropped'
+ assert recorded.get('ambient')=='yawn' and recorded.get('seated') is True and 'privateText' not in recorded
+ telemetry['lighting']['mode']='unrecognized application text'
+ req=urllib.request.Request(url+'/bench-metrics',data=json.dumps(telemetry).encode(),headers={'Origin':url})
+ try:urllib.request.urlopen(req);raise AssertionError('Unbounded lighting text accepted')
+ except urllib.error.HTTPError as e:assert e.code==400
 finally:server.shutdown();server.server_close()
 print('PASS loopback host, authenticated events, priority expiry, multiwindow coverage and path containment')

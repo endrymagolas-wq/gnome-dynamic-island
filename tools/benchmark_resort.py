@@ -8,10 +8,18 @@ p=argparse.ArgumentParser();p.add_argument('label');p.add_argument('--seconds',t
 time.sleep(5)
 expected='atlas' if a.label.startswith('atlas') else 'still' if a.label.startswith('still') else 'video'
 expectedState='editing' if a.label.startswith('runtime') and a.label.endswith('-editing') else 'done' if a.label.startswith('runtime') and a.label.endswith('-coffee') else None
+def settled(status):
+    if '-v6-' not in a.label or expectedState is None:return True
+    if status.get('transition'):return False
+    if expectedState=='done':return status.get('seated') is True
+    meta=json.loads((Path(__file__).resolve().parents[1]/'wallpaper/assets/scene.json').read_text())
+    target=meta['targets'].get(expectedState,meta['targets']['desk'])
+    position=status.get('position',[])
+    return len(position)==3 and all(abs(x-y)<.001 for x,y in zip(position,target))
 for attempt in range(25):
     try:
         status=json.load(urllib.request.urlopen('http://127.0.0.1:18765/bench-metrics',timeout=1))
-        if status.get('format')==expected and ('state' in status)==a.label.startswith('runtime') and (expectedState is None or status.get('state')==expectedState):break
+        if status.get('format')==expected and ('state' in status)==a.label.startswith('runtime') and (expectedState is None or status.get('state')==expectedState) and settled(status):break
     except OSError:pass
     time.sleep(1)
 else:raise RuntimeError('New benchmark page has not reported matching telemetry')
@@ -46,6 +54,7 @@ try:playback=json.load(urllib.request.urlopen('http://127.0.0.1:18765/bench-metr
 except OSError:playback={}
 assert root.is_running() and playback.get('format')==playbackBefore.get('format') and ('state' in playback)==('state' in playbackBefore),'Player changed while measuring; discard this run'
 assert expectedState is None or playback.get('state')==expectedState,'Task state changed during measurement; discard this run'
+assert settled(playback),'Actor left its measured work/rest position; discard this run'
 if a.label.endswith('-paused'):
     assert playbackBefore.get('paused') and playback.get('paused') and playbackBefore.get('videoPaused') and playback.get('videoPaused'),'Playback was not paused; discard this run'
     assert playbackBefore.get('totalVideoFrames')==playback.get('totalVideoFrames'),'Frames advanced while paused; discard this run'
