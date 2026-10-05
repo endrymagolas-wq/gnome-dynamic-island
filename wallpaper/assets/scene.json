@@ -47,7 +47,7 @@
   "targets": {
     "desk": [
       -2.3,
-      -0.77,
+      -1.1,
       0.43
     ],
     "testing": [
@@ -61,14 +61,14 @@
       0.34155709538871465
     ],
     "done": [
-      0,
-      -2.25,
-      0.43
+      -0.61,
+      -2.12,
+      0.64
     ],
     "idle": [
-      0,
-      -2.25,
-      0.43
+      -0.61,
+      -2.12,
+      0.64
     ],
     "browsing": [
       -2.3,
@@ -83,9 +83,9 @@
   },
   "projections": {
     "desk": {
-      "x": 738.3007621765137,
-      "y": 548.7485826015472,
-      "depth": 25.023395538330078
+      "x": 719.8214149475098,
+      "y": 562.1439957618713,
+      "depth": 24.779390335083008
     },
     "testing": {
       "x": 1146.258888244629,
@@ -98,14 +98,14 @@
       "depth": 21.561927795410156
     },
     "done": {
-      "x": 839.7171020507812,
-      "y": 675.5489408969879,
-      "depth": 22.889795303344727
+      "x": 795.2264213562012,
+      "y": 633.8468778133392,
+      "depth": 23.156742095947266
     },
     "idle": {
-      "x": 839.7171020507812,
-      "y": 675.5489408969879,
-      "depth": 22.889795303344727
+      "x": 795.2264213562012,
+      "y": 633.8468778133392,
+      "depth": 23.156742095947266
     },
     "browsing": {
       "x": 870.7537651062012,
@@ -142,14 +142,36 @@
       "browsing",
       "working"
     ],
-    "walkSpeed": 0.4992,
+    "walkSpeed": 0.5952,
     "source": "Pip generated from project reference via Stable Fast 3D; adapted Quaternius CC0 rig",
-    "reference": "art/references/pip-v5-front.png"
+    "reference": "art/references/pip-v5-front.png",
+    "transitions": [
+      "sit",
+      "stand"
+    ],
+    "depthAtlas": "character-depth.png",
+    "depthScale": 4,
+    "depthBias": 2,
+    "ambient": {
+      "atlas": "ambient.png",
+      "depthAtlas": "ambient-depth.png",
+      "clips": [
+        "drink",
+        "nod",
+        "yawn"
+      ],
+      "frames": 96,
+      "fps": 16,
+      "columns": 16,
+      "rowsPerClip": 6,
+      "cycleSeconds": 42,
+      "facialRig": false
+    }
   },
   "construction": {
     "width": 160,
     "height": 160,
-    "atlasY": 2720,
+    "atlasY": 3040,
     "x": 1214.0925979614258,
     "y": 636.3126540184021,
     "depth": 23.51007652282715,
@@ -188,5 +210,83 @@
       0.035,
       0.4
     ]
+  },
+  "navigation": {
+    "clearance": 0.3,
+    "obstacles": [
+      {
+        "name": "terrace",
+        "bounds": [
+          -1.899999976158142,
+          -0.5,
+          1.899999976158142,
+          2.5
+        ]
+      },
+      {
+        "name": "coffee seating",
+        "bounds": [
+          -1.059999704360962,
+          -2.4750001430511475,
+          1.6749999523162842,
+          -1.8250000476837158
+        ]
+      },
+      {
+        "name": "work table",
+        "bounds": [
+          -2.92392897605896,
+          -0.7530124187469482,
+          -1.6760706901550293,
+          -0.04698759317398071
+        ]
+      }
+    ]
+  },
+  "seating": {
+    "states": [
+      "idle",
+      "done"
+    ],
+    "approach": [
+      -0.61,
+      -2.98,
+      0.43
+    ],
+    "position": [
+      -0.61,
+      -2.12,
+      0.64
+    ],
+    "seconds": 0.9,
+    "hopHeight": 0.14,
+    "cushionTop": 0.95
+  },
+  "lighting": {
+    "phases": {
+      "day": "",
+      "morning": "phases/morning/",
+      "evening": "phases/evening/",
+      "night": "phases/night/"
+    },
+    "schedule": [
+      {
+        "phase": "morning",
+        "minute": 360
+      },
+      {
+        "phase": "day",
+        "minute": 540
+      },
+      {
+        "phase": "evening",
+        "minute": 1080
+      },
+      {
+        "phase": "night",
+        "minute": 1260
+      }
+    ],
+    "fadeSeconds": 120
   }
 }

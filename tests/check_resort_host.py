@@ -7,6 +7,17 @@ assert not m.covered((0,0,100,100),[(0,0,49,100),(50,0,100,100)])
 assert m.publish('starting',now=100);assert not m.publish('idle','desktop',now=101);assert m.publish('idle','desktop',now=281)
 server=m.ThreadingHTTPServer(('127.0.0.1',0),m.Handler);server.token='test-only';threading.Thread(target=server.serve_forever,daemon=True).start();url=f'http://127.0.0.1:{server.server_port}'
 try:
+ video=root/'wallpaper/assets/water-720.mp4'
+ req=urllib.request.Request(url+'/wallpaper/assets/water-720.mp4',headers={'Range':'bytes=20-39'})
+ with urllib.request.urlopen(req) as response:
+  assert response.status==206,'Video seeking requires HTTP byte ranges'
+  assert response.headers['Content-Range']==f'bytes 20-39/{video.stat().st_size}'
+  assert response.read()==video.read_bytes()[20:40]
+ req=urllib.request.Request(url+'/wallpaper/assets/water-720.mp4',headers={'Range':'bytes=-10'})
+ with urllib.request.urlopen(req) as response:assert response.status==206 and response.read()==video.read_bytes()[-10:]
+ req=urllib.request.Request(url+'/wallpaper/assets/water-720.mp4',headers={'Range':f'bytes={video.stat().st_size}-'})
+ try:urllib.request.urlopen(req);raise AssertionError('Out-of-file video range accepted')
+ except urllib.error.HTTPError as e:assert e.code==416
  for state in m.STATES:
   req=urllib.request.Request(url+'/event',data=json.dumps({'state':state}).encode(),headers={'Authorization':'Bearer test-only'})
   assert urllib.request.urlopen(req).status==200

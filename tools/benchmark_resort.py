@@ -40,13 +40,24 @@ def totals():
     return cpu,ram
 out=Path(__file__).resolve().parents[1]/'docs/evidence/resort';out.mkdir(parents=True,exist_ok=True)
 gpuFile=out/(a.label+'-gpu.json')
-gpuProc=subprocess.Popen(['powershell','-NoProfile','-File',str(Path(__file__).with_name('measure_resort_gpu.ps1')),'-ProcessIds',','.join(str(p.pid) for p in processes),'-Seconds',str(a.seconds),'-OutputFile',str(gpuFile)],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+readyFile=out/(a.label+'-gpu.ready')
+readyFile.unlink(missing_ok=True)
+gpuProc=subprocess.Popen(['powershell','-NoProfile','-File',str(Path(__file__).with_name('measure_resort_gpu.ps1')),'-ProcessIds',','.join(str(p.pid) for p in processes),'-Seconds',str(a.seconds),'-OutputFile',str(gpuFile),'-ReadyFile',str(readyFile)],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+# Enumerating Windows counters can take tens of seconds. Start the CPU window
+# at the first real GPU sample, keeping the original post-measurement timeout.
+deadline=time.monotonic()+60
+while not readyFile.exists():
+    if gpuProc.poll() is not None:raise RuntimeError('GPU collector exited before its first sample')
+    if time.monotonic()>deadline:
+        gpuProc.kill();gpuProc.wait();raise RuntimeError('GPU counters did not become ready within 60 seconds')
+    time.sleep(.1)
 try:playbackBefore=json.load(urllib.request.urlopen('http://127.0.0.1:18765/bench-metrics',timeout=1))
 except OSError:playbackBefore={}
 c0,_=totals();start=time.monotonic();rss=[]
 for _ in range(a.seconds):time.sleep(1);rss.append(totals()[1])
 c1,_=totals();elapsed=time.monotonic()-start
 gpuExit=gpuProc.wait(timeout=15)
+readyFile.unlink(missing_ok=True)
 assert gpuExit==0,'GPU collection failed; discard this run'
 gpu=json.loads(gpuFile.read_text(encoding='utf-8-sig'))
 assert len(gpu['samples'])>=a.seconds-1 and all(row.get('invalidTargetSamples',0)==0 for row in gpu['samples']),'Invalid GPU counters; discard this run'
@@ -56,8 +67,10 @@ assert root.is_running() and playback.get('format')==playbackBefore.get('format'
 assert expectedState is None or playback.get('state')==expectedState,'Task state changed during measurement; discard this run'
 assert settled(playback),'Actor left its measured work/rest position; discard this run'
 if a.label.endswith('-paused'):
+    assert playbackBefore.get('totalVideoFrames',0)>30 and playbackBefore.get('videoWidth')==1920,'Pause must measure an initialized player; discard this run'
     assert playbackBefore.get('paused') and playback.get('paused') and playbackBefore.get('videoPaused') and playback.get('videoPaused'),'Playback was not paused; discard this run'
     assert playbackBefore.get('totalVideoFrames')==playback.get('totalVideoFrames'),'Frames advanced while paused; discard this run'
+    assert all(playbackBefore.get(key)==playback.get(key) for key in ('actorRect','restTime','position')),'Actor advanced while paused; discard this run'
 playbackSeconds=playback.get('clock',0)-playbackBefore.get('clock',0)
 observedFps=((playback.get('totalVideoFrames',0)-playbackBefore.get('totalVideoFrames',0)) if playback.get('format')=='video' else (playback.get('frames',0)-playbackBefore.get('frames',0)))/playbackSeconds if playbackSeconds>0 else 0
 assert observedFps>=0,'Player changed while measuring; discard this run'

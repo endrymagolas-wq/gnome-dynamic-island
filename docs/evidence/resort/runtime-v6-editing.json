@@ -1,0 +1,99 @@
+{
+  "label": "runtime-v6-editing",
+  "gpuCounterExit": 0,
+  "seconds": 30.044826800003648,
+  "cpuPercentWholePC": 3.3803656341925614,
+  "cpuPercentOneCore": 54.08585014708098,
+  "meanRssMiB": 943.321875,
+  "peakRssMiB": 998.0859375,
+  "pids": [
+    53700,
+    44188,
+    45376,
+    53344,
+    54032,
+    48060,
+    53404,
+    52844,
+    45884
+  ],
+  "hostPids": [
+    45884
+  ],
+  "playbackBefore": {
+    "format": "video",
+    "clock": 63.00339999999851,
+    "totalVideoFrames": 1888,
+    "droppedVideoFrames": 0,
+    "paused": false,
+    "videoPaused": false,
+    "videoWidth": 1920,
+    "videoHeight": 1080,
+    "state": "editing",
+    "stage": 1,
+    "position": [
+      -2.3,
+      -1.1,
+      0.43
+    ],
+    "seated": false,
+    "transition": null,
+    "ambient": null,
+    "actorRect": [
+      0,
+      1600,
+      128,
+      160
+    ],
+    "restTime": 21.0015999999996,
+    "actorVisiblePixels": 9878,
+    "lighting": {
+      "mode": "auto",
+      "a": "evening",
+      "b": null,
+      "mix": 0,
+      "decoderCount": 1,
+      "clockDelta": 0
+    },
+    "smokeVisiblePixels": 0
+  },
+  "playback": {
+    "format": "video",
+    "clock": 93.00109999999404,
+    "totalVideoFrames": 2787,
+    "droppedVideoFrames": 0,
+    "paused": false,
+    "videoPaused": false,
+    "videoWidth": 1920,
+    "videoHeight": 1080,
+    "state": "editing",
+    "stage": 1,
+    "position": [
+      -2.3,
+      -1.1,
+      0.43
+    ],
+    "seated": false,
+    "transition": null,
+    "ambient": null,
+    "actorRect": [
+      1920,
+      1600,
+      128,
+      160
+    ],
+    "restTime": 8.96950000000058,
+    "actorVisiblePixels": 9885,
+    "lighting": {
+      "mode": "auto",
+      "a": "evening",
+      "b": null,
+      "mix": 0,
+      "decoderCount": 1,
+      "clockDelta": 0
+    },
+    "smokeVisiblePixels": 0
+  },
+  "observedPlaybackFps": 29.968964287266488,
+  "scope": "Lively WebView2 wrapper/descendants, Lively core, and loopback event host. RSS sums shared mappings. Video fps counts decoded frames; atlas fps counts rAF draw submissions, not physical display presents. GPU/VRAM are Windows per-process counters."
+}

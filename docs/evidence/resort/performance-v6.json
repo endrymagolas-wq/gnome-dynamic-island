@@ -1,0 +1,120 @@
+{
+  "recordedAt": "2026-10-05T20:04:52.096884+00:00",
+  "hardware": "Windows 11 Pro 10.0.26200, i9-9900K (16 logical CPUs), 32GB RAM, RTX3080 10GB, 1920x1080 primary display",
+  "conditions": "Seven fresh 30-second native windows with Blender stopped. CPU sampling begins after the first GPU counter sample. Coverage/observer are temporarily disabled during measurements, including native CLI pause of an initialized player; ordinary policy and observer are restored afterwards. Video/atlas use the same new 720p frames. Physical lock/fullscreen/multi-monitor checks remain manual.",
+  "scope": "Lively core, owned WebView2 process tree and loopback host. RSS sums shared mappings; GPU engines are separate Windows counters, not board power. Video fps counts decoded frames; atlas fps counts submitted draws, not monitor presents.",
+  "rows": [
+    {
+      "label": "video-v6-720",
+      "cpuPercentWholePC": 1.937565665010531,
+      "meanRssMiB": 666.0649739583333,
+      "gpu3DPercent": 0.31381723063666456,
+      "gpuVideoDecodePercent": 3.896855205644131,
+      "meanDedicatedMiB": 53.2546875,
+      "meanSharedMiB": 22.652604166666666,
+      "playbackFps": 29.96526828748013,
+      "droppedFramesDuringInterval": 0
+    },
+    {
+      "label": "atlas-v6-720",
+      "cpuPercentWholePC": 3.55692891429652,
+      "meanRssMiB": 840.5826822916666,
+      "gpu3DPercent": 0.5682671430613826,
+      "gpuVideoDecodePercent": 0,
+      "meanDedicatedMiB": 334.49440104166666,
+      "meanSharedMiB": 28.343229166666667,
+      "playbackFps": 23.40991409862089,
+      "droppedFramesDuringInterval": 0
+    },
+    {
+      "label": "still-v6",
+      "cpuPercentWholePC": 0.1593415284661606,
+      "meanRssMiB": 604.5276041666667,
+      "gpu3DPercent": 0,
+      "gpuVideoDecodePercent": 0,
+      "meanDedicatedMiB": 70.74609375,
+      "meanSharedMiB": 11.875,
+      "playbackFps": 0,
+      "droppedFramesDuringInterval": 0
+    },
+    {
+      "label": "runtime-v6-coffee",
+      "cpuPercentWholePC": 2.286002819082948,
+      "meanRssMiB": 928.8782552083334,
+      "gpu3DPercent": 1.2874681574438818,
+      "gpuVideoDecodePercent": 8.556170667869313,
+      "meanDedicatedMiB": 142.4859375,
+      "meanSharedMiB": 22.40234375,
+      "playbackFps": 29.965567929174444,
+      "droppedFramesDuringInterval": 0
+    },
+    {
+      "label": "runtime-v6-editing",
+      "cpuPercentWholePC": 3.3803656341925614,
+      "meanRssMiB": 943.321875,
+      "gpu3DPercent": 1.4991924866089361,
+      "gpuVideoDecodePercent": 7.956117808032624,
+      "meanDedicatedMiB": 122.48528645833333,
+      "meanSharedMiB": 21.897916666666667,
+      "playbackFps": 29.968964287266488,
+      "droppedFramesDuringInterval": 0
+    },
+    {
+      "label": "runtime-v6-transition",
+      "cpuPercentWholePC": 4.017396247730804,
+      "meanRssMiB": 993.3712239583333,
+      "gpu3DPercent": 3.815577963880881,
+      "gpuVideoDecodePercent": 29.266959607912757,
+      "meanDedicatedMiB": 197.071484375,
+      "meanSharedMiB": 30.888802083333335,
+      "playbackFps": 29.93323355588666,
+      "droppedFramesDuringInterval": 0
+    },
+    {
+      "label": "runtime-v6-paused",
+      "cpuPercentWholePC": 0.2958827591571082,
+      "meanRssMiB": 881.734765625,
+      "gpu3DPercent": 0,
+      "gpuVideoDecodePercent": 0,
+      "meanDedicatedMiB": 172.00390625,
+      "meanSharedMiB": 21.0546875,
+      "playbackFps": 0.0,
+      "droppedFramesDuringInterval": 0
+    }
+  ],
+  "restoredPausePolicy": {
+    "restoredFullscreenPause": 0,
+    "observerEnabled": true,
+    "pauseMeasurement": "Lively native pause callback via CLI; desktop was not fully covered during this run"
+  },
+  "assets": {
+    "scene.json": "a20a7d33843fdaa7653fbe3da1e23b98c55a1e8903b1946989a24b302bbc9295",
+    "character.png": "3fbb31b3743e5c9704ccef5ae097d370aacfb600fccc0667fbb74aaa64a1e543",
+    "character-depth.png": "f127989cf5a7486cd4e9f3eb5742251352b266db64513332135ab235a1b99fa7",
+    "ambient.png": "49f17c44dae1732b4d503326b6ae5273687ca48576e41454e1562efc7588581c",
+    "ambient-depth.png": "d354dcf111ee25fa54abce34f651cb5aa180c353181b55589eaf027e8a2077d4",
+    "water-1080.mp4": "59148eee2b2ce015be17dd98850a434902ac59ebb802fae83bcc152361a4db30",
+    "water-720.mp4": "4d4e7e414eb17ce5d652b0d4d72acb58cc68124b5a72636436d1ee1df3937b33",
+    "phases/evening/ambient.png": "a9e945924da096700a0dae9eecbc0245ba4f532814d40744fe135f1324854ada",
+    "phases/evening/character.png": "3ed35179f5f49f71598bd51b147d30f55ba3923d8f861bb7ffead14e3590a90a",
+    "phases/evening/poster.png": "47674fe172f023f27338de72214b162631d6c64c8d992b6c83e1a66ba4018d00",
+    "phases/evening/smoke.png": "6924ed4d687b0cadf805901384f634ed99a174bb16e1c2b29134c6018305c0ff",
+    "phases/evening/static.png": "092c9d672ba7532e271023ebf2abb2ef33d53c2af502adafa3214fa0d4e6633b",
+    "phases/evening/water-1080.mp4": "9a35b84eb0d23d8bf921a1fe386db80e66895e8af687f7c2e28fb68a9953436b",
+    "phases/evening/water-720.mp4": "0c555b5783898c4ae84f64e87dc3cbc179be15b3b5786148ec0f896bd2296684",
+    "phases/morning/ambient.png": "f9bf8eab1e98e5179c02d4975a389cf1450c9b9159aad0856f05385d51d1ca38",
+    "phases/morning/character.png": "86fe876dc8a50c7653621b485f398a2e76a2e7b53691e680e3a35bcd424a8bae",
+    "phases/morning/poster.png": "d2b5587ecea869e8c5fb25f4e69905c03258fffb28fffb38e0f66583592940bc",
+    "phases/morning/smoke.png": "a0e2a5d4786cc03792ce3d282d672eb95f855e5f43f97a555096c47bd70998d7",
+    "phases/morning/static.png": "2cfafac30810eb23b44fd81e18ee22f2326b71b3d1ddc99676fa5e54d59c1e8a",
+    "phases/morning/water-1080.mp4": "6328652d1bf2684ec861fb53fb7f60f6e996693d0187aa61c0a699dd1d22c939",
+    "phases/morning/water-720.mp4": "fa4bf09e7595391797c2519c02d5c455bc125082b67436393cf5401be87c75e3",
+    "phases/night/ambient.png": "ce281a2f3b7415fa9bf1f1743b05d63290c3fadb66b2678d50df4e5b9f9babcf",
+    "phases/night/character.png": "6e840837fa13320ce88e7bd33491f828669a10c88236875d452af9163f702df8",
+    "phases/night/poster.png": "7986248991aef7f563aa620317cd6ac62763f827a8aa40b90b7d540a926e043b",
+    "phases/night/smoke.png": "738a7625b652a02727835a4d32034a5caf4f159b70f7089684841468034f9517",
+    "phases/night/static.png": "b2548c50483ebf614978b56166cecb9bb0a72342265f0c7681812b1dba1e06c0",
+    "phases/night/water-1080.mp4": "60b76fb85ee26a7660eb43089977fee73ef7274d7b20747fce5cd86b7bf5873b",
+    "phases/night/water-720.mp4": "a29efbd3d2439531ad2f5d8e4076a71222ddc85c9600a93cc2d791ee6ed671a7"
+  }
+}

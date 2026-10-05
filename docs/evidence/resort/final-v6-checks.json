@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-05",
+  "scope": "Promoted V6 assets and Windows implementation; Blender stopped during native performance sampling",
+  "checks": [
+    {"command": "python tools/report_resort_v6.py", "result": "PASS seven valid native windows, initialized-player pause and restored policy"},
+    {"command": "python tools/validate_resort_v6.py", "result": "PASS source hash, four lighting bundles, 2368 unclipped actor cells, matching native and performance asset hashes"},
+    {"command": "node tests/resort-scene.mjs", "result": "PASS camera, routes, construction, smoke, 104 actual-surface probes"},
+    {"command": "node tests/resort-navigation.mjs", "result": "PASS 81 state pairs, 18100 ground samples, furniture clearance, seat/stand and interruptions"},
+    {"command": "node tests/resort-lighting.mjs", "result": "PASS local clock, midnight, four boundaries, fade and fixed override"},
+    {"command": "node tests/resort-lighting-runtime.mjs", "result": "PASS media lifecycle, pause, loading race, unload, quality and water"},
+    {"command": "python tests/check_resort_depth.py", "result": "PASS beach depth registration"},
+    {"command": "python tests/check_resort_construction_depth.py", "result": "PASS 517 actual-geometry cabana depth probes"},
+    {"command": "python tests/check_resort_host.py", "result": "PASS authenticated events, bounded telemetry, coverage, path containment, 206 byte ranges and 416 invalid range"},
+    {"command": "powershell -NoProfile -File tests/resort-properties.ps1", "result": "PASS schema migration preserves user values"}
+  ],
+  "regressions": [
+    "Host byte-range regression first failed with Video seeking requires HTTP byte ranges; passes after streaming response fix. Native fade drift changed from 4.627123s to 0.021419s at the end of the measured window.",
+    "Pause gate rejected the uninitialized player. Corrected workflow pauses an already advancing 1080p player and preserves 37 decoded frames, actor cell, rest time and position.",
+    "GPU counter startup triggered TimeoutExpired; CPU window now starts at the first GPU sample and retains the original completion timeout and sample validity checks."
+  ],
+  "limits": "Synthetic hook payloads, not paid Claude jobs. Physical lock/resume, exclusive fullscreen and multiple monitors are manual gaps. Existing Linux-only Windows suite failures are not changed."
+}

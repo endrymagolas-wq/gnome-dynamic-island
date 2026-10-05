@@ -1,5 +1,5 @@
 """Loopback-only Windows wallpaper host; no scene rendering or model inference."""
-import argparse, ctypes, json, math, mimetypes, os, secrets, threading, time
+import argparse, ctypes, json, math, mimetypes, os, re, secrets, threading, time
 from ctypes import wintypes
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 from pathlib import Path
@@ -102,7 +102,37 @@ class Handler(BaseHTTPRequestHandler):
         if path=='/':path='/wallpaper/index.html'
         target=(ROOT/path.lstrip('/')).resolve()
         if not target.is_relative_to(ROOT/'wallpaper') or not target.is_file():self.send(404,b'{}');return
-        self.send(200,target.read_bytes(),mimetypes.guess_type(target)[0] or 'application/octet-stream')
+        size=target.stat().st_size;start=0;end=size-1;status=200
+        requested=self.headers.get('Range')
+        if requested:
+            match=re.fullmatch(r'bytes=(\d*)-(\d*)',requested)
+            try:
+                if not match or not any(match.groups()):raise ValueError()
+                first,last=match.groups()
+                if first:
+                    start=int(first);end=min(int(last),size-1) if last else size-1
+                else:
+                    count=int(last)
+                    if count<=0:raise ValueError()
+                    start=max(0,size-count)
+                if start>=size or end<start:raise ValueError()
+                status=206
+            except ValueError:
+                self.send_response(416);self.send_header('Content-Range',f'bytes */{size}');self.send_header('Content-Length','0');self.end_headers();return
+        self.send_response(status)
+        self.send_header('Content-Type',mimetypes.guess_type(target)[0] or 'application/octet-stream')
+        self.send_header('Accept-Ranges','bytes');self.send_header('Cache-Control','no-store')
+        self.send_header('Content-Length',str(max(0,end-start+1)))
+        if status==206:self.send_header('Content-Range',f'bytes {start}-{end}/{size}')
+        self.end_headers()
+        try:
+            with target.open('rb') as source:
+                source.seek(start);remaining=end-start+1
+                while remaining>0:
+                    chunk=source.read(min(65536,remaining))
+                    if not chunk:break
+                    self.wfile.write(chunk);remaining-=len(chunk)
+        except (BrokenPipeError,ConnectionResetError):pass
     def do_POST(self):
         if self.path=='/bench-metrics':
             # Diagnostics are opt-in, bounded, numeric scene playback data only.

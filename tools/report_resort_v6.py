@@ -14,8 +14,10 @@ for label in labels:
     assert len(samples) >= 29 and all(s.get('invalidTargetSamples', 0) == 0 for s in samples)
     before, after = cpu['playbackBefore'], cpu['playback']
     if label.endswith('-paused'):
+        assert before['totalVideoFrames'] > 30 and before['videoWidth'] == 1920
         assert before['paused'] and after['paused'] and before['videoPaused'] and after['videoPaused']
         assert before['totalVideoFrames'] == after['totalVideoFrames']
+        assert all(before.get(key)==after.get(key) for key in ('actorRect','restTime','position'))
         assert after['lighting']['decoderCount'] == 0
     if label.endswith('-transition'):
         assert after['lighting']['decoderCount'] == 2 and after['lighting']['clockDelta'] < .1, after
@@ -34,7 +36,7 @@ files = ['scene.json', 'character.png', 'character-depth.png', 'ambient.png', 'a
 files += [str(p.relative_to(assets)).replace('\\', '/') for p in sorted((assets / 'phases').rglob('*')) if p.is_file()]
 report = {'recordedAt': datetime.datetime.now(datetime.timezone.utc).isoformat(),
           'hardware': 'Windows 11 Pro 10.0.26200, i9-9900K (16 logical CPUs), 32GB RAM, RTX3080 10GB, 1920x1080 primary display',
-          'conditions': 'Seven fresh 30-second native windows with Blender stopped. Active runs temporarily disable coverage/observer; ordinary policy restored before native CLI pause. Video/atlas use the same new 720p frames. Physical lock/fullscreen/multi-monitor checks remain manual.',
+          'conditions': 'Seven fresh 30-second native windows with Blender stopped. CPU sampling begins after the first GPU counter sample. Coverage/observer are temporarily disabled during measurements, including native CLI pause of an initialized player; ordinary policy and observer are restored afterwards. Video/atlas use the same new 720p frames. Physical lock/fullscreen/multi-monitor checks remain manual.',
           'scope': 'Lively core, owned WebView2 process tree and loopback host. RSS sums shared mappings; GPU engines are separate Windows counters, not board power. Video fps counts decoded frames; atlas fps counts submitted draws, not monitor presents.',
           'rows': rows, 'restoredPausePolicy': restore,
           'assets': {name: hashlib.sha256((assets / name).read_bytes()).hexdigest() for name in files}}

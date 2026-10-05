@@ -1,7 +1,7 @@
 # V6: fairy lagoon, seated Pip and local time
 
-Work in progress. The ordinary desktop is still V5 until all four final lighting
-bundles have been rendered, checked and promoted together. Preview:
+All four final lighting bundles have been rendered, checked and promoted together.
+The ordinary Windows wallpaper now uses V6. Review:
 `http://127.0.0.1:18765/wallpaper/fairy-review.html`.
 
 ## Art direction and layers
@@ -76,6 +76,17 @@ commands, run from the repository. Use the actual local Blender executable.
    video/atlas/still, measures coffee/editing/two-decoder fade/native pause,
    and restores ordinary pause policy and observer. Synthetic hooks execute
    no paid Claude tasks or test commands.
+   Use `-MeasurementsOnly` to resume measurements after the matching native
+   reaction/control evidence exists. Python failures retain their full traceback
+   in the named evidence log; they still fail the run.
+   `-TransitionOnly` checks the native two-decoder fade and initialized-player
+   pause when repairing those paths; `-PauseOnly` repeats just the pause window.
+   The pause gate requires previously decoded frames, then frozen water, actor
+   cell, rest time and position. A byte-range HTTP regression first failed
+   with `Video seeking requires HTTP byte ranges`; streaming 206/416 responses
+   fixed actual loop synchronization in WebView2. Counter sampling waits for
+   its first valid GPU sample before beginning the CPU/RAM interval, avoiding
+   a startup-related `TimeoutExpired` without dropping validity checks.
 
 The source lighting recipes are in `art/island/resort_time_of_day.py`; the
 palette is in `fairy_palette.py`, poses in `pip_v6_poses.py`, and ambient gestures
@@ -97,6 +108,44 @@ Environment shadows/reflections are baked. The moving actor uses animated
 per-pixel depth and a small contact shadow; arbitrary-position cast shadows and
 reflections of the moving actor are not rendered at runtime.
 
-Performance results will be added after the final native run. Physical lock,
-exclusive fullscreen and multiple monitors remain manual checks; callback and
-observer tests must not be described as physical lock/fullscreen proof.
+## Final native verification
+
+All four 12-second water videos contain 360 playback frames at 30fps. The raw
+endpoint frame is excluded; encoded last-to-first differences passed the seam
+gate for both 1080p and 720p in every phase. The source audit, independently
+rebuilt day frame, 2,368 unclipped actor cells, 12 native event cases, three
+advancing rest clips, four native lighting presets and controls passed.
+Evidence: `docs/evidence/resort/validation-v6.json`, `performance-v6.json` and
+`v6/`. Screenshots are actual Lively captures, not composited proof images.
+
+Fresh 30-second windows on Windows 11, i9-9900K/32GB/RTX3080 10GB, with Blender
+stopped. CPU includes the owned Lively/WebView2 tree, Lively core and local host.
+RSS sums process mappings and can count shared pages more than once. GPU 3D and
+video decode are separate Windows engine counters, not whole-board utilization.
+
+| Mode | CPU, whole PC | RSS MiB | Dedicated GPU MiB | GPU 3D | Video decode | FPS |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 720p video comparison | 1.94% | 666 | 53 | 0.31% | 3.90% | 29.97 |
+| Same 720p frames as atlas | 3.56% | 841 | 334 | 0.57% | 0% | 23.41 |
+| Still comparison | 0.16% | 605 | 71 | 0% | 0% | — |
+| Full 1080p, coffee | 2.29% | 929 | 142 | 1.29% | 8.56% | 29.97 |
+| Full 1080p, editing | 3.38% | 943 | 122 | 1.50% | 7.96% | 29.97 |
+| Two-video lighting fade | 4.02% | 993 | 197 | 3.82% | 29.27% | 29.93 |
+| Native pause | 0.30% | 882 | 172 | 0% | 0% | 0 |
+
+Video was selected for water because this PC decoded it more smoothly with
+less CPU and dedicated GPU memory than the atlas. Actor clips remain atlases.
+All measured video intervals had zero new dropped frames; FPS describes decoded
+frames, while atlas FPS describes draw submissions, not physical display presents.
+The fade finished the measured window with 0.0214s circular clock difference.
+Pause froze the already decoded water count (37 frames), actor cell, rest time
+and position, with zero active decoders. Assets remain resident during pause.
+Ordinary fullscreen-pause policy and foreground observer were restored, and the
+ordinary V6 wallpaper was launched with automatic local-time lighting.
+
+No After Effects composition was needed: Blender, Pillow and FFmpeg produced
+the shipped layers. The render resource guard is optional; it was stopped when
+the user chose parallel rendering with CS2. No game process was stopped.
+
+Physical lock/resume, exclusive fullscreen and multiple monitors remain manual
+checks; callback and observer tests are not physical lock/fullscreen proof.

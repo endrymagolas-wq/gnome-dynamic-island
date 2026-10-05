@@ -1,0 +1,496 @@
+﻿{
+    "scope":  "Windows per-process GPU counters for owned Lively player descendants",
+    "samples":  [
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:57:34.9512079Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:57:36.0668068Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:57:37.0833451Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:57:38.1120102Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:57:39.1347500Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:57:40.1621411Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:57:41.1908682Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:57:42.2178869Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:57:43.2459791Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:57:44.2672006Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:57:45.2912721Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:57:46.3058781Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:57:47.3286018Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:57:48.3524460Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:57:49.3799676Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:57:50.4005640Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:57:51.4281633Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:57:52.4426093Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:57:53.4662432Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:57:54.4920645Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:57:55.5184962Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:57:56.5316091Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:57:57.5583356Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:57:58.5735517Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:57:59.5887377Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:58:00.6025362Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:58:01.6305860Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:58:02.6588565Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:58:03.6855785Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  70.74609375,
+                        "timestamp":  "2026-10-05T19:58:04.7117309Z",
+                        "sharedMiB":  11.875,
+                        "invalidTargetSamples":  0
+                    }
+                ],
+    "processIds":  [
+                       9508,
+                       57580,
+                       54732,
+                       44716,
+                       64468,
+                       61908,
+                       9868,
+                       52844,
+                       45884
+                   ]
+}

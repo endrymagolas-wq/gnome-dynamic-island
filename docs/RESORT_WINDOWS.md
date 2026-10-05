@@ -3,6 +3,12 @@
 This is a full-screen wallpaper, independent of the GNOME Dynamic Island panel.
 The original GNOME extension remains available; it cannot run natively on Windows.
 
+The current bundle is V6: a painted fairy lagoon, larger Pip, furniture-aware
+walking, sit/stand transitions, drinking/nodding/yawning and four offline-rendered
+lighting sets. See [V6 source, reproduction and verification](RESORT_V6.md).
+Local-clock changes start at 06:00, 09:00, 18:00 and 21:00, with a two-minute fade.
+Lively Customize also provides a fixed lighting phase, water off and quality.
+
 ## Start on this PC
 
 ```powershell
