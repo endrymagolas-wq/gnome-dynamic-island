@@ -106,15 +106,40 @@ manual validation; the observer currently targets this PC's primary display.
 
 ## Reproduce the render
 
-Current source: `art/island/resort-v4.blend`, with Resort_Island, Mascot_Pip,
-Construction_Bake and Smoke_Bake scenes. Required meshes and all 21 used images
-are packed. Pip adapts Quaternius' CC0 BlueDemon: the authored 43-bone full-body
-rig, skin weights and 14 source actions are preserved alongside ten editable task
-actions. Its bat and loincloth were removed, ears softened, eyes enlarged, and
-a gentle smile, freckles and sunny shorts added. The GPT-generated turnaround
-is an art-direction reference, not a claim of an identical reconstructed mesh. See
-[sources and credits](../art/ASSET_SOURCES.md). `resort.blend` is the preserved
-earlier rejected prototype; `resort-v2.blend` preserves the previous Snow/V3 scene.
+Current source: `art/island/resort-v5.blend`, with Resort_Island, Mascot_Pip,
+Construction_Bake and Smoke_Bake scenes and packed image textures. V5 replaces
+the rejected BlueDemon-shaped mascot with a generated mesh based directly on the
+accepted cute turquoise reference. Antigravity obtained the textured GLB from
+the official free Stable Fast 3D Space, including an improved 2048px export.
+The working mesh has 19,980 vertices and 39,956 triangular faces after welding
+UV seam duplicates. Its large soft ears and face stay attached to Head.
+The retained Quaternius 43-bone skeleton is adapted from T-pose to the new A-pose,
+then skinned; 14 original motions and ten editable task actions are saved.
+The generated mesh has different provenance from the CC0 rig; see
+[sources and credits](../art/ASSET_SOURCES.md). `resort-v4.blend` preserves the
+previous mascot and approved sunny environment; `resort-v2.blend` preserves Snow/V3.
+
+V5 reuses V4's unchanged water, static plate, depth, construction and smoke.
+Only its 272 character sprites and metadata are rebuilt. Open V5 and execute
+this through Blender MCP (the child is an offline render, never a wallpaper process):
+
+```python
+import bpy, subprocess
+from pathlib import Path
+root = Path(bpy.data.filepath).parents[2]
+with open(root/'wallpaper/offline-render.log', 'w') as log:
+    subprocess.run([bpy.app.binary_path, '--background', str(root/'art/island/resort-v5.blend'),
+        '--python', str(root/'tools/render_resort_v5.py')], stdout=log, stderr=log,
+        check=True, creationflags=subprocess.CREATE_NO_WINDOW)
+```
+
+Then `python tools/package_resort_v5.py --promote`. It checks all 272 alpha bounds
+before replacing character/metadata and preserves V4 in
+`../runtime-backups/v4-before-pip-v5/`. Reopen the saved source to restore the
+editable rig/actions. For a full local mesh rebuild from the retained original
+HQ GLB, start from V4 and execute `tools/build_pip_v5.py`; it saves a separate V5.
+
+The following retained V4 pipeline reproduces the shared environment and water.
 
 The packed source is reproducible with Blender 4.5.9. The offline worker
 regenerates static/transparent plates, depth with leaf alpha, 272 worker sprites,
@@ -160,6 +185,36 @@ MCP did not receive a reply from the local bridge panel during this run.
 
 ## Validation
 
+V5's 272 offline sprites rendered in 40.64 seconds on this PC after excluding
+archived meshes from viewport pose evaluation. Saved mesh/rig audit:
+`docs/evidence/resort/source-v5-audit.json`. All nine reaction states, four edit
+growth stages, smoke visibility, water-off, 720p and native pause controls were
+verified in Lively using synthetic payloads through the real Claude hook transport;
+screenshots and reports are under `docs/evidence/resort/v5/`. These checks do not
+claim a paid Claude task or test command was actually executed.
+
+Fresh V5 1080p measurements (`performance-v5.json`, three 30-second windows):
+
+| State | CPU whole PC | Mean RSS | GPU 3D / decode | Dedicated GPU memory | Decoded fps |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Coffee | 1.52% | 806 MiB | 3.56% / 16.66% | 133 MiB | 29.97 |
+| Editing | 1.64% | 820 MiB | 3.57% / 14.21% | 122 MiB | 29.97 |
+| Native pause callback | 0.35% | 761 MiB | 0% / 0% | 156 MiB | 0 |
+
+Two decoded frame drops occurred during the coffee window; none during editing.
+CPU covers Lively core, its owned WebView2 processes and local host on 16 logical
+CPUs. RSS sums shared mappings; GPU engine counters are not board power and
+decoded fps is not physical monitor presentation. All Blender processes were
+stopped. Benchmark overrides were restored. Physical lock/resume, exclusive
+fullscreen applications and per-display multi-monitor behavior remain manual
+checks. This run verified the native pause callback, not full desktop coverage.
+The V4 video/atlas/still comparison below remains relevant because both water
+file hashes are unchanged; it has not been relabeled as a new V5 measurement.
+
+`tools/run_resort_v5_native.ps1` reproduces the fresh reaction/control/runtime
+measurements and restores the ordinary policy, and `tools/report_resort_v5.py`
+validates the measurement counters and unchanged water hashes.
+
 ```powershell
 python tests/check_claude.py
 python tests/check_resort_host.py
@@ -168,7 +223,9 @@ python tests/check_resort_depth.py
 python tests/check_resort_construction_depth.py
 python tools/check_resort_water.py
 node tests/cartoon-island.mjs
-python tools/validate_resort_v4.py
+python tools/validate_resort_v5.py
+# V4's unchanged water/environment evidence remains under docs/evidence/resort.
+# Run tools/audit_resort_v5.py inside Blender after reopening the V5 source.
 ```
 
 The original full `tests/run.py` fails on Windows at `os.getuid()` in
@@ -176,7 +233,7 @@ The original full `tests/run.py` fails on Windows at `os.getuid()` in
 PR baseline `14a163d37c7bb06d2455bd024383ac8b810effe1`; it is not a new regression.
 See `docs/evidence/resort/` for measured results and remaining native checks.
 
-`tools/audit_resort_v4.py`, run inside Blender after reopening the saved source,
+`tools/audit_resort_v5.py`, run inside Blender after reopening the saved source,
 checks packed textures, retained actions, the planted stride and that permission
 gestures survive frame evaluation. The source action is detached before sprite
 rendering so it cannot overwrite adjusted poses. The runtime's 0.4992 m/s travel

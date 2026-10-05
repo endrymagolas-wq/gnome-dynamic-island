@@ -33,7 +33,26 @@ the V3 worker used the credited Snow mesh and rig above. The island image
 is not used as a distorted water background. Flow's two sand generations failed;
 the actual sand shader uses the licensed PBR scan.
 
-## Current V4 mascot: Pip
+## Current V5 mascot: Pip
+
+V5 uses a new image-reconstructed mesh from the accepted cute fantasy creature
+reference, with a large rounded head, floppy ears and hibiscus swim shorts.
+The GPT-generated front reference is `references/pip-v5-front.png`.
+Antigravity obtained actual GLB outputs through the official free
+[Stable Fast 3D Space](https://huggingface.co/spaces/stabilityai/stable-fast-3d),
+without paid API credits or local GPU inference. Original outputs and generator
+license are retained in `thirdparty/pip-sf3d/`; see its README for parameters,
+ownership-of-outputs terms and precise provenance. Powered by Stability AI.
+The generated mesh is not relabeled as Quaternius CC0.
+
+Blender MCP was used to inspect/import the mesh, clean its geometry/normals,
+adapt the existing 43-bone rig, bind skin weights, render closeups and save
+editable task actions. Original T-pose bones do not automatically match the
+generated A-pose: `island/rig_pip_v5.py` records the explicit joint adaptation.
+The 2048px HQ output is used in the current V5 source. Its surface is triangulated,
+and it has no facial rig; limb/gesture animation is baked offline.
+
+## Archived V4 mascot and reused Quaternius rig
 
 Pip is adapted from **BlueDemon**, Quaternius' [Ultimate Monsters](https://quaternius.com/packs/ultimatemonsters.html),
 released October 2022, licensed **CC0 1.0**. The official page links to the

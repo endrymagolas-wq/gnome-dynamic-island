@@ -143,8 +143,8 @@
       "working"
     ],
     "walkSpeed": 0.4992,
-    "source": "Pip adapted from Quaternius BlueDemon, Ultimate Monsters, CC0-1.0",
-    "reference": "art/references/pip-v4-turnaround.png"
+    "source": "Pip generated from project reference via Stable Fast 3D; adapted Quaternius CC0 rig",
+    "reference": "art/references/pip-v5-front.png"
   },
   "construction": {
     "width": 160,

@@ -1,0 +1,9 @@
+{
+  "check": "Permission wrist must rise above 1.8m in normalized rig space",
+  "before": {"wristHeight": 1.6820275783538818, "result": "FAIL"},
+  "cause": "Moving parent edit bones altered connected child joints before their own coordinate transformation, applying the adaptation twice.",
+  "fix": "Snapshot every original joint and disconnect all edit bones before transforming any joint. Rebuild from retained V4 + unchanged original HQ GLB.",
+  "after": {"wristHeight": 1.955998182296753, "result": "PASS"},
+  "assertionUnchanged": true,
+  "savedSourceAudit": "../source-v5-audit.json"
+}

@@ -1,0 +1,36 @@
+{
+  "source": "7de43d8c567f9f6b656b11f153938ec52bb55e280f91401806163adfcb9716cb",
+  "assets": {
+    "scene.json": "0e3da23c13afecd79a3c1b960183218bd390140bdfde602f00092ea1dfd20c17",
+    "character.png": "9d3735d98f831729fe2ea73828002463237f397b5e0fb137f1ec8fb477fc42f0",
+    "water-1080.mp4": "85b21303e8c323d57c29bae7d624603e6b2ccdffa664d54d3a7c7ee1b4283ed3",
+    "water-720.mp4": "081fb67aef5c6670bad5e2ccf723ded00c848cfeb15c53d449dd66a863f61128"
+  },
+  "spriteFrames": 272,
+  "clippedFrames": 0,
+  "nativeCases": [
+    "starting",
+    "editing-1",
+    "editing-2",
+    "editing-3",
+    "editing-4",
+    "testing",
+    "failed",
+    "permission",
+    "done",
+    "browsing",
+    "working",
+    "idle"
+  ],
+  "controls": [
+    "manualPause",
+    "waterOff",
+    "720p",
+    "qualityOff",
+    "assets",
+    "recordedAt"
+  ],
+  "performance": "performance-v5.json",
+  "unchangedWaterEvidence": "encoded-water-v4.json; hashes checked by report_resort_v5.py",
+  "limitations": "Physical lock/resume, exclusive fullscreen and multi-monitor behavior remain manual; depth uses a vertical actor plane."
+}

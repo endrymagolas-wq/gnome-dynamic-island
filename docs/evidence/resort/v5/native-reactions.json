@@ -1,0 +1,225 @@
+{
+  "starting": {
+    "format": "video",
+    "clock": 11.001599999997765,
+    "totalVideoFrames": 331,
+    "droppedVideoFrames": 0,
+    "paused": false,
+    "videoPaused": false,
+    "videoWidth": 1920,
+    "videoHeight": 1080,
+    "state": "starting",
+    "stage": 0,
+    "position": [
+      -2.3,
+      -0.77,
+      0.43
+    ],
+    "smokeVisiblePixels": 0
+  },
+  "editing-1": {
+    "format": "video",
+    "clock": 14.00039999999851,
+    "totalVideoFrames": 421,
+    "droppedVideoFrames": 0,
+    "paused": false,
+    "videoPaused": false,
+    "videoWidth": 1920,
+    "videoHeight": 1080,
+    "state": "editing",
+    "stage": 1,
+    "position": [
+      -2.3,
+      -0.77,
+      0.43
+    ],
+    "smokeVisiblePixels": 0
+  },
+  "editing-2": {
+    "format": "video",
+    "clock": 18.00039999999851,
+    "totalVideoFrames": 541,
+    "droppedVideoFrames": 0,
+    "paused": false,
+    "videoPaused": false,
+    "videoWidth": 1920,
+    "videoHeight": 1080,
+    "state": "editing",
+    "stage": 2,
+    "position": [
+      -2.3,
+      -0.77,
+      0.43
+    ],
+    "smokeVisiblePixels": 0
+  },
+  "editing-3": {
+    "format": "video",
+    "clock": 21.00339999999851,
+    "totalVideoFrames": 631,
+    "droppedVideoFrames": 0,
+    "paused": false,
+    "videoPaused": false,
+    "videoWidth": 1920,
+    "videoHeight": 1080,
+    "state": "editing",
+    "stage": 3,
+    "position": [
+      -2.3,
+      -0.77,
+      0.43
+    ],
+    "smokeVisiblePixels": 0
+  },
+  "editing-4": {
+    "format": "video",
+    "clock": 24.000800000000744,
+    "totalVideoFrames": 720,
+    "droppedVideoFrames": 0,
+    "paused": false,
+    "videoPaused": false,
+    "videoWidth": 1920,
+    "videoHeight": 1080,
+    "state": "editing",
+    "stage": 4,
+    "position": [
+      -2.3,
+      -0.77,
+      0.43
+    ],
+    "smokeVisiblePixels": 0
+  },
+  "testing": {
+    "format": "video",
+    "clock": 36.002,
+    "totalVideoFrames": 1080,
+    "droppedVideoFrames": 0,
+    "paused": false,
+    "videoPaused": false,
+    "videoWidth": 1920,
+    "videoHeight": 1080,
+    "state": "testing",
+    "stage": 4,
+    "position": [
+      2.4,
+      -0.4,
+      0.43
+    ],
+    "smokeVisiblePixels": 0
+  },
+  "failed": {
+    "format": "video",
+    "clock": 40.00189999999851,
+    "totalVideoFrames": 1201,
+    "droppedVideoFrames": 0,
+    "paused": false,
+    "videoPaused": false,
+    "videoWidth": 1920,
+    "videoHeight": 1080,
+    "state": "failed",
+    "stage": 4,
+    "position": [
+      2.4,
+      -0.4,
+      0.43
+    ],
+    "smokeVisiblePixels": 7342
+  },
+  "permission": {
+    "format": "video",
+    "clock": 47.000699999999256,
+    "totalVideoFrames": 1411,
+    "droppedVideoFrames": 0,
+    "paused": false,
+    "videoPaused": false,
+    "videoWidth": 1920,
+    "videoHeight": 1080,
+    "state": "permission",
+    "stage": 4,
+    "position": [
+      2.3,
+      -2.7,
+      0.34155709538871465
+    ],
+    "smokeVisiblePixels": 0
+  },
+  "done": {
+    "format": "video",
+    "clock": 54.00019999999925,
+    "totalVideoFrames": 1621,
+    "droppedVideoFrames": 0,
+    "paused": false,
+    "videoPaused": false,
+    "videoWidth": 1920,
+    "videoHeight": 1080,
+    "state": "done",
+    "stage": 4,
+    "position": [
+      0,
+      -2.25,
+      0.43
+    ],
+    "smokeVisiblePixels": 0
+  },
+  "browsing": {
+    "format": "video",
+    "clock": 71.00089999999851,
+    "totalVideoFrames": 2130,
+    "droppedVideoFrames": 0,
+    "paused": false,
+    "videoPaused": false,
+    "videoWidth": 1920,
+    "videoHeight": 1080,
+    "state": "browsing",
+    "stage": 4,
+    "position": [
+      -2.3,
+      1.8,
+      0.43
+    ],
+    "smokeVisiblePixels": 0
+  },
+  "working": {
+    "format": "video",
+    "clock": 83.00389999999851,
+    "totalVideoFrames": 2490,
+    "droppedVideoFrames": 0,
+    "paused": false,
+    "videoPaused": false,
+    "videoWidth": 1920,
+    "videoHeight": 1080,
+    "state": "working",
+    "stage": 4,
+    "position": [
+      -2.3,
+      -0.77,
+      0.43
+    ],
+    "smokeVisiblePixels": 0
+  },
+  "idle": {
+    "format": "video",
+    "clock": 91.00630000000075,
+    "totalVideoFrames": 2730,
+    "droppedVideoFrames": 0,
+    "paused": false,
+    "videoPaused": false,
+    "videoWidth": 1920,
+    "videoHeight": 1080,
+    "state": "idle",
+    "stage": 4,
+    "position": [
+      0,
+      -2.25,
+      0.43
+    ],
+    "smokeVisiblePixels": 0
+  },
+  "method": "Synthetic Claude hook payloads through the real Windows transport and native Lively player. No paid model call; test commands were not executed.",
+  "assets": {
+    "scene.json": "0e3da23c13afecd79a3c1b960183218bd390140bdfde602f00092ea1dfd20c17",
+    "character.png": "9d3735d98f831729fe2ea73828002463237f397b5e0fb137f1ec8fb477fc42f0",
+    "water-1080.mp4": "85b21303e8c323d57c29bae7d624603e6b2ccdffa664d54d3a7c7ee1b4283ed3"
+  },
+  "recordedAt": "2026-10-05T16:26:52.926861+00:00"
+}

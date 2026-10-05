@@ -1,0 +1,288 @@
+{
+  "recordedAt": "2026-10-05T16:32:59.749120+00:00",
+  "parentRevision": "1fb35cf30abe9eced3d7e9b1f6b96c47d2fdbf47",
+  "indexTreeBeforeManifest": "8bcccc97acc4348af8c74ad88c064183a3d53d2b",
+  "method": "Exact local bytes and staged Git blobs are hashed separately because Windows text line endings may differ. The manifest excludes itself; runtime/source blob hashes bind the delivered content.",
+  "files": {
+    ".gitattributes": {
+      "bytes": 163,
+      "sha256": "7385c6c84b4380e8802bab7641ce10c5bfdc742fd37b531a74d9c37d6ad24dd1",
+      "gitBlobSha256": "7385c6c84b4380e8802bab7641ce10c5bfdc742fd37b531a74d9c37d6ad24dd1"
+    },
+    ".gitignore": {
+      "bytes": 1824,
+      "sha256": "2be184a3f3031f98cd1e882f48626f24a9b78de0ea46508066847e1ee7d167e8",
+      "gitBlobSha256": "89c3407782c838674182ad49f9edeb5b9f92fadb243817d223a5d4b1d9c29195"
+    },
+    "art/ASSET_SOURCES.md": {
+      "bytes": 6392,
+      "sha256": "706df746cd9327563be51cdf0f137509d0c14e18aed49484959a925da152a86f",
+      "gitBlobSha256": "706df746cd9327563be51cdf0f137509d0c14e18aed49484959a925da152a86f"
+    },
+    "art/island/pip_v5_poses.py": {
+      "bytes": 9950,
+      "sha256": "45bbb73b6374782eeb675e15c5e7f5748cc5f9d7079c81bc4916406bc2df5119",
+      "gitBlobSha256": "61290c1cc8fac86a0cd3382c80fa41f86881f7b0680bd7e09494ceb96b5768da"
+    },
+    "art/island/resort-v5.blend": {
+      "bytes": 41445266,
+      "sha256": "7de43d8c567f9f6b656b11f153938ec52bb55e280f91401806163adfcb9716cb",
+      "gitBlobSha256": "7de43d8c567f9f6b656b11f153938ec52bb55e280f91401806163adfcb9716cb"
+    },
+    "art/island/rig_pip_v5.py": {
+      "bytes": 3613,
+      "sha256": "c09ed50e2628b73eb4a8c0ee0acdc04ffcbc2f5dede5e661ebe7546f4c79f071",
+      "gitBlobSha256": "c09ed50e2628b73eb4a8c0ee0acdc04ffcbc2f5dede5e661ebe7546f4c79f071"
+    },
+    "art/references/pip-v5-front.png": {
+      "bytes": 2211329,
+      "sha256": "3066ecbaef693692f207edb4731655a3ac8800b84f3234851fba88fc617c7f41",
+      "gitBlobSha256": "3066ecbaef693692f207edb4731655a3ac8800b84f3234851fba88fc617c7f41"
+    },
+    "art/thirdparty/pip-sf3d/GENERATOR-LICENSE.md": {
+      "bytes": 11726,
+      "sha256": "9b60b9d0411f54d4087484ad4acf28ca6fd9f6a84c30ddacb04de2c623254749",
+      "gitBlobSha256": "9b60b9d0411f54d4087484ad4acf28ca6fd9f6a84c30ddacb04de2c623254749"
+    },
+    "art/thirdparty/pip-sf3d/README.md": {
+      "bytes": 2921,
+      "sha256": "24ce385af4f9bcfe0bc896febc9e130297b268d1e7f3b61342538000bb3b8291",
+      "gitBlobSha256": "24ce385af4f9bcfe0bc896febc9e130297b268d1e7f3b61342538000bb3b8291"
+    },
+    "art/thirdparty/pip-sf3d/pip-hq-original.glb": {
+      "bytes": 2339736,
+      "sha256": "7883b25e7b36f8d1ecb3d03403de5f3585a15453d2ae4896a01c243c27a63f0a",
+      "gitBlobSha256": "7883b25e7b36f8d1ecb3d03403de5f3585a15453d2ae4896a01c243c27a63f0a"
+    },
+    "art/thirdparty/pip-sf3d/pip-original.glb": {
+      "bytes": 1203196,
+      "sha256": "5c842f7b1ef224553f87e783f9fa93cd434dc6a73d2e7c5b250265aa0f087051",
+      "gitBlobSha256": "5c842f7b1ef224553f87e783f9fa93cd434dc6a73d2e7c5b250265aa0f087051"
+    },
+    "assistant/claude_hook.py": {
+      "bytes": 4876,
+      "sha256": "d24ff3ed0c693c3d6ae21aec077754f99da49415dbccbe1b09cc842f6bef6a95",
+      "gitBlobSha256": "96c8078e4ff15b816b1af1545a4a50d3cba4969046896949b243869816af0a87"
+    },
+    "docs/RESORT_WINDOWS.md": {
+      "bytes": 17828,
+      "sha256": "4bfa623d926ee3d91db57ccf22f4cef2bed6d47351b486633eac373138ae3838",
+      "gitBlobSha256": "eb9166e4c8b09e24fae550d0d1ef0151c3b713073afde04186a1d21945f65cb6"
+    },
+    "docs/evidence/resort/performance-v5.json": {
+      "bytes": 2532,
+      "sha256": "ff404f88881419ca03ed550d56bd7437c114e88315f55569db3f87c20242d88c",
+      "gitBlobSha256": "e5920cd8a7f6c709fdcf121d2ab33ff2bf0b1b465f0d250fc49a1cdb9912c9cd"
+    },
+    "docs/evidence/resort/runtime-v5-coffee-gpu.json": {
+      "bytes": 23924,
+      "sha256": "8d72e306f30db69682b2dd639fbf8cf09611c35abbedb4b9f937516191fc0275",
+      "gitBlobSha256": "7d673cf40eeda896d1252998201c61e672b6f17a5cd499ce82c810a2b7b0db27"
+    },
+    "docs/evidence/resort/runtime-v5-coffee.json": {
+      "bytes": 1452,
+      "sha256": "0442c6aec96928ecb8f83e929989b0a46a4edb8944b13099d7ec83dea4c09b6a",
+      "gitBlobSha256": "6f4186dcf67a0083125346d289b1b2d5662002fc2ad86e7ce8460d278e05b3fb"
+    },
+    "docs/evidence/resort/runtime-v5-editing-gpu.json": {
+      "bytes": 23918,
+      "sha256": "7f643fc4c74f3ad1e693e53928990deedb35a157e90f35e60c0d8db9a8509417",
+      "gitBlobSha256": "00aa3aef5c5f427b43df2d20eff39fdc87ff14fb536acb292cb118977884d77f"
+    },
+    "docs/evidence/resort/runtime-v5-editing.json": {
+      "bytes": 1474,
+      "sha256": "2a564e4deb20f89e26bdec92b35b085d62d482a0f6caf420c67ceb2bf462df45",
+      "gitBlobSha256": "6f376a37c635c43351d79062492cd8cd03cb01bd972030c4e4a24eb8ed30cb58"
+    },
+    "docs/evidence/resort/runtime-v5-paused-gpu.json": {
+      "bytes": 22446,
+      "sha256": "b56262c5b9301f45ecec157eeb0d840fc2324ea471e1fbf47efbc5d41860c202",
+      "gitBlobSha256": "a07a2f82616c3eb37162ed12de066b83227f9c62e72a97cfa811760d22b4f34e"
+    },
+    "docs/evidence/resort/runtime-v5-paused.json": {
+      "bytes": 1433,
+      "sha256": "2cac779d32aa9d2769c160af5d998090e816f9fe62e8301070b05da83fbd2592",
+      "gitBlobSha256": "373208b314716d1a6a9ce20085530474cefe9ffc9993955902d09cb50fa753ad"
+    },
+    "docs/evidence/resort/source-v5-audit.json": {
+      "bytes": 7362,
+      "sha256": "088d13164ee4df3b0a12e43031b238dd0decc4202b502556cf20c1b5a5a5ed1c",
+      "gitBlobSha256": "9c1eed3476ed9c213bf27a52a49929d3675ea7fed31e6cd9a5527e8ffccb412f"
+    },
+    "docs/evidence/resort/v5/browsing.jpg": {
+      "bytes": 211658,
+      "sha256": "7ef289f661d5801bf005693ea5983d7674555fabe4fc63b4310470ee8116cbaf",
+      "gitBlobSha256": "7ef289f661d5801bf005693ea5983d7674555fabe4fc63b4310470ee8116cbaf"
+    },
+    "docs/evidence/resort/v5/done.jpg": {
+      "bytes": 213585,
+      "sha256": "6f8fc73c61ef07b05a315804a97eaa6e29d781c1d4b6e27993dc8b040ca4f03e",
+      "gitBlobSha256": "6f8fc73c61ef07b05a315804a97eaa6e29d781c1d4b6e27993dc8b040ca4f03e"
+    },
+    "docs/evidence/resort/v5/editing-1.jpg": {
+      "bytes": 210783,
+      "sha256": "1419924c03ddb85c7e66ba7e5e02d45022d52a2b54415d55bf0912983ac6862a",
+      "gitBlobSha256": "1419924c03ddb85c7e66ba7e5e02d45022d52a2b54415d55bf0912983ac6862a"
+    },
+    "docs/evidence/resort/v5/editing-2.jpg": {
+      "bytes": 213620,
+      "sha256": "db51109b50a6696a3a55fe58975fa3297cb66ef14d05df00d970dd11f9f90427",
+      "gitBlobSha256": "db51109b50a6696a3a55fe58975fa3297cb66ef14d05df00d970dd11f9f90427"
+    },
+    "docs/evidence/resort/v5/editing-3.jpg": {
+      "bytes": 214452,
+      "sha256": "085fb64cf0b817c002cea9d20f0b713f1adfb9eaddadb650e7276671236817bd",
+      "gitBlobSha256": "085fb64cf0b817c002cea9d20f0b713f1adfb9eaddadb650e7276671236817bd"
+    },
+    "docs/evidence/resort/v5/editing-4.jpg": {
+      "bytes": 210068,
+      "sha256": "aed9bf45a94f7e4da210534e6ef7198a349d52096cdf57cd064c86e73092c4a1",
+      "gitBlobSha256": "aed9bf45a94f7e4da210534e6ef7198a349d52096cdf57cd064c86e73092c4a1"
+    },
+    "docs/evidence/resort/v5/failed.jpg": {
+      "bytes": 213449,
+      "sha256": "d39afc2c880db109143ea8ed6fa1796196d7fb7bf7c879d37210b8969d94be31",
+      "gitBlobSha256": "d39afc2c880db109143ea8ed6fa1796196d7fb7bf7c879d37210b8969d94be31"
+    },
+    "docs/evidence/resort/v5/idle.jpg": {
+      "bytes": 214016,
+      "sha256": "4a843109582f5b72b8b6828cd973d97ceee1cb60b786faf863e114f77036901f",
+      "gitBlobSha256": "4a843109582f5b72b8b6828cd973d97ceee1cb60b786faf863e114f77036901f"
+    },
+    "docs/evidence/resort/v5/native-controls.json": {
+      "bytes": 3568,
+      "sha256": "8e089d1955ee10d03a429ffbee15d4b3ae0658b46ddac866b20e5805d57ae5db",
+      "gitBlobSha256": "a517ce4edd40a979c880b522a2e3fc3f6a6daae5c805b7cc3d33d9a31b7ccde6"
+    },
+    "docs/evidence/resort/v5/native-reactions.json": {
+      "bytes": 5024,
+      "sha256": "028812a906486615173cc037a2a89e87c35eb6e0352eb9f3d137aa3b80661ef0",
+      "gitBlobSha256": "8c0416789965c404e706f7e257951badfd0ca1f0189fa71a488667262424c2c5"
+    },
+    "docs/evidence/resort/v5/permission.jpg": {
+      "bytes": 213417,
+      "sha256": "0119550446440f9be78f729c3c2bd6c4353acbfa90ae56e2e6b8617ff58fe980",
+      "gitBlobSha256": "0119550446440f9be78f729c3c2bd6c4353acbfa90ae56e2e6b8617ff58fe980"
+    },
+    "docs/evidence/resort/v5/restored-pause-policy.json": {
+      "bytes": 185,
+      "sha256": "2ee9c28f55f9c36cb88b6f0cad8f79205b8acc8759594ceb6ee1c7e46d7e697c",
+      "gitBlobSha256": "773df9b53d39da2c3ae9664757610159d39724a3716109c0c5a83ae8fd949742"
+    },
+    "docs/evidence/resort/v5/rig-correction.json": {
+      "bytes": 592,
+      "sha256": "d48c0f2e4c68452fb1cd4757992b19174840c35d18434769dc8208885812b943",
+      "gitBlobSha256": "d48c0f2e4c68452fb1cd4757992b19174840c35d18434769dc8208885812b943"
+    },
+    "docs/evidence/resort/v5/starting.jpg": {
+      "bytes": 211385,
+      "sha256": "fd52b9cfedf996f84b3473091a8daa08bb4dc64eb8964425374d58e2a9958e26",
+      "gitBlobSha256": "fd52b9cfedf996f84b3473091a8daa08bb4dc64eb8964425374d58e2a9958e26"
+    },
+    "docs/evidence/resort/v5/testing.jpg": {
+      "bytes": 210036,
+      "sha256": "0cde3676032d040a05454ada89b5ab89eaf380cd8abd35cd39ddd318fbb8e66c",
+      "gitBlobSha256": "0cde3676032d040a05454ada89b5ab89eaf380cd8abd35cd39ddd318fbb8e66c"
+    },
+    "docs/evidence/resort/v5/working.jpg": {
+      "bytes": 211520,
+      "sha256": "b761597ffccff3186637996ec9437297755a74217dc08b4be1c0618a7f5c0493",
+      "gitBlobSha256": "b761597ffccff3186637996ec9437297755a74217dc08b4be1c0618a7f5c0493"
+    },
+    "docs/evidence/resort/validation-v5.json": {
+      "bytes": 1132,
+      "sha256": "eec017d2e9218f9ace0e63100fe6b678a4c3ad7688a097aa7b2627e46d6dd1f8",
+      "gitBlobSha256": "eec8af036c9fe0f3a9a6494ed467859434706e7f9cdd1749db816d9df25a8fe0"
+    },
+    "tools/audit_resort_v5.py": {
+      "bytes": 2303,
+      "sha256": "325a161dcc7143a4e85e523345038279056b506c60783ecd424cadf8d3d1dc87",
+      "gitBlobSha256": "325a161dcc7143a4e85e523345038279056b506c60783ecd424cadf8d3d1dc87"
+    },
+    "tools/build_pip_v5.py": {
+      "bytes": 1590,
+      "sha256": "2fbd87e1e1c96fadfcfbd666de9a09115b904fd4691f66e308f76624e1ab7e4c",
+      "gitBlobSha256": "2fbd87e1e1c96fadfcfbd666de9a09115b904fd4691f66e308f76624e1ab7e4c"
+    },
+    "tools/package_resort_v5.py": {
+      "bytes": 1514,
+      "sha256": "dc6d81b1763fafe2c1c02540be70db2ae4cf394d5383398d5fe8f9ec5e8765a7",
+      "gitBlobSha256": "dc6d81b1763fafe2c1c02540be70db2ae4cf394d5383398d5fe8f9ec5e8765a7"
+    },
+    "tools/render_resort_v5.py": {
+      "bytes": 1012,
+      "sha256": "a1cd78fd53328f98dce522e30757cf744a45bfe4f9f5deeb2b379a18381ee917",
+      "gitBlobSha256": "a1cd78fd53328f98dce522e30757cf744a45bfe4f9f5deeb2b379a18381ee917"
+    },
+    "tools/report_resort_v5.py": {
+      "bytes": 2524,
+      "sha256": "7ed0e92b542c02110af455531d6cbb787ce843b218cfb4891ccf5e2ee4c8368d",
+      "gitBlobSha256": "7ed0e92b542c02110af455531d6cbb787ce843b218cfb4891ccf5e2ee4c8368d"
+    },
+    "tools/run_resort_v5_native.ps1": {
+      "bytes": 4660,
+      "sha256": "d2b559430d2a5f360416ea6099370172d417aa853472433b8f8539bacbcc565c",
+      "gitBlobSha256": "30895ff35b4d15c5867a71a6ef0a2cd3bad165f70d5a8345d962e9c4403350a7"
+    },
+    "tools/validate_resort_v5.py": {
+      "bytes": 2487,
+      "sha256": "d348def2489ab19ee5e86082fabeb40b03590eb883166dbc99f8ca20fd5ecce5",
+      "gitBlobSha256": "d348def2489ab19ee5e86082fabeb40b03590eb883166dbc99f8ca20fd5ecce5"
+    },
+    "wallpaper/LivelyInfo.json": {
+      "bytes": 680,
+      "sha256": "35466386179118c83b22c877fce03664d7010259563db452b31429ff17b78e10",
+      "gitBlobSha256": "35466386179118c83b22c877fce03664d7010259563db452b31429ff17b78e10"
+    },
+    "wallpaper/LivelyProperties.json": {
+      "bytes": 175,
+      "sha256": "ade41f39fd87f7180da10f098a8cc021d238e0fc4b271af768d0142735b5f3e7",
+      "gitBlobSha256": "ade41f39fd87f7180da10f098a8cc021d238e0fc4b271af768d0142735b5f3e7"
+    },
+    "wallpaper/assets/character.png": {
+      "bytes": 1898566,
+      "sha256": "9d3735d98f831729fe2ea73828002463237f397b5e0fb137f1ec8fb477fc42f0",
+      "gitBlobSha256": "9d3735d98f831729fe2ea73828002463237f397b5e0fb137f1ec8fb477fc42f0"
+    },
+    "wallpaper/assets/pip-v5-front2-review.png": {
+      "bytes": 598000,
+      "sha256": "b02a786192468ad28605850fa4b776f409937779fd1fac0b24eba94a425f0e59",
+      "gitBlobSha256": "b02a786192468ad28605850fa4b776f409937779fd1fac0b24eba94a425f0e59"
+    },
+    "wallpaper/assets/pip-v5-hq-review.png": {
+      "bytes": 600496,
+      "sha256": "ae457c38de3dd64738d1efcbf1306a2404ea8222e9d452ce2d6d512849ef67c2",
+      "gitBlobSha256": "ae457c38de3dd64738d1efcbf1306a2404ea8222e9d452ce2d6d512849ef67c2"
+    },
+    "wallpaper/assets/pip-v5-poses-review.png": {
+      "bytes": 90437,
+      "sha256": "423b099e8e12015bbe75f29bb5b8f9859fa0dd2612e6aea292e949f15a1b11ec",
+      "gitBlobSha256": "423b099e8e12015bbe75f29bb5b8f9859fa0dd2612e6aea292e949f15a1b11ec"
+    },
+    "wallpaper/assets/pip-v5-wave-review.png": {
+      "bytes": 502170,
+      "sha256": "58a4ec9e0fd83e8c06e59d153e9364be34f5b671f6da94cdcb8dd37afab58ff6",
+      "gitBlobSha256": "58a4ec9e0fd83e8c06e59d153e9364be34f5b671f6da94cdcb8dd37afab58ff6"
+    },
+    "wallpaper/assets/scene.json": {
+      "bytes": 3561,
+      "sha256": "0e3da23c13afecd79a3c1b960183218bd390140bdfde602f00092ea1dfd20c17",
+      "gitBlobSha256": "08804c59c6bc3be0599c664c14bd81bf46bec18bbe495706d76974407a0c7c3c"
+    },
+    "wallpaper/bootstrap.html": {
+      "bytes": 153,
+      "sha256": "2060a6f8957349aa7f86e9f9c749d3a1ba8a3272c2430c1067326917d71a5a42",
+      "gitBlobSha256": "2060a6f8957349aa7f86e9f9c749d3a1ba8a3272c2430c1067326917d71a5a42"
+    },
+    "wallpaper/resort-review.html": {
+      "bytes": 2674,
+      "sha256": "8dcb1e523b16e0b48d2715145df6a50038865313cc9a35456b7014aa313e0167",
+      "gitBlobSha256": "65ce732e9e96d4ceea46210805c0e8ea416da95dce84bd290b12f057d8a539e2"
+    },
+    "wallpaper/server.py": {
+      "bytes": 8450,
+      "sha256": "c168f78652967b613b9a93b8c576aa5d23e961c0bb79b7d4fc6dffbec9a5585c",
+      "gitBlobSha256": "24f8943da119414e679ae6c2f82c5a6eb0d59450c4ffe2447dfde080ec8e6d14"
+    }
+  }
+}

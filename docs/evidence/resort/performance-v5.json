@@ -1,0 +1,53 @@
+{
+  "recordedAt": "2026-10-05T16:30:28.526918+00:00",
+  "hardware": "Windows 11 Pro 10.0.26200, i9-9900K (16 logical CPUs), 32GB RAM, RTX3080 10GB, 1920x1080 primary display",
+  "scope": "Lively core, owned WebView2 process tree and loopback host. RSS sums shared mappings; GPU engines are separate Windows counters, not board power. Video fps counts decoded frames; atlas fps counts submitted draws, not monitor presents.",
+  "conditions": "Three fresh 30-second V5 native windows with Blender stopped. Active windows disable coverage/observer temporarily; ordinary policy restored before native CLI pause callback. Physical lock/fullscreen and multi-monitor checks remain manual.",
+  "unchangedWaterComparison": "performance-v4.json; water asset hashes match exactly",
+  "rows": [
+    {
+      "label": "runtime-v5-coffee",
+      "cpuPercentWholePC": 1.5157347154621226,
+      "meanRssMiB": 805.5834635416667,
+      "gpu3DPercent": 3.5633895754197846,
+      "gpuVideoDecodePercent": 16.66367826806573,
+      "meanDedicatedMiB": 132.631640625,
+      "meanSharedMiB": 25.761197916666667,
+      "playbackFps": 29.96860720216302,
+      "droppedFramesDuringInterval": 2
+    },
+    {
+      "label": "runtime-v5-editing",
+      "cpuPercentWholePC": 1.6392919168846536,
+      "meanRssMiB": 820.0127604166667,
+      "gpu3DPercent": 3.566132143345866,
+      "gpuVideoDecodePercent": 14.210518762214484,
+      "meanDedicatedMiB": 122.49609375,
+      "meanSharedMiB": 24.936197916666668,
+      "playbackFps": 29.97115011637063,
+      "droppedFramesDuringInterval": 0
+    },
+    {
+      "label": "runtime-v5-paused",
+      "cpuPercentWholePC": 0.35107084400677246,
+      "meanRssMiB": 760.5286458333334,
+      "gpu3DPercent": 0,
+      "gpuVideoDecodePercent": 0,
+      "meanDedicatedMiB": 155.56640625,
+      "meanSharedMiB": 23.49609375,
+      "playbackFps": 0.0,
+      "droppedFramesDuringInterval": 0
+    }
+  ],
+  "restoredPausePolicy": {
+    "pauseMeasurement": "Lively native pause callback via CLI; desktop was not fully covered during this run",
+    "observerEnabled": true,
+    "restoredFullscreenPause": 0
+  },
+  "assets": {
+    "scene.json": "0e3da23c13afecd79a3c1b960183218bd390140bdfde602f00092ea1dfd20c17",
+    "character.png": "9d3735d98f831729fe2ea73828002463237f397b5e0fb137f1ec8fb477fc42f0",
+    "water-1080.mp4": "85b21303e8c323d57c29bae7d624603e6b2ccdffa664d54d3a7c7ee1b4283ed3",
+    "water-720.mp4": "081fb67aef5c6670bad5e2ccf723ded00c848cfeb15c53d449dd66a863f61128"
+  }
+}
