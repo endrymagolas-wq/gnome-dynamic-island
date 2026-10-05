@@ -1,0 +1,151 @@
+{
+  "method": "Independent BVH hits on licensed palm triangles, UV alpha samples and linear decoded depth PNG",
+  "transparentLeafGaps": [
+    {
+      "pixel": [
+        999,
+        79
+      ],
+      "uvAlpha": 0.0,
+      "frontCardDepth": 23.73,
+      "renderedDepth": 36.109
+    },
+    {
+      "pixel": [
+        873,
+        86
+      ],
+      "uvAlpha": 0.0,
+      "frontCardDepth": 24.037,
+      "renderedDepth": 31.593
+    },
+    {
+      "pixel": [
+        901,
+        86
+      ],
+      "uvAlpha": 0.0,
+      "frontCardDepth": 23.838,
+      "renderedDepth": 26.928
+    },
+    {
+      "pixel": [
+        999,
+        86
+      ],
+      "uvAlpha": 0.0,
+      "frontCardDepth": 23.693,
+      "renderedDepth": 38.989
+    },
+    {
+      "pixel": [
+        866,
+        93
+      ],
+      "uvAlpha": 0.0,
+      "frontCardDepth": 24.046,
+      "renderedDepth": 39.013
+    },
+    {
+      "pixel": [
+        880,
+        93
+      ],
+      "uvAlpha": 0.0,
+      "frontCardDepth": 23.856,
+      "renderedDepth": 29.004
+    },
+    {
+      "pixel": [
+        978,
+        93
+      ],
+      "uvAlpha": 0.0,
+      "frontCardDepth": 23.628,
+      "renderedDepth": 33.961
+    },
+    {
+      "pixel": [
+        985,
+        93
+      ],
+      "uvAlpha": 0.0,
+      "frontCardDepth": 23.634,
+      "renderedDepth": 34.766
+    }
+  ],
+  "opaqueLeaves": [
+    {
+      "pixel": [
+        880,
+        79
+      ],
+      "uvAlpha": 1.0,
+      "frontCardDepth": 24.005,
+      "renderedDepth": 23.986
+    },
+    {
+      "pixel": [
+        985,
+        79
+      ],
+      "uvAlpha": 1.0,
+      "frontCardDepth": 23.696,
+      "renderedDepth": 23.693
+    },
+    {
+      "pixel": [
+        992,
+        79
+      ],
+      "uvAlpha": 1.0,
+      "frontCardDepth": 23.713,
+      "renderedDepth": 23.718
+    },
+    {
+      "pixel": [
+        887,
+        86
+      ],
+      "uvAlpha": 1.0,
+      "frontCardDepth": 23.838,
+      "renderedDepth": 23.925
+    },
+    {
+      "pixel": [
+        971,
+        86
+      ],
+      "uvAlpha": 1.0,
+      "frontCardDepth": 23.647,
+      "renderedDepth": 23.668
+    },
+    {
+      "pixel": [
+        978,
+        86
+      ],
+      "uvAlpha": 1.0,
+      "frontCardDepth": 23.647,
+      "renderedDepth": 23.645
+    },
+    {
+      "pixel": [
+        985,
+        86
+      ],
+      "uvAlpha": 1.0,
+      "frontCardDepth": 23.66,
+      "renderedDepth": 23.766
+    },
+    {
+      "pixel": [
+        887,
+        93
+      ],
+      "uvAlpha": 1.0,
+      "frontCardDepth": 23.823,
+      "renderedDepth": 23.9
+    }
+  ]
+}

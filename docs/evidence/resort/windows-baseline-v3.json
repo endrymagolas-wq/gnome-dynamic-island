@@ -1,0 +1,18 @@
+[
+  {
+    "label": "baseline",
+    "headBeforeCommit": "14a163d37c7bb06d2455bd024383ac8b810effe1",
+    "exit": 1,
+    "failure": "subprocess.CalledProcessError: Command '['C:\\\\Users\\\\andri\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe', 'C:\\\\Users\\\\andri\\\\Documents\\\\Codex\\\\2026-10-05\\\\3d-claude-https-github-com-endrymagolas\\\\baseline-pr\\\\tests\\\\policy\\\\check_async.py']' returned non-zero exit status 1.",
+    "location": "assistant/music_scene.py:15",
+    "scope": "Runner aborts on Windows; later Linux checks are not validated."
+  },
+  {
+    "label": "candidate",
+    "headBeforeCommit": "14a163d37c7bb06d2455bd024383ac8b810effe1",
+    "exit": 1,
+    "failure": "subprocess.CalledProcessError: Command '['C:\\\\Users\\\\andri\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe', 'C:\\\\Users\\\\andri\\\\Documents\\\\Codex\\\\2026-10-05\\\\3d-claude-https-github-com-endrymagolas\\\\gnome-dynamic-island\\\\tests\\\\policy\\\\check_async.py']' returned non-zero exit status 1.",
+    "location": "assistant/music_scene.py:15",
+    "scope": "Runner aborts on Windows; later Linux checks are not validated."
+  }
+]

@@ -1,0 +1,60 @@
+{
+  "recordedAt": "2026-10-05T13:30:10.401787+00:00",
+  "files": {
+    "art/island/resort-v2.blend": {
+      "bytes": 82452503,
+      "sha256": "df071e3c818ed9167b523d3031d2f749a846bd6aa30e9b9c9923a915105012eb"
+    },
+    "wallpaper/player.js": {
+      "bytes": 8181,
+      "sha256": "e1c7ecd077c378a77f10edaa4441c64bae999e75197b9be80744e37563d5ffef"
+    },
+    "wallpaper/server.py": {
+      "bytes": 8450,
+      "sha256": "c168f78652967b613b9a93b8c576aa5d23e961c0bb79b7d4fc6dffbec9a5585c"
+    },
+    "wallpaper/scene-model.js": {
+      "bytes": 2431,
+      "sha256": "0376cc77f6c6eb584e5ff998c7ad38473e9ebc06314943413334f8d7e2bf5087"
+    },
+    "wallpaper/assets/scene.json": {
+      "bytes": 3442,
+      "sha256": "e3f1fe2c515e477247a69b0e0268be50a9a2f17ff377306ec457ad76158947f4"
+    },
+    "wallpaper/assets/character.png": {
+      "bytes": 1197262,
+      "sha256": "3a10097e0fc5c7190acdf2d731195057bd4fc422add2d02db22d885304b7b264"
+    },
+    "wallpaper/assets/construction-depth.png": {
+      "bytes": 24158,
+      "sha256": "16dc885a547698aa50b1fc55e101c09f2ae23017867cb4f9ba6045ca5de80aad"
+    },
+    "wallpaper/assets/smoke.png": {
+      "bytes": 379739,
+      "sha256": "43fcf69644a8687e3775247c7d9a17b32011395c618c61674e80936b871b1474"
+    },
+    "wallpaper/assets/depth.png": {
+      "bytes": 825505,
+      "sha256": "010919c852e079bc0585da561ed82a2894d0f9d6970e8bda0fbd8833f0a529aa"
+    },
+    "wallpaper/assets/poster.png": {
+      "bytes": 3268961,
+      "sha256": "01b964042bbf31e9a5203d9cad0a50862cdaba96d2b39e61a8b0a084e5784abd"
+    },
+    "wallpaper/assets/static.png": {
+      "bytes": 1181919,
+      "sha256": "4870762190853d8affd7e0ab48fdce89994ca7ed09929338075005e5e8322ece"
+    },
+    "wallpaper/assets/water-1080.mp4": {
+      "bytes": 46737407,
+      "sha256": "683b90600d75b8f969cf63cee1b01e34b76ee5c17c75077fea02de89db752f46"
+    },
+    "wallpaper/assets/water-720.mp4": {
+      "bytes": 24401103,
+      "sha256": "6e5648bb705dd1ea230e75d96b70fd42f341dbf4d504ce114c6e10e0ebce489f"
+    }
+  },
+  "render": "361 Cycles OptiX frames at 1920x1080, 64 samples; first 360 exported at 30fps for 12 seconds; frame361 retained locally as audit endpoint.",
+  "sourceAudit": "10 editable Snow actions, 1030 retained drivers, no invalid driver reported, no unpacked missing file reported.",
+  "nativeScope": "Synthetic bounded hook events in real native Lively; restart Claude Code for installed hooks. Physical Win+L/resume, exclusive fullscreen games and multi-monitor pause/resume remain manual."
+}

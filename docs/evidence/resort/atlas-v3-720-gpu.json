@@ -1,0 +1,436 @@
+﻿{
+    "scope":  "Windows per-process GPU counters for owned Lively player descendants",
+    "samples":  [
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  1.3049899909742879,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.0064182405809379822,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.55859375,
+                        "sharedMiB":  59.640625
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  1.5772246046346607,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.00746475353775998,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.55859375,
+                        "sharedMiB":  59.640625
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  1.985169887868097,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.0051481912216013023,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.55859375,
+                        "sharedMiB":  59.640625
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  1.3104958793902868,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.0049349789647743156,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.44921875,
+                        "sharedMiB":  3.453125
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  4.4066256104252624,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.013730085642750977,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.55859375,
+                        "sharedMiB":  59.703125
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  2.3256027588644,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.006107920007943227,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.55859375,
+                        "sharedMiB":  59.703125
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  1.8831769280551334,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.0053475226137753747,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.55859375,
+                        "sharedMiB":  59.703125
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  2.474035026592099,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.00530340828422002,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.55859375,
+                        "sharedMiB":  59.703125
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  1.1570639376534355,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.0046992536410404616,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.55859375,
+                        "sharedMiB":  59.703125
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  1.835790993557324,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.0070041849026555251,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.44921875,
+                        "sharedMiB":  3.453125
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0.95625268131571062,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.0047112798421868173,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.44921875,
+                        "sharedMiB":  3.453125
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  1.7583887767488235,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.0043358655178576139,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.44921875,
+                        "sharedMiB":  3.453125
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  1.5143365987491797,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.006789772053416826,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.44921875,
+                        "sharedMiB":  3.453125
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  1.8228636394903659,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.00544042011002369,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.44921875,
+                        "sharedMiB":  3.453125
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  2.4646673762889257,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.0044839842632667321,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.44921875,
+                        "sharedMiB":  3.453125
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  1.5619031549740698,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.0050383972741099032,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.44921875,
+                        "sharedMiB":  3.453125
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  1.6973335553295448,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.0044334140755037761,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.44921875,
+                        "sharedMiB":  3.453125
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  1.6430653039445062,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.011590565709516578,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.44921875,
+                        "sharedMiB":  3.453125
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  1.8632418812019369,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.0048040078698563561,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.44921875,
+                        "sharedMiB":  3.453125
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  1.6243438013860685,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.0053215986477995877,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.44921875,
+                        "sharedMiB":  3.453125
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  1.8047882388651622,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.0052857449234580091,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.44921875,
+                        "sharedMiB":  3.453125
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  2.2938387164903142,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.0054331086528873812,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.55859375,
+                        "sharedMiB":  59.703125
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  2.6252862225253497,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.0066659414278778858,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.55859375,
+                        "sharedMiB":  59.703125
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  2.2228479442901428,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.0048216241626140768,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.55859375,
+                        "sharedMiB":  59.703125
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  1.8180546725248836,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.006361766120961931,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.55859375,
+                        "sharedMiB":  59.703125
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  2.232688824482064,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.0032354663934670408,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.44921875,
+                        "sharedMiB":  3.453125
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  2.6885867341884682,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.0069203782797402765,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.44921875,
+                        "sharedMiB":  3.453125
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  2.0290852870716933,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.0044030748497340877,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.44921875,
+                        "sharedMiB":  3.453125
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  0.68744046109498691,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.0050621973001284829,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.55859375,
+                        "sharedMiB":  59.703125
+                    },
+                    {
+                        "engines":  {
+                                        "security":  0,
+                                        "3d":  1.0355822681226896,
+                                        "videoencode":  0,
+                                        "videodecode":  0,
+                                        "vr":  0,
+                                        "copy":  0.003274016607817939,
+                                        "ofa_0":  0,
+                                        "legacyoverlay":  0
+                                    },
+                        "dedicatedMiB":  334.55859375,
+                        "sharedMiB":  59.703125
+                    }
+                ],
+    "processIds":  [
+                       6868,
+                       41228,
+                       36620,
+                       42388,
+                       37164,
+                       34916,
+                       29024,
+                       37448,
+                       3092
+                   ]
+}

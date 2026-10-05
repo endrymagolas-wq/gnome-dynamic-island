@@ -157,3 +157,10 @@ Code is GPL-3.0-or-later; upstream theme notices are retained. See [third-party 
 ### Cartoon island live wallpaper
 
 A separate, full-screen pre-rendered resort island lives behind your application windows. The worker and masked water animate from cached frames; the island stays static. The worker reacts to active applications and optional Claude Code events. Install it independently with `python3 install_wallpaper.py`; see [setup and preview](docs/CLAUDE.md).
+
+### Blender resort on Windows
+
+A separate Windows implementation uses a real Blender island scene, a 12-second
+30 fps water video, rigged character sprites and a camera-depth matte. It runs in
+Lively Wallpaper and reuses the Claude hook events through a loopback host. See
+[Windows setup, sources, reproduction and evidence](docs/RESORT_WINDOWS.md).

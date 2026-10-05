@@ -1,0 +1,50 @@
+{
+  "checks": [
+    {
+      "command": "python tests/check_claude.py",
+      "exit": 0,
+      "output": "PASS Claude hook events, test failures, settings merge/idempotency and unavailable desktop"
+    },
+    {
+      "command": "python tests/check_resort_host.py",
+      "exit": 0,
+      "output": "PASS loopback host, authenticated events, priority expiry, multiwindow coverage and path containment"
+    },
+    {
+      "command": "node tests/cartoon-island.mjs",
+      "exit": 0,
+      "output": "PASS resort registration/routes, sprite bounds/baking, idle/covered/reduced-motion policy, floor cap, expiry and monitor fitting\nPASS baked water indexing, bank bounds and exact 6-second wrap\nPASS work-area clipping for maximized-window water pause"
+    },
+    {
+      "command": "node tests/resort-scene.mjs",
+      "exit": 0,
+      "output": "PASS Blender camera registration, all state routes, construction cap and event deduplication\nPASS construction and smoke registration after the camera change\nPASS 104 walk-surface samples against the actual Blender mesh"
+    },
+    {
+      "command": "python tests/check_resort_depth.py",
+      "exit": 0,
+      "output": "PASS rendered beach depth registration and neutral matte exposure"
+    },
+    {
+      "command": "python tests/check_resort_construction_depth.py",
+      "exit": 0,
+      "output": "PASS 517 shipped cabana depth samples against original 3D geometry"
+    },
+    {
+      "command": "python tools/check_resort_water.py",
+      "exit": 0,
+      "output": "{\"water-1080.mp4\": {\"width\": 1920, \"height\": 1080, \"r_frame_rate\": \"30/1\", \"duration\": \"12.000000\", \"nb_read_frames\": \"360\", \"sha256\": \"683b90600d75b8f969cf63cee1b01e34b76ee5c17c75077fea02de89db752f46\", \"firstStepMAE\": 1.8507187178497944, \"lastStepMAE\": 1.5516520383230452, \"seamMAE\": 1.8510186792695473}, \"water-720.mp4\": {\"width\": 1280, \"height\": 720, \"r_frame_rate\": \"30/1\", \"duration\": \"12.000000\", \"nb_read_frames\": \"360\", \"sha256\": \"6e5648bb705dd1ea230e75d96b70fd42f341dbf4d504ce114c6e10e0ebce489f\", \"firstStepMAE\": 2.062125289351852, \"lastStepMAE\": 1.7392350260416667, \"seamMAE\": 2.063131148726852}, \"method\": \"Full FFprobe decode count and encoded RGB MAE (0-255), boundary versus adjacent 30fps steps. Numeric continuity is supplemented by the visible water review.\"}"
+    },
+    {
+      "command": "node --check wallpaper/player.js",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "command": "python -m compileall -q assistant wallpaper tools art/island",
+      "exit": 0,
+      "output": ""
+    }
+  ],
+  "fullSuite": "Windows baseline and candidate both stop at assistant/music_scene.py os.getuid AttributeError. No claim for the Linux-only tests after that failure."
+}

@@ -1,0 +1,1 @@
+{"water":{"type":"checkbox","text":"Animated water","value":true},"quality":{"type":"dropdown","text":"Quality","value":0,"items":["1080p / 30 fps","720p / 30 fps","Still"]}}

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Optional Claude Code hooks. Only bounded animation state crosses D-Bus."""
+"""Optional Claude Code hooks. Only bounded animation state crosses the desktop transport."""
 import argparse
 import json
 from pathlib import Path
@@ -7,6 +7,8 @@ import re
 import shlex
 import subprocess
 import sys
+import os
+import urllib.request
 
 EVENTS = ('UserPromptSubmit', 'PreToolUse', 'PostToolUse', 'PostToolUseFailure',
           'PermissionRequest', 'Notification', 'Stop', 'SessionEnd')
@@ -43,9 +45,10 @@ def state_for(data):
 
 def install(settings):
     settings.parent.mkdir(parents=True, exist_ok=True)
-    original = settings.read_text() if settings.exists() else None
+    original = settings.read_text(encoding='utf-8') if settings.exists() else None
     data = json.loads(original) if original else {}
-    command = f'{shlex.quote(sys.executable)} {shlex.quote(str(Path(__file__).resolve()))}'
+    parts = [sys.executable, str(Path(__file__).resolve())]
+    command = subprocess.list2cmdline(parts) if sys.platform == 'win32' else ' '.join(map(shlex.quote, parts))
     hooks = data.setdefault('hooks', {})
     for event in EVENTS:
         entries = hooks.setdefault(event, [])
@@ -58,8 +61,8 @@ def install(settings):
     if original is not None:
         backup = settings.with_name(settings.name + '.before-island')
         if not backup.exists():
-            backup.write_text(original)
-    settings.write_text(json.dumps(data, indent=2) + '\n')
+            backup.write_text(original, encoding='utf-8')
+    settings.write_text(json.dumps(data, indent=2) + '\n', encoding='utf-8')
     print(f'Claude hooks installed: {settings}')
 
 
@@ -77,11 +80,22 @@ def main():
             return
         state = state_for(data)
         if state:
+            if sys.platform == 'win32':
+                connection = Path(os.environ.get('LOCALAPPDATA', str(Path.home()))) / 'ResortIsland/connection.json'
+                target = json.loads(connection.read_text(encoding='utf-8'))
+                # Never transmit payloads, prompts, filenames or commands.
+                if not re.fullmatch(r'http://127\.0\.0\.1:\d+/event', target['url']):
+                    return
+                request = urllib.request.Request(target['url'], data=json.dumps({'state': state}).encode(),
+                    headers={'Content-Type': 'application/json', 'Authorization': 'Bearer ' + target['token']})
+                with urllib.request.urlopen(request, timeout=1) as response:
+                    response.read(128)
+                return
             subprocess.run(['gdbus', 'call', '--session', '--dest', 'org.gnome.Shell',
                             '--object-path', '/org/avalon/CartoonIsland', '--method',
                             'org.avalon.CartoonIsland.ClaudeState', state],
                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=2)
-    except (ValueError, OSError, subprocess.TimeoutExpired):
+    except (ValueError, KeyError, TypeError, OSError, subprocess.TimeoutExpired):
         pass  # An unavailable desktop must never block Claude.
 
 
