@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';import fs from 'node:fs';
 import {SceneModel,project,STATES,groundHeight} from '../wallpaper/scene-model.js';
-const meta=JSON.parse(fs.readFileSync(new URL(`../wallpaper/assets/${process.argv.includes('--v3')?'scene-v2':'scene'}.json`,import.meta.url)));
+const meta=JSON.parse(fs.readFileSync(process.env.RESORT_TEST_ASSETS?`${process.env.RESORT_TEST_ASSETS}/scene.json`:new URL(`../wallpaper/assets/${process.argv.includes('--v3')?'scene-v2':'scene'}.json`,import.meta.url)));
 for(const [key,p] of Object.entries(meta.projections)){
  const actual=project(meta.targets[key],meta);assert.ok(Math.abs(actual.x-p.x)<.01);assert.ok(Math.abs(actual.y-p.y)<.01);
 }

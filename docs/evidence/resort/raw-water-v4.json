@@ -1,0 +1,7 @@
+{
+  "first_to_second_MAE": 0.6675405092592593,
+  "penultimate_to_last_MAE": 0.6622035751028806,
+  "last_to_first_MAE": 0.6668240419238683,
+  "endpoint_361_to_first_MAE": 0.013817997685185185,
+  "method": "Raw RGB mean absolute difference, 0-255. Last frame to first is one normal 1/30-second step, not a duplicated endpoint."
+}

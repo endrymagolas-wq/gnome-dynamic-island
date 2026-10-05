@@ -161,6 +161,7 @@ A separate, full-screen pre-rendered resort island lives behind your application
 ### Blender resort on Windows
 
 A separate Windows implementation uses a real Blender island scene, a 12-second
-30 fps water video, rigged character sprites and a camera-depth matte. It runs in
+30 fps water video, Pip the friendly fantasy mascot, and a camera-depth matte.
+The sunny palette includes turquoise water, coral cushions and mint accents. It runs in
 Lively Wallpaper and reuses the Claude hook events through a loopback host. See
 [Windows setup, sources, reproduction and evidence](docs/RESORT_WINDOWS.md).

@@ -1,0 +1,5 @@
+{
+  "restoredFullscreenPause": 0,
+  "observerEnabled": true,
+  "pauseMeasurement": "Lively native pause callback via CLI; desktop was not fully covered"
+}

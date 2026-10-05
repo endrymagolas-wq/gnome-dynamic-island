@@ -1,0 +1,63 @@
+{
+  "label": "runtime-v4-paused",
+  "gpuCounterExit": 0,
+  "seconds": 30.204928999999538,
+  "cpuPercentWholePC": 1.403175372469859,
+  "cpuPercentOneCore": 22.450805959517744,
+  "meanRssMiB": 777.1485677083333,
+  "peakRssMiB": 792.9140625,
+  "pids": [
+    46248,
+    49876,
+    31260,
+    35072,
+    36980,
+    45000,
+    37664,
+    16988,
+    17712
+  ],
+  "hostPids": [
+    17712
+  ],
+  "playbackBefore": {
+    "format": "video",
+    "clock": 8.012,
+    "totalVideoFrames": 236,
+    "droppedVideoFrames": 0,
+    "paused": false,
+    "videoPaused": false,
+    "videoWidth": 1920,
+    "videoHeight": 1080,
+    "state": "idle",
+    "stage": 0,
+    "position": [
+      0,
+      -2.25,
+      0.43
+    ],
+    "smokeVisiblePixels": 0
+  },
+  "playback": {
+    "format": "video",
+    "clock": 46.006,
+    "totalVideoFrames": 1375,
+    "droppedVideoFrames": 1,
+    "paused": false,
+    "videoPaused": false,
+    "videoWidth": 1920,
+    "videoHeight": 1080,
+    "state": "idle",
+    "stage": 0,
+    "position": [
+      0,
+      -2.25,
+      0.43
+    ],
+    "smokeVisiblePixels": 0
+  },
+  "observedPlaybackFps": 29.978417644891298,
+  "scope": "Lively WebView2 wrapper/descendants, Lively core, and loopback event host. RSS sums shared mappings. Video fps counts decoded frames; atlas fps counts rAF draw submissions, not physical display presents. GPU/VRAM are Windows per-process counters.",
+  "validAsPauseEvidence": false,
+  "reason": "Desktop was not fully covered and both pause flags were false; retained as an uncovered playback sample, not pause proof."
+}

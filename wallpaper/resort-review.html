@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="uk"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Resort — сонячний варіант і маскот</title>
+<style>
+body{margin:0;background:#102c34;color:#edf8f4;font:16px system-ui}main{max-width:1150px;margin:auto;padding:24px}h1{font-size:24px}figure{margin:20px 0}img,video{display:block;width:100%;border-radius:14px}figcaption{margin:10px 0;color:#c2d9d5}button{padding:10px 18px;background:#f08068;border:0;border-radius:8px;font:inherit;cursor:pointer}
+</style><main><h1>Сонячний курорт · пробний рендер</h1>
+<p>Світліший пляж, бірюзова лагуна, коралові та м’ятні акценти. Камера й геометрія повільних хвиль збережені.</p>
+<figure><img src="assets/resort-v4-palette-review.png" alt="Світліший курортний острів"><figcaption>Blender Cycles, пробний кадр 960 × 540. Персонаж запечений окремим шаром.</figcaption></figure>
+<figure><video id="water" src="assets/resort-v4-water-draft.mp4" controls loop muted playsinline preload="metadata"></video><figcaption>Чорновий цикл води: 12 секунд, 30 кадрів/с, 480 × 270. Фінальний рендер має вищу роздільність і якість.</figcaption></figure>
+<button id="play">Відтворити / пауза</button>
+<h1>Pip · милий кумедний маскот</h1>
+<figure><img src="assets/pip-v4-review.png" alt="Готова 3D-модель Pip махає рукою"><figcaption>Готова 3D-модель: м’які вуха, великі очі, усмішка та жовті шорти. Ріг Quaternius адаптований і збережений.</figcaption></figure>
+<figure><img src="assets/pip-v4-reference.png" alt="Згенерований референс Pip спереду, збоку, ззаду та під кутом"><figcaption>Згенерований референс для адаптації готової 3D-моделі. Це дизайн-напрямок; готова сітка має власну стилізацію.</figcaption></figure>
+<p><a style="color:#8ee6d2" href="index.html?preview=1">Готова інтерактивна сцена з Pip →</a> · фінальна вода 1920 × 1080 / 30 кадрів/с. Вище збережений ранній чорновий цикл для порівняння.</p>
+<script>document.querySelector('#play').onclick=()=>{let v=document.querySelector('#water');v.paused?v.play():v.pause()}</script>
+</main></html>

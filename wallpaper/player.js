@@ -1,22 +1,30 @@
 import {SceneModel,project} from './scene-model.js';
 function srgb(v){return v<=.04045?v/12.92:((v+.055)/1.055)**2.4;}
-const meta=await fetch('assets/scene.json').then(r=>r.json()),model=new SceneModel(meta);
+const params=new URLSearchParams(location.search),debug=params.has('preview');
+const assets=debug&&params.get('assets')==='v4'?'assets/v4-stage/':'assets/';
+document.querySelector('#poster').src=assets+'poster.png';
+document.querySelector('#land').src=assets+'static.png';
+document.querySelector('video').poster=assets+'poster.png';
+const meta=await fetch(assets+'scene.json').then(r=>r.json()),model=new SceneModel(meta);
 const video=document.querySelector('video'),canvas=document.querySelector('canvas'),ctx=canvas.getContext('2d'),control=document.querySelector('#controls');
-const debug=new URLSearchParams(location.search).has('preview');if(debug)control.classList.add('show');
+if(debug)control.classList.add('show');
+if(debug&&assets==='assets/v4-stage/')video.addEventListener('loadedmetadata',()=>{
+  document.querySelector('#quality option[value="high"]').textContent=`Пробна вода ${video.videoWidth} × ${video.videoHeight} / 30 fps`;
+});
 const image=src=>new Promise((resolve,reject)=>{let i=new Image();i.onload=()=>resolve(i);i.onerror=reject;i.src=src;});
-const atlas=await image('assets/character.png'),depthImage=await image('assets/depth.png');
-const smoke=meta.smoke?await image('assets/smoke.png'):null;
+const atlas=await image(assets+'character.png'),depthImage=await image(assets+'depth.png');
+const smoke=meta.smoke?await image(assets+'smoke.png'):null;
 const depthCanvas=document.createElement('canvas');depthCanvas.width=meta.width;depthCanvas.height=meta.height;
 const dc=depthCanvas.getContext('2d',{willReadFrequently:true});dc.drawImage(depthImage,0,0,meta.width,meta.height);
 const depthPixels=dc.getImageData(0,0,meta.width,meta.height).data;
 const depth=Float32Array.from({length:meta.width*meta.height},(_,i)=>srgb(depthPixels[i*4]/255)*50);
 let cabanaDepth=null;
-if(meta.construction?.depthAtlas){const imageDepth=await image('assets/'+meta.construction.depthAtlas),c=document.createElement('canvas');c.width=imageDepth.width;c.height=imageDepth.height;const d=c.getContext('2d',{willReadFrequently:true});d.drawImage(imageDepth,0,0);const p=d.getImageData(0,0,c.width,c.height).data;cabanaDepth={width:c.width,data:Float32Array.from({length:c.width*c.height},(_,i)=>srgb(p[i*4]/255)*meta.construction.depthScale-meta.construction.depthBias)};}
+if(meta.construction?.depthAtlas){const imageDepth=await image(assets+meta.construction.depthAtlas),c=document.createElement('canvas');c.width=imageDepth.width;c.height=imageDepth.height;const d=c.getContext('2d',{willReadFrequently:true});d.drawImage(imageDepth,0,0);const p=d.getImageData(0,0,c.width,c.height).data;cabanaDepth={width:c.width,data:Float32Array.from({length:c.width*c.height},(_,i)=>srgb(p[i*4]/255)*meta.construction.depthScale-meta.construction.depthBias)};}
 const scratch=document.createElement('canvas');scratch.width=384;scratch.height=384;const sc=scratch.getContext('2d',{willReadFrequently:true});
 let paused=false,hostPause=false,observerPause=false,waterEnabled=true,quality='high',raf=0,last=0,nextDraw=0,seq=0,smokeVisiblePixels=0;
 function updatePause(){const next=hostPause||observerPause||document.hidden||matchMedia('(prefers-reduced-motion: reduce)').matches;
   paused=next;if(paused){cancelAnimationFrame(raf);raf=0;video.pause();last=0;nextDraw=0;}else{if(waterEnabled&&quality!=='off')video.play().catch(()=>{});else video.pause();if(!raf)raf=requestAnimationFrame(tick);}}
-function setQuality(value){quality=value;video.src=`assets/water-${value==='low'?'720':'1080'}.mp4`;video.hidden=!waterEnabled||value==='off';updatePause();}
+function setQuality(value){quality=value;video.src=`${assets}water-${value==='low'?'720':'1080'}.mp4`;video.hidden=!waterEnabled||value==='off';updatePause();}
 function masked(source,rect,x,y,w,h,footDepth,footY,ppm,depthStage=null){
   x=Math.round(x);y=Math.round(y);sc.clearRect(0,0,384,384);sc.drawImage(source,...rect,0,0,w,h);
   const pixels=sc.getImageData(0,0,w,h);

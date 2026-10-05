@@ -2,7 +2,7 @@
 import argparse,json,os,subprocess,sys,time,urllib.request
 import hashlib,datetime
 from pathlib import Path
-root=Path(__file__).resolve().parents[1];out=root/'docs/evidence/resort';out.mkdir(parents=True,exist_ok=True)
+root=Path(__file__).resolve().parents[1];out=Path(os.environ.get('RESORT_NATIVE_EVIDENCE',root/'docs/evidence/resort'));out.mkdir(parents=True,exist_ok=True)
 cli=Path(os.environ['LOCALAPPDATA'])/'ResortIsland/lively-cli/Livelycu.exe'
 p=argparse.ArgumentParser();p.add_argument('mode',choices=['controls','reactions']);args=p.parse_args()
 def command(*items):subprocess.run([str(cli),*items],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)

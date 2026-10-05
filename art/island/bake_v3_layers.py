@@ -1,7 +1,7 @@
 """V3 offline layers, with leaf alpha retained in the depth render."""
-import bpy,json
+import bpy,json,os
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[2];OUT=ROOT/'wallpaper/assets'
+ROOT=Path(__file__).resolve().parents[2];OUT=Path(os.environ.get('RESORT_RENDER_OUT',ROOT/'wallpaper/assets'))
 
 def static_layers():
     s=bpy.data.scenes['Resort_Island'];bpy.context.window.scene=s
@@ -27,7 +27,7 @@ def shore_mask():
     """Expose the baked moving shoreline rather than freezing it in the plate."""
     s=bpy.data.scenes['Resort_Island'];bpy.context.window.scene=s
     terrain=bpy.data.objects['Island sand and submerged shelf'].material_slots[0].material
-    world=s.world;engine=s.render.engine;view=s.view_settings.view_transform;exposure=s.view_settings.exposure
+    world=s.world;engine=s.render.engine;view=s.view_settings.view_transform;look=s.view_settings.look;exposure=s.view_settings.exposure
     water=bpy.data.objects['Water - periodic geometric waves'];foam=bpy.data.objects['V3 waterline foam']
     water_hidden=water.hide_render;foam_hidden=foam.hide_render;slots=[];mats={}
     black=bpy.data.worlds.new('V3 mask temporary black world');black.use_nodes=True;black.node_tree.nodes['Background'].inputs[1].default_value=0
@@ -57,7 +57,7 @@ def shore_mask():
         s.render.filepath=str(OUT/'shore-alpha-mask.png');bpy.ops.render.render(write_still=True)
     finally:
         for slot,link,old in slots:slot.material=old;slot.link=link
-        water.hide_render=water_hidden;foam.hide_render=foam_hidden;s.world=world;s.render.engine=engine;s.view_settings.view_transform=view;s.view_settings.exposure=exposure
+        water.hide_render=water_hidden;foam.hide_render=foam_hidden;s.world=world;s.render.engine=engine;s.view_settings.view_transform=view;s.view_settings.look=look;s.view_settings.exposure=exposure
         for dm in mats.values():
             if dm.users==0:bpy.data.materials.remove(dm)
         bpy.data.worlds.remove(black)
@@ -67,7 +67,8 @@ def depth_layer():
     s=bpy.data.scenes['Resort_Island'];bpy.context.window.scene=s
     if bpy.data.objects.get('V2 actor review instance'):bpy.data.objects['V2 actor review instance'].hide_render=True
     s.render.resolution_percentage=100;s.render.engine='BLENDER_EEVEE_NEXT';s.eevee.taa_render_samples=64
-    exposure=s.view_settings.exposure;s.view_settings.exposure=0;s.view_settings.view_transform='Standard'
+    view=s.view_settings.view_transform;look=s.view_settings.look
+    exposure=s.view_settings.exposure;s.view_settings.exposure=0;s.view_settings.view_transform='Standard';s.view_settings.look='None'
     s.render.image_settings.color_depth='16';s.render.film_transparent=False
     replacements={};old_slots=[]
     def depth_material(original):
@@ -96,7 +97,7 @@ def depth_layer():
         s.render.filepath=str(OUT/'depth-v3.png');bpy.ops.render.render(write_still=True)
     finally:
         for slot,link,material in old_slots:slot.material=material;slot.link=link
-        s.view_settings.exposure=exposure;s.view_settings.view_transform='AgX';s.render.image_settings.color_depth='8';s.render.engine='CYCLES'
+        s.view_settings.exposure=exposure;s.view_settings.view_transform=view;s.view_settings.look=look;s.render.image_settings.color_depth='8';s.render.engine='CYCLES'
         for dm in replacements.values():
             if dm.users==0:bpy.data.materials.remove(dm)
     return {'depth':str(OUT/'depth-v3.png'),'leafAlpha':True}

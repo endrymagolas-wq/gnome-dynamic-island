@@ -1,8 +1,8 @@
 """Bake actual cabana depth offsets; its footprint cannot use an upright plane."""
-import bpy,json
+import bpy,json,os
 from pathlib import Path
 from mathutils import Vector
-ROOT=Path(__file__).resolve().parents[2];OUT=ROOT/'wallpaper/assets'
+ROOT=Path(__file__).resolve().parents[2];OUT=Path(os.environ.get('RESORT_RENDER_OUT',ROOT/'wallpaper/assets'))
 s=bpy.data.scenes['Construction_Bake'];original=bpy.context.window.scene;bpy.context.window.scene=s
 s.frame_set(s.frame_current);bpy.context.view_layer.update()
 foot_depth=-(s.camera.matrix_world.inverted()@Vector((0,0,0))).z

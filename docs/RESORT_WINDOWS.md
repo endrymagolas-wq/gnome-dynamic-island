@@ -80,7 +80,7 @@ have edited files or passed tests.
   palms, rocks, furniture and the cottage rather than using screen-space guesses.
 - `scene.json`: camera matrix, real ground targets, anchors and sprite scale.
 
-The adapted Snow character moves along the elevated plateau and the organically
+Pip, a friendly turquoise fantasy creature in yellow swim shorts, moves along the elevated plateau and the organically
 perturbed beach slope. Perspective position
 and scale come from the Blender camera. Routes use clear beach corridors around
 the cottage. The depth comparison approximates the character as a vertical
@@ -106,12 +106,15 @@ manual validation; the observer currently targets this PC's primary display.
 
 ## Reproduce the render
 
-Current source: `art/island/resort-v2.blend`, with Resort_Island, Character_V2,
-Construction_Bake and Smoke_Bake scenes. Despite its v2 filename, this includes
-the later v3 palms and coast. Required meshes and images are packed. The Snow
-rig, weights, controls and ten task actions remain editable. See
+Current source: `art/island/resort-v4.blend`, with Resort_Island, Mascot_Pip,
+Construction_Bake and Smoke_Bake scenes. Required meshes and all 21 used images
+are packed. Pip adapts Quaternius' CC0 BlueDemon: the authored 43-bone full-body
+rig, skin weights and 14 source actions are preserved alongside ten editable task
+actions. Its bat and loincloth were removed, ears softened, eyes enlarged, and
+a gentle smile, freckles and sunny shorts added. The GPT-generated turnaround
+is an art-direction reference, not a claim of an identical reconstructed mesh. See
 [sources and credits](../art/ASSET_SOURCES.md). `resort.blend` is the preserved
-earlier rejected prototype, not the current source.
+earlier rejected prototype; `resort-v2.blend` preserves the previous Snow/V3 scene.
 
 The packed source is reproducible with Blender 4.5.9. The offline worker
 regenerates static/transparent plates, depth with leaf alpha, 272 worker sprites,
@@ -123,25 +126,35 @@ import bpy, subprocess
 from pathlib import Path
 root = Path(bpy.data.filepath).parents[2]
 log = open(root/'wallpaper/offline-render.log', 'w')
-subprocess.Popen([
-    bpy.app.binary_path, '--background', '--threads', '8',
-    str(root/'art/island/resort-v2.blend'), '--python',
-    str(root/'tools/render_resort_v3.py'), '--', 'final'
-], stdout=log, stderr=log, creationflags=subprocess.CREATE_NO_WINDOW)
+for mode in ('sprites', 'layers', 'water'):
+    subprocess.run([
+        bpy.app.binary_path, '--background', '--threads', '8',
+        str(root/'art/island/resort-v4.blend'), '--python',
+        str(root/'tools/render_resort_v4.py'), '--', mode
+    ], stdout=log, stderr=log, check=True,
+       creationflags=subprocess.CREATE_NO_WINDOW)
 ```
 
 Then, with FFmpeg and Pillow installed:
 
 ```powershell
-python tools/package_resort_v3.py
+python tools/package_resort_v4.py --promote
 ```
 
 Frame 361 is the audit endpoint; it is excluded from the 360-frame video.
 The packager rejects an incomplete render and checks all frame dimensions before
 replacing the runtime bundle. Raw PNG sequences are retained locally but ignored
-by Git. Runtime files and the editable `.blend` are versioned. Antigravity
-downloaded licensed models; Nano Banana 2 generated art-direction and turnaround
-references in Flow. Those references are not the animated water layer.
+by Git in `wallpaper/assets/v4-stage/`. Runtime files and the editable `.blend`
+are versioned. Run `draft` instead of `water` for a 480p look-development loop;
+after `sprites` and `layers`, `package_resort_v4.py --preview` prepares the isolated
+candidate at `index.html?preview=1&assets=v4`. It cannot promote a draft. Do not
+run the source-saving `sprites` and `layers` workers together. The water worker
+is read-only. `mascot-review` renders a larger transparent character proof.
+Promotion preserves the former live bundle in `../runtime-backups/v3-before-pip/`;
+reload Lively with `wallpaper/launch.ps1` after promotion.
+Antigravity assisted licensed asset discovery/downloads. The current Pip reference
+was generated with GPT; older art-direction references were generated in Flow.
+References are not the animated water layer.
 After Effects was not required; its exposed
 MCP did not receive a reply from the local bridge panel during this run.
 
@@ -155,12 +168,26 @@ python tests/check_resort_depth.py
 python tests/check_resort_construction_depth.py
 python tools/check_resort_water.py
 node tests/cartoon-island.mjs
+python tools/validate_resort_v4.py
 ```
 
 The original full `tests/run.py` fails on Windows at `os.getuid()` in
 `assistant/music_scene.py`. The same failure was reproduced on the untouched
 PR baseline `14a163d37c7bb06d2455bd024383ac8b810effe1`; it is not a new regression.
 See `docs/evidence/resort/` for measured results and remaining native checks.
+
+`tools/audit_resort_v4.py`, run inside Blender after reopening the saved source,
+checks packed textures, retained actions, the planted stride and that permission
+gestures survive frame evaluation. The source action is detached before sprite
+rendering so it cannot overwrite adjusted poses. The runtime's 0.4992 m/s travel
+matches the retimed stance phase of the weighted leg IK.
+
+For optional native remeasurement, first stop your owned Blender workers, then
+run `tools/prepare_resort_atlas.py` and `tools/run_resort_v4_native.ps1`. This tool
+requires exactly one active Resort wallpaper. It temporarily restarts Lively and
+the owned host for active measurements, restores the fullscreen pause policy and
+coverage observer, checks the native Lively pause callback, then reinstalls the ordinary entry.
+It refuses to replace another active wallpaper or measure with Blender running.
 
 Water uses offline Cycles/OptiX rendering: geometric periodic waves, periodically
 advected fine bump normals, IOR 1.333, transmission, volume absorption and a
@@ -175,45 +202,54 @@ WebView2 player and descendants, and the loopback event host.
 
 | Mode | CPU % of whole PC | Mean summed RSS MiB | GPU 3D % | GPU decode % | Dedicated GPU MiB | Playback fps |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Same 720p water as video | 1.40 | 678 | 0.60 | 6.01 | 53 | 30.00 |
-| Same 720p water as atlas | 2.79 | 883 | 1.89 | 0.00 | 335 | 25.01 |
-| Still image | 0.09 | 605 | 0.00 | 0.00 | 53 | 0 |
-| Full 1080p scene, coffee | 2.17 | 839 | 1.99 | 10.38 | 164 | 29.97 |
-| Full 1080p scene, typing | 2.31 | 843 | 1.65 | 9.00 | 153 | 29.97 |
-| Full scene, covered and paused | 0.32 | 753 | 0.00 | 0.00 | 147 | 0 |
+| Same 720p water as video | 2.49 | 680 | 0.65 | 8.02 | 71 | 29.98 |
+| Same 720p water as atlas | 4.17 | 862 | 0.53 | 0.00 | 334 | 20.77 |
+| Still image only | 0.15 | 602 | 0.00 | 0.00 | 53 | 0 |
+| Full 1080p scene, coffee | 2.47 | 811 | 1.94 | 16.03 | 132 | 29.97 |
+| Full 1080p scene, typing | 2.80 | 824 | 3.37 | 13.73 | 122 | 29.97 |
+| Full scene, Lively pause callback | 0.36 | 784 | 0.00 | 0.00 | 156 | 0 |
 
 Video is selected because it kept 30 decoded fps and used less CPU and memory
-than the atlas. The atlas averaged about 40 ms between draws, with p95 about
-117 ms. The decoded atlas occupies substantially more memory than its PNG files;
+than the atlas. The atlas averaged about 48 ms between draws, with p95 about
+192 ms. The decoded atlas occupies substantially more memory than its PNG files;
 the browser's actual residency is reported above, rather than its theoretical
-allocation. Shared GPU memory means were 11–30 MiB across these runs.
+allocation. Shared GPU memory means were 11–25 MiB across these runs.
 
 Active measurements temporarily used `--no-observer` and Lively's fullscreen
 ignore setting because Codex covered the desktop. Both were restored before the
-paused measurement and ordinary launch. The covered run held the decoded frame
-counter at 4 throughout the interval, with video and actor scheduling paused.
+paused measurement and ordinary launch. The current desktop was not fully covered:
+that initial measurement is retained as `v4/uncovered-run.json` and explicitly
+excluded from pause evidence. The successful repeat used Lively's native pause
+callback via its CLI. It held the decoded frame counter at 22 throughout the
+interval, with video and actor scheduling paused. Earlier V3 coverage evidence
+remains archived; it is not relabeled as a new V4 coverage run.
 Pause reduces processing; it retains loaded assets and GPU allocations.
 
 RSS can double-count shared mappings. GPU columns are separate Windows engine
 counters at the current clock, not total board utilization or power. Video fps
 counts decoded frames; atlas fps counts draw submissions. Neither proves physical
-monitor presentation. There were no additional reported dropped video frames in
-the final video/full-scene measurement intervals. These are short measurements
+monitor presentation. The standalone video reported one dropped frame during its
+interval; both full-scene intervals reported zero additional drops. These are short measurements
 on this PC, not a promise of zero load or all-day performance.
 
-Evidence: [performance](evidence/resort/performance-v3.json),
-[native reactions](evidence/resort/native-reactions.json),
-[native controls](evidence/resort/native-controls.json),
-[encoded seam](evidence/resort/encoded-water-v3.json),
-[delivery hashes](evidence/resort/delivery-v3-manifest.json).
+Evidence: [performance](evidence/resort/performance-v4.json),
+[native reactions](evidence/resort/v4/native-reactions.json),
+[native controls](evidence/resort/v4/native-controls.json),
+[encoded seam](evidence/resort/encoded-water-v4.json),
+[delivery hashes](evidence/resort/delivery-v4-manifest.json),
+[source audit](evidence/resort/source-v4-audit.json),
+[verification commands](evidence/resort/validation-v4.json).
 The geometry checks cover 104 beach samples, opaque/transparent palm leaves,
-and 517 cabana depth samples. Ten editable actions and 1030 rig drivers were
+and 517 cabana depth samples against the unchanged coast/cabana geometry. Pip's
+43-bone weighted rig, 14 original actions and ten editable task actions were
 retained. Native tests used synthetic hook payloads through the real transport;
 they did not execute paid Claude tasks or real test commands.
 
 Physical Win+L/resume, exclusive fullscreen games and per-display pause/resume
 on multiple monitors remain manual checks. Native computer input was unavailable
-in this session. Primary-desktop coverage and the native Lively pause callback
-were observed and verified; do not extend that evidence to those untested cases.
+in this session. The native Lively pause callback was verified in V4. Primary
+coverage was observed in the earlier V3 delivery; current coverage geometry is
+tested with fixtures, and the desktop was not fully covered during the new run.
+Do not extend that evidence to those untested cases.
 
-![Current native Lively coffee scene](evidence/resort/done.jpg)
+![Current native Lively coffee scene](evidence/resort/v4/done.jpg)

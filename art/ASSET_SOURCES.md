@@ -17,7 +17,7 @@ the current resort. Originals downloaded on 2026-10-05 remain in the local
 [Poly Haven's asset license](https://polyhaven.com/license) covers asset files.
 Its website previews have a different license and are not used in the wallpaper.
 The source caches retain original readmes where supplied. Snow attribution is
-also retained in `wallpaper/LivelyInfo.json`.
+retained for the archived V3 source and in `wallpaper/LivelyInfo.json`.
 
 The cottage, terrace details, beach mesh, water geometry/material, foam and
 render/runtime tooling are project work. Imported asset licenses remain
@@ -29,9 +29,40 @@ applicable to those components; the code's GPL does not relabel Snow.
 were generated in Google Flow with **Nano Banana 2**, using the user's existing
 account on 2026-10-05. They guide composition, palette and character adaptation.
 They are not claimed as CC0 models. The turnaround supplies no mesh or rig:
-the rendered worker uses the credited Snow mesh and rig above. The island image
+the V3 worker used the credited Snow mesh and rig above. The island image
 is not used as a distorted water background. Flow's two sand generations failed;
 the actual sand shader uses the licensed PBR scan.
+
+## Current V4 mascot: Pip
+
+Pip is adapted from **BlueDemon**, Quaternius' [Ultimate Monsters](https://quaternius.com/packs/ultimatemonsters.html),
+released October 2022, licensed **CC0 1.0**. The official page links to the
+[author's public asset folder](https://drive.google.com/drive/folders/18m4KpzpEzhC9wl7jzr6dUc0N8Jozr79C).
+The downloaded originals are shipped in `thirdparty/quaternius-pip/`:
+`BlueDemon.blend`, `Atlas_Monsters.png`, and `License.txt`. Credit is appreciated
+but not required by CC0. The publisher's License.txt has an older “Ultimate
+Platformer Pack” heading; its CC0 dedication agrees with this pack's official
+CC0 badge. No paid source kit was purchased.
+
+Verified directly in Blender 4.5: **43 bones**, weighted arms/fingers, two leg IK
+constraints and **14 original actions**, including Walk, Wave, Idle, Yes and No.
+There are no separate ear or facial-control bones. Ten task actions are saved
+separately. Pip retains the original weighted mesh and skeleton; customization
+removes the bat and loincloth, rounds the silhouette, folds the ear tips,
+shortens the existing arm bones, adds friendly eyes/smile/nose/freckles, paints
+yellow swim shorts and brightens the skin. Walk and breathing reuse authored
+motions. Typing, inspection, coffee and permission gestures adapt the same rig.
+
+`references/pip-v4-turnaround.png` was generated using Codex's built-in image
+generator on 2026-10-05 under the user's authorization. It is a design reference,
+not a downloaded CC0 asset or an automatically generated 3D mesh. The adapted
+mesh has its own stylization; it is not claimed to reproduce every detail of the
+reference. No generated photograph is used as animated water.
+
+The earlier Snow and rejected prototype sources remain available in their
+original `.blend` files. `resort-v4.blend` contains only the current four scenes
+and packs the used model images. Antigravity located models and downloaded the
+author's palette/license; actual rig and render validation was done through MCP.
 
 ## Earlier rejected prototype
 

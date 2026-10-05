@@ -1,6 +1,8 @@
 param([ValidateSet('video','atlas','still','runtime')][string]$Format='video')
 $ErrorActionPreference='Stop'
-$app=Get-AppxPackage '*LivelyWallpaper*' | Select-Object -First 1
+. (Join-Path (Split-Path $PSScriptRoot -Parent) 'wallpaper/find-lively.ps1')
+$app=Find-ResortLively
+if(-not $app){throw 'A verified Lively Store installation is required.'}
 $actual=Join-Path $env:LOCALAPPDATA ('Packages/'+$app.PackageFamilyName+'/LocalCache/Local/Lively Wallpaper/Library/wallpapers/resort-benchmark-'+$Format)
 $alias=Join-Path $env:LOCALAPPDATA ('Lively Wallpaper/Library/wallpapers/resort-benchmark-'+$Format)
 New-Item -ItemType Directory -Force -Path $actual | Out-Null

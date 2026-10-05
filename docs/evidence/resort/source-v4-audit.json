@@ -1,0 +1,412 @@
+{
+  "source": "art/island/resort-v4.blend",
+  "sourceSha256": "a8bd6fbc50c17f3c259f1dd00eb287884e146024e250f7f710c0ccca59be9f56",
+  "scenes": [
+    "Construction_Bake",
+    "Mascot_Pip",
+    "Resort_Island",
+    "Smoke_Bake"
+  ],
+  "rigBones": 43,
+  "meshVertices": 2604,
+  "invalidConstraints": [],
+  "images": [
+    {
+      "name": "Atlas_Monsters.png",
+      "packed": true
+    },
+    {
+      "name": "boulder_01_diff",
+      "packed": true
+    },
+    {
+      "name": "boulder_01_nor_gl",
+      "packed": true
+    },
+    {
+      "name": "boulder_01_rough",
+      "packed": true
+    },
+    {
+      "name": "coast_sand_01_diff_1k.jpg",
+      "packed": true
+    },
+    {
+      "name": "coast_sand_01_disp_1k.png",
+      "packed": true
+    },
+    {
+      "name": "coast_sand_01_rough_1k.exr",
+      "packed": true
+    },
+    {
+      "name": "diffuse.png",
+      "packed": true
+    },
+    {
+      "name": "Map #1",
+      "packed": true
+    },
+    {
+      "name": "normal.png",
+      "packed": true
+    },
+    {
+      "name": "normal.tga",
+      "packed": true
+    },
+    {
+      "name": "white_stucco_diff_1k.jpg",
+      "packed": true
+    },
+    {
+      "name": "white_stucco_disp_1k.png",
+      "packed": true
+    },
+    {
+      "name": "white_stucco_rough_1k.exr",
+      "packed": true
+    },
+    {
+      "name": "wood_floor_deck_diff_1k.jpg",
+      "packed": true
+    },
+    {
+      "name": "wood_floor_deck_disp_1k.png",
+      "packed": true
+    },
+    {
+      "name": "wood_floor_deck_rough_1k.exr",
+      "packed": true
+    },
+    {
+      "name": "wooden_table_02_diff.png",
+      "packed": true
+    },
+    {
+      "name": "wooden_table_02_metal.png",
+      "packed": true
+    },
+    {
+      "name": "wooden_table_02_nor_gl.png",
+      "packed": true
+    },
+    {
+      "name": "wooden_table_02_rough.png",
+      "packed": true
+    }
+  ],
+  "actions": {
+    "Pip_Source_Death": {
+      "range": [
+        0.0,
+        23.0
+      ],
+      "retained": true
+    },
+    "Pip_Source_Duck": {
+      "range": [
+        0.0,
+        50.0
+      ],
+      "retained": true
+    },
+    "Pip_Source_HitReact": {
+      "range": [
+        0.0,
+        18.0
+      ],
+      "retained": true
+    },
+    "Pip_Source_Idle": {
+      "range": [
+        0.0,
+        30.0
+      ],
+      "retained": true
+    },
+    "Pip_Source_Jump": {
+      "range": [
+        0.0,
+        11.0
+      ],
+      "retained": true
+    },
+    "Pip_Source_Jump_Idle": {
+      "range": [
+        0.0,
+        15.0
+      ],
+      "retained": true
+    },
+    "Pip_Source_Jump_Land": {
+      "range": [
+        0.0,
+        11.0
+      ],
+      "retained": true
+    },
+    "Pip_Source_No": {
+      "range": [
+        0.0,
+        50.0
+      ],
+      "retained": true
+    },
+    "Pip_Source_Punch": {
+      "range": [
+        0.0,
+        26.0
+      ],
+      "retained": true
+    },
+    "Pip_Source_Run": {
+      "range": [
+        0.0,
+        17.0
+      ],
+      "retained": true
+    },
+    "Pip_Source_Walk": {
+      "range": [
+        0.0,
+        30.0
+      ],
+      "retained": true
+    },
+    "Pip_Source_Wave": {
+      "range": [
+        0.0,
+        50.0
+      ],
+      "retained": true
+    },
+    "Pip_Source_Weapon": {
+      "range": [
+        0.0,
+        26.0
+      ],
+      "retained": true
+    },
+    "Pip_Source_Yes": {
+      "range": [
+        0.0,
+        50.0
+      ],
+      "retained": true
+    },
+    "Resort_browsing": {
+      "range": [
+        1.0,
+        16.0
+      ],
+      "retained": true
+    },
+    "Resort_done": {
+      "range": [
+        1.0,
+        16.0
+      ],
+      "retained": true
+    },
+    "Resort_editing": {
+      "range": [
+        1.0,
+        16.0
+      ],
+      "retained": true
+    },
+    "Resort_failed": {
+      "range": [
+        1.0,
+        16.0
+      ],
+      "retained": true
+    },
+    "Resort_idle": {
+      "range": [
+        1.0,
+        16.0
+      ],
+      "retained": true
+    },
+    "Resort_permission": {
+      "range": [
+        1.0,
+        16.0
+      ],
+      "retained": true
+    },
+    "Resort_Pip_browsing": {
+      "range": [
+        1.0,
+        17.0
+      ],
+      "retained": true
+    },
+    "Resort_Pip_done": {
+      "range": [
+        1.0,
+        17.0
+      ],
+      "retained": true
+    },
+    "Resort_Pip_editing": {
+      "range": [
+        1.0,
+        17.0
+      ],
+      "retained": true
+    },
+    "Resort_Pip_failed": {
+      "range": [
+        1.0,
+        17.0
+      ],
+      "retained": true
+    },
+    "Resort_Pip_idle": {
+      "range": [
+        1.0,
+        17.0
+      ],
+      "retained": true
+    },
+    "Resort_Pip_permission": {
+      "range": [
+        1.0,
+        17.0
+      ],
+      "retained": true
+    },
+    "Resort_Pip_starting": {
+      "range": [
+        1.0,
+        17.0
+      ],
+      "retained": true
+    },
+    "Resort_Pip_testing": {
+      "range": [
+        1.0,
+        17.0
+      ],
+      "retained": true
+    },
+    "Resort_Pip_walk": {
+      "range": [
+        1.0,
+        17.0
+      ],
+      "retained": true
+    },
+    "Resort_Pip_working": {
+      "range": [
+        1.0,
+        17.0
+      ],
+      "retained": true
+    },
+    "Resort_starting": {
+      "range": [
+        1.0,
+        16.0
+      ],
+      "retained": true
+    },
+    "Resort_testing": {
+      "range": [
+        1.0,
+        16.0
+      ],
+      "retained": true
+    },
+    "Resort_working": {
+      "range": [
+        1.0,
+        16.0
+      ],
+      "retained": true
+    },
+    "Root.001|Root|0.Targeting Pose": {
+      "range": [
+        1.0,
+        2.0
+      ],
+      "retained": true
+    },
+    "Root.001|Root|Run": {
+      "range": [
+        1.0,
+        17.0
+      ],
+      "retained": true
+    },
+    "Root|Root|0.Targeting Pose": {
+      "range": [
+        1.0,
+        2.0
+      ],
+      "retained": true
+    },
+    "Root|Root|0.Targeting Pose.001": {
+      "range": [
+        1.0,
+        2.0
+      ],
+      "retained": true
+    },
+    "Root|Root|0.Targeting Pose.002": {
+      "range": [
+        1.0,
+        2.0
+      ],
+      "retained": true
+    },
+    "Root|Root|0.Targeting Pose.003": {
+      "range": [
+        1.0,
+        2.0
+      ],
+      "retained": true
+    },
+    "Root|Root|Run": {
+      "range": [
+        1.0,
+        17.0
+      ],
+      "retained": true
+    },
+    "Root|Root|Run.001": {
+      "range": [
+        1.0,
+        17.0
+      ],
+      "retained": true
+    },
+    "Root|Root|Run.002": {
+      "range": [
+        1.0,
+        17.0
+      ],
+      "retained": true
+    },
+    "Root|Root|Run.003": {
+      "range": [
+        1.0,
+        17.0
+      ],
+      "retained": true
+    }
+  },
+  "walkSpeedMetresPerSecond": 0.4992,
+  "plantedFootWorldY": [
+    -0.2285425879716873,
+    -0.22854259324073792,
+    -0.22854259076118463,
+    -0.22854257278442378
+  ],
+  "plantedFootMaxDriftMetres": 2.045631414260285e-08,
+  "permissionWristHeight": 2.512303352355957,
+  "gestureSurvivesFrameEvaluation": true
+}

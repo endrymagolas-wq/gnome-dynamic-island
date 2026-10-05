@@ -142,7 +142,9 @@
       "browsing",
       "working"
     ],
-    "source": "Adapted Snow v2, Blender Foundation, CC-BY-4.0"
+    "walkSpeed": 0.4992,
+    "source": "Pip adapted from Quaternius BlueDemon, Ultimate Monsters, CC0-1.0",
+    "reference": "art/references/pip-v4-turnaround.png"
   },
   "construction": {
     "width": 160,
@@ -151,7 +153,7 @@
     "x": 1214.0925979614258,
     "y": 636.3126540184021,
     "depth": 23.51007652282715,
-    "ppm": 64,
+    "ppm": 64.0,
     "anchorX": 80.0,
     "anchorY": 116.04829788208008,
     "depthAtlas": "construction-depth.png",
@@ -166,7 +168,7 @@
     "columns": 6,
     "ppm": 102.4,
     "anchorX": 128.0,
-    "anchorY": 185.6772216796875,
+    "anchorY": 185.67727661132812,
     "worldOrigin": [
       3.1,
       -0.15,

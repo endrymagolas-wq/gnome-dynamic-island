@@ -8,7 +8,8 @@ if (-not (Test-NetConnection 127.0.0.1 -Port 18765 -InformationLevel Quiet -Warn
     Start-Process -FilePath $pythonExe -ArgumentList ('"' + (Join-Path $PSScriptRoot 'server.py') + '"') -WorkingDirectory $projectRoot -WindowStyle Hidden -RedirectStandardOutput (Join-Path $islandState 'server.log') -RedirectStandardError (Join-Path $islandState 'server-error.log')
 }
 if ($InstallHooks) { & $pythonExe (Join-Path $projectRoot 'assistant/claude_hook.py') --install }
-$livelyApp = Get-AppxPackage '*LivelyWallpaper*' | Select-Object -First 1
+. (Join-Path $PSScriptRoot 'find-lively.ps1')
+$livelyApp = Find-ResortLively
 if (-not $livelyApp) { throw 'Install Lively Wallpaper from its official Microsoft Store page first.' }
 $livelyExe = Join-Path $livelyApp.InstallLocation 'Build/Lively.exe'
 $livelyCli = Join-Path $islandState 'lively-cli/Livelycu.exe'

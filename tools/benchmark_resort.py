@@ -7,7 +7,7 @@ p=argparse.ArgumentParser();p.add_argument('label');p.add_argument('--seconds',t
 # before discovering its process tree and taking the first playback snapshot.
 time.sleep(5)
 expected='atlas' if a.label.startswith('atlas') else 'still' if a.label.startswith('still') else 'video'
-expectedState='editing' if a.label=='runtime-v3-editing' else 'done' if a.label=='runtime-v3-coffee' else None
+expectedState='editing' if a.label.startswith('runtime') and a.label.endswith('-editing') else 'done' if a.label.startswith('runtime') and a.label.endswith('-coffee') else None
 for attempt in range(25):
     try:
         status=json.load(urllib.request.urlopen('http://127.0.0.1:18765/bench-metrics',timeout=1))
@@ -39,10 +39,16 @@ c0,_=totals();start=time.monotonic();rss=[]
 for _ in range(a.seconds):time.sleep(1);rss.append(totals()[1])
 c1,_=totals();elapsed=time.monotonic()-start
 gpuExit=gpuProc.wait(timeout=15)
+assert gpuExit==0,'GPU collection failed; discard this run'
+gpu=json.loads(gpuFile.read_text(encoding='utf-8-sig'))
+assert len(gpu['samples'])>=a.seconds-1 and all(row.get('invalidTargetSamples',0)==0 for row in gpu['samples']),'Invalid GPU counters; discard this run'
 try:playback=json.load(urllib.request.urlopen('http://127.0.0.1:18765/bench-metrics',timeout=1))
 except OSError:playback={}
 assert root.is_running() and playback.get('format')==playbackBefore.get('format') and ('state' in playback)==('state' in playbackBefore),'Player changed while measuring; discard this run'
 assert expectedState is None or playback.get('state')==expectedState,'Task state changed during measurement; discard this run'
+if a.label.endswith('-paused'):
+    assert playbackBefore.get('paused') and playback.get('paused') and playbackBefore.get('videoPaused') and playback.get('videoPaused'),'Playback was not paused; discard this run'
+    assert playbackBefore.get('totalVideoFrames')==playback.get('totalVideoFrames'),'Frames advanced while paused; discard this run'
 playbackSeconds=playback.get('clock',0)-playbackBefore.get('clock',0)
 observedFps=((playback.get('totalVideoFrames',0)-playbackBefore.get('totalVideoFrames',0)) if playback.get('format')=='video' else (playback.get('frames',0)-playbackBefore.get('frames',0)))/playbackSeconds if playbackSeconds>0 else 0
 assert observedFps>=0,'Player changed while measuring; discard this run'

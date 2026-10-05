@@ -1,0 +1,61 @@
+{
+  "recordedAt": "2026-10-05T15:32:17.304935+00:00",
+  "checks": [
+    {
+      "command": "C:\\Users\\andri\\AppData\\Local\\Programs\\Python\\Python313\\python.exe tests/check_claude.py",
+      "exit": 0,
+      "output": "Claude hooks installed: C:\\Users\\andri\\AppData\\Local\\Temp\\tmpxyq9f_hh\\settings.json\nClaude hooks installed: C:\\Users\\andri\\AppData\\Local\\Temp\\tmpxyq9f_hh\\settings.json\nPASS Claude hook events, test failures, settings merge/idempotency and unavailable desktop\n"
+    },
+    {
+      "command": "C:\\Users\\andri\\AppData\\Local\\Programs\\Python\\Python313\\python.exe tests/check_resort_host.py",
+      "exit": 0,
+      "output": "PASS loopback host, authenticated events, priority expiry, multiwindow coverage and path containment\n"
+    },
+    {
+      "command": "node tests/cartoon-island.mjs",
+      "exit": 0,
+      "output": "PASS resort registration/routes, sprite bounds/baking, idle/covered/reduced-motion policy, floor cap, expiry and monitor fitting\nPASS baked water indexing, bank bounds and exact 6-second wrap\nPASS work-area clipping for maximized-window water pause\n"
+    },
+    {
+      "command": "node tests/resort-scene.mjs",
+      "exit": 0,
+      "output": "PASS Blender camera registration, all state routes, construction cap and event deduplication\nPASS construction and smoke registration after the camera change\nPASS 104 walk-surface samples against the actual Blender mesh\n"
+    },
+    {
+      "command": "C:\\Users\\andri\\AppData\\Local\\Programs\\Python\\Python313\\python.exe tests/check_resort_depth.py",
+      "exit": 0,
+      "output": "PASS rendered beach depth registration and neutral matte exposure\n"
+    },
+    {
+      "command": "C:\\Users\\andri\\AppData\\Local\\Programs\\Python\\Python313\\python.exe tests/check_resort_construction_depth.py",
+      "exit": 0,
+      "output": "PASS 517 shipped cabana depth samples against original 3D geometry\n"
+    },
+    {
+      "command": "C:\\Users\\andri\\AppData\\Local\\Programs\\Python\\Python313\\python.exe tools/check_resort_water.py",
+      "exit": 0,
+      "output": "{\"water-1080.mp4\": {\"width\": 1920, \"height\": 1080, \"r_frame_rate\": \"30/1\", \"duration\": \"12.000000\", \"nb_read_frames\": \"360\", \"sha256\": \"85b21303e8c323d57c29bae7d624603e6b2ccdffa664d54d3a7c7ee1b4283ed3\", \"firstStepMAE\": 1.9384611304012347, \"lastStepMAE\": 1.5860038901748972, \"seamMAE\": 1.932750932355967}, \"water-720.mp4\": {\"width\": 1280, \"height\": 720, \"r_frame_rate\": \"30/1\", \"duration\": \"12.000000\", \"nb_read_frames\": \"360\", \"sha256\": \"081fb67aef5c6670bad5e2ccf723ded00c848cfeb15c53d449dd66a863f61128\", \"firstStepMAE\": 2.172474681712963, \"lastStepMAE\": 1.8079231770833335, \"seamMAE\": 2.1660915798611113}, \"method\": \"Full FFprobe decode count and encoded RGB MAE (0-255), boundary versus adjacent 30fps steps. Numeric continuity is supplemented by the visible water review.\"}\n"
+    },
+    {
+      "command": "node --check wallpaper/player.js",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "command": "C:\\Users\\andri\\AppData\\Local\\Programs\\Python\\Python313\\python.exe -m compileall -q assistant wallpaper tools art/island",
+      "exit": 0,
+      "output": ""
+    }
+  ],
+  "spriteCells": 272,
+  "clippedSpriteCells": 0,
+  "sourceAuditMatchesSavedBlend": true,
+  "assets": {
+    "character.png": "b89ebbc51fb8660570cacbd70bd5655f095b343b86d9ad573b50a9efd590a924",
+    "depth.png": "acbb924d6a94e12d3d01e2fee5f339453dab56f70c25b2e70bcec7b88cd141e3",
+    "scene.json": "9a1a312dd8ff39049f574e63776cee5d80829745b514f751d2f56e22adabc141",
+    "static.png": "6d48fdd4b7aad32754db00d8d4a03d0e8cc22e2d3afffedc554f2c0fb62d6827",
+    "water-1080.mp4": "85b21303e8c323d57c29bae7d624603e6b2ccdffa664d54d3a7c7ee1b4283ed3"
+  },
+  "limits": "Physical Win+L/resume, exclusive fullscreen and multiple displays remain manual. The unchanged Windows os.getuid baseline failure is recorded in windows-baseline-v3.json."
+}

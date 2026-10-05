@@ -2,7 +2,7 @@
 import argparse,json,subprocess,tempfile,os
 from pathlib import Path
 from PIL import Image,ImageChops,ImageStat
-ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'wallpaper/assets'
+ROOT=Path(__file__).resolve().parents[1];OUT=Path(os.environ.get('RESORT_RENDER_OUT',ROOT/'wallpaper/assets'))
 def atlas():
     im=Image.new('RGBA',(2048,2880))
     for row in range(17):

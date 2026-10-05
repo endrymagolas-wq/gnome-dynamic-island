@@ -31,8 +31,9 @@ export class SceneModel{
     this.path.push([...t]);return true;
   }
   step(dt){
-    // Match the baked 0.6m local stance travel × 0.78 actor scale per second.
-    this.time+=Math.min(.1,dt);let budget=Math.max(0,Math.min(.1,dt))*.468;
+    // Each offline rig supplies its measured stride; preserve legacy Snow speed.
+    const speed=this.meta.character?.walkSpeed??.468;
+    this.time+=Math.min(.1,dt);let budget=Math.max(0,Math.min(.1,dt))*speed;
     while(this.path.length&&budget>0){const t=this.path[0],dx=t[0]-this.position[0],dy=t[1]-this.position[1],d=Math.hypot(dx,dy);
       if(d<.001){this.position=[...t];this.path.shift();continue;}this.heading=Math.atan2(dy,dx);
       const v=Math.min(budget,d);this.position[0]+=dx/d*v;this.position[1]+=dy/d*v;this.position[2]=groundHeight(this.position[0],this.position[1],this.meta);budget-=v;if(v===d){this.position=[...t];this.path.shift();}

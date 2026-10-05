@@ -1,10 +1,11 @@
 """Check exported depth against clear, known beach points, including exposure."""
-import json, math, sys
+import json, math, sys, os
 from pathlib import Path
 from PIL import Image
 root=Path(__file__).resolve().parents[1]
-meta=json.loads((root/('wallpaper/assets/scene-v2.json' if '--v3' in sys.argv else 'wallpaper/assets/scene.json')).read_text())
-image=Image.open(root/('wallpaper/assets/depth-v3.png' if '--v3' in sys.argv else 'wallpaper/assets/depth.png')).convert('RGB')
+assets=Path(os.environ.get('RESORT_TEST_ASSETS',root/'wallpaper/assets'))
+meta=json.loads((assets/('scene-v2.json' if '--v3' in sys.argv else 'scene.json')).read_text())
+image=Image.open(assets/('depth-v3.png' if '--v3' in sys.argv else 'depth.png')).convert('RGB')
 camera=meta['camera'];matrix=camera['matrixWorld'];f=meta['width']*camera['lens']/camera['sensor']
 for point in [(0,-3,.43),(-1,-2.8,.43),(1,-3,.43)]:
     delta=[point[i]-camera['location'][i] for i in range(3)]

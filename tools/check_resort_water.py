@@ -1,11 +1,12 @@
 """Decode shipped loops and compare the actual encoded boundary to adjacent steps."""
-import json,subprocess,tempfile,hashlib
+import json,subprocess,tempfile,hashlib,os
 from pathlib import Path
 from PIL import Image,ImageChops,ImageStat
 root=Path(__file__).resolve().parents[1]
+assets=Path(os.environ.get('RESORT_TEST_ASSETS',root/'wallpaper/assets'))
 report={}
 for name in ('water-1080.mp4','water-720.mp4'):
-    path=root/'wallpaper/assets'/name
+    path=assets/name
     probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-count_frames','-select_streams','v:0','-show_entries','stream=width,height,r_frame_rate,nb_read_frames,duration','-of','json',str(path)]))['streams'][0]
     assert int(probe['nb_read_frames'])==360 and probe['r_frame_rate']=='30/1' and abs(float(probe['duration'])-12)<.001,probe
     with tempfile.TemporaryDirectory(prefix='resort-seam-') as td:
@@ -16,5 +17,5 @@ for name in ('water-1080.mp4','water-720.mp4'):
         assert seam<max(first,last)*1.5,(name,first,last,seam)
         report[name]={**probe,'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'firstStepMAE':first,'lastStepMAE':last,'seamMAE':seam}
 report['method']='Full FFprobe decode count and encoded RGB MAE (0-255), boundary versus adjacent 30fps steps. Numeric continuity is supplemented by the visible water review.'
-(root/'docs/evidence/resort/encoded-water-v3.json').write_text(json.dumps(report,indent=2))
+(root/'docs/evidence/resort'/os.environ.get('RESORT_WATER_REPORT','encoded-water-v3.json')).write_text(json.dumps(report,indent=2))
 print(json.dumps(report))

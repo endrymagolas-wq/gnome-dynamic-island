@@ -1,9 +1,9 @@
 """Separate build-time volumetric smoke loop; no volumetrics at runtime."""
-import bpy,math,json
+import bpy,math,json,os
 from pathlib import Path
 from mathutils import Vector
 from bpy_extras.object_utils import world_to_camera_view
-ROOT=Path(__file__).resolve().parents[2];OUT=ROOT/'wallpaper/assets'
+ROOT=Path(__file__).resolve().parents[2];OUT=Path(os.environ.get('RESORT_RENDER_OUT',ROOT/'wallpaper/assets'))
 s=bpy.data.scenes.get('Smoke_Bake') or bpy.data.scenes.new('Smoke_Bake');bpy.context.window.scene=s
 for o in list(s.objects):
         if len(o.users_scene)>1:
@@ -11,6 +11,7 @@ for o in list(s.objects):
                 if c in list(s.collection.children) or c==s.collection:c.objects.unlink(o)
         else:bpy.data.objects.remove(o,do_unlink=True)
 source=bpy.data.scenes['Resort_Island'];s.world=source.world;s.view_settings.exposure=source.view_settings.exposure
+s.view_settings.view_transform=source.view_settings.view_transform;s.view_settings.look=source.view_settings.look
 for o in source.objects:
     if o.type=='LIGHT':
         lamp=o.copy();lamp.data=o.data.copy();s.collection.objects.link(lamp)
@@ -30,6 +31,6 @@ for frame in range(24):
         phase=(frame/24+i/3)%1;o.location=(.08*math.sin(phase*math.tau+i),0,.1+phase*1.1);size=.12+phase*.25;o.scale=(size,size,size*1.2);density.inputs[1].default_value=math.sin(phase*math.pi)*1.0
     s.render.filepath=str(folder/f'{frame:02}.png');bpy.ops.render.render(write_still=True)
 foot=world_to_camera_view(s,cam,Vector((0,0,0)))
-metadata=OUT/('scene-v2.json' if Path(bpy.data.filepath).name=='resort-v2.blend' else 'scene.json')
+metadata=OUT/('scene-v2.json' if os.environ.get('RESORT_RENDER_OUT') or Path(bpy.data.filepath).name=='resort-v2.blend' else 'scene.json')
 meta=json.loads(metadata.read_text());meta['smoke']={'width':256,'height':256,'frames':24,'fps':12,'columns':6,'ppm':256/2.5,'anchorX':foot.x*256,'anchorY':(1-foot.y)*256,'worldOrigin':[3.1,-.15,1.65]};metadata.write_text(json.dumps(meta,indent=2));bpy.context.window.scene=source;bpy.ops.wm.save_as_mainfile(filepath=bpy.data.filepath,compress=True)
 result={'smokeFrames':24}

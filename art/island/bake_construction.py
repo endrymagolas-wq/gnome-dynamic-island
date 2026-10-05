@@ -1,8 +1,8 @@
-import bpy,json,math
+import bpy,json,math,os
 from pathlib import Path
 from mathutils import Vector
 from bpy_extras.object_utils import world_to_camera_view
-ROOT=Path(__file__).resolve().parents[2];OUT=ROOT/'wallpaper/assets'
+ROOT=Path(__file__).resolve().parents[2];OUT=Path(os.environ.get('RESORT_RENDER_OUT',ROOT/'wallpaper/assets'))
 s=bpy.data.scenes.get('Construction_Bake') or bpy.data.scenes.new('Construction_Bake');bpy.context.window.scene=s
 for o in list(s.objects):
         if len(o.users_scene)>1:
@@ -10,6 +10,7 @@ for o in list(s.objects):
                 if c in list(s.collection.children) or c==s.collection:c.objects.unlink(o)
         else:bpy.data.objects.remove(o,do_unlink=True)
 source=bpy.data.scenes['Resort_Island'];s.world=source.world;s.view_settings.exposure=source.view_settings.exposure
+s.view_settings.view_transform=source.view_settings.view_transform;s.view_settings.look=source.view_settings.look
 for o in source.objects:
     if o.type=='LIGHT':
         lamp=o.copy();lamp.data=o.data.copy();s.collection.objects.link(lamp)
@@ -32,7 +33,7 @@ for stage in range(5):
     s.render.filepath=str(OUT/f'construction-{stage}.png');bpy.ops.render.render(write_still=True)
 p=world_to_camera_view(source,source.camera,Vector((2.8,.3,.43)))
 foot=world_to_camera_view(s,camera,Vector((0,0,0)))
-metadata=OUT/('scene-v2.json' if Path(bpy.data.filepath).name=='resort-v2.blend' else 'scene.json')
+metadata=OUT/('scene-v2.json' if os.environ.get('RESORT_RENDER_OUT') or Path(bpy.data.filepath).name=='resort-v2.blend' else 'scene.json')
 meta=json.loads(metadata.read_text());meta['construction']={'width':160,'height':160,'atlasY':2720,'x':p.x*1920,'y':(1-p.y)*1080,'depth':p.z,'ppm':160/2.5,'anchorX':foot.x*160,'anchorY':(1-foot.y)*160};metadata.write_text(json.dumps(meta,indent=2))
 bpy.context.window.scene=source
 bpy.ops.wm.save_as_mainfile(filepath=bpy.data.filepath,compress=True)
