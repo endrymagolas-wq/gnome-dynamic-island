@@ -8,7 +8,7 @@
     <Nullable>enable</Nullable>
     <AssemblyName>IslandDesktop</AssemblyName>
     <RootNamespace>Island.Windows</RootNamespace>
-    <Version>0.4.0</Version>
+    <Version>0.4.0-beta.2</Version>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
   </PropertyGroup>
