@@ -1,0 +1,45 @@
+{
+  "label": "video-v3-720",
+  "gpuCounterExit": 0,
+  "seconds": 30.02669160000005,
+  "cpuPercentWholePC": 1.4017476287663984,
+  "cpuPercentOneCore": 22.427962060262374,
+  "meanRssMiB": 678.4920572916667,
+  "peakRssMiB": 693.12109375,
+  "pids": [
+    44612,
+    11376,
+    1624,
+    43508,
+    42316,
+    31484,
+    17960,
+    37448,
+    3092
+  ],
+  "hostPids": [
+    3092
+  ],
+  "playbackBefore": {
+    "format": "video",
+    "clock": 4.967599999999996,
+    "frames": 150,
+    "totalVideoFrames": 153,
+    "droppedVideoFrames": 0,
+    "meanFrameMs": 33.339597315436244,
+    "p95FrameMs": 33.5,
+    "paused": false
+  },
+  "playback": {
+    "format": "video",
+    "clock": 37.967799999999905,
+    "frames": 1140,
+    "totalVideoFrames": 1143,
+    "droppedVideoFrames": 0,
+    "meanFrameMs": 33.33432835820896,
+    "p95FrameMs": 33.5,
+    "paused": false
+  },
+  "observedPlaybackFps": 29.999818182920187,
+  "scope": "Lively WebView2 wrapper/descendants, Lively core, and loopback event host. RSS sums shared mappings. Video fps counts decoded frames; atlas fps counts rAF draw submissions, not physical display presents. GPU/VRAM are Windows per-process counters."
+}

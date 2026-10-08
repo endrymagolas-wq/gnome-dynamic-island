@@ -1,0 +1,23 @@
+<!doctype html><meta charset="utf-8"><title>Bake resort sprites</title><canvas id="atlas" width="1280" height="2084"></canvas>
+<script type="module">
+import {drawAtlasCharacter,drawAtlasCabana} from '../extensions/cartoon-island@avalon.local/scene-3d.js';
+import {POSES,ATLAS} from '../extensions/cartoon-island@avalon.local/resort-layout.js';
+const canvas=document.querySelector('canvas'),c=canvas.getContext('2d');
+for(let row=0;row<17;row++)for(let frame=0;frame<8;frame++){
+ c.save();c.translate(frame*80,row*100);c.beginPath();c.rect(0,0,80,100);c.clip();
+ drawAtlasCharacter(c,row<8?'working':POSES[row-8],frame,row<8?row/8*Math.PI*2:null);c.restore();
+}
+const ellipse=(x,y,rx,ry,color)=>{c.beginPath();c.ellipse(x,y,rx,ry,0,0,Math.PI*2);c.fillStyle=color;c.fill();};
+const poly=(points,color)=>{c.beginPath();c.moveTo(...points[0]);for(const p of points.slice(1))c.lineTo(...p);c.closePath();c.fillStyle=color;c.fill();};
+for(let frame=0;frame<8;frame++){
+ c.save();c.translate(frame*160,1700);
+ for(let i=0;i<4;i++){const phase=frame/8*Math.PI*2,x=22+i*30+Math.sin(phase+i)*7,y=34+(i%2)*24;
+ c.beginPath();c.moveTo(x,y);c.quadraticCurveTo(x+12,y-2,x+25,y);c.strokeStyle=`rgba(240,255,235,${.05+.08*(.5+.5*Math.sin(phase+i))})`;c.lineWidth=1.5;c.stroke();}
+ c.restore();
+ c.save();c.translate(frame*160,1828);
+ for(let i=0;i<5;i++){const rise=(frame/8+i*.18)%1;ellipse(75+Math.sin(frame+i)*8,103-rise*80,8+rise*12,10+rise*15,`rgba(105,111,116,${.5*(1-rise)})`);}
+ c.restore();
+}
+for(let stage=0;stage<5;stage++){c.save();c.translate(stage*160,1956);drawAtlasCabana(c,stage);c.restore();}
+window.atlasReady=true;
+</script>

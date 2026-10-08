@@ -1,0 +1,99 @@
+{
+  "label": "runtime-v6-transition",
+  "gpuCounterExit": 0,
+  "seconds": 30.215271599998232,
+  "cpuPercentWholePC": 4.017396247730804,
+  "cpuPercentOneCore": 64.27833996369286,
+  "meanRssMiB": 993.3712239583333,
+  "peakRssMiB": 1010.21484375,
+  "pids": [
+    57400,
+    55556,
+    24068,
+    19684,
+    63964,
+    39316,
+    20412,
+    52844,
+    45884
+  ],
+  "hostPids": [
+    45884
+  ],
+  "playbackBefore": {
+    "format": "video",
+    "clock": 31.00189999999851,
+    "totalVideoFrames": 926,
+    "droppedVideoFrames": 2,
+    "paused": false,
+    "videoPaused": false,
+    "videoWidth": 1920,
+    "videoHeight": 1080,
+    "state": "idle",
+    "stage": 0,
+    "position": [
+      -0.61,
+      -2.12,
+      0.64
+    ],
+    "seated": true,
+    "transition": null,
+    "ambient": "yawn",
+    "actorRect": [
+      1920,
+      1920,
+      128,
+      160
+    ],
+    "restTime": 30.998100000000022,
+    "actorVisiblePixels": 12093,
+    "lighting": {
+      "mode": "auto",
+      "a": "morning",
+      "b": "day",
+      "mix": 0.5,
+      "decoderCount": 2,
+      "clockDelta": 0.03062900000000024
+    },
+    "smokeVisiblePixels": 0
+  },
+  "playback": {
+    "format": "video",
+    "clock": 61.002,
+    "totalVideoFrames": 1824,
+    "droppedVideoFrames": 2,
+    "paused": false,
+    "videoPaused": false,
+    "videoWidth": 1920,
+    "videoHeight": 1080,
+    "state": "idle",
+    "stage": 0,
+    "position": [
+      -0.61,
+      -2.12,
+      0.64
+    ],
+    "seated": true,
+    "transition": null,
+    "ambient": "drink",
+    "actorRect": [
+      0,
+      160,
+      128,
+      160
+    ],
+    "restTime": 19.003599999999594,
+    "actorVisiblePixels": 12085,
+    "lighting": {
+      "mode": "auto",
+      "a": "morning",
+      "b": "day",
+      "mix": 0.5,
+      "decoderCount": 2,
+      "clockDelta": 0.021418999999999966
+    },
+    "smokeVisiblePixels": 0
+  },
+  "observedPlaybackFps": 29.93323355588666,
+  "scope": "Lively WebView2 wrapper/descendants, Lively core, and loopback event host. RSS sums shared mappings. Video fps counts decoded frames; atlas fps counts rAF draw submissions, not physical display presents. GPU/VRAM are Windows per-process counters."
+}

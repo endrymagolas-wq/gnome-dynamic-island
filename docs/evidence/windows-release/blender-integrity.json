@@ -1,0 +1,145 @@
+{
+  "scope": "Frozen public project copies only; compressed file reopening compared against the sanitized uncompressed semantic fingerprint. Live sources were not edited.",
+  "files": [
+    {
+      "file": "resort-v2.blend",
+      "artifactSHA256": "121212a930f222796cbf47389b899a6b43ab2f481608801a3a6f28442e99cc8e",
+      "bytes": 81867107,
+      "semanticBeforeSHA256": "64787510ed9f5bb3c60f945d6da4eabc6bf7b49d75449c215f19316331aaa73d",
+      "semanticAfterSHA256": "64787510ed9f5bb3c60f945d6da4eabc6bf7b49d75449c215f19316331aaa73d",
+      "semanticIntegrityMatch": true,
+      "uncompressedPersonalPaths": 0,
+      "counts": {
+        "meshes": 844,
+        "objects": 966,
+        "rigs": 3,
+        "actions": 59,
+        "images": 46,
+        "cameras": 6,
+        "materials": 59,
+        "scenes": 6
+      },
+      "underGitHub100MiB": true
+    },
+    {
+      "file": "resort-v4.blend",
+      "artifactSHA256": "3bd5fcd1a096dcd5c461b957c1436fddb3fe5b0570ff963c68b1be61b04d3b17",
+      "bytes": 38938193,
+      "semanticBeforeSHA256": "63d16e1a88d8f14ac520d015968fd000e41caa2294a74ed19465261077136925",
+      "semanticAfterSHA256": "63d16e1a88d8f14ac520d015968fd000e41caa2294a74ed19465261077136925",
+      "semanticIntegrityMatch": true,
+      "uncompressedPersonalPaths": 0,
+      "counts": {
+        "meshes": 799,
+        "objects": 907,
+        "rigs": 1,
+        "actions": 43,
+        "images": 21,
+        "cameras": 4,
+        "materials": 49,
+        "scenes": 4
+      },
+      "underGitHub100MiB": true
+    },
+    {
+      "file": "resort-v5.blend",
+      "artifactSHA256": "b8b65911c520e4778365407954433ceb90b73fd261df14041939c070c497d570",
+      "bytes": 41268089,
+      "semanticBeforeSHA256": "2a777bd54e4105c504ec6e8f80b758c2a9d2357e6e0a260c57189e7a68abb698",
+      "semanticAfterSHA256": "2a777bd54e4105c504ec6e8f80b758c2a9d2357e6e0a260c57189e7a68abb698",
+      "semanticIntegrityMatch": true,
+      "uncompressedPersonalPaths": 0,
+      "counts": {
+        "meshes": 800,
+        "objects": 910,
+        "rigs": 2,
+        "actions": 43,
+        "images": 23,
+        "cameras": 4,
+        "materials": 50,
+        "scenes": 4
+      },
+      "underGitHub100MiB": true
+    },
+    {
+      "file": "resort-v6.blend",
+      "artifactSHA256": "bc3f2d5612cf5b21eefb1cf44f394ace580741bf1ba4135d6a1b42ae0772f5da",
+      "bytes": 41434178,
+      "semanticBeforeSHA256": "cf9f8700961ca0fcf6b0e05a6c929ca5ee96d5e71baf22614181a8633bdfdb61",
+      "semanticAfterSHA256": "cf9f8700961ca0fcf6b0e05a6c929ca5ee96d5e71baf22614181a8633bdfdb61",
+      "semanticIntegrityMatch": true,
+      "uncompressedPersonalPaths": 0,
+      "counts": {
+        "meshes": 800,
+        "objects": 910,
+        "rigs": 2,
+        "actions": 48,
+        "images": 23,
+        "cameras": 4,
+        "materials": 50,
+        "scenes": 4
+      },
+      "underGitHub100MiB": true
+    },
+    {
+      "file": "resort-v7-actions.blend",
+      "artifactSHA256": "44bff6ae9f08731dbd10ade7fdedf6049ce2ac8bc596c7bad86f9e3f83fd2335",
+      "bytes": 41696614,
+      "semanticBeforeSHA256": "2c466e40b4fe5cc8617448cf224a5cb7b2e86c86a5734bf8f5a51fe707238d28",
+      "semanticAfterSHA256": "2c466e40b4fe5cc8617448cf224a5cb7b2e86c86a5734bf8f5a51fe707238d28",
+      "semanticIntegrityMatch": true,
+      "uncompressedPersonalPaths": 0,
+      "counts": {
+        "meshes": 803,
+        "objects": 919,
+        "rigs": 2,
+        "actions": 136,
+        "images": 23,
+        "cameras": 4,
+        "materials": 53,
+        "scenes": 4
+      },
+      "underGitHub100MiB": true
+    },
+    {
+      "file": "resort-v7.blend",
+      "artifactSHA256": "4373e2235f290b89450b815326569a5656245740ab183179dd7f834e528c02f0",
+      "bytes": 41466641,
+      "semanticBeforeSHA256": "57210dd3a0e85ac3601477cf232a8aea64d10cb1c6e6e7453f29ceb4801ca9b9",
+      "semanticAfterSHA256": "57210dd3a0e85ac3601477cf232a8aea64d10cb1c6e6e7453f29ceb4801ca9b9",
+      "semanticIntegrityMatch": true,
+      "uncompressedPersonalPaths": 0,
+      "counts": {
+        "meshes": 834,
+        "objects": 947,
+        "rigs": 2,
+        "actions": 48,
+        "images": 23,
+        "cameras": 4,
+        "materials": 57,
+        "scenes": 4
+      },
+      "underGitHub100MiB": true
+    },
+    {
+      "file": "resort.blend",
+      "artifactSHA256": "d61148d77dea47deec9c854b1d4123b46807086fde33de2ff57ae08fc2ec8778",
+      "bytes": 2088539,
+      "semanticBeforeSHA256": "63d878157e76158f44524a7839f503e460987a3d9d9549e46efc634928ed3d92",
+      "semanticAfterSHA256": "63d878157e76158f44524a7839f503e460987a3d9d9549e46efc634928ed3d92",
+      "semanticIntegrityMatch": true,
+      "uncompressedPersonalPaths": 0,
+      "counts": {
+        "meshes": 358,
+        "objects": 398,
+        "rigs": 1,
+        "actions": 19,
+        "images": 3,
+        "cameras": 5,
+        "materials": 21,
+        "scenes": 5
+      },
+      "underGitHub100MiB": true
+    }
+  ]
+}

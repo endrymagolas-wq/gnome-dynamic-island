@@ -1,0 +1,5 @@
+# Preserve the upstream legal text, including its original Markdown hard breaks.
+art/thirdparty/pip-sf3d/GENERATOR-LICENSE.md text eol=lf whitespace=-blank-at-eol
+
+# Preserve the downloaded SDK terms byte for byte.
+windows/licenses/Microsoft-Windows-SDK-LICENSE.rtf binary

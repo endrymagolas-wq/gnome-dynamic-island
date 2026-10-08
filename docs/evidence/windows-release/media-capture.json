@@ -1,0 +1,515 @@
+{
+  "status": "PASS",
+  "frames": 1650,
+  "fps": 30,
+  "duration": 55,
+  "kind": "Recorded frames from shipped wallpaper renderer with scripted preview states; actual native WPF panel snapshots",
+  "segments": [
+    {
+      "title": "Island Desktop for Windows",
+      "actors": [
+        {
+          "key": "claude",
+          "state": "idle",
+          "position": [
+            -3.1,
+            -2.32,
+            0.6599999999999999
+          ],
+          "activity": "sit",
+          "activityTime": 4.999999999999992,
+          "clip": "drink",
+          "visiblePixels": 10578,
+          "moving": false,
+          "transition": null,
+          "routeError": null
+        },
+        {
+          "key": "codex",
+          "state": "idle",
+          "position": [
+            3.3,
+            -1.74,
+            0.6634
+          ],
+          "activity": "sit",
+          "activityTime": 4.999999999999992,
+          "clip": "drink",
+          "visiblePixels": 9827,
+          "moving": false,
+          "transition": null,
+          "routeError": null
+        },
+        {
+          "key": "apps",
+          "state": "idle",
+          "position": [
+            -0.45,
+            -3.67,
+            0.612
+          ],
+          "activity": "sit",
+          "activityTime": 4.999999999999992,
+          "clip": "drink",
+          "visiblePixels": 8263,
+          "moving": false,
+          "transition": null,
+          "routeError": null
+        }
+      ],
+      "endFrame": 150
+    },
+    {
+      "title": "Their own little corners",
+      "actors": [
+        {
+          "key": "claude",
+          "state": "idle",
+          "position": [
+            -3.1,
+            -2.32,
+            0.6599999999999999
+          ],
+          "activity": "sit",
+          "activityTime": 9.999999999999975,
+          "clip": "drink",
+          "visiblePixels": 10627,
+          "moving": false,
+          "transition": null,
+          "routeError": null
+        },
+        {
+          "key": "codex",
+          "state": "idle",
+          "position": [
+            3.3,
+            -1.74,
+            0.6634
+          ],
+          "activity": "sit",
+          "activityTime": 9.999999999999975,
+          "clip": "drink",
+          "visiblePixels": 9870,
+          "moving": false,
+          "transition": null,
+          "routeError": null
+        },
+        {
+          "key": "apps",
+          "state": "idle",
+          "position": [
+            -0.45,
+            -3.67,
+            0.612
+          ],
+          "activity": "sit",
+          "activityTime": 9.999999999999975,
+          "clip": "drink",
+          "visiblePixels": 8288,
+          "moving": false,
+          "transition": null,
+          "routeError": null
+        }
+      ],
+      "endFrame": 300
+    },
+    {
+      "title": "A proper sip",
+      "actors": [
+        {
+          "key": "claude",
+          "state": "idle",
+          "position": [
+            -3.1,
+            -2.32,
+            0.6599999999999999
+          ],
+          "activity": "sit",
+          "activityTime": 14.049999999999962,
+          "clip": "drink",
+          "visiblePixels": 10599,
+          "moving": false,
+          "transition": null,
+          "routeError": null
+        },
+        {
+          "key": "codex",
+          "state": "idle",
+          "position": [
+            3.3,
+            -1.74,
+            0.6634
+          ],
+          "activity": "sit",
+          "activityTime": 14.049999999999962,
+          "clip": "drink",
+          "visiblePixels": 9843,
+          "moving": false,
+          "transition": null,
+          "routeError": null
+        },
+        {
+          "key": "apps",
+          "state": "idle",
+          "position": [
+            -0.45,
+            -3.67,
+            0.612
+          ],
+          "activity": "sit",
+          "activityTime": 14.049999999999962,
+          "clip": "drink",
+          "visiblePixels": 8271,
+          "moving": false,
+          "transition": null,
+          "routeError": null
+        }
+      ],
+      "endFrame": 420
+    },
+    {
+      "title": "Time to do absolutely nothing",
+      "actors": [
+        {
+          "key": "claude",
+          "state": "idle",
+          "position": [
+            -4.65,
+            -1.91,
+            1.289111773967743
+          ],
+          "activity": "scratch",
+          "activityTime": 4.999999999999992,
+          "clip": "scratch",
+          "visiblePixels": 5978,
+          "moving": false,
+          "transition": null,
+          "routeError": null
+        },
+        {
+          "key": "codex",
+          "state": "idle",
+          "position": [
+            3.3,
+            -1.74,
+            0.6634
+          ],
+          "activity": "sit",
+          "activityTime": 24.400000000000286,
+          "clip": "drink",
+          "visiblePixels": 10215,
+          "moving": false,
+          "transition": null,
+          "routeError": null
+        },
+        {
+          "key": "apps",
+          "state": "idle",
+          "position": [
+            -0.45,
+            -3.67,
+            0.612
+          ],
+          "activity": "sit",
+          "activityTime": 24.400000000000286,
+          "clip": "drink",
+          "visiblePixels": 8580,
+          "moving": false,
+          "transition": null,
+          "routeError": null
+        }
+      ],
+      "endFrame": 570
+    },
+    {
+      "title": "Put the kettle on",
+      "actors": [
+        {
+          "key": "claude",
+          "state": "idle",
+          "position": [
+            2.35,
+            -4.27,
+            0.19557013787032787
+          ],
+          "activity": "tea",
+          "activityTime": 4.999999999999992,
+          "clip": "brew",
+          "visiblePixels": 15264,
+          "moving": false,
+          "transition": null,
+          "routeError": null
+        },
+        {
+          "key": "codex",
+          "state": "idle",
+          "position": [
+            3.3,
+            -1.74,
+            0.6634
+          ],
+          "activity": "sit",
+          "activityTime": 43.44999999999974,
+          "clip": "drink",
+          "visiblePixels": 9826,
+          "moving": false,
+          "transition": null,
+          "routeError": null
+        },
+        {
+          "key": "apps",
+          "state": "idle",
+          "position": [
+            -0.45,
+            -3.67,
+            0.612
+          ],
+          "activity": "sit",
+          "activityTime": 43.44999999999974,
+          "clip": "drink",
+          "visiblePixels": 8263,
+          "moving": false,
+          "transition": null,
+          "routeError": null
+        }
+      ],
+      "endFrame": 720
+    },
+    {
+      "title": "Morning",
+      "actors": [
+        {
+          "key": "claude",
+          "state": "idle",
+          "position": [
+            2.35,
+            -4.27,
+            0.19557013787032787
+          ],
+          "activity": "tea",
+          "activityTime": 7.999999999999981,
+          "clip": "brew",
+          "visiblePixels": 15264,
+          "moving": false,
+          "transition": null,
+          "routeError": null
+        },
+        {
+          "key": "codex",
+          "state": "idle",
+          "position": [
+            3.3,
+            -1.74,
+            0.6634
+          ],
+          "activity": "sit",
+          "activityTime": 46.44999999999957,
+          "clip": "drink",
+          "visiblePixels": 9826,
+          "moving": false,
+          "transition": null,
+          "routeError": null
+        },
+        {
+          "key": "apps",
+          "state": "idle",
+          "position": [
+            -0.45,
+            -3.67,
+            0.612
+          ],
+          "activity": "sit",
+          "activityTime": 46.44999999999957,
+          "clip": "drink",
+          "visiblePixels": 8263,
+          "moving": false,
+          "transition": null,
+          "routeError": null
+        }
+      ],
+      "endFrame": 810
+    },
+    {
+      "title": "Evening",
+      "actors": [
+        {
+          "key": "claude",
+          "state": "idle",
+          "position": [
+            2.35,
+            -4.27,
+            0.19557013787032787
+          ],
+          "activity": "tea",
+          "activityTime": 10.999999999999972,
+          "clip": "brew",
+          "visiblePixels": 15264,
+          "moving": false,
+          "transition": null,
+          "routeError": null
+        },
+        {
+          "key": "codex",
+          "state": "idle",
+          "position": [
+            3.3,
+            -1.74,
+            0.6634
+          ],
+          "activity": "sit",
+          "activityTime": 49.4499999999994,
+          "clip": "drink",
+          "visiblePixels": 9826,
+          "moving": false,
+          "transition": null,
+          "routeError": null
+        },
+        {
+          "key": "apps",
+          "state": "idle",
+          "position": [
+            -0.45,
+            -3.67,
+            0.612
+          ],
+          "activity": "sit",
+          "activityTime": 49.4499999999994,
+          "clip": "drink",
+          "visiblePixels": 8263,
+          "moving": false,
+          "transition": null,
+          "routeError": null
+        }
+      ],
+      "endFrame": 900
+    },
+    {
+      "title": "Night",
+      "actors": [
+        {
+          "key": "claude",
+          "state": "idle",
+          "position": [
+            2.35,
+            -4.27,
+            0.19557013787032787
+          ],
+          "activity": "tea",
+          "activityTime": 13.999999999999961,
+          "clip": "brew",
+          "visiblePixels": 15263,
+          "moving": false,
+          "transition": null,
+          "routeError": null
+        },
+        {
+          "key": "codex",
+          "state": "idle",
+          "position": [
+            3.3,
+            -1.74,
+            0.6634
+          ],
+          "activity": "sit",
+          "activityTime": 52.44999999999923,
+          "clip": "drink",
+          "visiblePixels": 9824,
+          "moving": false,
+          "transition": null,
+          "routeError": null
+        },
+        {
+          "key": "apps",
+          "state": "idle",
+          "position": [
+            -0.45,
+            -3.67,
+            0.612
+          ],
+          "activity": "sit",
+          "activityTime": 52.44999999999923,
+          "clip": "drink",
+          "visiblePixels": 8262,
+          "moving": false,
+          "transition": null,
+          "routeError": null
+        }
+      ],
+      "endFrame": 990
+    },
+    {
+      "title": "Media, together",
+      "nativeSnapshot": "media",
+      "endFrame": 1140
+    },
+    {
+      "title": "Ink desktop navigation",
+      "nativeSnapshot": "navigation",
+      "endFrame": 1260
+    },
+    {
+      "title": "Your floating dock",
+      "nativeSnapshot": "dock",
+      "endFrame": 1380
+    },
+    {
+      "title": "AirPlay from iPhone and iPad",
+      "nativeSnapshot": "airplay",
+      "endFrame": 1500
+    },
+    {
+      "title": "Pick a component, or the full desktop",
+      "actors": [
+        {
+          "key": "claude",
+          "state": "idle",
+          "position": [
+            2.35,
+            -4.27,
+            0.19557013787032787
+          ],
+          "activity": "tea",
+          "activityTime": 19.000000000000103,
+          "clip": "brew",
+          "visiblePixels": 15242,
+          "moving": false,
+          "transition": null,
+          "routeError": null
+        },
+        {
+          "key": "codex",
+          "state": "idle",
+          "position": [
+            3.3,
+            -1.74,
+            0.6634
+          ],
+          "activity": "sit",
+          "activityTime": 57.449999999998944,
+          "clip": "drink",
+          "visiblePixels": 10215,
+          "moving": false,
+          "transition": null,
+          "routeError": null
+        },
+        {
+          "key": "apps",
+          "state": "idle",
+          "position": [
+            -0.45,
+            -3.67,
+            0.612
+          ],
+          "activity": "sit",
+          "activityTime": 57.449999999998944,
+          "clip": "drink",
+          "visiblePixels": 8580,
+          "moving": false,
+          "transition": null,
+          "routeError": null
+        }
+      ],
+      "endFrame": 1650
+    }
+  ]
+}

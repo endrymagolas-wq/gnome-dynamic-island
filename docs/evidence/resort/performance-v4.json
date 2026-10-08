@@ -1,0 +1,85 @@
+{
+  "recordedAt": "2026-10-05T15:44:11.043883+00:00",
+  "hardware": "Windows 11 Pro 10.0.26200, i9-9900K (16 logical CPUs), 32GB RAM, RTX3080 10GB, 1920x1080 primary display",
+  "conditions": "Six 30-second CPU/GPU windows, all Blender processes stopped. Active runs temporarily disabled the observer and ignored fullscreen coverage; ordinary pause policy and observation restored before the Lively native pause callback measurement. Desktop was not fully covered; this is not a current coverage-pause measurement. Video and atlas use the same decoded 720p loop.",
+  "scope": "Lively core, owned WebView2 process tree and loopback host. RSS sums shared mappings; GPU engines are separate Windows counters, not board power. Video fps counts decoded frames; atlas fps counts submitted draws, not monitor presents.",
+  "rows": [
+    {
+      "label": "video-v4-720",
+      "cpuPercentWholePC": 2.490309405241067,
+      "meanRssMiB": 679.728125,
+      "gpu3DPercent": 0.6524990076012394,
+      "gpuVideoDecodePercent": 8.017706356585679,
+      "meanDedicatedMiB": 71.2234375,
+      "meanSharedMiB": 25.241666666666667,
+      "playbackFps": 29.975609756097736,
+      "droppedFramesDuringInterval": 1
+    },
+    {
+      "label": "atlas-v4-720",
+      "cpuPercentWholePC": 4.17388891718883,
+      "meanRssMiB": 861.841796875,
+      "gpu3DPercent": 0.5316706931391546,
+      "gpuVideoDecodePercent": 0,
+      "meanDedicatedMiB": 334.4868489583333,
+      "meanSharedMiB": 23.765625,
+      "playbackFps": 20.76653431462133,
+      "droppedFramesDuringInterval": 0
+    },
+    {
+      "label": "still-v4",
+      "cpuPercentWholePC": 0.14626662641060334,
+      "meanRssMiB": 602.1055989583333,
+      "gpu3DPercent": 0,
+      "gpuVideoDecodePercent": 0,
+      "meanDedicatedMiB": 53.23046875,
+      "meanSharedMiB": 11.06640625,
+      "playbackFps": 0,
+      "droppedFramesDuringInterval": 0
+    },
+    {
+      "label": "runtime-v4-coffee",
+      "cpuPercentWholePC": 2.468324129520652,
+      "meanRssMiB": 810.565625,
+      "gpu3DPercent": 1.936940411832509,
+      "gpuVideoDecodePercent": 16.030323443328154,
+      "meanDedicatedMiB": 132.098046875,
+      "meanSharedMiB": 25.396875,
+      "playbackFps": 29.969618629984183,
+      "droppedFramesDuringInterval": 0
+    },
+    {
+      "label": "runtime-v4-editing",
+      "cpuPercentWholePC": 2.7963861515103225,
+      "meanRssMiB": 823.82421875,
+      "gpu3DPercent": 3.3725284544585015,
+      "gpuVideoDecodePercent": 13.727804026478463,
+      "meanDedicatedMiB": 122.49778645833334,
+      "meanSharedMiB": 25.20625,
+      "playbackFps": 29.969354203060256,
+      "droppedFramesDuringInterval": 0
+    },
+    {
+      "label": "runtime-v4-paused",
+      "cpuPercentWholePC": 0.3608552794873804,
+      "meanRssMiB": 783.954296875,
+      "gpu3DPercent": 0,
+      "gpuVideoDecodePercent": 0,
+      "meanDedicatedMiB": 155.9453125,
+      "meanSharedMiB": 24.05078125,
+      "playbackFps": 0.0,
+      "droppedFramesDuringInterval": 0
+    }
+  ],
+  "restoredPausePolicy": {
+    "restoredFullscreenPause": 0,
+    "observerEnabled": true,
+    "pauseMeasurement": "Lively native pause callback via CLI; desktop was not fully covered"
+  },
+  "assets": {
+    "scene.json": "9a1a312dd8ff39049f574e63776cee5d80829745b514f751d2f56e22adabc141",
+    "character.png": "b89ebbc51fb8660570cacbd70bd5655f095b343b86d9ad573b50a9efd590a924",
+    "water-1080.mp4": "85b21303e8c323d57c29bae7d624603e6b2ccdffa664d54d3a7c7ee1b4283ed3",
+    "water-720.mp4": "081fb67aef5c6670bad5e2ccf723ded00c848cfeb15c53d449dd66a863f61128"
+  }
+}

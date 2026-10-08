@@ -1,0 +1,160 @@
+{
+  "manualPause": [
+    {
+      "format": "video",
+      "clock": 97.0026000000015,
+      "totalVideoFrames": 2854,
+      "droppedVideoFrames": 0,
+      "paused": true,
+      "videoPaused": true,
+      "videoWidth": 1920,
+      "videoHeight": 1080,
+      "state": "idle",
+      "stage": 4,
+      "position": [
+        0,
+        -2.25,
+        0.43
+      ],
+      "smokeVisiblePixels": 0
+    },
+    {
+      "format": "video",
+      "clock": 100.007,
+      "totalVideoFrames": 2854,
+      "droppedVideoFrames": 0,
+      "paused": true,
+      "videoPaused": true,
+      "videoWidth": 1920,
+      "videoHeight": 1080,
+      "state": "idle",
+      "stage": 4,
+      "position": [
+        0,
+        -2.25,
+        0.43
+      ],
+      "smokeVisiblePixels": 0
+    }
+  ],
+  "waterOff": [
+    {
+      "format": "still",
+      "clock": 103.00490000000038,
+      "totalVideoFrames": 2868,
+      "droppedVideoFrames": 0,
+      "paused": false,
+      "videoPaused": true,
+      "videoWidth": 1920,
+      "videoHeight": 1080,
+      "state": "idle",
+      "stage": 4,
+      "position": [
+        0,
+        -2.25,
+        0.43
+      ],
+      "smokeVisiblePixels": 0
+    },
+    {
+      "format": "still",
+      "clock": 106.00290000000037,
+      "totalVideoFrames": 2868,
+      "droppedVideoFrames": 0,
+      "paused": false,
+      "videoPaused": true,
+      "videoWidth": 1920,
+      "videoHeight": 1080,
+      "state": "idle",
+      "stage": 4,
+      "position": [
+        0,
+        -2.25,
+        0.43
+      ],
+      "smokeVisiblePixels": 0
+    }
+  ],
+  "720p": [
+    {
+      "format": "video",
+      "clock": 109.00690000000037,
+      "totalVideoFrames": 57,
+      "droppedVideoFrames": 0,
+      "paused": false,
+      "videoPaused": false,
+      "videoWidth": 1280,
+      "videoHeight": 720,
+      "state": "idle",
+      "stage": 4,
+      "position": [
+        0,
+        -2.25,
+        0.43
+      ],
+      "smokeVisiblePixels": 0
+    },
+    {
+      "format": "video",
+      "clock": 112.00380000000075,
+      "totalVideoFrames": 147,
+      "droppedVideoFrames": 0,
+      "paused": false,
+      "videoPaused": false,
+      "videoWidth": 1280,
+      "videoHeight": 720,
+      "state": "idle",
+      "stage": 4,
+      "position": [
+        0,
+        -2.25,
+        0.43
+      ],
+      "smokeVisiblePixels": 0
+    }
+  ],
+  "qualityOff": [
+    {
+      "format": "still",
+      "clock": 114.00840000000038,
+      "totalVideoFrames": 4,
+      "droppedVideoFrames": 0,
+      "paused": false,
+      "videoPaused": true,
+      "videoWidth": 1920,
+      "videoHeight": 1080,
+      "state": "idle",
+      "stage": 4,
+      "position": [
+        0,
+        -2.25,
+        0.43
+      ],
+      "smokeVisiblePixels": 0
+    },
+    {
+      "format": "still",
+      "clock": 117.0025,
+      "totalVideoFrames": 4,
+      "droppedVideoFrames": 0,
+      "paused": false,
+      "videoPaused": true,
+      "videoWidth": 1920,
+      "videoHeight": 1080,
+      "state": "idle",
+      "stage": 4,
+      "position": [
+        0,
+        -2.25,
+        0.43
+      ],
+      "smokeVisiblePixels": 0
+    }
+  ],
+  "assets": {
+    "scene.json": "e3f1fe2c515e477247a69b0e0268be50a9a2f17ff377306ec457ad76158947f4",
+    "character.png": "3a10097e0fc5c7190acdf2d731195057bd4fc422add2d02db22d885304b7b264",
+    "water-1080.mp4": "683b90600d75b8f969cf63cee1b01e34b76ee5c17c75077fea02de89db752f46"
+  },
+  "recordedAt": "2026-10-05T13:25:03.364455+00:00"
+}

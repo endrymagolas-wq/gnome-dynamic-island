@@ -1,0 +1,4659 @@
+{
+  "method": "Independent orthographic BVH rays through the original cabana meshes versus linearized baked camera-depth offsets. No sprite-plane approximation.",
+  "samples": [
+    {
+      "stage": 1,
+      "pixel": [
+        94,
+        87
+      ],
+      "meshOffset": -1.0624845027923584,
+      "renderOffset": -1.061797559988982
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        52,
+        94
+      ],
+      "meshOffset": 0.34413743019104004,
+      "renderOffset": 0.3363141518419397
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        59,
+        94
+      ],
+      "meshOffset": 0.34413743019104004,
+      "renderOffset": 0.3363141518419397
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        66,
+        94
+      ],
+      "meshOffset": 0.3441355228424072,
+      "renderOffset": 0.3363141518419397
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        73,
+        94
+      ],
+      "meshOffset": 0.34413743019104004,
+      "renderOffset": 0.3363141518419397
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        80,
+        94
+      ],
+      "meshOffset": 0.34413743019104004,
+      "renderOffset": 0.3363141518419397
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        87,
+        94
+      ],
+      "meshOffset": 0.3441355228424072,
+      "renderOffset": 0.3363141518419397
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        94,
+        94
+      ],
+      "meshOffset": -0.9994885921478271,
+      "renderOffset": -0.9993667492396081
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        45,
+        101
+      ],
+      "meshOffset": 0.15423893928527832,
+      "renderOffset": 0.15791842496745412
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        52,
+        101
+      ],
+      "meshOffset": 0.15423798561096191,
+      "renderOffset": 0.15791842496745412
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        59,
+        101
+      ],
+      "meshOffset": 0.15423798561096191,
+      "renderOffset": 0.15791842496745412
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        66,
+        101
+      ],
+      "meshOffset": 0.15423798561096191,
+      "renderOffset": 0.15791842496745412
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        73,
+        101
+      ],
+      "meshOffset": 0.15423893928527832,
+      "renderOffset": 0.1331060832822213
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        80,
+        101
+      ],
+      "meshOffset": 0.15423798561096191,
+      "renderOffset": 0.15791842496745412
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        87,
+        101
+      ],
+      "meshOffset": 0.15423798561096191,
+      "renderOffset": 0.1331060832822213
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        94,
+        101
+      ],
+      "meshOffset": -0.9364926815032959,
+      "renderOffset": -0.9345774687116011
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        101,
+        101
+      ],
+      "meshOffset": 0.15423989295959473,
+      "renderOffset": 0.1331060832822213
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        108,
+        101
+      ],
+      "meshOffset": 0.15423989295959473,
+      "renderOffset": 0.15791842496745412
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        115,
+        101
+      ],
+      "meshOffset": 0.15423798561096191,
+      "renderOffset": 0.15791842496745412
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        38,
+        108
+      ],
+      "meshOffset": -0.03566145896911621,
+      "renderOffset": -0.05940014213797484
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        45,
+        108
+      ],
+      "meshOffset": -0.035660505294799805,
+      "renderOffset": -0.03591650368805843
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        52,
+        108
+      ],
+      "meshOffset": -0.0356595516204834,
+      "renderOffset": -0.03591650368805843
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        59,
+        108
+      ],
+      "meshOffset": -0.03566145896911621,
+      "renderOffset": -0.03591650368805843
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        66,
+        108
+      ],
+      "meshOffset": -0.03565859794616699,
+      "renderOffset": -0.012267923571369632
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        73,
+        108
+      ],
+      "meshOffset": -0.03566145896911621,
+      "renderOffset": -0.03591650368805843
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        80,
+        108
+      ],
+      "meshOffset": -0.03566145896911621,
+      "renderOffset": -0.03591650368805843
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        87,
+        108
+      ],
+      "meshOffset": -0.0356595516204834,
+      "renderOffset": -0.03591650368805843
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        94,
+        108
+      ],
+      "meshOffset": -0.8734967708587646,
+      "renderOffset": -0.8674049262090271
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        101,
+        108
+      ],
+      "meshOffset": -0.0356595516204834,
+      "renderOffset": -0.03591650368805843
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        108,
+        108
+      ],
+      "meshOffset": -0.035660505294799805,
+      "renderOffset": -0.03591650368805843
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        115,
+        108
+      ],
+      "meshOffset": -0.03566145896911621,
+      "renderOffset": -0.03591650368805843
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        122,
+        108
+      ],
+      "meshOffset": -0.0356595516204834,
+      "renderOffset": -0.03591650368805843
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        38,
+        115
+      ],
+      "meshOffset": -0.22555899620056152,
+      "renderOffset": -0.21919511978456008
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        45,
+        115
+      ],
+      "meshOffset": -0.22555899620056152,
+      "renderOffset": -0.21919511978456008
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        52,
+        115
+      ],
+      "meshOffset": -0.22555804252624512,
+      "renderOffset": -0.21919511978456008
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        59,
+        115
+      ],
+      "meshOffset": -0.22555899620056152,
+      "renderOffset": -0.21919511978456008
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        66,
+        115
+      ],
+      "meshOffset": -0.22555899620056152,
+      "renderOffset": -0.2413712019128018
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        73,
+        115
+      ],
+      "meshOffset": -0.22555899620056152,
+      "renderOffset": -0.21919511978456008
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        80,
+        115
+      ],
+      "meshOffset": -0.22555899620056152,
+      "renderOffset": -0.21919511978456008
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        87,
+        115
+      ],
+      "meshOffset": -0.22555899620056152,
+      "renderOffset": -0.2413712019128018
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        94,
+        115
+      ],
+      "meshOffset": -0.8105008602142334,
+      "renderOffset": -0.8154468049021946
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        101,
+        115
+      ],
+      "meshOffset": -0.22555804252624512,
+      "renderOffset": -0.21919511978456008
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        108,
+        115
+      ],
+      "meshOffset": -0.22555804252624512,
+      "renderOffset": -0.21919511978456008
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        115,
+        115
+      ],
+      "meshOffset": -0.22555899620056152,
+      "renderOffset": -0.21919511978456008
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        38,
+        122
+      ],
+      "meshOffset": -0.22848296165466309,
+      "renderOffset": -0.2413712019128018
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        45,
+        122
+      ],
+      "meshOffset": -0.3056161403656006,
+      "renderOffset": -0.3069292157193091
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        59,
+        122
+      ],
+      "meshOffset": -0.41545844078063965,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        66,
+        122
+      ],
+      "meshOffset": -0.41545844078063965,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        73,
+        122
+      ],
+      "meshOffset": -0.41545748710632324,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        80,
+        122
+      ],
+      "meshOffset": -0.41545844078063965,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        87,
+        122
+      ],
+      "meshOffset": -0.41545844078063965,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        94,
+        122
+      ],
+      "meshOffset": -0.7475039958953857,
+      "renderOffset": -0.7621241971331021
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        101,
+        122
+      ],
+      "meshOffset": -0.41545748710632324,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        108,
+        122
+      ],
+      "meshOffset": -0.41545748710632324,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        115,
+        122
+      ],
+      "meshOffset": -0.3329789638519287,
+      "renderOffset": -0.32845961176856653
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        66,
+        129
+      ],
+      "meshOffset": -0.47402358055114746,
+      "renderOffset": -0.4746958463988151
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        73,
+        129
+      ],
+      "meshOffset": -0.551156759262085,
+      "renderOffset": -0.5547727716374409
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        87,
+        129
+      ],
+      "meshOffset": -0.6053569316864014,
+      "renderOffset": -0.6131836645089495
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        94,
+        129
+      ],
+      "meshOffset": -0.6845080852508545,
+      "renderOffset": -0.6701937438503975
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        101,
+        129
+      ],
+      "meshOffset": -0.6053578853607178,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        108,
+        129
+      ],
+      "meshOffset": -0.47652506828308105,
+      "renderOffset": -0.49495139980063874
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        87,
+        136
+      ],
+      "meshOffset": -0.6424300670623779,
+      "renderOffset": -0.6323421900467066
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        94,
+        136
+      ],
+      "meshOffset": -0.7195632457733154,
+      "renderOffset": -0.7258127761873072
+    },
+    {
+      "stage": 1,
+      "pixel": [
+        101,
+        136
+      ],
+      "meshOffset": -0.6200683116912842,
+      "renderOffset": -0.6323421900467066
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        66,
+        45
+      ],
+      "meshOffset": -0.029638051986694336,
+      "renderOffset": -0.012267923571369632
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        73,
+        45
+      ],
+      "meshOffset": -0.029638051986694336,
+      "renderOffset": -0.03591650368805843
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        52,
+        52
+      ],
+      "meshOffset": -0.21953845024108887,
+      "renderOffset": -0.21919511978456008
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        59,
+        52
+      ],
+      "meshOffset": -0.21953845024108887,
+      "renderOffset": -0.21919511978456008
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        66,
+        52
+      ],
+      "meshOffset": -0.21953749656677246,
+      "renderOffset": -0.21919511978456008
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        73,
+        52
+      ],
+      "meshOffset": -0.21953749656677246,
+      "renderOffset": -0.21919511978456008
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        80,
+        52
+      ],
+      "meshOffset": -0.21953749656677246,
+      "renderOffset": -0.2413712019128018
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        87,
+        52
+      ],
+      "meshOffset": -0.21953845024108887,
+      "renderOffset": -0.21919511978456008
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        94,
+        52
+      ],
+      "meshOffset": -0.21953845024108887,
+      "renderOffset": -0.21919511978456008
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        45,
+        59
+      ],
+      "meshOffset": -0.4094359874725342,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        52,
+        59
+      ],
+      "meshOffset": -0.4094369411468506,
+      "renderOffset": -0.43370998191041665
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        59,
+        59
+      ],
+      "meshOffset": -0.4094369411468506,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        66,
+        59
+      ],
+      "meshOffset": -0.4094359874725342,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        73,
+        59
+      ],
+      "meshOffset": -0.4094369411468506,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        80,
+        59
+      ],
+      "meshOffset": -0.4094359874725342,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        87,
+        59
+      ],
+      "meshOffset": -0.4094359874725342,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        94,
+        59
+      ],
+      "meshOffset": -0.4094369411468506,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        101,
+        59
+      ],
+      "meshOffset": -0.409437894821167,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        108,
+        59
+      ],
+      "meshOffset": -0.409437894821167,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        115,
+        59
+      ],
+      "meshOffset": -0.4094369411468506,
+      "renderOffset": -0.3920887744293995
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        45,
+        66
+      ],
+      "meshOffset": -0.5993354320526123,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        52,
+        66
+      ],
+      "meshOffset": -0.5993354320526123,
+      "renderOffset": -0.6131836645089495
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        59,
+        66
+      ],
+      "meshOffset": -0.5993354320526123,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        66,
+        66
+      ],
+      "meshOffset": -0.5993354320526123,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        73,
+        66
+      ],
+      "meshOffset": -0.5993354320526123,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        80,
+        66
+      ],
+      "meshOffset": -0.5993354320526123,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        87,
+        66
+      ],
+      "meshOffset": -0.5993363857269287,
+      "renderOffset": -0.6131836645089495
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        94,
+        66
+      ],
+      "meshOffset": -0.5993363857269287,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        101,
+        66
+      ],
+      "meshOffset": -0.5993363857269287,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        108,
+        66
+      ],
+      "meshOffset": -0.5993363857269287,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        122,
+        66
+      ],
+      "meshOffset": -0.4091002941131592,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        38,
+        73
+      ],
+      "meshOffset": -0.5342118740081787,
+      "renderOffset": -0.5349895086902472
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        45,
+        73
+      ],
+      "meshOffset": -0.6113450527191162,
+      "renderOffset": -0.6131836645089495
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        52,
+        73
+      ],
+      "meshOffset": -0.6884791851043701,
+      "renderOffset": -0.7074270524021931
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        66,
+        73
+      ],
+      "meshOffset": -0.789233922958374,
+      "renderOffset": -0.7978247105191385
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        73,
+        73
+      ],
+      "meshOffset": -0.7892348766326904,
+      "renderOffset": -0.7800506320052274
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        80,
+        73
+      ],
+      "meshOffset": -0.7892348766326904,
+      "renderOffset": -0.7978247105191385
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        87,
+        73
+      ],
+      "meshOffset": -0.7892358303070068,
+      "renderOffset": -0.7800506320052274
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        94,
+        73
+      ],
+      "meshOffset": -0.7892348766326904,
+      "renderOffset": -0.7800506320052274
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        101,
+        73
+      ],
+      "meshOffset": -0.7892348766326904,
+      "renderOffset": -0.7800506320052274
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        115,
+        73
+      ],
+      "meshOffset": -0.5526444911956787,
+      "renderOffset": -0.5547727716374409
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        122,
+        73
+      ],
+      "meshOffset": -0.34610438346862793,
+      "renderOffset": -0.34982944074048317
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        38,
+        80
+      ],
+      "meshOffset": -0.47121500968933105,
+      "renderOffset": -0.4746958463988151
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        45,
+        80
+      ],
+      "meshOffset": -0.548349142074585,
+      "renderOffset": -0.5547727716374409
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        52,
+        80
+      ],
+      "meshOffset": -0.6254832744598389,
+      "renderOffset": -0.6323421900467066
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        59,
+        80
+      ],
+      "meshOffset": -0.7026183605194092,
+      "renderOffset": -0.7074270524021931
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        66,
+        80
+      ],
+      "meshOffset": -0.7797524929046631,
+      "renderOffset": -0.7978247105191385
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        73,
+        80
+      ],
+      "meshOffset": -0.856886625289917,
+      "renderOffset": -0.8502365370612606
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        80,
+        80
+      ],
+      "meshOffset": -0.9340207576751709,
+      "renderOffset": -0.9345774687116011
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        101,
+        80
+      ],
+      "meshOffset": -0.902733564376831,
+      "renderOffset": -0.9012906396538807
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        108,
+        80
+      ],
+      "meshOffset": -0.696190595626831,
+      "renderOffset": -0.7074270524021931
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        115,
+        80
+      ],
+      "meshOffset": -0.48964858055114746,
+      "renderOffset": -0.49495139980063874
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        122,
+        80
+      ],
+      "meshOffset": -0.2831084728240967,
+      "renderOffset": -0.2852379097279787
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        38,
+        87
+      ],
+      "meshOffset": -0.4082190990447998,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        52,
+        87
+      ],
+      "meshOffset": -0.5841262340545654,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        66,
+        87
+      ],
+      "meshOffset": -0.7167556285858154,
+      "renderOffset": -0.7074270524021931
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        80,
+        87
+      ],
+      "meshOffset": -0.8710238933563232,
+      "renderOffset": -0.8674049262090271
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        87,
+        87
+      ],
+      "meshOffset": -0.9481589794158936,
+      "renderOffset": -0.950997257840839
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        94,
+        87
+      ],
+      "meshOffset": -1.0624845027923584,
+      "renderOffset": -1.061797559988982
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        101,
+        87
+      ],
+      "meshOffset": -0.839735746383667,
+      "renderOffset": -0.832917288754256
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        108,
+        87
+      ],
+      "meshOffset": -0.6331937313079834,
+      "renderOffset": -0.6323421900467066
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        115,
+        87
+      ],
+      "meshOffset": -0.4266536235809326,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        122,
+        87
+      ],
+      "meshOffset": -0.22011160850524902,
+      "renderOffset": -0.21919511978456008
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        38,
+        94
+      ],
+      "meshOffset": -0.34522223472595215,
+      "renderOffset": -0.34982944074048317
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        52,
+        94
+      ],
+      "meshOffset": -0.5211312770843506,
+      "renderOffset": -0.5150491695199142
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        59,
+        94
+      ],
+      "meshOffset": -0.5982644557952881,
+      "renderOffset": -0.6131836645089495
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        66,
+        94
+      ],
+      "meshOffset": -0.6537597179412842,
+      "renderOffset": -0.6513454292567347
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        73,
+        94
+      ],
+      "meshOffset": -0.7525327205657959,
+      "renderOffset": -0.7621241971331021
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        80,
+        94
+      ],
+      "meshOffset": -0.8296678066253662,
+      "renderOffset": -0.832917288754256
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        94,
+        94
+      ],
+      "meshOffset": -0.9994885921478271,
+      "renderOffset": -0.9993667492396081
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        101,
+        94
+      ],
+      "meshOffset": -0.7767379283905029,
+      "renderOffset": -0.7800506320052274
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        108,
+        94
+      ],
+      "meshOffset": -0.5701987743377686,
+      "renderOffset": -0.574399313890287
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        115,
+        94
+      ],
+      "meshOffset": -0.36365675926208496,
+      "renderOffset": -0.37103904660152875
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        122,
+        94
+      ],
+      "meshOffset": -0.15711569786071777,
+      "renderOffset": -0.17435580632728453
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        38,
+        101
+      ],
+      "meshOffset": -0.2822263240814209,
+      "renderOffset": -0.2852379097279787
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        52,
+        101
+      ],
+      "meshOffset": -0.45813441276550293,
+      "renderOffset": -0.4542821573623985
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        59,
+        101
+      ],
+      "meshOffset": -0.5352694988250732,
+      "renderOffset": -0.5349895086902472
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        66,
+        101
+      ],
+      "meshOffset": -0.5907628536224365,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        73,
+        101
+      ],
+      "meshOffset": -0.689537763595581,
+      "renderOffset": -0.7074270524021931
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        80,
+        101
+      ],
+      "meshOffset": -0.766671895980835,
+      "renderOffset": -0.7621241971331021
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        94,
+        101
+      ],
+      "meshOffset": -0.9364926815032959,
+      "renderOffset": -0.9345774687116011
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        101,
+        101
+      ],
+      "meshOffset": -0.7137429714202881,
+      "renderOffset": -0.7258127761873072
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        108,
+        101
+      ],
+      "meshOffset": -0.5072000026702881,
+      "renderOffset": -0.5150491695199142
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        115,
+        101
+      ],
+      "meshOffset": -0.3006608486175537,
+      "renderOffset": -0.3069292157193091
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        122,
+        101
+      ],
+      "meshOffset": -0.09411978721618652,
+      "renderOffset": -0.08271916926004774
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        38,
+        108
+      ],
+      "meshOffset": -0.21923041343688965,
+      "renderOffset": -0.2413712019128018
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        52,
+        108
+      ],
+      "meshOffset": -0.3951385021209717,
+      "renderOffset": -0.3920887744293995
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        59,
+        108
+      ],
+      "meshOffset": -0.4722726345062256,
+      "renderOffset": -0.4746958463988151
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        66,
+        108
+      ],
+      "meshOffset": -0.5277678966522217,
+      "renderOffset": -0.5150491695199142
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        73,
+        108
+      ],
+      "meshOffset": -0.6049010753631592,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        80,
+        108
+      ],
+      "meshOffset": -0.6820361614227295,
+      "renderOffset": -0.6888874968102834
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        87,
+        108
+      ],
+      "meshOffset": -0.759169340133667,
+      "renderOffset": -0.7621241971331021
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        94,
+        108
+      ],
+      "meshOffset": -0.8734967708587646,
+      "renderOffset": -0.8674049262090271
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        101,
+        108
+      ],
+      "meshOffset": -0.6507470607757568,
+      "renderOffset": -0.6513454292567347
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        108,
+        108
+      ],
+      "meshOffset": -0.44420504570007324,
+      "renderOffset": -0.4542821573623985
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        115,
+        108
+      ],
+      "meshOffset": -0.23766398429870605,
+      "renderOffset": -0.2413712019128018
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        38,
+        115
+      ],
+      "meshOffset": -0.22555899620056152,
+      "renderOffset": -0.21919511978456008
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        52,
+        115
+      ],
+      "meshOffset": -0.3321406841278076,
+      "renderOffset": -0.32845961176856653
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        59,
+        115
+      ],
+      "meshOffset": -0.40927577018737793,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        66,
+        115
+      ],
+      "meshOffset": -0.464771032333374,
+      "renderOffset": -0.4746958463988151
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        73,
+        115
+      ],
+      "meshOffset": -0.5419051647186279,
+      "renderOffset": -0.5349895086902472
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        80,
+        115
+      ],
+      "meshOffset": -0.6190392971038818,
+      "renderOffset": -0.6131836645089495
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        87,
+        115
+      ],
+      "meshOffset": -0.6961743831634521,
+      "renderOffset": -0.7074270524021931
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        94,
+        115
+      ],
+      "meshOffset": -0.8105008602142334,
+      "renderOffset": -0.8154468049021946
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        101,
+        115
+      ],
+      "meshOffset": -0.5877511501312256,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        108,
+        115
+      ],
+      "meshOffset": -0.3812100887298584,
+      "renderOffset": -0.37103904660152875
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        115,
+        115
+      ],
+      "meshOffset": -0.22555899620056152,
+      "renderOffset": -0.21919511978456008
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        38,
+        122
+      ],
+      "meshOffset": -0.22848296165466309,
+      "renderOffset": -0.2413712019128018
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        45,
+        122
+      ],
+      "meshOffset": -0.3056161403656006,
+      "renderOffset": -0.3069292157193091
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        59,
+        122
+      ],
+      "meshOffset": -0.41545844078063965,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        73,
+        122
+      ],
+      "meshOffset": -0.4789092540740967,
+      "renderOffset": -0.4746958463988151
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        80,
+        122
+      ],
+      "meshOffset": -0.556044340133667,
+      "renderOffset": -0.5547727716374409
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        87,
+        122
+      ],
+      "meshOffset": -0.6331775188446045,
+      "renderOffset": -0.6323421900467066
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        94,
+        122
+      ],
+      "meshOffset": -0.7475039958953857,
+      "renderOffset": -0.7621241971331021
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        101,
+        122
+      ],
+      "meshOffset": -0.5247561931610107,
+      "renderOffset": -0.5349895086902472
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        108,
+        122
+      ],
+      "meshOffset": -0.41545748710632324,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        115,
+        122
+      ],
+      "meshOffset": -0.3329789638519287,
+      "renderOffset": -0.32845961176856653
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        66,
+        129
+      ],
+      "meshOffset": -0.47402358055114746,
+      "renderOffset": -0.4746958463988151
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        73,
+        129
+      ],
+      "meshOffset": -0.551156759262085,
+      "renderOffset": -0.5547727716374409
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        94,
+        129
+      ],
+      "meshOffset": -0.6845080852508545,
+      "renderOffset": -0.6701937438503975
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        101,
+        129
+      ],
+      "meshOffset": -0.6053578853607178,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        108,
+        129
+      ],
+      "meshOffset": -0.47652506828308105,
+      "renderOffset": -0.49495139980063874
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        87,
+        136
+      ],
+      "meshOffset": -0.6424300670623779,
+      "renderOffset": -0.6323421900467066
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        94,
+        136
+      ],
+      "meshOffset": -0.7195632457733154,
+      "renderOffset": -0.7258127761873072
+    },
+    {
+      "stage": 2,
+      "pixel": [
+        101,
+        136
+      ],
+      "meshOffset": -0.6200683116912842,
+      "renderOffset": -0.6323421900467066
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        59,
+        31
+      ],
+      "meshOffset": 0.14484333992004395,
+      "renderOffset": 0.1331060832822213
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        66,
+        31
+      ],
+      "meshOffset": 0.0167543888092041,
+      "renderOffset": 0.011545927561602998
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        73,
+        31
+      ],
+      "meshOffset": -0.11133265495300293,
+      "renderOffset": -0.10587391639059462
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        80,
+        31
+      ],
+      "meshOffset": -0.23942160606384277,
+      "renderOffset": -0.2413712019128018
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        87,
+        31
+      ],
+      "meshOffset": -0.3675105571746826,
+      "renderOffset": -0.37103904660152875
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        94,
+        31
+      ],
+      "meshOffset": -0.4056060314178467,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        101,
+        31
+      ],
+      "meshOffset": -0.3484323024749756,
+      "renderOffset": -0.32845961176856653
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        52,
+        38
+      ],
+      "meshOffset": -0.07380080223083496,
+      "renderOffset": -0.08271916926004774
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        59,
+        38
+      ],
+      "meshOffset": -0.201887845993042,
+      "renderOffset": -0.19685676708736488
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        66,
+        38
+      ],
+      "meshOffset": -0.32997584342956543,
+      "renderOffset": -0.32845961176856653
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        73,
+        38
+      ],
+      "meshOffset": -0.4580657482147217,
+      "renderOffset": -0.4542821573623985
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        87,
+        38
+      ],
+      "meshOffset": -0.5826737880706787,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        94,
+        38
+      ],
+      "meshOffset": -0.525501012802124,
+      "renderOffset": -0.5349895086902472
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        101,
+        38
+      ],
+      "meshOffset": -0.46832728385925293,
+      "renderOffset": -0.4746958463988151
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        108,
+        38
+      ],
+      "meshOffset": -0.4111506938934326,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        115,
+        38
+      ],
+      "meshOffset": -0.3539769649505615,
+      "renderOffset": -0.37103904660152875
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        45,
+        45
+      ],
+      "meshOffset": -0.29244303703308105,
+      "renderOffset": -0.2852379097279787
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        52,
+        45
+      ],
+      "meshOffset": -0.4205329418182373,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        59,
+        45
+      ],
+      "meshOffset": -0.5486218929290771,
+      "renderOffset": -0.5349895086902472
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        66,
+        45
+      ],
+      "meshOffset": -0.6767089366912842,
+      "renderOffset": -0.6701937438503975
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        80,
+        45
+      ],
+      "meshOffset": -0.7597415447235107,
+      "renderOffset": -0.7440450350345418
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        87,
+        45
+      ],
+      "meshOffset": -0.7025668621063232,
+      "renderOffset": -0.6888874968102834
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        94,
+        45
+      ],
+      "meshOffset": -0.6453931331634521,
+      "renderOffset": -0.6513454292567347
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        101,
+        45
+      ],
+      "meshOffset": -0.588219404220581,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        108,
+        45
+      ],
+      "meshOffset": -0.5310447216033936,
+      "renderOffset": -0.5150491695199142
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        115,
+        45
+      ],
+      "meshOffset": -0.47387099266052246,
+      "renderOffset": -0.4746958463988151
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        122,
+        45
+      ],
+      "meshOffset": -0.41669726371765137,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        38,
+        52
+      ],
+      "meshOffset": -0.5110890865325928,
+      "renderOffset": -0.49495139980063874
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        45,
+        52
+      ],
+      "meshOffset": -0.6391780376434326,
+      "renderOffset": -0.6323421900467066
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        52,
+        52
+      ],
+      "meshOffset": -0.767266035079956,
+      "renderOffset": -0.7621241971331021
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        59,
+        52
+      ],
+      "meshOffset": -0.8953559398651123,
+      "renderOffset": -0.884422833997276
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        73,
+        52
+      ],
+      "meshOffset": -0.9368093013763428,
+      "renderOffset": -0.9345774687116011
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        80,
+        52
+      ],
+      "meshOffset": -0.8796327114105225,
+      "renderOffset": -0.884422833997276
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        87,
+        52
+      ],
+      "meshOffset": -0.8224599361419678,
+      "renderOffset": -0.8154468049021946
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        94,
+        52
+      ],
+      "meshOffset": -0.7652862071990967,
+      "renderOffset": -0.7621241971331021
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        101,
+        52
+      ],
+      "meshOffset": -0.7081124782562256,
+      "renderOffset": -0.6888874968102834
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        108,
+        52
+      ],
+      "meshOffset": -0.6509377956390381,
+      "renderOffset": -0.6323421900467066
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        115,
+        52
+      ],
+      "meshOffset": -0.593764066696167,
+      "renderOffset": -0.574399313890287
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        122,
+        52
+      ],
+      "meshOffset": -0.5365884304046631,
+      "renderOffset": -0.5349895086902472
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        129,
+        52
+      ],
+      "meshOffset": -0.479414701461792,
+      "renderOffset": -0.4746958463988151
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        136,
+        52
+      ],
+      "meshOffset": -0.4222409725189209,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        24,
+        59
+      ],
+      "meshOffset": -0.6016461849212646,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        52,
+        59
+      ],
+      "meshOffset": -1.0173366069793701,
+      "renderOffset": -1.0308753985046657
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        66,
+        59
+      ],
+      "meshOffset": -1.1138761043548584,
+      "renderOffset": -1.121895090421487
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        73,
+        59
+      ],
+      "meshOffset": -1.056701421737671,
+      "renderOffset": -1.0464095932435686
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        80,
+        59
+      ],
+      "meshOffset": -0.9995286464691162,
+      "renderOffset": -0.9993667492396081
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        87,
+        59
+      ],
+      "meshOffset": -0.9423539638519287,
+      "renderOffset": -0.9345774687116011
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        94,
+        59
+      ],
+      "meshOffset": -0.8851783275604248,
+      "renderOffset": -0.884422833997276
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        101,
+        59
+      ],
+      "meshOffset": -0.8280055522918701,
+      "renderOffset": -0.832917288754256
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        108,
+        59
+      ],
+      "meshOffset": -0.7708308696746826,
+      "renderOffset": -0.7621241971331021
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        115,
+        59
+      ],
+      "meshOffset": -0.7136561870574951,
+      "renderOffset": -0.7074270524021931
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        122,
+        59
+      ],
+      "meshOffset": -0.6564834117889404,
+      "renderOffset": -0.6701937438503975
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        129,
+        59
+      ],
+      "meshOffset": -0.5993087291717529,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        45,
+        66
+      ],
+      "meshOffset": -0.5993354320526123,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        52,
+        66
+      ],
+      "meshOffset": -0.5993354320526123,
+      "renderOffset": -0.6131836645089495
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        59,
+        66
+      ],
+      "meshOffset": -0.5993354320526123,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        80,
+        66
+      ],
+      "meshOffset": -1.119419813156128,
+      "renderOffset": -1.1070880598734822
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        87,
+        66
+      ],
+      "meshOffset": -1.0622470378875732,
+      "renderOffset": -1.061797559988982
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        94,
+        66
+      ],
+      "meshOffset": -1.0050723552703857,
+      "renderOffset": -0.9993667492396081
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        101,
+        66
+      ],
+      "meshOffset": -0.9478976726531982,
+      "renderOffset": -0.950997257840839
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        108,
+        66
+      ],
+      "meshOffset": -0.8907229900360107,
+      "renderOffset": -0.9012906396538807
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        115,
+        66
+      ],
+      "meshOffset": -0.8335492610931396,
+      "renderOffset": -0.832917288754256
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        122,
+        66
+      ],
+      "meshOffset": -0.7763755321502686,
+      "renderOffset": -0.7800506320052274
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        38,
+        73
+      ],
+      "meshOffset": -0.5342118740081787,
+      "renderOffset": -0.5349895086902472
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        45,
+        73
+      ],
+      "meshOffset": -0.6113450527191162,
+      "renderOffset": -0.6131836645089495
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        52,
+        73
+      ],
+      "meshOffset": -0.6884791851043701,
+      "renderOffset": -0.7074270524021931
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        66,
+        73
+      ],
+      "meshOffset": -0.789233922958374,
+      "renderOffset": -0.7978247105191385
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        73,
+        73
+      ],
+      "meshOffset": -0.7892348766326904,
+      "renderOffset": -0.7800506320052274
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        80,
+        73
+      ],
+      "meshOffset": -1.199883222579956,
+      "renderOffset": -1.2077226125803064
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        87,
+        73
+      ],
+      "meshOffset": -1.1821401119232178,
+      "renderOffset": -1.179684944709476
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        94,
+        73
+      ],
+      "meshOffset": -1.1249654293060303,
+      "renderOffset": -1.121895090421487
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        101,
+        73
+      ],
+      "meshOffset": -1.0677917003631592,
+      "renderOffset": -1.061797559988982
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        108,
+        73
+      ],
+      "meshOffset": -1.0106170177459717,
+      "renderOffset": -0.9993667492396081
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        115,
+        73
+      ],
+      "meshOffset": -0.9534423351287842,
+      "renderOffset": -0.950997257840839
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        38,
+        80
+      ],
+      "meshOffset": -0.47121500968933105,
+      "renderOffset": -0.4746958463988151
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        45,
+        80
+      ],
+      "meshOffset": -0.548349142074585,
+      "renderOffset": -0.5547727716374409
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        52,
+        80
+      ],
+      "meshOffset": -0.6254832744598389,
+      "renderOffset": -0.6323421900467066
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        59,
+        80
+      ],
+      "meshOffset": -0.7026183605194092,
+      "renderOffset": -0.7074270524021931
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        66,
+        80
+      ],
+      "meshOffset": -0.7797524929046631,
+      "renderOffset": -0.7978247105191385
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        73,
+        80
+      ],
+      "meshOffset": -0.856886625289917,
+      "renderOffset": -0.8502365370612606
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        80,
+        80
+      ],
+      "meshOffset": -0.9340207576751709,
+      "renderOffset": -0.9345774687116011
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        87,
+        80
+      ],
+      "meshOffset": -1.2140204906463623,
+      "renderOffset": -1.2077226125803064
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        94,
+        80
+      ],
+      "meshOffset": -1.2448575496673584,
+      "renderOffset": -1.2351931604608741
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        101,
+        80
+      ],
+      "meshOffset": -1.1876847743988037,
+      "renderOffset": -1.1937748753609676
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        108,
+        80
+      ],
+      "meshOffset": -1.1305100917816162,
+      "renderOffset": -1.136557889094979
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        115,
+        80
+      ],
+      "meshOffset": -0.48964858055114746,
+      "renderOffset": -0.49495139980063874
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        122,
+        80
+      ],
+      "meshOffset": -0.2831084728240967,
+      "renderOffset": -0.2852379097279787
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        38,
+        87
+      ],
+      "meshOffset": -0.4082190990447998,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        52,
+        87
+      ],
+      "meshOffset": -0.5841262340545654,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        66,
+        87
+      ],
+      "meshOffset": -0.7167556285858154,
+      "renderOffset": -0.7074270524021931
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        80,
+        87
+      ],
+      "meshOffset": -0.8710238933563232,
+      "renderOffset": -0.8674049262090271
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        87,
+        87
+      ],
+      "meshOffset": -0.9481589794158936,
+      "renderOffset": -0.950997257840839
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        108,
+        87
+      ],
+      "meshOffset": -0.6331937313079834,
+      "renderOffset": -0.6323421900467066
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        115,
+        87
+      ],
+      "meshOffset": -0.4266536235809326,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        122,
+        87
+      ],
+      "meshOffset": -0.22011160850524902,
+      "renderOffset": -0.21919511978456008
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        38,
+        94
+      ],
+      "meshOffset": -0.34522223472595215,
+      "renderOffset": -0.34982944074048317
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        52,
+        94
+      ],
+      "meshOffset": -0.5211312770843506,
+      "renderOffset": -0.5150491695199142
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        59,
+        94
+      ],
+      "meshOffset": -0.5982644557952881,
+      "renderOffset": -0.6131836645089495
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        66,
+        94
+      ],
+      "meshOffset": -0.6537597179412842,
+      "renderOffset": -0.6513454292567347
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        73,
+        94
+      ],
+      "meshOffset": -0.7525327205657959,
+      "renderOffset": -0.7621241971331021
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        80,
+        94
+      ],
+      "meshOffset": -0.8296678066253662,
+      "renderOffset": -0.832917288754256
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        94,
+        94
+      ],
+      "meshOffset": -0.9994885921478271,
+      "renderOffset": -0.9993667492396081
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        101,
+        94
+      ],
+      "meshOffset": -0.7767379283905029,
+      "renderOffset": -0.7800506320052274
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        108,
+        94
+      ],
+      "meshOffset": -0.5701987743377686,
+      "renderOffset": -0.574399313890287
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        115,
+        94
+      ],
+      "meshOffset": -0.36365675926208496,
+      "renderOffset": -0.37103904660152875
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        122,
+        94
+      ],
+      "meshOffset": -0.15711569786071777,
+      "renderOffset": -0.17435580632728453
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        38,
+        101
+      ],
+      "meshOffset": -0.2822263240814209,
+      "renderOffset": -0.2852379097279787
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        52,
+        101
+      ],
+      "meshOffset": -0.45813441276550293,
+      "renderOffset": -0.4542821573623985
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        59,
+        101
+      ],
+      "meshOffset": -0.5352694988250732,
+      "renderOffset": -0.5349895086902472
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        66,
+        101
+      ],
+      "meshOffset": -0.5907628536224365,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        73,
+        101
+      ],
+      "meshOffset": -0.689537763595581,
+      "renderOffset": -0.7074270524021931
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        80,
+        101
+      ],
+      "meshOffset": -0.766671895980835,
+      "renderOffset": -0.7621241971331021
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        94,
+        101
+      ],
+      "meshOffset": -0.9364926815032959,
+      "renderOffset": -0.9345774687116011
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        101,
+        101
+      ],
+      "meshOffset": -0.7137429714202881,
+      "renderOffset": -0.7258127761873072
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        108,
+        101
+      ],
+      "meshOffset": -0.5072000026702881,
+      "renderOffset": -0.5150491695199142
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        115,
+        101
+      ],
+      "meshOffset": -0.3006608486175537,
+      "renderOffset": -0.3069292157193091
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        122,
+        101
+      ],
+      "meshOffset": -0.09411978721618652,
+      "renderOffset": -0.08271916926004774
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        38,
+        108
+      ],
+      "meshOffset": -0.21923041343688965,
+      "renderOffset": -0.2413712019128018
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        52,
+        108
+      ],
+      "meshOffset": -0.3951385021209717,
+      "renderOffset": -0.3920887744293995
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        59,
+        108
+      ],
+      "meshOffset": -0.4722726345062256,
+      "renderOffset": -0.4746958463988151
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        66,
+        108
+      ],
+      "meshOffset": -0.5277678966522217,
+      "renderOffset": -0.5150491695199142
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        73,
+        108
+      ],
+      "meshOffset": -0.6049010753631592,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        80,
+        108
+      ],
+      "meshOffset": -0.6820361614227295,
+      "renderOffset": -0.6888874968102834
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        87,
+        108
+      ],
+      "meshOffset": -0.759169340133667,
+      "renderOffset": -0.7621241971331021
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        94,
+        108
+      ],
+      "meshOffset": -0.8734967708587646,
+      "renderOffset": -0.8674049262090271
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        101,
+        108
+      ],
+      "meshOffset": -0.6507470607757568,
+      "renderOffset": -0.6513454292567347
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        108,
+        108
+      ],
+      "meshOffset": -0.44420504570007324,
+      "renderOffset": -0.4542821573623985
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        115,
+        108
+      ],
+      "meshOffset": -0.23766398429870605,
+      "renderOffset": -0.2413712019128018
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        38,
+        115
+      ],
+      "meshOffset": -0.22555899620056152,
+      "renderOffset": -0.21919511978456008
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        52,
+        115
+      ],
+      "meshOffset": -0.3321406841278076,
+      "renderOffset": -0.32845961176856653
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        59,
+        115
+      ],
+      "meshOffset": -0.40927577018737793,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        66,
+        115
+      ],
+      "meshOffset": -0.464771032333374,
+      "renderOffset": -0.4746958463988151
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        73,
+        115
+      ],
+      "meshOffset": -0.5419051647186279,
+      "renderOffset": -0.5349895086902472
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        80,
+        115
+      ],
+      "meshOffset": -0.6190392971038818,
+      "renderOffset": -0.6131836645089495
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        87,
+        115
+      ],
+      "meshOffset": -0.6961743831634521,
+      "renderOffset": -0.7074270524021931
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        94,
+        115
+      ],
+      "meshOffset": -0.8105008602142334,
+      "renderOffset": -0.8154468049021946
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        101,
+        115
+      ],
+      "meshOffset": -0.5877511501312256,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        108,
+        115
+      ],
+      "meshOffset": -0.3812100887298584,
+      "renderOffset": -0.37103904660152875
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        115,
+        115
+      ],
+      "meshOffset": -0.22555899620056152,
+      "renderOffset": -0.21919511978456008
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        38,
+        122
+      ],
+      "meshOffset": -0.22848296165466309,
+      "renderOffset": -0.2413712019128018
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        45,
+        122
+      ],
+      "meshOffset": -0.3056161403656006,
+      "renderOffset": -0.3069292157193091
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        59,
+        122
+      ],
+      "meshOffset": -0.41545844078063965,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        73,
+        122
+      ],
+      "meshOffset": -0.4789092540740967,
+      "renderOffset": -0.4746958463988151
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        80,
+        122
+      ],
+      "meshOffset": -0.556044340133667,
+      "renderOffset": -0.5547727716374409
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        87,
+        122
+      ],
+      "meshOffset": -0.6331775188446045,
+      "renderOffset": -0.6323421900467066
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        94,
+        122
+      ],
+      "meshOffset": -0.7475039958953857,
+      "renderOffset": -0.7621241971331021
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        101,
+        122
+      ],
+      "meshOffset": -0.5247561931610107,
+      "renderOffset": -0.5349895086902472
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        108,
+        122
+      ],
+      "meshOffset": -0.41545748710632324,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        115,
+        122
+      ],
+      "meshOffset": -0.3329789638519287,
+      "renderOffset": -0.32845961176856653
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        66,
+        129
+      ],
+      "meshOffset": -0.47402358055114746,
+      "renderOffset": -0.4746958463988151
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        73,
+        129
+      ],
+      "meshOffset": -0.551156759262085,
+      "renderOffset": -0.5547727716374409
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        94,
+        129
+      ],
+      "meshOffset": -0.6845080852508545,
+      "renderOffset": -0.6701937438503975
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        101,
+        129
+      ],
+      "meshOffset": -0.6053578853607178,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        108,
+        129
+      ],
+      "meshOffset": -0.47652506828308105,
+      "renderOffset": -0.49495139980063874
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        87,
+        136
+      ],
+      "meshOffset": -0.6424300670623779,
+      "renderOffset": -0.6323421900467066
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        94,
+        136
+      ],
+      "meshOffset": -0.7195632457733154,
+      "renderOffset": -0.7258127761873072
+    },
+    {
+      "stage": 3,
+      "pixel": [
+        101,
+        136
+      ],
+      "meshOffset": -0.6200683116912842,
+      "renderOffset": -0.6323421900467066
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        59,
+        31
+      ],
+      "meshOffset": 0.14484333992004395,
+      "renderOffset": 0.1331060832822213
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        66,
+        31
+      ],
+      "meshOffset": 0.0167543888092041,
+      "renderOffset": 0.011545927561602998
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        73,
+        31
+      ],
+      "meshOffset": -0.11133265495300293,
+      "renderOffset": -0.10587391639059462
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        80,
+        31
+      ],
+      "meshOffset": -0.23942160606384277,
+      "renderOffset": -0.2413712019128018
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        87,
+        31
+      ],
+      "meshOffset": -0.3675105571746826,
+      "renderOffset": -0.37103904660152875
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        94,
+        31
+      ],
+      "meshOffset": -0.4056060314178467,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        101,
+        31
+      ],
+      "meshOffset": -0.3484323024749756,
+      "renderOffset": -0.32845961176856653
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        52,
+        38
+      ],
+      "meshOffset": -0.07380080223083496,
+      "renderOffset": -0.08271916926004774
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        59,
+        38
+      ],
+      "meshOffset": -0.201887845993042,
+      "renderOffset": -0.19685676708736488
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        66,
+        38
+      ],
+      "meshOffset": -0.32997584342956543,
+      "renderOffset": -0.32845961176856653
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        73,
+        38
+      ],
+      "meshOffset": -0.4580657482147217,
+      "renderOffset": -0.4542821573623985
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        87,
+        38
+      ],
+      "meshOffset": -0.5826737880706787,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        94,
+        38
+      ],
+      "meshOffset": -0.525501012802124,
+      "renderOffset": -0.5349895086902472
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        101,
+        38
+      ],
+      "meshOffset": -0.46832728385925293,
+      "renderOffset": -0.4746958463988151
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        108,
+        38
+      ],
+      "meshOffset": -0.4111506938934326,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        115,
+        38
+      ],
+      "meshOffset": -0.3539769649505615,
+      "renderOffset": -0.37103904660152875
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        45,
+        45
+      ],
+      "meshOffset": -0.29244303703308105,
+      "renderOffset": -0.2852379097279787
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        52,
+        45
+      ],
+      "meshOffset": -0.4205329418182373,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        59,
+        45
+      ],
+      "meshOffset": -0.5486218929290771,
+      "renderOffset": -0.5349895086902472
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        66,
+        45
+      ],
+      "meshOffset": -0.6767089366912842,
+      "renderOffset": -0.6701937438503975
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        80,
+        45
+      ],
+      "meshOffset": -0.7597415447235107,
+      "renderOffset": -0.7440450350345418
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        87,
+        45
+      ],
+      "meshOffset": -0.7025668621063232,
+      "renderOffset": -0.6888874968102834
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        94,
+        45
+      ],
+      "meshOffset": -0.6453931331634521,
+      "renderOffset": -0.6513454292567347
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        101,
+        45
+      ],
+      "meshOffset": -0.588219404220581,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        108,
+        45
+      ],
+      "meshOffset": -0.5310447216033936,
+      "renderOffset": -0.5150491695199142
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        115,
+        45
+      ],
+      "meshOffset": -0.47387099266052246,
+      "renderOffset": -0.4746958463988151
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        122,
+        45
+      ],
+      "meshOffset": -0.41669726371765137,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        38,
+        52
+      ],
+      "meshOffset": -0.5110890865325928,
+      "renderOffset": -0.49495139980063874
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        45,
+        52
+      ],
+      "meshOffset": -0.6391780376434326,
+      "renderOffset": -0.6323421900467066
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        52,
+        52
+      ],
+      "meshOffset": -0.767266035079956,
+      "renderOffset": -0.7621241971331021
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        59,
+        52
+      ],
+      "meshOffset": -0.8953559398651123,
+      "renderOffset": -0.884422833997276
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        73,
+        52
+      ],
+      "meshOffset": -0.9368093013763428,
+      "renderOffset": -0.9345774687116011
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        80,
+        52
+      ],
+      "meshOffset": -0.8796327114105225,
+      "renderOffset": -0.884422833997276
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        87,
+        52
+      ],
+      "meshOffset": -0.8224599361419678,
+      "renderOffset": -0.8154468049021946
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        94,
+        52
+      ],
+      "meshOffset": -0.7652862071990967,
+      "renderOffset": -0.7621241971331021
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        101,
+        52
+      ],
+      "meshOffset": -0.7081124782562256,
+      "renderOffset": -0.6888874968102834
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        108,
+        52
+      ],
+      "meshOffset": -0.6509377956390381,
+      "renderOffset": -0.6323421900467066
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        115,
+        52
+      ],
+      "meshOffset": -0.593764066696167,
+      "renderOffset": -0.574399313890287
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        122,
+        52
+      ],
+      "meshOffset": -0.5365884304046631,
+      "renderOffset": -0.5349895086902472
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        129,
+        52
+      ],
+      "meshOffset": -0.479414701461792,
+      "renderOffset": -0.4746958463988151
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        136,
+        52
+      ],
+      "meshOffset": -0.4222409725189209,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        24,
+        59
+      ],
+      "meshOffset": -0.6016461849212646,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        52,
+        59
+      ],
+      "meshOffset": -1.0173366069793701,
+      "renderOffset": -1.0308753985046657
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        66,
+        59
+      ],
+      "meshOffset": -1.1138761043548584,
+      "renderOffset": -1.121895090421487
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        73,
+        59
+      ],
+      "meshOffset": -1.056701421737671,
+      "renderOffset": -1.0464095932435686
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        80,
+        59
+      ],
+      "meshOffset": -0.9995286464691162,
+      "renderOffset": -0.9993667492396081
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        87,
+        59
+      ],
+      "meshOffset": -0.9423539638519287,
+      "renderOffset": -0.9345774687116011
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        94,
+        59
+      ],
+      "meshOffset": -0.8851783275604248,
+      "renderOffset": -0.884422833997276
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        101,
+        59
+      ],
+      "meshOffset": -0.8280055522918701,
+      "renderOffset": -0.832917288754256
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        108,
+        59
+      ],
+      "meshOffset": -0.7708308696746826,
+      "renderOffset": -0.7621241971331021
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        115,
+        59
+      ],
+      "meshOffset": -0.7136561870574951,
+      "renderOffset": -0.7074270524021931
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        122,
+        59
+      ],
+      "meshOffset": -0.6564834117889404,
+      "renderOffset": -0.6701937438503975
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        129,
+        59
+      ],
+      "meshOffset": -0.5993087291717529,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        45,
+        66
+      ],
+      "meshOffset": -0.5993354320526123,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        52,
+        66
+      ],
+      "meshOffset": -0.5993354320526123,
+      "renderOffset": -0.6131836645089495
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        59,
+        66
+      ],
+      "meshOffset": -0.5993354320526123,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        80,
+        66
+      ],
+      "meshOffset": -1.119419813156128,
+      "renderOffset": -1.1070880598734822
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        87,
+        66
+      ],
+      "meshOffset": -1.0622470378875732,
+      "renderOffset": -1.061797559988982
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        94,
+        66
+      ],
+      "meshOffset": -1.0050723552703857,
+      "renderOffset": -0.9993667492396081
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        101,
+        66
+      ],
+      "meshOffset": -0.9478976726531982,
+      "renderOffset": -0.950997257840839
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        108,
+        66
+      ],
+      "meshOffset": -0.8907229900360107,
+      "renderOffset": -0.9012906396538807
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        115,
+        66
+      ],
+      "meshOffset": -0.8335492610931396,
+      "renderOffset": -0.832917288754256
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        122,
+        66
+      ],
+      "meshOffset": -0.7763755321502686,
+      "renderOffset": -0.7800506320052274
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        38,
+        73
+      ],
+      "meshOffset": -0.5342118740081787,
+      "renderOffset": -0.5349895086902472
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        45,
+        73
+      ],
+      "meshOffset": -0.6113450527191162,
+      "renderOffset": -0.6131836645089495
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        52,
+        73
+      ],
+      "meshOffset": -0.6884791851043701,
+      "renderOffset": -0.7074270524021931
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        66,
+        73
+      ],
+      "meshOffset": -0.789233922958374,
+      "renderOffset": -0.7978247105191385
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        73,
+        73
+      ],
+      "meshOffset": -0.7892348766326904,
+      "renderOffset": -0.7800506320052274
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        80,
+        73
+      ],
+      "meshOffset": -1.199883222579956,
+      "renderOffset": -1.2077226125803064
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        87,
+        73
+      ],
+      "meshOffset": -1.1821401119232178,
+      "renderOffset": -1.179684944709476
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        94,
+        73
+      ],
+      "meshOffset": -1.1249654293060303,
+      "renderOffset": -1.121895090421487
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        101,
+        73
+      ],
+      "meshOffset": -1.0677917003631592,
+      "renderOffset": -1.061797559988982
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        108,
+        73
+      ],
+      "meshOffset": -1.0106170177459717,
+      "renderOffset": -0.9993667492396081
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        115,
+        73
+      ],
+      "meshOffset": -0.9534423351287842,
+      "renderOffset": -0.950997257840839
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        38,
+        80
+      ],
+      "meshOffset": -0.47121500968933105,
+      "renderOffset": -0.4746958463988151
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        45,
+        80
+      ],
+      "meshOffset": -0.548349142074585,
+      "renderOffset": -0.5547727716374409
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        52,
+        80
+      ],
+      "meshOffset": -0.6254832744598389,
+      "renderOffset": -0.6323421900467066
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        59,
+        80
+      ],
+      "meshOffset": -0.7026183605194092,
+      "renderOffset": -0.7074270524021931
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        66,
+        80
+      ],
+      "meshOffset": -0.7797524929046631,
+      "renderOffset": -0.7978247105191385
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        73,
+        80
+      ],
+      "meshOffset": -0.856886625289917,
+      "renderOffset": -0.8502365370612606
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        80,
+        80
+      ],
+      "meshOffset": -0.9340207576751709,
+      "renderOffset": -0.9345774687116011
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        87,
+        80
+      ],
+      "meshOffset": -1.2140204906463623,
+      "renderOffset": -1.2077226125803064
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        94,
+        80
+      ],
+      "meshOffset": -1.2448575496673584,
+      "renderOffset": -1.2351931604608741
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        101,
+        80
+      ],
+      "meshOffset": -1.1876847743988037,
+      "renderOffset": -1.1937748753609676
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        108,
+        80
+      ],
+      "meshOffset": -1.1305100917816162,
+      "renderOffset": -1.136557889094979
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        115,
+        80
+      ],
+      "meshOffset": -0.48964858055114746,
+      "renderOffset": -0.49495139980063874
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        122,
+        80
+      ],
+      "meshOffset": -0.2831084728240967,
+      "renderOffset": -0.2852379097279787
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        38,
+        87
+      ],
+      "meshOffset": -0.4082190990447998,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        52,
+        87
+      ],
+      "meshOffset": -0.5841262340545654,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        66,
+        87
+      ],
+      "meshOffset": -0.7167556285858154,
+      "renderOffset": -0.7074270524021931
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        80,
+        87
+      ],
+      "meshOffset": -0.8710238933563232,
+      "renderOffset": -0.8674049262090271
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        87,
+        87
+      ],
+      "meshOffset": -0.9481589794158936,
+      "renderOffset": -0.950997257840839
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        108,
+        87
+      ],
+      "meshOffset": -0.6331937313079834,
+      "renderOffset": -0.6323421900467066
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        115,
+        87
+      ],
+      "meshOffset": -0.4266536235809326,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        122,
+        87
+      ],
+      "meshOffset": -0.22011160850524902,
+      "renderOffset": -0.21919511978456008
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        38,
+        94
+      ],
+      "meshOffset": -0.34522223472595215,
+      "renderOffset": -0.34982944074048317
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        52,
+        94
+      ],
+      "meshOffset": -0.5211312770843506,
+      "renderOffset": -0.5150491695199142
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        59,
+        94
+      ],
+      "meshOffset": -0.5982644557952881,
+      "renderOffset": -0.6131836645089495
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        66,
+        94
+      ],
+      "meshOffset": -0.6537597179412842,
+      "renderOffset": -0.6513454292567347
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        73,
+        94
+      ],
+      "meshOffset": -0.7525327205657959,
+      "renderOffset": -0.7621241971331021
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        80,
+        94
+      ],
+      "meshOffset": -0.8296678066253662,
+      "renderOffset": -0.832917288754256
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        94,
+        94
+      ],
+      "meshOffset": -0.9994885921478271,
+      "renderOffset": -0.9993667492396081
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        101,
+        94
+      ],
+      "meshOffset": -0.7767379283905029,
+      "renderOffset": -0.7800506320052274
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        108,
+        94
+      ],
+      "meshOffset": -0.5701987743377686,
+      "renderOffset": -0.574399313890287
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        115,
+        94
+      ],
+      "meshOffset": -0.36365675926208496,
+      "renderOffset": -0.37103904660152875
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        122,
+        94
+      ],
+      "meshOffset": -0.15711569786071777,
+      "renderOffset": -0.17435580632728453
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        38,
+        101
+      ],
+      "meshOffset": -0.2822263240814209,
+      "renderOffset": -0.2852379097279787
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        52,
+        101
+      ],
+      "meshOffset": -0.45813441276550293,
+      "renderOffset": -0.4542821573623985
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        59,
+        101
+      ],
+      "meshOffset": -0.5352694988250732,
+      "renderOffset": -0.5349895086902472
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        66,
+        101
+      ],
+      "meshOffset": -0.5907628536224365,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        73,
+        101
+      ],
+      "meshOffset": -0.689537763595581,
+      "renderOffset": -0.7074270524021931
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        80,
+        101
+      ],
+      "meshOffset": -0.766671895980835,
+      "renderOffset": -0.7621241971331021
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        94,
+        101
+      ],
+      "meshOffset": -0.9364926815032959,
+      "renderOffset": -0.9345774687116011
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        101,
+        101
+      ],
+      "meshOffset": -0.7137429714202881,
+      "renderOffset": -0.7258127761873072
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        108,
+        101
+      ],
+      "meshOffset": -0.5072000026702881,
+      "renderOffset": -0.5150491695199142
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        115,
+        101
+      ],
+      "meshOffset": -0.3006608486175537,
+      "renderOffset": -0.3069292157193091
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        122,
+        101
+      ],
+      "meshOffset": -0.09411978721618652,
+      "renderOffset": -0.08271916926004774
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        38,
+        108
+      ],
+      "meshOffset": -0.21923041343688965,
+      "renderOffset": -0.2413712019128018
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        52,
+        108
+      ],
+      "meshOffset": -0.3951385021209717,
+      "renderOffset": -0.3920887744293995
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        59,
+        108
+      ],
+      "meshOffset": -0.4722726345062256,
+      "renderOffset": -0.4746958463988151
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        66,
+        108
+      ],
+      "meshOffset": -0.5277678966522217,
+      "renderOffset": -0.5150491695199142
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        73,
+        108
+      ],
+      "meshOffset": -0.6049010753631592,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        80,
+        108
+      ],
+      "meshOffset": -0.6820361614227295,
+      "renderOffset": -0.6888874968102834
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        87,
+        108
+      ],
+      "meshOffset": -0.759169340133667,
+      "renderOffset": -0.7621241971331021
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        94,
+        108
+      ],
+      "meshOffset": -0.8734967708587646,
+      "renderOffset": -0.8674049262090271
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        101,
+        108
+      ],
+      "meshOffset": -0.6507470607757568,
+      "renderOffset": -0.6513454292567347
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        108,
+        108
+      ],
+      "meshOffset": -0.44420504570007324,
+      "renderOffset": -0.4542821573623985
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        115,
+        108
+      ],
+      "meshOffset": -0.23766398429870605,
+      "renderOffset": -0.2413712019128018
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        24,
+        115
+      ],
+      "meshOffset": -0.28566718101501465,
+      "renderOffset": -0.3069292157193091
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        31,
+        115
+      ],
+      "meshOffset": -0.28566813468933105,
+      "renderOffset": -0.2852379097279787
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        38,
+        115
+      ],
+      "meshOffset": -0.28566813468933105,
+      "renderOffset": -0.2852379097279787
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        52,
+        115
+      ],
+      "meshOffset": -0.3321406841278076,
+      "renderOffset": -0.32845961176856653
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        59,
+        115
+      ],
+      "meshOffset": -0.40927577018737793,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        66,
+        115
+      ],
+      "meshOffset": -0.464771032333374,
+      "renderOffset": -0.4746958463988151
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        73,
+        115
+      ],
+      "meshOffset": -0.5419051647186279,
+      "renderOffset": -0.5349895086902472
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        80,
+        115
+      ],
+      "meshOffset": -0.6190392971038818,
+      "renderOffset": -0.6131836645089495
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        87,
+        115
+      ],
+      "meshOffset": -0.6961743831634521,
+      "renderOffset": -0.7074270524021931
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        94,
+        115
+      ],
+      "meshOffset": -0.8105008602142334,
+      "renderOffset": -0.8154468049021946
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        101,
+        115
+      ],
+      "meshOffset": -0.5877511501312256,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        108,
+        115
+      ],
+      "meshOffset": -0.3812100887298584,
+      "renderOffset": -0.37103904660152875
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        115,
+        115
+      ],
+      "meshOffset": -0.22555899620056152,
+      "renderOffset": -0.21919511978456008
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        17,
+        122
+      ],
+      "meshOffset": -0.42985987663269043,
+      "renderOffset": -0.43370998191041665
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        31,
+        122
+      ],
+      "meshOffset": -0.4755666255950928,
+      "renderOffset": -0.49495139980063874
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        38,
+        122
+      ],
+      "meshOffset": -0.4755666255950928,
+      "renderOffset": -0.4746958463988151
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        45,
+        122
+      ],
+      "meshOffset": -0.4755666255950928,
+      "renderOffset": -0.4746958463988151
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        52,
+        122
+      ],
+      "meshOffset": -0.4755675792694092,
+      "renderOffset": -0.49495139980063874
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        59,
+        122
+      ],
+      "meshOffset": -0.4755666255950928,
+      "renderOffset": -0.4746958463988151
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        66,
+        122
+      ],
+      "meshOffset": -0.4755666255950928,
+      "renderOffset": -0.4746958463988151
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        80,
+        122
+      ],
+      "meshOffset": -0.556044340133667,
+      "renderOffset": -0.5547727716374409
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        87,
+        122
+      ],
+      "meshOffset": -0.6331775188446045,
+      "renderOffset": -0.6323421900467066
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        94,
+        122
+      ],
+      "meshOffset": -0.7475039958953857,
+      "renderOffset": -0.7621241971331021
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        101,
+        122
+      ],
+      "meshOffset": -0.5247561931610107,
+      "renderOffset": -0.5349895086902472
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        108,
+        122
+      ],
+      "meshOffset": -0.41545748710632324,
+      "renderOffset": -0.41297897042264187
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        115,
+        122
+      ],
+      "meshOffset": -0.3329789638519287,
+      "renderOffset": -0.32845961176856653
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        31,
+        129
+      ],
+      "meshOffset": -0.5211293697357178,
+      "renderOffset": -0.5349895086902472
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        38,
+        129
+      ],
+      "meshOffset": -0.5982644557952881,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        52,
+        129
+      ],
+      "meshOffset": -0.6654660701751709,
+      "renderOffset": -0.6701937438503975
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        59,
+        129
+      ],
+      "meshOffset": -0.6654651165008545,
+      "renderOffset": -0.6701937438503975
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        66,
+        129
+      ],
+      "meshOffset": -0.6654660701751709,
+      "renderOffset": -0.6513454292567347
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        73,
+        129
+      ],
+      "meshOffset": -0.6654651165008545,
+      "renderOffset": -0.6701937438503975
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        80,
+        129
+      ],
+      "meshOffset": -0.6654670238494873,
+      "renderOffset": -0.6701937438503975
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        87,
+        129
+      ],
+      "meshOffset": -0.6654660701751709,
+      "renderOffset": -0.6701937438503975
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        101,
+        129
+      ],
+      "meshOffset": -0.6053578853607178,
+      "renderOffset": -0.5938694921915235
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        108,
+        129
+      ],
+      "meshOffset": -0.47652506828308105,
+      "renderOffset": -0.49495139980063874
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        52,
+        136
+      ],
+      "meshOffset": -0.689537763595581,
+      "renderOffset": -0.6888874968102834
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        59,
+        136
+      ],
+      "meshOffset": -0.7666699886322021,
+      "renderOffset": -0.7621241971331021
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        73,
+        136
+      ],
+      "meshOffset": -0.8553645610809326,
+      "renderOffset": -0.8674049262090271
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        80,
+        136
+      ],
+      "meshOffset": -0.8553636074066162,
+      "renderOffset": -0.8502365370612606
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        87,
+        136
+      ],
+      "meshOffset": -0.8553645610809326,
+      "renderOffset": -0.8502365370612606
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        73,
+        143
+      ],
+      "meshOffset": -0.8579432964324951,
+      "renderOffset": -0.8502365370612606
+    },
+    {
+      "stage": 4,
+      "pixel": [
+        80,
+        143
+      ],
+      "meshOffset": -0.935077428817749,
+      "renderOffset": -0.9345774687116011
+    }
+  ],
+  "maxErrorMetres": 0.024273040763566067
+}

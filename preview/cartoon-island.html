@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="uk"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Курортний острів · живі шпалери</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#126174;font:14px system-ui;color:#263f44}#plate{position:fixed;transform-origin:top left;background:url('../extensions/cartoon-island@avalon.local/assets/resort.jpg') center/100% 100%;width:1000px;height:666.6667px;overflow:hidden}.sprite{position:absolute;overflow:hidden;pointer-events:none}.sheet{position:absolute;width:1280px;height:2084px;background:url('../extensions/cartoon-island@avalon.local/assets/sprites.png') 0 0;transform-origin:top left;will-change:transform}#bubble{position:absolute;padding:5px 9px;border-radius:12px;background:#fff2dc;color:#67503f;font-size:13px}aside{position:fixed;top:18px;left:18px;max-width:390px;background:#fff8e9ee;padding:18px;border-radius:20px;box-shadow:0 6px 30px #294d5122}h1{font-size:18px;margin:0 0 6px}p{margin:0 0 12px;line-height:1.5}nav{display:flex;gap:7px;flex-wrap:wrap}button{border:0;border-radius:12px;padding:9px 12px;background:#e4eee0;color:#354c3c;cursor:pointer}button[aria-pressed=true]{background:#edaf6e}label{display:block;margin-top:12px}aside.hidden{opacity:0;pointer-events:none}#controls{position:fixed;right:16px;top:16px;background:#fff8e9dd}
+</style>
+<div id="plate" role="img" aria-label="Курортний острів з чоловічком, який реагує на роботу програм"><div id="bubble" hidden></div></div>
+<aside><h1>Твій курортний острів 🌴</h1><p>Сонце, море й маленький помічник. Спробуй події нижче.</p><nav></nav><label><input id="motion" type="checkbox" checked> Анімація чоловічка</label><label><input id="water" type="checkbox" checked> Хвилі й відблиски води</label></aside>
+<button id="controls">Сховати керування</button>
+<script type="module">
+import {IslandWorld} from '../extensions/cartoon-island@avalon.local/world.js';
+import {ATLAS,WATER,waterFrame,fitPlate,projectGround,characterFrame,needsFrames} from '../extensions/cartoon-island@avalon.local/resort-layout.js';
+const plate=document.querySelector('#plate'),world=new IslandWorld(),motion=document.querySelector('#motion'),water=document.querySelector('#water');
+window.islandWorld=world;window.renderStats={backgroundLoads:1,spriteUpdates:0,active:false};
+const assets=['resort.jpg','sprites.png','water-0.png','water-1.png'].map(name=>new Promise((resolve,reject)=>{const img=new Image();img.onload=resolve;img.onerror=reject;img.src='../extensions/cartoon-island@avalon.local/assets/'+name;}));
+await Promise.all(assets);window.assetsReady=true;
+function sprite(width,height,scale,x=0,y=0){const clip=document.createElement('div'),sheet=document.createElement('div');clip.className='sprite';sheet.className='sheet';clip.style.width=width*scale+'px';clip.style.height=height*scale+'px';clip.style.left=x+'px';clip.style.top=y+'px';sheet.style.width=ATLAS.width*scale+'px';sheet.style.height=ATLAS.height*scale+'px';sheet.style.backgroundSize=ATLAS.width*scale+'px '+ATLAS.height*scale+'px';clip.append(sheet);plate.append(clip);return {clip,sheet,scale,frame(x,y){sheet.style.transform=`translate(${-x*scale}px,${-y*scale}px)`;}};}
+const worker=sprite(80,100,.65),building=sprite(160,128,.85,552-80*.85,430-120*.85),smoke=sprite(160,128,.65,560,150),bubble=document.querySelector('#bubble');bubble.style.zIndex=10;smoke.clip.style.zIndex=8;
+const waterLayer=document.createElement('div');waterLayer.className='sprite';waterLayer.style.width='1000px';waterLayer.style.height='666.6667px';waterLayer.style.zIndex=1;plate.append(waterLayer);
+const waterScale=1000/WATER.width;
+const waterSheets=[0,1].map(index=>{const image=document.createElement('img');image.src=`../extensions/cartoon-island@avalon.local/assets/water-${index}.png`;image.style.position='absolute';image.style.width=WATER.bankWidth*waterScale+'px';image.style.height=WATER.bankHeight*waterScale+'px';image.style.willChange='transform';waterLayer.append(image);return image;});
+window.renderStats.waterUpdates=0;let waterIndex=-1;
+let buildingStage=-1;
+function paint(now){const p=projectGround(world.x,world.z),f=characterFrame(world,now),ef=world.motion?Math.floor(now*8)%8:0;
+ worker.clip.style.transform=`translate(${p.x-ATLAS.anchorX*.65}px,${p.y-ATLAS.anchorY*.65}px)`;worker.frame(f.x,f.y);worker.clip.style.zIndex=p.y>430?5:3;building.clip.style.zIndex=4;
+ if(buildingStage!==world.floors){building.frame(world.floors*160,1956);building.clip.hidden=world.floors===0;buildingStage=world.floors;}
+ smoke.clip.hidden=world.state!=='failed';if(!smoke.clip.hidden)smoke.frame(ef*160,1828);
+ bubble.hidden=!['permission','failed'].includes(world.state)||world.path.length>0;
+ if(!bubble.hidden){bubble.textContent=world.state==='failed'?'блять…':'Гей! Дозвіл?';bubble.style.left=p.x-28+'px';bubble.style.top=p.y-90+'px';}
+ waterLayer.hidden=!water.checked||!world.motion;
+ if(!waterLayer.hidden){const f=waterFrame(now);if(waterIndex!==f.index){for(let i=0;i<waterSheets.length;i++)waterSheets[i].hidden=i!==f.bank;waterSheets[f.bank].style.transform=`translate(${-f.x*waterScale}px,${-f.y*waterScale}px)`;waterIndex=f.index;window.renderStats.waterUpdates++;}}
+ window.renderStats.spriteUpdates++;
+}
+let timer=0,expiration=0,last=0;
+function wake(){clearInterval(timer);timer=0;const now=performance.now()/1000;world.step(now,0,motion.checked);paint(now);last=now;
+ if(document.hidden||!needsFrames(world,water.checked)){window.renderStats.active=false;return;}
+ window.renderStats.active=true;
+ timer=setInterval(()=>{const now=performance.now()/1000;world.step(now,now-last,motion.checked);last=now;paint(now);if(!needsFrames(world,water.checked)){clearInterval(timer);timer=0;window.renderStats.active=false;}},83);
+}
+function present(state){world.present(state,performance.now()/1000,['browsing','idle'].includes(state)?'desktop':'claude');clearTimeout(expiration);if(world.until)expiration=setTimeout(()=>{world.step(performance.now()/1000,0,motion.checked);wake();},(world.until-performance.now()/1000)*1000);wake();}
+const options=[['starting','Почав задачу'],['editing','Редагує'],['testing','Тести'],['failed','Тести впали'],['permission','Дозвіл'],['done','Завершив'],['browsing','Браузер'],['idle','Відпочинок']];
+const nav=document.querySelector('nav');for(const [state,label] of options){const b=document.createElement('button');b.textContent=label;b.setAttribute('aria-pressed','false');b.onclick=()=>{present(state);for(const item of nav.children)item.setAttribute('aria-pressed',String(item===b));};nav.append(b);}
+const params=new URLSearchParams(location.search);if(params.has('state')){world.floors=3;present(params.get('state'));Object.assign(world,world.target());world.path=[];}
+if(params.has('clean')){document.querySelector('aside').classList.add('hidden');document.querySelector('#controls').hidden=true;}
+const control=document.querySelector('#controls');control.onclick=()=>{const hidden=document.querySelector('aside').classList.toggle('hidden');control.textContent=hidden?'Показати керування':'Сховати керування';};
+motion.checked=!matchMedia('(prefers-reduced-motion: reduce)').matches;motion.onchange=water.onchange=wake;document.addEventListener('visibilitychange',wake);
+function resize(){const f=fitPlate(innerWidth,innerHeight);plate.style.transform=`translate(${f.x}px,${f.y}px) scale(${f.scale})`;wake();}addEventListener('resize',resize);resize();
+</script></html>

@@ -1,0 +1,41 @@
+{
+  "downloadDate": "2026-10-05",
+  "originals": "Local sibling asset-downloads/resort-v2; meshes and used maps packed in resort-v2.blend",
+  "files": [
+    {
+      "asset": "character-snow/snow_v02.blend",
+      "bytes": 7580771,
+      "sha256": "038463b0d793c2a619fbcd93a0220b21191f87079af03698e4056642d7032876"
+    },
+    {
+      "asset": "palms-better/palm_bend.obj",
+      "bytes": 68424,
+      "sha256": "7a0eb6213f7ce4d8444751dfa55b9c65a41733616d25d079e23bd27a20a113b1"
+    },
+    {
+      "asset": "palms-better/diffuse.png",
+      "bytes": 12768593,
+      "sha256": "5dcf670057a04c8c9a85c40c36b1c3e9eb8566bd85ba8250d34db896750e2e45"
+    },
+    {
+      "asset": "palms-better/normal.png",
+      "bytes": 9243509,
+      "sha256": "e872216fdabc552de087bae638805064df5daafca5a393e3ad4db6cba3e5b758"
+    },
+    {
+      "asset": "rocks-boulder/boulder_01_1k.gltf",
+      "bytes": 2773,
+      "sha256": "51487934db898b4c24072780a451e34eca5c02e3ada24a62bbc600bbc4019e92"
+    },
+    {
+      "asset": "rocks-boulder/boulder_01.bin",
+      "bytes": 2938808,
+      "sha256": "7f5b06503d62bd95bfe9c6b8a354a5cc8ff04a4d271a8cf87a3e3125db4232d7"
+    },
+    {
+      "asset": "furniture/wooden_table_02_1k.blend",
+      "bytes": 137139,
+      "sha256": "a449fb6f61d76bba9d7f45e2dfc1fa154f5795aa49484f1d6ec1667fe240dab7"
+    }
+  ]
+}

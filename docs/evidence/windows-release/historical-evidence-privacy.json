@@ -1,0 +1,39 @@
+{
+  "scope": "Only three authorized frozen historical JSON copies. Path-valued text genericized; numeric/boolean/hash evidence preserved. Live files unchanged.",
+  "files": [
+    {
+      "file": "docs/evidence/resort/source-v3-audit.json",
+      "changedPathFields": [
+        "/source"
+      ],
+      "numericBooleanAndHashFieldsUnchanged": true,
+      "personalPathsRemaining": 0,
+      "publicSHA256": "6e61d93f4f44427d3694dde2aab51f4da212ad83a72a34b028894c48defed68b"
+    },
+    {
+      "file": "docs/evidence/resort/validation-v4.json",
+      "changedPathFields": [
+        "/checks/0/command",
+        "/checks/0/output",
+        "/checks/1/command",
+        "/checks/4/command",
+        "/checks/5/command",
+        "/checks/6/command",
+        "/checks/8/command"
+      ],
+      "numericBooleanAndHashFieldsUnchanged": true,
+      "personalPathsRemaining": 0,
+      "publicSHA256": "377d2a420cd353e693941c022cb3f8c5d4f7c4c4b1f7e5c2daff253efc9150e0"
+    },
+    {
+      "file": "docs/evidence/resort/windows-baseline-v3.json",
+      "changedPathFields": [
+        "/0/failure",
+        "/1/failure"
+      ],
+      "numericBooleanAndHashFieldsUnchanged": true,
+      "personalPathsRemaining": 0,
+      "publicSHA256": "040f0bd6997283475325bf33d7593eccc8904f02ecf0e6a4c7c0bb7b4ddd4680"
+    }
+  ]
+}

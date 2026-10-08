@@ -1,103 +1,115 @@
-<div align="center">
+# Island Desktop
 
-# Island Desktop for GNOME
+**A Dynamic Island, a floating dock, phone media and a living island for your desktop.**
 
-**A complete Ubuntu desktop look, with Dynamic Island at its center.**
+The Windows edition brings the top bar, dock and media controls together in Cortiva Ink. Add AirPlay to play music and supported YouTube video from your iPhone or iPad, or Fairy Lagoon V7 for three little companions with their own places to work and relax. The original GNOME edition includes a coordinated Ubuntu desktop appearance.
 
-Light application themes · Floating dock · Music-responsive wallpaper · Media controls · Optional offline Laya monitoring
+![Island Desktop on Windows with Fairy Lagoon V7](docs/images/windows-v7/desktop.png)
 
-![GNOME 46](https://img.shields.io/badge/GNOME-46-4a86cf?style=flat-square)
-![Ubuntu 24.04](https://img.shields.io/badge/Ubuntu-24.04-E95420?style=flat-square)
-![Beta](https://img.shields.io/badge/status-0.2.0--beta.1-f2b544?style=flat-square)
-![License](https://img.shields.io/badge/license-GPL--3.0--or--later-667085?style=flat-square)
+*Product preview composed from the shipped scene renderer and actual native Windows panel captures.*
 
-[Install](#choose-your-installation) · [Desktop guide](docs/DESKTOP.md) · [Laya](#optional-offline-assistant) · [Validation](docs/VALIDATION.md) · [Report an issue](https://github.com/endrymagolas-wq/gnome-dynamic-island/issues)
+[Watch the Windows demo](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.1/island-desktop-windows-demo.mp4) · [Downloads](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/tag/windows-v0.4.0-beta.1) · [Windows quick start, українською](docs/WINDOWS_RELEASE.md) · [GNOME guide](docs/DESKTOP.md)
 
-</div>
+## Windows, brought together
 
-![Island Desktop: light GTK window, floating dock, wallpaper and centered island](docs/images/desktop-profile.png)
-
-*Native GNOME 46 preview from an isolated compositor. Audio features were injected to validate the wallpaper rendering; this is a desktop fixture, not a recording of a daily-use session.*
-
-## Your desktop, brought together
-
-Island Desktop combines the shell, application appearance, dock, wallpaper and media controls into one coordinated GNOME setup. Start with the full look, then adjust it to your taste. A smaller installation is available if you only want the island and its shell integration.
-
-Built for **Ubuntu 24.04 / GNOME Shell 46 / Wayland**. Tested on Ubuntu 24.04.5. The interface currently uses **Ukrainian labels**. This beta supports GNOME 46 only.
-
-| Part of the desktop | What you get |
+| Part | What you get |
 | --- | --- |
-| **Appearance** | Light GTK3/GTK4 application themes, matching icons, Inter typography and traffic-light window buttons. |
-| **Dock & wallpaper** | A floating bottom dock, bundled wallpaper and optional music-responsive Layerlight waves. |
-| **Dynamic Island** | A centered clock that becomes a compact media control with album art and animated playback indicators. |
-| **Sound & focus** | Desktop and phone-volume feedback, per-application audio controls, a focus timer and notification history. |
-| **Media & phone** | Netflix/YouTube browser-app launchers, an optional Netflix phone remote and optional AirPlay receiver integration. |
-| **Laya** | Optional local monitoring for disk space, sustained CPU/RAM pressure, long tasks, downloads, network changes and service failures. |
+| **Island and top bar** | A clock capsule expands at the top edge. Apps, window search, calendar, language, network, audio and settings use rounded Ink panels. |
+| **Floating dock** | Pinned and running applications, launch/focus/minimize, window lists and running indicators. The top arrow opens the genuine Windows background-icon panel and its context menus. |
+| **Media** | Artwork, track information, player selection, playback, seeking, system volume and per-application audio through Windows SMTC and Core Audio. |
+| **AirPlay** | Receive phone music and supported direct YouTube video. PIN pairing, an independent video window, supported playback/seek controls, aspect options and adjustable buffering. |
+| **Fairy Lagoon V7** | A larger island, three private nooks, a shared daybed and tea table. The companions walk, sit, drink, lie down, scratch their bellies and brew tea. Morning, day, evening and night follow the PC clock. |
+| **Everyday controls** | Focus timer, app volume/mute, optional playback-responsive indicator, animation, hover, display and startup preferences. |
 
-Custom-titlebar overlays cover configured Codex/ChatGPT, Claude and Antigravity profiles. Application appearance and controls depend on compatibility; see the [desktop guide](docs/DESKTOP.md).
+The island is a native WPF application. Fairy Lagoon runs in Lively Wallpaper using pre-rendered color/depth animation and 12-second water loops; Blender is needed only to edit and render the source scene. The dock uses installed applications and their icons. Third-party desktop applications and browser accounts are not included.
 
-## Choose your installation
+## Downloads
 
-Both options currently use the same repository or [release archive](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases). The commands below select what gets installed.
+Release **[windows-v0.4.0-beta.1](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/tag/windows-v0.4.0-beta.1)** offers a complete bundle and separate components:
 
-| Option | Includes | Command |
+| Download | Includes | Start after extraction |
 | --- | --- | --- |
-| **Full desktop** | Island and shell integration, light application themes, icons, Inter, dock, wallpaper, waves and browser-player launchers. | `python3 install.py install --desktop` |
-| **Island & shell** | Island, Ink shell theme, compatibility window controls and assistant helpers; keeps the rest of your desktop appearance. | `python3 install.py install` |
+| [Full Windows desktop](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.1/island-desktop-windows-full-0.4.0-beta.1.zip) | Island, top bar, dock, media, AirPlay and V7 wallpaper; .NET and Python included. | `IslandDesktop-Windows-Full/Start-Desktop.cmd` |
+| [Windows island](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.1/island-desktop-windows-0.4.0-beta.1.zip) | Island, top bar, dock and media; .NET included. Receiver and wallpaper are separate. | `IslandDesktop-Windows/IslandDesktop.exe` |
+| [AirPlay receiver](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.1/cortiva-airplay-windows-0.4.0-beta.1.zip) | Standalone UxPlay/GStreamer receiver and its dependencies, licenses and source. | `Cortiva-AirPlay-Windows/Start-AirPlay.cmd` |
+| [Fairy Lagoon V7 wallpaper](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.1/fairy-lagoon-v7-wallpaper-windows.zip) | V7 runtime assets and a local host; Python included. | `FairyLagoon-V7-Windows/Start-Wallpaper.cmd` |
+| [Editable Blender source](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.1/fairy-lagoon-v7-blender-sources.zip) | Scene, character actions, build/render scripts and notices. | Open the `.blend` files in Blender. |
+| [Native dependency source](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.1/cortiva-airplay-native-corresponding-sources-0.4.0-beta.1.zip) | Exact corresponding sources/recipes for the shipped native receiver libraries; separate from the runtime bundle. | For source/license review and rebuilding. |
 
-**Laya, AirPlay receiver setup and the phone remote are optional.** Laya and the phone remote start OFF on a fresh installation. Ordinary MPRIS media controls work without them.
+**Lively Wallpaper is an external dependency** for the wallpaper and full bundle. The core island and standalone receiver do not need it. Keep every extracted package's subfolders together. See [Windows installation](docs/INSTALL_WINDOWS.md), [AirPlay](docs/AIRPLAY_WINDOWS.md) and [V7](docs/WALLPAPER_V7.md) for setup and removal.
 
-### 1. Get the project
+The corresponding [project source archive](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.1/island-desktop-windows-source-0.4.0-beta.1.zip) contains Windows and GNOME code, installers and production scripts. UxPlay source and local changes are included with the receiver; exact native dependency sources are offered as the separate download above, without duplicating them in the full runtime bundle. [Archive checksums](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.1/SHA256SUMS).
 
-Check `gnome-shell --version` first. KDE, Hyprland and other shells are unsupported; keep GNOME's version validation enabled.
+| Platform | Support boundary |
+| --- | --- |
+| **Windows** | Native x64 beta; tested on Windows 11 Pro x64, build 26200. Windows 10, ARM64 and every DPI/monitor arrangement are not validated. |
+| **Linux** | Ubuntu 24.04 / GNOME Shell 46 / Wayland; tested on Ubuntu 24.04.5. This installer supports GNOME 46 only. KDE and Hyprland are unsupported. |
 
-```sh
+## Phone music and video
+
+For the full Windows bundle, enable the receiver in **System → AirPlay**. The standalone receiver shows its PIN in its console. Put the phone and PC on the same LAN and choose **Cortiva Island**:
+
+- **Music:** select it in the player's AirPlay output menu.
+- **YouTube video:** cast button → **AirPlay / Bluetooth devices** → **Cortiva Island**. The supported direct-video path opens a PC video window.
+
+A real iPhone was used to confirm audible music, audio after PIN pairing and moving YouTube video with sound. Artwork, playback commands and seek support depend on what the source sends. Buffer choices are targets, not a fixed-latency guarantee. DRM services and every iOS application/version are outside the tested scope. [Connection and firewall instructions](docs/AIRPLAY_WINDOWS.md).
+
+## Fairy Lagoon V7
+
+Pip has a mint chair on the west side, the Codex companion a rounded violet nook beneath the eastern palm, and the app companion a low cream seat on the front beach. The shared daybed and tea table have reservations; routes and body clearance keep the characters from occupying the same furniture.
+
+The three channels react to coarse local activity. Optional Claude Code hooks provide explicit task events; Codex and other applications also use process/focus inference. This is an activity display, not access to an assistant's internal thoughts. Hooks send bounded states, not prompts, tool commands or file contents. Eating and facial mouth/eyelid animation have not been implemented.
+
+![Fairy Lagoon V7 animation preview](docs/media/windows-v7-preview.gif)
+
+The product preview illustrates the scene and panels. Any staged media fixtures in the demo are labeled; a preview is separate from native playback and physical phone evidence. [V7 details and editable source](docs/WALLPAPER_V7.md).
+
+### Native Windows panels
+
+![Native media panel with a local test media fixture](docs/images/windows-v7/media.png)
+
+![Native AirPlay settings panel](docs/images/windows-v7/airplay.png)
+
+[Download all screenshots](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.1/island-desktop-windows-screenshots.zip). The demo is a silent 55-second, 1920×1080 H.264 video at 30fps.
+
+## GNOME desktop
+
+The Linux profile combines light GTK3/GTK4 themes, matching icons, Inter, traffic-light window controls, a floating Ubuntu Dock, a light wallpaper and Layerlight waves driven by system playback. The island supplies MPRIS controls, per-app audio, phone-volume feedback, focus tools and notification history. Custom-titlebar profiles depend on application compatibility.
+
+The interface currently uses Ukrainian labels. Disable conflicting top-bar/autohide extensions before testing. Check `gnome-shell --version` and keep the installer's version validation enabled.
+
+From this repository or the extracted source archive:
+
+```bash
 sudo apt install git python3 python3-venv gnome-shell-extensions
-git clone https://github.com/endrymagolas-wq/gnome-dynamic-island.git
-cd gnome-dynamic-island
-```
 
-### 2. Install the full desktop
-
-On Ubuntu 24.04, install the desktop-profile dependencies, preview the changes, then install:
-
-```sh
+# Full appearance profile dependencies
 sudo apt install python3-gi gir1.2-gtk-3.0 gnome-shell-extension-ubuntu-dock \
   pipewire-bin fontconfig qrencode
+
+# Preview changes, then install
 python3 install.py install --desktop --dry-run
 python3 install.py install --desktop
 ```
 
-For the smaller **island & shell** option instead:
+For a smaller installation that keeps the rest of your desktop appearance:
 
-```sh
+```bash
 python3 install.py install --dry-run
 python3 install.py install
 ```
 
-### 3. Load your new desktop
+Save your work, log out and log back in to load the extension. The installer prints a recovery manifest; retain its path. Appearance assets are installed offline, replaced files are backed up and changed settings are recorded. `--no-activate` copies files without changing settings or starting services.
 
-Save your work, then **log out and back in** to load the new JavaScript. The installer prints a recovery manifest: keep its path for [restoring your previous setup](#restore--remove). Disable conflicting top-bar/autohide extensions such as Hide Top Bar before testing.
+The separate GNOME cartoon wallpaper uses one worker and its own cached-frame player. Install with `python3 install_wallpaper.py`; see [setup](docs/CLAUDE.md). Windows V7 has a different runtime and is not advertised as a native GNOME V7 port.
 
-The appearance assets install offline. Replaced files are backed up and changed settings are recorded. `--no-activate` copies files without changing desktop settings or services. See the [full desktop guide](docs/DESKTOP.md) for browser requirements, optional receivers, phone pairing and compatibility details.
+Optional Linux receivers, browser players and Netflix phone remote are documented in the [desktop guide](docs/DESKTOP.md). Linux audio uses Shairport Sync; supported video uses a separately built, patched UxPlay. The Linux installer does not alter firewall/router policies.
 
-## Make it yours
+### Optional offline Laya
 
-Use GNOME's appearance settings and your dock's settings to adjust fonts, wallpaper and dock preferences. The top-panel moon control selects automatic, calm or energetic wallpaper motion and its intensity; you can switch waves off. Island desktop controls provide focus, audio, notification and assistant settings.
+Laya monitors supported resource, task, download, connectivity and service events and offers short recommendations. It starts **OFF** on a fresh installation. It does not delete files, close other applications or execute model-selected commands.
 
-The profile uses ordinary GNOME settings and installed theme/extension files. Further theme changes can be made in those files; there is no all-in-one visual theme editor in this beta. Restore retains later per-key appearance choices; manually edited installed source files cause restore to stop before overwriting them.
-
-## Optional offline assistant
-
-### Laya: keep an eye on resources while you work
-
-Local models, builds and parallel development tasks can put pressure on RAM, CPU and disk space. Laya classifies observed system events and surfaces short notices for supported conditions, so you can spot resource pressure or service failures while working on a project.
-
-Monitoring includes sustained CPU/RAM pressure, disk-space changes, long tasks, downloads and network changes. Notices respect fullscreen/focus contexts, category muting and a maximum of three notices per five minutes. The assistant recommends actions; it does not close applications, kill other processes, delete files or run model-selected commands. Its economic mode releases the owned model process after 60 seconds idle. Full OFF disables its service and monitoring; manual diagnosis and media controls remain available.
-
-The assistant starts **OFF on a fresh install**. Existing preferences are retained when reinstalling.
-
-```sh
+```bash
 python3 setup_assistant.py
 export PATH="$HOME/.local/bin:$PATH"
 island-assistant on
@@ -105,51 +117,28 @@ island-assistant status
 island-assistant off
 ```
 
-Setup explicitly downloads CPU Python dependencies, a pinned [Laya multilingual checkpoint](https://huggingface.co/convaiinnovations/laya), and its tokenizer/configuration files. Internet is needed during setup; normal inference runs offline. The model weights alone are about 644 MB; allow several GB of disk space for Python dependencies and around 2 GB RAM for the loaded model. The lightweight collector uses substantially less memory when Laya sleeps. CPU and memory limits apply to the owned assistant service.
+Setup needs internet to download pinned Python dependencies and the model; inference then runs offline. The model weights are about 644 MB. Allow several GB of disk for dependencies and around 2 GB RAM for the loaded model. Python 3.10+ is required; actual inference was checked with Python 3.11. Economic mode releases the owned model after 60 seconds idle. Notices are limited to three per five minutes. `island-assistant diagnose` works with the assistant OFF.
 
-Python 3.10+ is required for model setup; Python 3.11 was used for the actual inference checks. `python3 setup_assistant.py --python /path/to/python3.11` selects another interpreter. The full tested runtime freeze is in `assistant/requirements.lock`; the installer pins the principal SDK/runtime versions. It is not a promise that every future dependency combination works.
+Monitoring reads system metrics, coarse same-user process/service information and top-level download names/size/mtime. It does not read download contents, keystrokes, browser history, command lines or environment variables. Preferences and recent notices remain under `~/.local/share/island-desktop/assistant/`; redact local process/service names before publishing logs. See [Linux validation](docs/VALIDATION.md).
 
-Open the island, then its desktop controls, for assistant settings, category muting, diagnosis, history and application audio. `island-assistant diagnose` works with the assistant OFF. The actual service is `island-assistant.service`:
+## Restore and privacy
 
-```sh
-systemctl --user status island-assistant.service
-journalctl --user -u island-assistant.service -n 30
-```
+On Windows, use the package's stop action and switch off any startup preference before removing its folder. The island restores the previous taskbar state on exit; its launcher also handles island crashes. The full bundle's stop action closes its own wallpaper entry and restores the captured previous Lively layout; standalone wallpaper has a restore action. Pairing keys and preferences stay in local user data.
 
-## AirPlay and media players
+Restore a GNOME installation using the manifest printed by its installer:
 
-Ordinary MPRIS players do not require the assistant or AirPlay. Receiver support is integration with separately installed software: [Shairport Sync](https://github.com/mikebrady/shairport-sync) for audio and [UxPlay](https://github.com/FDH2/UxPlay) for screen mirroring. Follow their upstream installation instructions. The phone and receiver must be on the same LAN.
-
-This beta recognizes existing user units named `ytmusic-airplay.service` (audio) and `airplay-screen.service` (screen). The optional `--receivers` installation configures user units after `setup_receivers.py`; see the desktop guide. Shairport needs its D-Bus/MPRIS metadata support for phone track data, artwork and volume. A phone audio receiver is selected in the phone's audio AirPlay menu; screen mirroring uses a separate receiver. No firewall rules or network configuration are changed by this installer.
-
-## Restore / remove
-
-Use the exact manifest path printed during installation:
-
-```sh
+```bash
 python3 install.py restore /absolute/path/to/manifest.json
 ```
 
-Original files are restored, newly installed package files removed, and unchanged desktop settings reverted. Modified source files cause restore to stop before overwriting them. Later assistant preference changes and personal history/model caches are preserved. Save work and log out/back in after restoring. To switch off quickly, disable `airplay-island@avalon.local` and `island-window-controls@avalon.local` in GNOME Extensions, then run `island-assistant off`.
+Restore reinstates original files and unchanged settings, retains later preferences and stops before overwriting manually edited installed source. Save work and log out/back in afterward.
 
-If upgrading the earlier local prototype, the installer disables its old window-controls UUID to avoid duplicate overlays. Existing old prototype assistant files/services are not migrated automatically: switch the old assistant off before enabling this separate public version.
+Optional Windows audio response and Linux Layerlight analyze system playback, not microphone input, and do not save raw audio. Windows does not install GNOME themes, Linux Laya or the Netflix phone remote. Local suppression of Seelen flyouts on the development PC is not a portable feature that disables every Windows popup.
 
-## Privacy and limits
+Physical sleep/resume/lock, exclusive fullscreen, broad monitor/scaling combinations and every third-party player remain separate beta checks. [Release evidence and limitations](docs/RELEASE_VALIDATION.md) distinguish automated checks, browser previews, native operation and physical phone verification.
 
-Monitoring reads system metrics, same-user process names/PIDs/start times, coarse NetworkManager connectivity, the watched user services, and top-level download names/size/mtime to detect stable files. Download contents, screenshots, command lines, environment variables, keystrokes and browser histories are not collected. Some UI media artwork may be downloaded from the URL supplied by an MPRIS player. No analytics or cloud model API is included.
+## Source and licenses
 
-Status, preferences and the last 60 notices stay in `~/.local/share/island-desktop/assistant/` with private file permissions. Logs can contain local process or service names; inspect and redact them before filing a public issue. OFF stops the owned classifier and collector, not other applications or media receivers.
+Project code is **GPL-3.0-or-later**. Third-party runtime, theme, font and artwork licenses are preserved: [general notices](THIRD_PARTY_NOTICES.md), [Windows notices](windows/THIRD_PARTY_NOTICES.md), [asset provenance](art/ASSET_SOURCES.md).
 
-See [validation and known limitations](docs/VALIDATION.md). Physical sleep/resume/lock reliability and broad monitor, scaling and application compatibility remain open beta checks. Task disappearance does not prove successful completion. Per-process RSS may count shared pages more than once. Displayed advice is conservative and requires the user's own decision.
-
-## Development
-
-```sh
-python3 tests/run.py
-python3 -m compileall -q assistant install.py setup_assistant.py
-find extensions -name '*.js' -exec node --check {} \;
-```
-
-Node 22+ is needed for development tests and the optional Netflix phone remote. There are no npm runtime dependencies. Native rendering needs GNOME 46; portable tests do not stand in for compositor or physical-device verification.
-
-Code is GPL-3.0-or-later; upstream theme notices are retained. See [third-party notices](THIRD_PARTY_NOTICES.md). This project is unofficial and is not affiliated with Apple, GNOME, Ubuntu or the Laya authors.
+Development commands and build dependencies: [Windows](windows/README.md), [GNOME desktop](docs/DESKTOP.md), [Linux validation](docs/VALIDATION.md). This is an unofficial project with no affiliation to Apple, Microsoft, GNOME, Ubuntu or the Laya authors.

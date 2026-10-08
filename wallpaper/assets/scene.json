@@ -1,0 +1,780 @@
+{
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "frames": 360,
+  "seconds": 12,
+  "camera": {
+    "location": [
+      11,
+      -18,
+      13
+    ],
+    "rotation": [
+      1.0482372045516968,
+      4.317574564538518e-08,
+      0.548549473285675
+    ],
+    "lens": 44,
+    "sensor": 36,
+    "matrixWorld": [
+      [
+        0.8532817959785461,
+        -0.260255366563797,
+        0.45185983180999756,
+        11
+      ],
+      [
+        0.5214500427246094,
+        0.42587241530418396,
+        -0.7394068837165833,
+        -18
+      ],
+      [
+        -4.317574564538518e-08,
+        0.866544783115387,
+        0.49909937381744385,
+        13
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ]
+  },
+  "targets": {
+    "desk": [
+      -2.3,
+      -1.1,
+      0.43
+    ],
+    "testing": [
+      -1.35,
+      -2.3,
+      0.43
+    ],
+    "failed": [
+      -1.35,
+      -2.3,
+      0.43
+    ],
+    "permission": [
+      -1.65,
+      -3.4,
+      0.43
+    ],
+    "browsing": [
+      -2.3,
+      -1.1,
+      0.43
+    ],
+    "idle": [
+      -3.1,
+      -2.32,
+      0.97
+    ],
+    "done": [
+      -3.1,
+      -2.32,
+      0.97
+    ],
+    "starting": [
+      -2.3,
+      -1.1,
+      0.43
+    ],
+    "editing": [
+      -2.3,
+      -1.1,
+      0.43
+    ],
+    "working": [
+      -2.3,
+      -1.1,
+      0.43
+    ]
+  },
+  "projections": {
+    "desk": {
+      "x": 719.8214196934504,
+      "y": 562.1440363200287,
+      "depth": 24.779391226768492
+    },
+    "testing": {
+      "x": 724.8352166010493,
+      "y": 639.2279199393605,
+      "depth": 23.462836126089094
+    },
+    "permission": {
+      "x": 632.4000745103644,
+      "y": 682.3858102495537,
+      "depth": 22.785046503543853
+    },
+    "done": {
+      "x": 582.5899685401978,
+      "y": 547.5633636274596,
+      "depth": 23.969289032220843
+    },
+    "idle": {
+      "x": 582.5899685401978,
+      "y": 547.5633636274596,
+      "depth": 23.969289032220843
+    },
+    "browsing": {
+      "x": 719.8214196934504,
+      "y": 562.1440363200287,
+      "depth": 24.779391226768492
+    },
+    "failed": {
+      "x": 724.8352166010493,
+      "y": 639.2279199393605,
+      "depth": 23.462836126089094
+    },
+    "starting": {
+      "x": 719.8214196934504,
+      "y": 562.1440363200287,
+      "depth": 24.779391226768492
+    },
+    "editing": {
+      "x": 719.8214196934504,
+      "y": 562.1440363200287,
+      "depth": 24.779391226768492
+    },
+    "working": {
+      "x": 719.8214196934504,
+      "y": 562.1440363200287,
+      "depth": 24.779391226768492
+    }
+  },
+  "depthRange": [
+    0,
+    50
+  ],
+  "assetsImported": true,
+  "character": {
+    "width": 128,
+    "height": 160,
+    "frames": 16,
+    "fps": 16,
+    "ppm": 72.72727272727272,
+    "anchorX": 64.00000762939453,
+    "anchorY": 120.96397399902344,
+    "poses": [
+      "idle",
+      "starting",
+      "editing",
+      "testing",
+      "failed",
+      "permission",
+      "done",
+      "browsing",
+      "working"
+    ],
+    "walkSpeed": 0.5952,
+    "source": "Pip generated from project reference via Stable Fast 3D; adapted Quaternius CC0 rig",
+    "reference": "art/references/pip-v5-front.png",
+    "transitions": [
+      "sit",
+      "stand"
+    ],
+    "depthAtlas": "character-depth.png",
+    "depthScale": 4,
+    "depthBias": 2,
+    "ambient": {
+      "atlas": "ambient.png",
+      "depthAtlas": "ambient-depth.png",
+      "clips": [
+        "drink",
+        "nod",
+        "yawn"
+      ],
+      "frames": 96,
+      "fps": 16,
+      "columns": 16,
+      "rowsPerClip": 6,
+      "cycleSeconds": 42,
+      "facialRig": false
+    },
+    "life": {
+      "atlas": "life.png",
+      "depthAtlas": "life-depth.png",
+      "width": 256,
+      "height": 192,
+      "frames": 24,
+      "fps": 8,
+      "columns": 8,
+      "rowsPerClip": 3,
+      "clips": [
+        "stand",
+        "sit",
+        "drink",
+        "lie",
+        "scratch",
+        "brew",
+        "recline",
+        "rise"
+      ],
+      "frameCounts": {
+        "stand": 24,
+        "sit": 24,
+        "drink": 24,
+        "lie": 24,
+        "scratch": 24,
+        "brew": 24,
+        "recline": 16,
+        "rise": 16
+      },
+      "ppm": 80.00000762939453,
+      "anchorX": 117.9881820678711,
+      "anchorY": 149.93031406402588,
+      "depthScale": 4,
+      "depthBias": 2,
+      "phase": "day",
+      "engine": "BLENDER_EEVEE_NEXT",
+      "lying": {
+        "headDirection": [
+          0,
+          1,
+          0
+        ],
+        "rootOffset": 0.44911177396774293,
+        "bounds": [
+          [
+            -0.6530157327651978,
+            0.6467170715332031
+          ],
+          [
+            0.00047311719390563667,
+            1.6100561618804932
+          ],
+          [
+            -0.4341117739677429,
+            0.42360788583755493
+          ]
+        ],
+        "rootAt": "feet",
+        "contactClearance": 0.015
+      },
+      "facialRig": false,
+      "teapot": true,
+      "pourStream": true,
+      "sip": {
+        "headBackRadians": 0.16,
+        "cupTiltRadians": 0.26,
+        "raise": [
+          0.08,
+          0.38
+        ],
+        "hold": [
+          0.38,
+          0.62
+        ],
+        "lower": [
+          0.62,
+          0.92
+        ]
+      },
+      "bakerSha256": "6fc367ca37011db00a11d73e7d065655b48024dd943f1d113981ebb5b513d4b0"
+    }
+  },
+  "construction": {
+    "width": 160,
+    "height": 160,
+    "atlasY": 3040,
+    "x": 1214.0925979614258,
+    "y": 636.3126540184021,
+    "depth": 23.51007652282715,
+    "ppm": 64.0,
+    "anchorX": 80.0,
+    "anchorY": 116.04829788208008,
+    "depthAtlas": "construction-depth.png",
+    "depthScale": 4,
+    "depthBias": 2
+  },
+  "smoke": {
+    "width": 256,
+    "height": 256,
+    "frames": 24,
+    "fps": 12,
+    "columns": 6,
+    "ppm": 102.4,
+    "anchorX": 128.0,
+    "anchorY": 185.67727661132812,
+    "worldOrigin": [
+      3.1,
+      -0.15,
+      1.65
+    ]
+  },
+  "ground": {
+    "ellipse": [
+      7.2,
+      5.5
+    ],
+    "plateauRadius": 0.72,
+    "height": 0.43,
+    "slope": 2.35,
+    "coastPerturb": [
+      0.045,
+      0.035,
+      0.4
+    ]
+  },
+  "navigation": {
+    "clearance": 0.3,
+    "obstacles": [
+      {
+        "name": "terrace",
+        "bounds": [
+          -1.899999976158142,
+          -0.5,
+          1.899999976158142,
+          2.5
+        ]
+      },
+      {
+        "name": "single original work table",
+        "bounds": [
+          -2.92392897605896,
+          -0.7530124187469482,
+          -1.6760706901550293,
+          -0.04698759317398071
+        ]
+      },
+      {
+        "name": "mint-west-nook",
+        "bounds": [
+          -3.734999895095825,
+          -2.6599998474121094,
+          -2.4649999141693115,
+          -1.9249999523162842
+        ]
+      },
+      {
+        "name": "violet-east-nook",
+        "bounds": [
+          2.6471457481384277,
+          -2.320000171661377,
+          3.9528541564941406,
+          -1.0800000429153442
+        ]
+      },
+      {
+        "name": "cream-front-nook",
+        "bounds": [
+          -1.0299999713897705,
+          -3.995000123977661,
+          0.12999999523162842,
+          -3.2950000762939453
+        ]
+      },
+      {
+        "name": "western-nap-nook",
+        "bounds": [
+          -5.40500020980835,
+          -2.0900001525878906,
+          -3.8949999809265137,
+          -0.11000001430511475
+        ]
+      },
+      {
+        "name": "front-tea-nook",
+        "bounds": [
+          1.8249999284744263,
+          -3.7750000953674316,
+          2.9092562198638916,
+          -3.125
+        ]
+      },
+      {
+        "name": "V2 scanned boulder 0",
+        "bounds": [
+          -6.54238748550415,
+          -1.150986909866333,
+          -5.535562992095947,
+          0.3005691170692444
+        ]
+      },
+      {
+        "name": "V2 scanned boulder 1",
+        "bounds": [
+          -6.111003875732422,
+          -2.0680181980133057,
+          -5.582420825958252,
+          -1.3059512376785278
+        ]
+      },
+      {
+        "name": "V2 scanned boulder 2",
+        "bounds": [
+          5.022491455078125,
+          -0.520045280456543,
+          6.3439483642578125,
+          1.3851219415664673
+        ]
+      },
+      {
+        "name": "V2 scanned boulder 3",
+        "bounds": [
+          5.455709457397461,
+          1.074259877204895,
+          6.210827827453613,
+          2.1629269123077393
+        ]
+      },
+      {
+        "name": "V2 scanned boulder 4",
+        "bounds": [
+          1.8927333354949951,
+          3.6180713176727295,
+          2.5849251747131348,
+          4.616016387939453
+        ]
+      },
+      {
+        "name": "V2 scanned boulder 5",
+        "bounds": [
+          -5.868408679962158,
+          -2.8267805576324463,
+          -5.327240467071533,
+          -2.0465691089630127
+        ]
+      },
+      {
+        "name": "western palm trunk",
+        "bounds": [
+          -4.72,
+          -0.02,
+          -4.48,
+          0.22
+        ]
+      }
+    ]
+  },
+  "seating": {
+    "states": [
+      "idle",
+      "done"
+    ],
+    "position": [
+      -3.1,
+      -2.32,
+      0.66
+    ],
+    "approach": [
+      -3.1,
+      -3.17,
+      0.43
+    ],
+    "seconds": 1.05,
+    "hopHeight": 0.12,
+    "cushionTop": 0.97
+  },
+  "lighting": {
+    "phases": {
+      "day": "",
+      "morning": "phases/morning/",
+      "evening": "phases/evening/",
+      "night": "phases/night/"
+    },
+    "schedule": [
+      {
+        "phase": "morning",
+        "minute": 360
+      },
+      {
+        "phase": "day",
+        "minute": 540
+      },
+      {
+        "phase": "evening",
+        "minute": 1080
+      },
+      {
+        "phase": "night",
+        "minute": 1260
+      }
+    ],
+    "fadeSeconds": 120
+  },
+  "version": 7,
+  "layout": "organic-personal-nooks",
+  "source": "art/island/resort-v7.blend",
+  "activities": {
+    "seats": {
+      "claude": {
+        "id": "mint-west-nook",
+        "position": [
+          -3.1,
+          -2.32,
+          0.97
+        ],
+        "approach": [
+          -3.1,
+          -3.17,
+          0.43
+        ],
+        "heading": 0,
+        "surfaceHeight": 0.97,
+        "rootOffset": 0.31,
+        "transitionSeconds": 1.05,
+        "hopHeight": 0.12
+      },
+      "codex": {
+        "id": "violet-east-nook",
+        "position": [
+          3.3,
+          -1.74,
+          0.93
+        ],
+        "approach": [
+          3.3,
+          -2.66,
+          0.43
+        ],
+        "heading": 0,
+        "surfaceHeight": 0.93,
+        "rootOffset": 0.31,
+        "transitionSeconds": 1.05,
+        "hopHeight": 0.12
+      },
+      "apps": {
+        "id": "cream-front-nook",
+        "position": [
+          -0.45,
+          -3.67,
+          0.86
+        ],
+        "approach": [
+          -0.45,
+          -4.47,
+          0.25066809196882944
+        ],
+        "heading": 0,
+        "surfaceHeight": 0.86,
+        "rootOffset": 0.31,
+        "transitionSeconds": 1.05,
+        "hopHeight": 0.1
+      }
+    },
+    "bed": {
+      "id": "western-nap-nook",
+      "position": [
+        -4.65,
+        -1.91,
+        0.84
+      ],
+      "approach": [
+        -4.65,
+        -2.5,
+        0.256218322714202
+      ],
+      "heading": 0,
+      "surfaceHeight": 0.84,
+      "rootOffset": -0.44911177396774293,
+      "seconds": 14,
+      "transitionSeconds": 1.35,
+      "usableLength": 1.94,
+      "usableWidth": 1.45,
+      "anchor": "feet south; head +Y"
+    },
+    "tea": {
+      "id": "front-tea-nook",
+      "position": [
+        2.35,
+        -4.27,
+        0.19557013787032787
+      ],
+      "approach": [
+        2.35,
+        -4.27,
+        0.19557013787032787
+      ],
+      "heading": 0,
+      "seconds": 10,
+      "counterHeight": 1.025
+    },
+    "targets": {
+      "claude": {
+        "desk": [
+          -2.3,
+          -1.1,
+          0.43
+        ],
+        "testing": [
+          -1.35,
+          -2.3,
+          0.43
+        ],
+        "failed": [
+          -1.35,
+          -2.3,
+          0.43
+        ],
+        "permission": [
+          -1.65,
+          -3.4,
+          0.43
+        ],
+        "browsing": [
+          -2.3,
+          -1.1,
+          0.43
+        ],
+        "idle": [
+          -3.1,
+          -2.32,
+          0.97
+        ],
+        "done": [
+          -3.1,
+          -2.32,
+          0.97
+        ],
+        "starting": [
+          -2.3,
+          -1.1,
+          0.43
+        ],
+        "editing": [
+          -2.3,
+          -1.1,
+          0.43
+        ],
+        "working": [
+          -2.3,
+          -1.1,
+          0.43
+        ]
+      },
+      "codex": {
+        "desk": [
+          2.3,
+          -1.55,
+          0.43
+        ],
+        "testing": [
+          1.05,
+          -2.05,
+          0.43
+        ],
+        "failed": [
+          1.05,
+          -2.05,
+          0.43
+        ],
+        "permission": [
+          1.15,
+          -3.05,
+          0.43
+        ],
+        "browsing": [
+          2.3,
+          -1.55,
+          0.43
+        ],
+        "idle": [
+          3.3,
+          -1.74,
+          0.93
+        ],
+        "done": [
+          3.3,
+          -1.74,
+          0.93
+        ],
+        "starting": [
+          2.3,
+          -1.55,
+          0.43
+        ],
+        "editing": [
+          2.3,
+          -1.55,
+          0.43
+        ],
+        "working": [
+          2.3,
+          -1.55,
+          0.43
+        ]
+      },
+      "apps": {
+        "desk": [
+          0.35,
+          -2.85,
+          0.43
+        ],
+        "testing": [
+          0.35,
+          -2.85,
+          0.43
+        ],
+        "failed": [
+          0.35,
+          -2.85,
+          0.43
+        ],
+        "permission": [
+          0.8,
+          -3.95,
+          0.4187323366622417
+        ],
+        "browsing": [
+          0.35,
+          -2.85,
+          0.43
+        ],
+        "idle": [
+          -0.45,
+          -3.67,
+          0.86
+        ],
+        "done": [
+          -0.45,
+          -3.67,
+          0.86
+        ],
+        "starting": [
+          0.35,
+          -2.85,
+          0.43
+        ],
+        "editing": [
+          0.35,
+          -2.85,
+          0.43
+        ],
+        "working": [
+          0.35,
+          -2.85,
+          0.43
+        ]
+      }
+    },
+    "workLane": false,
+    "minimumGroundHeight": 0.1,
+    "initialIdleSeconds": 10,
+    "transitionSeconds": 1.05,
+    "seatSeconds": 12,
+    "poseOverrides": {
+      "codex": {
+        "starting": "testing",
+        "editing": "testing",
+        "working": "testing"
+      },
+      "apps": {
+        "starting": "testing",
+        "editing": "testing",
+        "working": "testing"
+      }
+    },
+    "groundNote": "XY enlarged from ellipse 5.5/4.3 to 7.2/5.5; shoreline foam scaled identically; all Z and camera unchanged."
+  },
+  "effects": {
+    "construction": false,
+    "smoke": false
+  }
+}

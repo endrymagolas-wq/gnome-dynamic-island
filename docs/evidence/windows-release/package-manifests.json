@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "artifacts": [
+    {
+      "artifact": "island-desktop-windows-0.4.0-beta.1.zip",
+      "bytes": 87688585,
+      "sha256": "01fd2033afdac15483d6dfeb290b3177ff2ee5af6a11d8a0511537c596c9d004",
+      "packageManifestFilesVerified": 524,
+      "unlistedArchiveEntries": 0,
+      "blenderIntegrityFilesMatched": [],
+      "status": "PASS"
+    },
+    {
+      "artifact": "fairy-lagoon-v7-wallpaper-windows.zip",
+      "bytes": 345900936,
+      "sha256": "d63079c23b36d142cf9cd50e1c6bcc8fab8a7005e7da8a883616a9940d2a5dec",
+      "packageManifestFilesVerified": 143,
+      "unlistedArchiveEntries": 0,
+      "blenderIntegrityFilesMatched": [],
+      "status": "PASS"
+    },
+    {
+      "artifact": "cortiva-airplay-windows-0.4.0-beta.1.zip",
+      "bytes": 80544758,
+      "sha256": "60497a49ebf3a976df04ea8a901ca3556ce76d20c81dd1776ab8a785f99a34d8",
+      "packageManifestFilesVerified": 463,
+      "unlistedArchiveEntries": 0,
+      "blenderIntegrityFilesMatched": [],
+      "status": "PASS"
+    },
+    {
+      "artifact": "island-desktop-windows-full-0.4.0-beta.1.zip",
+      "bytes": 513873593,
+      "sha256": "8e7a32b617307bc9c66ab496994911fb29777d60576d044e9774b94e272118bf",
+      "packageManifestFilesVerified": 1085,
+      "unlistedArchiveEntries": 0,
+      "blenderIntegrityFilesMatched": [],
+      "status": "PASS"
+    },
+    {
+      "artifact": "fairy-lagoon-v7-blender-sources.zip",
+      "bytes": 127918328,
+      "sha256": "8f3aad204e0440a91fe16bd22b6aade8326c2495ef58cef6293dd357b57e553e",
+      "packageManifestFilesVerified": 91,
+      "unlistedArchiveEntries": 0,
+      "blenderIntegrityFilesMatched": [
+        "resort-v6.blend",
+        "resort-v7-actions.blend",
+        "resort-v7.blend"
+      ],
+      "status": "PASS"
+    }
+  ],
+  "scope": "All package-manifest byte/hash records equal the read-only audit inventory; no staged-file mutation. Archive file hashes measured from final ZIPs."
+}

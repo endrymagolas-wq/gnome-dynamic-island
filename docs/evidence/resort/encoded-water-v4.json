@@ -1,0 +1,25 @@
+{
+  "water-1080.mp4": {
+    "width": 1920,
+    "height": 1080,
+    "r_frame_rate": "30/1",
+    "duration": "12.000000",
+    "nb_read_frames": "360",
+    "sha256": "85b21303e8c323d57c29bae7d624603e6b2ccdffa664d54d3a7c7ee1b4283ed3",
+    "firstStepMAE": 1.9384611304012347,
+    "lastStepMAE": 1.5860038901748972,
+    "seamMAE": 1.932750932355967
+  },
+  "water-720.mp4": {
+    "width": 1280,
+    "height": 720,
+    "r_frame_rate": "30/1",
+    "duration": "12.000000",
+    "nb_read_frames": "360",
+    "sha256": "081fb67aef5c6670bad5e2ccf723ded00c848cfeb15c53d449dd66a863f61128",
+    "firstStepMAE": 2.172474681712963,
+    "lastStepMAE": 1.8079231770833335,
+    "seamMAE": 2.1660915798611113
+  },
+  "method": "Full FFprobe decode count and encoded RGB MAE (0-255), boundary versus adjacent 30fps steps. Numeric continuity is supplemented by the visible water review."
+}

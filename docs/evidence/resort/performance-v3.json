@@ -1,0 +1,74 @@
+{
+  "recordedAt": "2026-10-05T13:30:10.401787+00:00",
+  "hardware": "Windows 11 Pro 10.0.26200, i9-9900K (16 logical CPUs), 32GB RAM, RTX3080 10GB, 1920x1080 primary display",
+  "scope": "Lively core, owned WebView2 process tree and loopback host; summed RSS can count shared mappings more than once. Windows GPU engine counters are separate engine utilization measurements, not total board load or power.",
+  "conditions": "30-second CPU/GPU windows, no Blender process. Active playback runs used --no-observer and temporarily ignored Lively fullscreen coverage because the desktop was covered by Codex. Both restored for the paused run and ordinary launch. Video and atlas use the same decoded 720p encoded loop. Telemetry count deltas divided by their own clock delta, not GPU collection completion time. No claim about physical monitor presents.",
+  "rows": [
+    {
+      "label": "video-v3-720",
+      "cpuPercentWholePC": 1.4017476287663984,
+      "meanRssMiB": 678.4920572916667,
+      "gpu3DPercent": 0.5966342450189028,
+      "gpuVideoDecodePercent": 6.014813783502329,
+      "meanDedicatedMiB": 53.260546875,
+      "meanSharedMiB": 24.833854166666665,
+      "playbackFps": 29.999818182920187,
+      "droppedFramesDuringInterval": 0
+    },
+    {
+      "label": "atlas-v3-720",
+      "cpuPercentWholePC": 2.7870881325166716,
+      "meanRssMiB": 883.294140625,
+      "gpu3DPercent": 1.8868257252366625,
+      "gpuVideoDecodePercent": 0.0,
+      "meanDedicatedMiB": 334.50026041666666,
+      "meanSharedMiB": 29.696875,
+      "playbackFps": 25.006714766002002,
+      "droppedFramesDuringInterval": 0
+    },
+    {
+      "label": "still-v3",
+      "cpuPercentWholePC": 0.09431376339563964,
+      "meanRssMiB": 605.2109375,
+      "gpu3DPercent": 0.0,
+      "gpuVideoDecodePercent": 0.0,
+      "meanDedicatedMiB": 53.23046875,
+      "meanSharedMiB": 11.06640625,
+      "playbackFps": 0,
+      "droppedFramesDuringInterval": 0
+    },
+    {
+      "label": "runtime-v3-coffee",
+      "cpuPercentWholePC": 2.1723131893908665,
+      "meanRssMiB": 838.8305989583333,
+      "gpu3DPercent": 1.9915764013634163,
+      "gpuVideoDecodePercent": 10.384433870153222,
+      "meanDedicatedMiB": 163.74505208333332,
+      "meanSharedMiB": 23.933854166666666,
+      "playbackFps": 29.969515336269662,
+      "droppedFramesDuringInterval": 0
+    },
+    {
+      "label": "runtime-v3-editing",
+      "cpuPercentWholePC": 2.312636379530413,
+      "meanRssMiB": 842.6092447916667,
+      "gpu3DPercent": 1.6456023249105647,
+      "gpuVideoDecodePercent": 9.001008303996251,
+      "meanDedicatedMiB": 152.54466145833334,
+      "meanSharedMiB": 22.81171875,
+      "playbackFps": 29.969515336271353,
+      "droppedFramesDuringInterval": 0
+    },
+    {
+      "label": "runtime-v3-paused",
+      "cpuPercentWholePC": 0.32199102461438833,
+      "meanRssMiB": 753.437890625,
+      "gpu3DPercent": 0.0,
+      "gpuVideoDecodePercent": 0.0,
+      "meanDedicatedMiB": 146.58203125,
+      "meanSharedMiB": 26.82421875,
+      "playbackFps": 0.0,
+      "droppedFramesDuringInterval": 0
+    }
+  ]
+}
