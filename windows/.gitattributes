@@ -1,0 +1,5 @@
+receiver-build/*.sh text eol=lf
+# Patch context lines intentionally preserve the pinned upstream whitespace.
+receiver-build/*.patch text eol=lf -whitespace
+receiver-build/*.py text eol=lf
+receiver-build/tests/*.py text eol=lf

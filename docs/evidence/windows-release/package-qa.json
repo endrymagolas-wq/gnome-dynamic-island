@@ -1,0 +1,166 @@
+{
+  "releaseTag": "windows-v0.4.0-beta.1",
+  "checkedAtUtc": "2026-10-08T16:39:35.875545+00:00",
+  "status": "PASS_FOR_RECORDED_PACKAGE_GATES",
+  "scope": "Frozen public source and final ZIPs; live desktop sources, app state and original artwork were not edited.",
+  "sourcePrivacy": {
+    "publicFilesAtScan": 586,
+    "bytesAtScan": 663755628,
+    "blockers": 0,
+    "warnings": 0,
+    "method": "Tracked and intended untracked public files, ASCII/UTF-16 personal-path and high-confidence secret patterns; private-state/build/profile exclusions."
+  },
+  "artifacts": [
+    {
+      "artifact": "island-desktop-windows-0.4.0-beta.1.zip",
+      "bytes": 87688585,
+      "sha256": "01fd2033afdac15483d6dfeb290b3177ff2ee5af6a11d8a0511537c596c9d004",
+      "packageManifestFilesVerified": 524,
+      "unlistedArchiveEntries": 0,
+      "blenderIntegrityFilesMatched": [],
+      "status": "PASS",
+      "archiveEntries": 525,
+      "uncompressedBytes": 206696743,
+      "privacyBlockers": 0,
+      "warnings": 0,
+      "zipCRC": "PASS",
+      "nativePEFilesChecked": 0,
+      "receiverManifests": []
+    },
+    {
+      "artifact": "fairy-lagoon-v7-wallpaper-windows.zip",
+      "bytes": 345900936,
+      "sha256": "d63079c23b36d142cf9cd50e1c6bcc8fab8a7005e7da8a883616a9940d2a5dec",
+      "packageManifestFilesVerified": 143,
+      "unlistedArchiveEntries": 0,
+      "blenderIntegrityFilesMatched": [],
+      "status": "PASS",
+      "archiveEntries": 144,
+      "uncompressedBytes": 374351657,
+      "privacyBlockers": 0,
+      "warnings": 0,
+      "zipCRC": "PASS",
+      "nativePEFilesChecked": 0,
+      "receiverManifests": []
+    },
+    {
+      "artifact": "cortiva-airplay-windows-0.4.0-beta.1.zip",
+      "bytes": 80544758,
+      "sha256": "60497a49ebf3a976df04ea8a901ca3556ce76d20c81dd1776ab8a785f99a34d8",
+      "packageManifestFilesVerified": 463,
+      "unlistedArchiveEntries": 0,
+      "blenderIntegrityFilesMatched": [],
+      "status": "PASS",
+      "archiveEntries": 464,
+      "uncompressedBytes": 191582889,
+      "privacyBlockers": 0,
+      "warnings": 0,
+      "zipCRC": "PASS",
+      "nativePEFilesChecked": 176,
+      "receiverManifests": [
+        {
+          "path": "receiver/manifest.json",
+          "filesVerified": 430,
+          "expected": 430,
+          "uxplayRevision": "3dbf7ceee65932154e85a2f83963d53520a799fa"
+        }
+      ]
+    },
+    {
+      "artifact": "island-desktop-windows-full-0.4.0-beta.1.zip",
+      "bytes": 513873593,
+      "sha256": "8e7a32b617307bc9c66ab496994911fb29777d60576d044e9774b94e272118bf",
+      "packageManifestFilesVerified": 1085,
+      "unlistedArchiveEntries": 0,
+      "blenderIntegrityFilesMatched": [],
+      "status": "PASS",
+      "archiveEntries": 1086,
+      "uncompressedBytes": 771725937,
+      "privacyBlockers": 0,
+      "warnings": 0,
+      "zipCRC": "PASS",
+      "nativePEFilesChecked": 176,
+      "receiverManifests": [
+        {
+          "path": "receiver/manifest.json",
+          "filesVerified": 430,
+          "expected": 430,
+          "uxplayRevision": "3dbf7ceee65932154e85a2f83963d53520a799fa"
+        }
+      ]
+    },
+    {
+      "artifact": "fairy-lagoon-v7-blender-sources.zip",
+      "bytes": 127918328,
+      "sha256": "8f3aad204e0440a91fe16bd22b6aade8326c2495ef58cef6293dd357b57e553e",
+      "packageManifestFilesVerified": 91,
+      "unlistedArchiveEntries": 0,
+      "blenderIntegrityFilesMatched": [
+        "resort-v6.blend",
+        "resort-v7-actions.blend",
+        "resort-v7.blend"
+      ],
+      "status": "PASS",
+      "archiveEntries": 92,
+      "uncompressedBytes": 133828868,
+      "privacyBlockers": 0,
+      "warnings": 0,
+      "zipCRC": "PASS",
+      "nativePEFilesChecked": 0,
+      "receiverManifests": []
+    }
+  ],
+  "nativeCorrespondingSource": {
+    "artifact": "cortiva-airplay-native-corresponding-sources-0.4.0-beta.1.zip",
+    "bytes": 1245140566,
+    "sha256": "81372689243525d1d3486fbca9306ad979d3b2f9b7894a60a612645fa1419f6c",
+    "sourceArchives": 96,
+    "packageVersions": 99,
+    "nativeFilesCovered": 175,
+    "zipCRC": "PASS",
+    "sourcePayloadsUnchanged": true
+  },
+  "nativeBuildRecipe": {
+    "path": "windows/receiver-build/build.sh",
+    "sha256": "997380ccaf464f5b7ea859bdaa12d4829379f235a122fa1816127ea53cd364d0",
+    "sourceZipMatchesFrozenRecipe": true
+  },
+  "blender": {
+    "projectsVerified": 7,
+    "semanticIntegrityMatches": true,
+    "uncompressedPersonalPaths": 0,
+    "allUnderGitHub100MiB": true,
+    "receipt": "blender-integrity.json"
+  },
+  "licenseResources": [
+    "Project GPL",
+    "NAudio MIT",
+    ".NET runtime notices",
+    "Windows SDK projection terms",
+    "CsWinRT MIT",
+    "CPython PSF",
+    "psutil BSD",
+    "UxPlay/GStreamer/FFmpeg/native GNU notices and exact corresponding source",
+    "Lively CLI GPL and tagged source",
+    "V7 artwork/rig/generated-output provenance"
+  ],
+  "publicUpstreamKeyConstants": {
+    "status": "BYTE_MATCHED_TO_EXACT_UPSTREAM_SOURCE",
+    "component": "GnuTLS 3.8.13 lib/crypto-selftests-pk.c",
+    "constants": 6,
+    "proof": "gnutls-public-key-proof.json"
+  },
+  "runtimeBoundary": {
+    "receiverMappedBinarySHA256": "18face37b642d7528633edd70472a1dcb52d3542cdae6b44505dd10bb55bf673",
+    "nativeStartup": "9/9 recorded by the independent native rebuild audit",
+    "hlsRelayDecode": "13 recorded passing assertions; the same local-pause assertion and its exception remain red on original and mapped binaries.",
+    "receipt": "uxplay-mapped-promotion.json"
+  },
+  "notEstablished": [
+    "Universal UI/device/Windows compatibility",
+    "Fresh-machine Lively installation",
+    "Every media control or the unresolved synthetic pause assertion",
+    "Independent reproduction of every transitive dependency binary",
+    "A legal opinion or a claim that every possible secret pattern was exhausted"
+  ]
+}

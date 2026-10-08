@@ -17,7 +17,7 @@ export function groundHeight(x,y,meta){
   return g.height-Math.max(0,r-g.plateauRadius)*g.slope;
 }
 // Visibility graph around measured furniture footprints, expanded by actor radius.
-function route(start,end,meta){
+export function route(start,end,meta){
   const c=meta.navigation.clearance;
   const boxes=meta.navigation.obstacles.map(o=>[o.bounds[0]-c,o.bounds[1]-c,o.bounds[2]+c,o.bounds[3]+c]);
   const inside=(p,b)=>p[0]>b[0]+1e-7&&p[0]<b[2]-1e-7&&p[1]>b[1]+1e-7&&p[1]<b[3]-1e-7;
@@ -93,5 +93,21 @@ export class SceneModel{
       const v=Math.min(budget,d);this.position[0]+=dx/d*v;this.position[1]+=dy/d*v;this.position[2]=groundHeight(this.position[0],this.position[1],this.meta);budget-=v;if(v===d){this.position=[...t];this.path.shift();}
     }
     if(this.meta.seating&&!this.path.length&&!this.seated&&this.meta.seating.states.includes(this.state))this.transition={kind:'sit',elapsed:0};
+  }
+}
+
+// Companions share Pip's rig but keep their own spots on the beach (clear of furniture and of Pip's bench).
+const COMPANION_SPOTS={
+  codex:{desk:[-1.5,-1.6],testing:[3.0,-1.3],failed:[3.0,-1.3],permission:[1.5,-3.2],done:[-1.21,-3.02],idle:[-1.21,-3.02],browsing:[-3.1,1.3]},
+  apps:{desk:[-2.9,-2.0],testing:[1.8,-1.3],failed:[1.8,-1.3],permission:[3.2,-2.3],done:[-0.01,-3.02],idle:[-0.01,-3.02],browsing:[-2.9,0.9]},
+};
+export class Companion extends SceneModel{
+  constructor(meta,key){super({...meta,seating:null});this.spots=COMPANION_SPOTS[key];this.position=this.spot('idle');}
+  spot(state){const t=this.spots[state]||this.spots.desk;return [t[0],t[1],groundHeight(t[0],t[1],this.meta)];}
+  event(e){
+    if(e.seq===this.seq||!STATES.includes(e.state))return false;
+    this.seq=e.seq;this.state=e.state;const t=this.spot(e.state);
+    try{this.path=route(this.position,t,this.meta);}catch{this.path=[t];}
+    return true;
   }
 }

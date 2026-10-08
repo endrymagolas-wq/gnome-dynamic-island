@@ -15,5 +15,31 @@ jobs:
           node-version: '22'
       - run: python3 -m compileall -q assistant desktop receivers install.py desktop_profile.py receiver_profile.py setup_assistant.py setup_receivers.py
       - run: python3 tests/run.py
+      - name: V7 scene coordination and host
+        run: |
+          RESORT_LIFE_ASSETS=wallpaper/assets node tests/resort-life.mjs
+          python3 tests/check_resort_v7_host.py
       - name: Parse JavaScript
         run: find extensions -name '*.js' -exec node --check {} \;
+  windows-source:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.401'
+      - name: Build Windows application
+        run: dotnet build windows/src/Island.Windows.csproj -c Release -p:DebugType=None -p:DebugSymbols=false
+      - name: Windows deterministic app and dock checks
+        shell: pwsh
+        run: |
+          $app = (Resolve-Path windows/src/bin/Release/net10.0-windows10.0.19041.0/IslandDesktop.exe).Path
+          foreach ($gate in @('self-test', 'dock-test')) {
+            $report = Join-Path $env:RUNNER_TEMP ($gate + '.json')
+            $child = Start-Process -FilePath $app -ArgumentList @('--' + $gate, ('"' + $report + '"')) -WindowStyle Hidden -PassThru
+            if (-not $child.WaitForExit(30000)) { throw "Gate timed out: $gate" }
+            if ($child.ExitCode -ne 0) { throw "Gate failed: $gate" }
+            $result = Get-Content $report -Raw | ConvertFrom-Json
+            if ($result.failed -ne 0) { throw "Failed assertions: $gate" }
+            Write-Output "$gate passed: $($result.passed)"
+          }

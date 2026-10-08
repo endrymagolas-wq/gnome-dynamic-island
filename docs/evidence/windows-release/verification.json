@@ -1,0 +1,160 @@
+{
+  "checkedAtUtc": "2026-10-08T17:24:41.941662+01:00",
+  "windowsBuild": "Windows 11 Pro x64 / 26200",
+  "appSHA256": "f19e0502784923f95a819b1b5269ccde1758559eaf03f97599fa88c2d147679f",
+  "windowsSourceBuild": "PASS .NET10 Release, source prefix map, no debug symbols",
+  "pureWindowsChecks": {
+    "self-test": {
+      "passed": 29,
+      "failed": 0,
+      "tests": [
+        "No focus timer",
+        "Expired timer never negative",
+        "Timer respects absolute instant across time zones",
+        "NaN volume rejected",
+        "Volume bounded",
+        "Spotify session name",
+        "Chrome session name",
+        "Edge dwell starts without revealing",
+        "Accidental edge contact remains hidden",
+        "Edge reveals after 300 ms",
+        "Panel remains while pointer is inside",
+        "Leaving starts the hide grace period",
+        "Panel does not collapse early",
+        "Panel collapses after 600 ms outside",
+        "Dragging or fullscreen cancels edge intent",
+        "A blocked dwell cannot leak into the next reveal",
+        "Native window enumeration marshals and returns desktop applications",
+        "Classic ChatGPT belongs only in the top panel",
+        "Codex remains in the dock",
+        "AirPlay has a stable independent source identity",
+        "AirPlay RTP timeline survives the 32-bit counter wrapping",
+        "AirPlay progress remains within track duration",
+        "Invalid AirPlay durations are discarded",
+        "DACP DNS-SD reads compressed service and address records",
+        "Truncated DNS responses cannot enable remote controls",
+        "Cyclic DNS pointers cannot hang discovery",
+        "Short DNS headers are rejected",
+        "DACP accepts a sender in the local subnet",
+        "DACP never forwards sender authorization to an external or loopback target"
+      ]
+    },
+    "dock-test": {
+      "passed": 12,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "Closed pinned apps remain available to launch",
+          "passed": true
+        },
+        {
+          "name": "Two windows of a pinned app produce one dock entry",
+          "passed": true
+        },
+        {
+          "name": "Packaged app identity groups independently of installed version",
+          "passed": true
+        },
+        {
+          "name": "Classic ChatGPT remains separate from Codex and outside the dock",
+          "passed": true
+        },
+        {
+          "name": "A Classic ChatGPT shortcut cannot create a second GPT dock entry",
+          "passed": true
+        },
+        {
+          "name": "Chrome web apps remain distinct from the browser",
+          "passed": true
+        },
+        {
+          "name": "Pinned Chrome and web app each consume only their own window",
+          "passed": true
+        },
+        {
+          "name": "Docker's frontend window groups with its installed launcher",
+          "passed": true
+        },
+        {
+          "name": "An unrelated executable with the same filename never matches a pin",
+          "passed": true
+        },
+        {
+          "name": "Repeated shortcut identities cannot create duplicates",
+          "passed": true
+        },
+        {
+          "name": "Pinned order remains stable when windows arrive in another order",
+          "passed": true
+        },
+        {
+          "name": "Other running applications remain accessible after the pins",
+          "passed": true
+        }
+      ]
+    }
+  },
+  "v7PhysicalGate": {
+    "status": "PASS",
+    "checks": 876493,
+    "simulatedFrames": 67144,
+    "metadataSHA256": "e36bf1d955e21342c084a5c9b0eca9b1327fe35bfa857c7651588c1f3d8221ca"
+  },
+  "v7HostGate": {
+    "status": "PASS",
+    "checks": 278,
+    "legacyAuthAndRangeGate": "unchanged and repeated"
+  },
+  "physicalPhoneEvidence": {
+    "kind": "Direct human observations from earlier installed receiver session",
+    "audio": "audible",
+    "afterPIN": "audible",
+    "directYouTube": "moving video and audible audio",
+    "notRepeatedByArchiveTests": true
+  },
+  "nativeSources": {
+    "artifact": "cortiva-airplay-native-corresponding-sources-0.4.0-beta.1.zip",
+    "bytes": 1245140566,
+    "sha256": "81372689243525d1d3486fbca9306ad979d3b2f9b7894a60a612645fa1419f6c",
+    "sourceArchives": 96,
+    "packageVersions": 99,
+    "nativeFilesCovered": 175,
+    "allArchiveRecipesPresent": true,
+    "zipCRC": "PASS",
+    "seconds": 162.64,
+    "boundary": "Exact downloaded source inputs, recipes, measured hashes and ZIP validity. Not a new native compiler reproduction.",
+    "recipeSHA256": "997380ccaf464f5b7ea859bdaa12d4829379f235a122fa1816127ea53cd364d0"
+  },
+  "media": {
+    "status": "PASS",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30/1",
+          "nb_read_frames": "1650",
+          "side_data_list": [
+            {}
+          ]
+        }
+      ],
+      "format": {
+        "duration": "55.000000"
+      }
+    },
+    "sha256": "167c325f971159276e940c9f6a560a2b8e2933f9a4321f8276f6229211d0af89",
+    "bytes": 6826500,
+    "gifBytes": 1609266,
+    "source": "Exact frozen wallpaper renderer; export-only manual scene clock, scripted leisure selection; native WPF panel snapshots; local media fixture labeled; no phone video represented as recording"
+  },
+  "boundaries": [
+    "Pure tests are not native user-interaction or physical-phone proof.",
+    "Media uses scripted scene preview states and labeled local media fixture.",
+    "Native benchmark/performance and previous phone evidence remain separately described.",
+    "Archive QA and Blender sanitation are documented separately."
+  ]
+}

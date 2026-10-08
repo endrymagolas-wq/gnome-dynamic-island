@@ -1,0 +1,68 @@
+{
+  "kind": "Release-only native executable promotion",
+  "binarySha256": "18face37b642d7528633edd70472a1dcb52d3542cdae6b44505dd10bb55bf673",
+  "baselineSha256": "27f7af08f195dee688ae606c9912b01c12dd13aa522e8b3f5313ce676f0f982d",
+  "personalPathMatches": 0,
+  "importsUnchanged": true,
+  "sourceEquivalent": true,
+  "startup": {
+    "passed": 9,
+    "failed": 0
+  },
+  "hlsRelay": {
+    "passed": 13,
+    "failed": 2,
+    "baselinePassed": 13,
+    "baselineFailed": 2,
+    "status": "NO_NEW_FAILURES",
+    "exactTestResultsUnchanged": true,
+    "baselineFailureIds": [
+      "Local pause changes actual GStreamer rate",
+      "AssertionError: Local pause changes actual GStreamer rate"
+    ]
+  },
+  "nonPrerollingVideoFixture": {
+    "passed": 13,
+    "failed": 2,
+    "status": "UNCHANGED_BASELINE_LIMITATION"
+  },
+  "scope": "Compiler-path privacy correction; no native code changes. Synthetic pause fixture red results retained.",
+  "buildFlags": [
+    "-ffile-prefix-map=<build>=/build/uxplay",
+    "-fdebug-prefix-map=<build>=/build/uxplay",
+    "-ffile-prefix-map=<source>=/src/uxplay",
+    "-fdebug-prefix-map=<source>=/src/uxplay"
+  ],
+  "destinations": [
+    "source/windows/receiver",
+    "packages/Cortiva-AirPlay-Windows/receiver",
+    "packages/IslandDesktop-Windows-Full/receiver"
+  ],
+  "verifiedAtUtc": "2026-10-08T16:34:11.450296+00:00",
+  "sourceEquivalentMethod": "Exact bytes after CRLF-to-LF normalization only; seven patched files have line-ending differences, no other content tolerance",
+  "sourceFilesCompared": 80,
+  "originalsPreserved": {
+    "liveInstalledSha256": "27f7af08f195dee688ae606c9912b01c12dd13aa522e8b3f5313ce676f0f982d",
+    "originalBuildSha256": "27f7af08f195dee688ae606c9912b01c12dd13aa522e8b3f5313ce676f0f982d"
+  },
+  "buildRecipe": {
+    "path": "windows/receiver-build/build.sh",
+    "sha256": "997380ccaf464f5b7ea859bdaa12d4829379f235a122fa1816127ea53cd364d0",
+    "filePrefixMapCount": 2,
+    "debugPrefixMapCount": 2
+  },
+  "receiverManifests": [
+    {
+      "path": "source/windows/receiver/manifest.json",
+      "sha256": "d6a06458e9993372be7447ff7e1ac4a7c9508554b76fb18a628787ff01b45d02"
+    },
+    {
+      "path": "packages/Cortiva-AirPlay-Windows/receiver/manifest.json",
+      "sha256": "d6a06458e9993372be7447ff7e1ac4a7c9508554b76fb18a628787ff01b45d02"
+    },
+    {
+      "path": "packages/IslandDesktop-Windows-Full/receiver/manifest.json",
+      "sha256": "d6a06458e9993372be7447ff7e1ac4a7c9508554b76fb18a628787ff01b45d02"
+    }
+  ]
+}

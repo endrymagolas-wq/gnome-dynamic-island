@@ -6,18 +6,26 @@ from pathlib import Path
 import sys
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'assistant'))
-from claude_hook import state_for
+from claude_hook import state_for, TEST_COMMAND
 STATES={'starting','editing','testing','failed','permission','done','working','browsing','idle'}
 DATA=Path(os.environ.get('LOCALAPPDATA',str(Path.home())))/'ResortIsland'
 DATA.mkdir(parents=True,exist_ok=True)
 LOCK=threading.Lock()
 CURRENT={'state':'idle','source':'desktop','seq':0,'until':0,'paused':False}
+# One channel per mascot: Pip follows Claude, the violet companion follows Codex, the coral one other apps.
+ACTORS={key:{'state':'idle','seq':0,'until':0} for key in ('claude','codex','apps')}
+LAST_HOOK={'claude':0.0}  # real hook events outrank process inference
 BENCH={}
 
 def publish(state, source='claude', now=None):
-    if state not in STATES:return False
+    if state not in STATES or source not in ('claude','codex','desktop'):return False
     now=time.time() if now is None else now
     with LOCK:
+        actor=ACTORS['apps' if source=='desktop' else source]
+        # Claude events always count (each edit grows the cabana); other channels only on change.
+        if source=='claude' or actor['state']!=state:
+            actor.update(state=state,seq=actor['seq']+1,until=now+(20 if state=='done' else 180) if source=='claude' else 0)
+        if source=='codex':return True
         if source=='desktop' and CURRENT['until']>now:return False
         CURRENT.update(state=state,source=source,seq=CURRENT['seq']+1,until=now+(20 if state=='done' else 180) if source=='claude' else 0)
     return True
@@ -76,10 +84,51 @@ def observe_windows():
     region=(work.left,work.top,work.right,work.bottom)
     return {'state':state,'paused':locked or covered(region,rects),'locked':locked}
 
+CODEX_SERVICE=re.compile(r'mcp|server\.mjs|cua_node|app-server|node_repl|--eval',re.I)
+def watch_agent(source,prefix):
+    """Infer an agent's activity from the commands it spawns (names only, never output). Codex has no Windows
+    hooks; for Claude this only fills in when its hooks are not delivering (e.g. hosts that skip user hooks)."""
+    try:import psutil
+    except ImportError:return
+    known={};active_before=False;done_at=0;last=None
+    while True:
+        try:
+            now=time.time();active=testing=False
+            if source=='claude' and now-LAST_HOOK['claude']<120:time.sleep(2);continue
+            roots=[p for p in psutil.process_iter(['name']) if (p.info['name'] or '').lower().startswith(prefix)]
+            root_names={(r.info['name'] or '').lower() for r in roots}
+            for root in roots:
+                try:children=root.children(recursive=True)
+                except psutil.Error:continue
+                for child in children:
+                    try:
+                        if child.pid not in known:
+                            command=' '.join(child.cmdline());child.cpu_percent(None);known[child.pid]=(child,command)
+                        child,command=known[child.pid]
+                        if CODEX_SERVICE.search(command) or child.name().lower() in root_names or 'webview2' in child.name().lower():continue  # app helpers and long-lived tool servers are not work
+                        age=now-child.create_time();cpu=child.cpu_percent(None)
+                        busy=age<60 or cpu>3
+                        active=active or busy
+                        testing=testing or (busy and bool(TEST_COMMAND.search(command)))
+                    except psutil.Error:pass
+            known={pid:v for pid,v in known.items() if v[0].is_running()}
+            want=None
+            if testing:want='testing'
+            elif active:want='working'
+            elif active_before:want='done';done_at=now
+            elif done_at and now-done_at>25:want='idle';done_at=0
+            if want and want!=last:publish(want,source);last=want  # only on change, so badges do not flicker
+            active_before=active
+        except Exception:pass
+        time.sleep(2)
+
 def monitor():
     last=None
     while True:
         try:
+            with LOCK:
+                pip=ACTORS['claude']
+                if pip['until'] and time.time()>=pip['until']:pip.update(state='idle',seq=pip['seq']+1,until=0)
             v=observe_windows()
             with LOCK:CURRENT['paused']=v['paused']
             if v['state']!=last or CURRENT['until'] and time.time()>=CURRENT['until']:
@@ -96,7 +145,7 @@ class Handler(BaseHTTPRequestHandler):
             self.send(403,b'{}');return
         path=self.path.split('?',1)[0]
         if path=='/events':
-            with LOCK:payload=json.dumps(CURRENT).encode()
+            with LOCK:payload=json.dumps({**CURRENT,'actors':{k:{'state':v['state'],'seq':v['seq']} for k,v in ACTORS.items()}}).encode()
             self.send(200,payload);return
         if path=='/bench-metrics':self.send(200,json.dumps(BENCH).encode());return
         if path=='/':path='/wallpaper/index.html'
@@ -164,11 +213,23 @@ class Handler(BaseHTTPRequestHandler):
                         clean[key]=value
                     elif key=='transition':
                         if value is not None:
-                            if not isinstance(value,dict) or value.get('kind') not in ('sit','stand'):raise ValueError()
+                            if not isinstance(value,dict) or value.get('kind') not in ('sit','stand','lie','rise'):raise ValueError()
                             elapsed=value.get('elapsed')
                             if not isinstance(elapsed,(int,float)) or not math.isfinite(elapsed) or not 0<=elapsed<=10:raise ValueError()
                             value={'kind':value['kind'],'elapsed':elapsed}
                         clean[key]=value
+                    elif key=='actors':
+                        if not isinstance(value,list) or len(value)!=3:raise ValueError()
+                        checked=[]
+                        for actor in value:
+                            if not isinstance(actor,dict) or actor.get('key') not in ('claude','codex','apps') or actor.get('state') not in STATES:raise ValueError()
+                            position=actor.get('position')
+                            if not isinstance(position,list) or len(position)!=3 or not all(isinstance(v,(int,float)) and math.isfinite(v) and abs(v)<=100 for v in position):raise ValueError()
+                            activity=actor.get('activity')
+                            if activity not in ('sit','stand','walk','work','wait','lie','rise','scratch','tea'):raise ValueError()
+                            checked.append({'key':actor['key'],'state':actor['state'],'position':position,'activity':activity})
+                        if len({a['key'] for a in checked})!=3:raise ValueError()
+                        clean[key]=checked
                     elif key=='lighting':
                         if value is not None:
                             phases=('morning','day','evening','night')
@@ -187,8 +248,9 @@ class Handler(BaseHTTPRequestHandler):
         try:
             length=int(self.headers.get('Content-Length',0))
             if not 0<length<=1024:raise ValueError()
-            data=json.loads(self.rfile.read(length));state=data.get('state')
-            if not publish(state):raise ValueError()
+            data=json.loads(self.rfile.read(length));state=data.get('state');source=data.get('source','claude')
+            if source not in ('claude','codex') or not publish(state,source):raise ValueError()
+            if source=='claude':LAST_HOOK['claude']=time.time()
             self.send(200,b'{"ok":true}')
         except (ValueError,TypeError,AttributeError):self.send(400,b'{}')
 
@@ -196,7 +258,10 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--port',type=int,default=18765);p.add_argument('--no-observer',action='store_true');args=p.parse_args()
     server=ThreadingHTTPServer(('127.0.0.1',args.port),Handler);server.token=secrets.token_urlsafe(32)
     connection=DATA/'connection.json';connection.write_text(json.dumps({'url':f'http://127.0.0.1:{args.port}/event','token':server.token}))
-    if not args.no_observer:threading.Thread(target=monitor,daemon=True).start()
+    if not args.no_observer:
+        threading.Thread(target=monitor,daemon=True).start()
+        threading.Thread(target=watch_agent,args=('codex','codex'),daemon=True).start()
+        threading.Thread(target=watch_agent,args=('claude','claude'),daemon=True).start()
     print(f'Resort wallpaper: http://127.0.0.1:{args.port}',flush=True)
     try:server.serve_forever()
     finally:server.server_close();connection.unlink(missing_ok=True)
