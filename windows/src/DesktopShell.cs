@@ -42,6 +42,8 @@ public sealed class DesktopShell : IDisposable
     private readonly DispatcherTimer poll = new() { Interval=TimeSpan.FromMilliseconds(50) };
     private readonly DispatcherTimer refresh = new() { Interval=TimeSpan.FromSeconds(2) };
     private bool shown, disposed, refreshBusy, inspecting;
+    private bool dockShown, dockAnimating;
+    private int dockVisibilityGeneration;
     private DateTimeOffset? previewUntil;
     private DateTimeOffset dockHover=DateTimeOffset.UtcNow.AddSeconds(3);
     private string appKey = "", topAppKey = "";
@@ -94,8 +96,9 @@ public sealed class DesktopShell : IDisposable
         grid.Children.Add(right);
         dockSurface = new Border { Background=Brush("#D91C1C1E"),BorderBrush=Brush("#30FFFFFF"),BorderThickness=new Thickness(1),CornerRadius=new CornerRadius(22),Padding=new Thickness(8,4,8,4),Child=apps };
         dock=Surface("Island · dock",dockSurface); dock.Height=58; dock.SizeToContent=SizeToContent.Width;
-        dock.Show(); dock.Owner=owner;
-        DockStyle.Apply(dock,dockSurface,apps,()=>island.Settings.Animations);
+        dock.Opacity=0; dock.Show(); dock.Owner=owner;
+        DockStyle.Apply(dock,dockSurface,apps);
+        SetDockVisible(true);
         // Save before changing Explorer. Also recover the original after an interrupted run.
         Directory.CreateDirectory(Preferences.Data);
         previousTaskbar = File.Exists(backup) && int.TryParse(File.ReadAllText(backup),out int saved) ? saved : ShellNative.TaskbarState;
@@ -136,7 +139,7 @@ public sealed class DesktopShell : IDisposable
     public void PopupSnapshot(string path) { if(popup?.IsVisible!=true)throw new InvalidOperationException("No popup");popup.Snapshot(path); }
     public void Inspect(bool enabled)
     {
-        inspecting=enabled;if(enabled){Preview();panel.ShowInTaskbar=true;dock.ShowInTaskbar=true;dock.Show();}else {panel.ShowInTaskbar=false;dock.ShowInTaskbar=false;}
+        inspecting=enabled;if(enabled){Preview();panel.ShowInTaskbar=true;dock.ShowInTaskbar=true;SetDockVisible(true);}else {panel.ShowInTaskbar=false;dock.ShowInTaskbar=false;}
         ShellNative.Inspectable(new WindowInteropHelper(panel).Handle,enabled);ShellNative.Inspectable(new WindowInteropHelper(dock).Handle,enabled);
     }
     public object NavigationGeometry() => navigation.Select(pair=> { var b=pair.Value;var point=b.PointToScreen(new Point(b.ActualWidth/2,b.ActualHeight/2));var local=b.TranslatePoint(new Point(b.ActualWidth/2,b.ActualHeight/2),panel);var hit=panel.InputHitTest(local) as DependencyObject;bool found=false;while(hit!=null){if(hit==b){found=true;break;}hit=VisualTreeHelper.GetParent(hit);}return new {id=pair.Key,x=point.X,y=point.Y,hit=found};}).ToArray();
@@ -169,11 +172,42 @@ public sealed class DesktopShell : IDisposable
         bool overlaps=!ShellNative.IsDesktopSurface(foreground) && rect.Bottom>(bounds.Bottom-80/scale) && rect.Right>dock.Left/scale && rect.Left<(dock.Left+dock.ActualWidth)/scale;
         bool menuOpen=apps.Children.OfType<Button>().Any(b=>b.ContextMenu?.IsOpen==true);
         bool dockVisible=inspecting || island.IsVisible && (!overlaps || nearDock || menuOpen || (DateTimeOffset.UtcNow-dockHover).TotalMilliseconds<600);
-        if (dockVisible && !dock.IsVisible) dock.Show(); else if (!dockVisible && dock.IsVisible) dock.Hide();
+        SetDockVisible(dockVisible);
         // Floating Linux dock sits above the bottom edge, clear of Explorer's recovery strip.
         dock.Left=(bounds.Left+bounds.Width/2.0)*scale-dock.ActualWidth/2;
         dock.Top=bounds.Bottom*scale-dock.Height-12+DockStyle.BottomBleed; // the slab keeps its 12 px gap; the window reaches the edge for the shadow
         if (!shown && !panel.IsVisible) { panel.Left=bounds.Left*scale+16; panel.Top=island.Top; panel.Width=bounds.Width*scale-32; ((Grid)panelSurface.Child).Width=panel.Width-12; }
+    }
+    private void SetDockVisible(bool visible)
+    {
+        bool animate = island.Settings.Animations;
+        if (visible == dockShown && (animate || !dockAnimating)) return;
+        dockShown = visible;
+        int generation = ++dockVisibilityGeneration;
+        double from = dock.IsVisible ? dock.Opacity : 0;
+        dock.BeginAnimation(UIElement.OpacityProperty, null);
+        dockAnimating = false;
+        if (!animate) {
+            if (visible) dock.Show(); else dock.Hide();
+            dock.Opacity = 1; dock.IsHitTestVisible = true;
+            return;
+        }
+        if (visible) { dock.Opacity = from; dock.Show(); }
+        dock.IsHitTestVisible = visible;
+        dock.Opacity = visible ? 1 : 0;
+        dockAnimating = true;
+        var fade = new DoubleAnimation(from, visible ? 1 : 0, TimeSpan.FromMilliseconds(visible ? 140 : 100)) {
+            EasingFunction = new QuadraticEase { EasingMode = visible ? EasingMode.EaseOut : EasingMode.EaseIn },
+            FillBehavior = FillBehavior.Stop
+        };
+        fade.Completed += (_, _) => {
+            if (disposed || generation != dockVisibilityGeneration) return;
+            dockAnimating = false;
+            if (!dockShown) dock.Hide();
+            dock.BeginAnimation(UIElement.OpacityProperty, null);
+            dock.Opacity = 1; dock.IsHitTestVisible = true;
+        };
+        dock.BeginAnimation(UIElement.OpacityProperty, fade);
     }
     public void Preview() { previewUntil=DateTimeOffset.UtcNow.AddSeconds(8); island.Collapse(); Reveal(true); }
     private void Reveal(bool value)
@@ -243,8 +277,9 @@ public sealed class DesktopShell : IDisposable
         if(icon is FrameworkElement element) { element.VerticalAlignment=VerticalAlignment.Center; element.Margin=new Thickness(0,0,0,5); }
         if(icon is TextBlock glyph) glyph.Foreground=Brush("#F2F2F7");
         if(running) content.Children.Add(new Border { Width=4,Height=4,CornerRadius=new CornerRadius(2),Background=Brush("#CCFFFFFF"),VerticalAlignment=VerticalAlignment.Bottom,Margin=new Thickness(0,0,0,1) });
-        var b=Button(content,tooltip,click); b.Padding=new Thickness(2,0,2,0); b.RenderTransformOrigin=new Point(.5,1); var zoom=new ScaleTransform(1,1); b.RenderTransform=zoom;
-        apps.Children.Add(b); return b; // hover magnification lives in DockStyle
+        var b=Button(content,tooltip,click); b.Padding=new Thickness(2,0,2,0);
+        DockStyle.ConfigureButton(b,()=>island.Settings.Animations);
+        apps.Children.Add(b); return b;
     }
     private void Zoom(ScaleTransform zoom,double target) { int ms=island.Settings.Animations?340:0; var spring=new SpringEase { Damping=.55 }; zoom.BeginAnimation(ScaleTransform.ScaleXProperty,new DoubleAnimation(target,TimeSpan.FromMilliseconds(ms)){EasingFunction=spring}); zoom.BeginAnimation(ScaleTransform.ScaleYProperty,new DoubleAnimation(target,TimeSpan.FromMilliseconds(ms)){EasingFunction=spring}); }
     public void Snapshot(string path,bool bottom)

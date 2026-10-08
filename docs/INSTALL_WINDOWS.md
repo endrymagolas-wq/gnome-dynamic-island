@@ -6,13 +6,13 @@ This x64 beta was exercised on Windows 11 Pro, build 26200. The archives are por
 
 | Archive | Extracted folder | Included runtime | External dependency |
 | --- | --- | --- | --- |
-| `island-desktop-windows-full-0.4.0-beta.1.zip` | `IslandDesktop-Windows-Full` | Island, AirPlay receiver, V7, .NET and Python | Lively Wallpaper for V7 |
-| `island-desktop-windows-0.4.0-beta.1.zip` | `IslandDesktop-Windows` | Island, top bar, dock, media and .NET | None for core UI; receiver and wallpaper are separate |
+| `island-desktop-windows-full-0.4.0-beta.2.zip` | `IslandDesktop-Windows-Full` | Island, AirPlay receiver, V7, .NET and Python | Lively Wallpaper for V7 |
+| `island-desktop-windows-0.4.0-beta.2.zip` | `IslandDesktop-Windows` | Island, top bar, dock, media and .NET | None for core UI; receiver and wallpaper are separate |
 | `cortiva-airplay-windows-0.4.0-beta.1.zip` | `Cortiva-AirPlay-Windows` | UxPlay, GStreamer, required DLLs, source and notices | Same LAN as the phone |
 | `fairy-lagoon-v7-wallpaper-windows.zip` | `FairyLagoon-V7-Windows` | V7 assets, local host, Python and psutil | Lively Wallpaper |
 | `fairy-lagoon-v7-blender-sources.zip` | `FairyLagoon-V7-Blender` | Editable scene/actions and production scripts | Blender for editing/rendering |
 
-Download from the [release](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/tag/windows-v0.4.0-beta.1). Third-party applications shown in the dock are not included.
+Download from the [release](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/tag/windows-v0.4.0-beta.2). Third-party applications shown in the dock are not included.
 
 ## Full desktop
 
