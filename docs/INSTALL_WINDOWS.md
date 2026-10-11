@@ -12,7 +12,7 @@ This x64 beta was exercised on Windows 11 Pro, build 26200. The archives are por
 | `fairy-lagoon-v7-wallpaper-windows.zip` | `FairyLagoon-V7-Windows` | V7 assets, local host, Python and psutil | Lively Wallpaper |
 | `fairy-lagoon-v7-blender-sources.zip` | `FairyLagoon-V7-Blender` | Editable scene/actions and production scripts | Blender for editing/rendering |
 
-Download from the [release](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/tag/windows-v0.4.0-beta.2). Third-party applications shown in the dock are not included.
+Download from the [release](https://github.com/endrymagolas-wq/island-desktop/releases/tag/windows-v0.4.0-beta.2). Third-party applications shown in the dock are not included.
 
 ## Full desktop
 

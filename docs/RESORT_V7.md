@@ -17,7 +17,7 @@
 - `tools/render_resort_v7.py`, `render_resort_v7_alpha.py`, `package_resort_v7.py` — чотири статичні фази, берегова маска, перевірка походження та пакування.
 - `wallpaper/resort-life.js` — координація трьох персонажів; `player.js` — відтворення та перекриття.
 
-Фінальну сцену й рухи можна завантажити з [Windows-релізу](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/tag/windows-v0.4.0-beta.1). Вихідний `art/island/resort-v6.blend` збережено; інструкції запуску й редагування — у [WALLPAPER_V7.md](WALLPAPER_V7.md).
+Фінальну сцену й рухи можна завантажити з [Windows-релізу](https://github.com/endrymagolas-wq/island-desktop/releases/tag/windows-v0.4.0-beta.1). Вихідний `art/island/resort-v6.blend` збережено; інструкції запуску й редагування — у [WALLPAPER_V7.md](WALLPAPER_V7.md).
 
 ## Перевірено
 
