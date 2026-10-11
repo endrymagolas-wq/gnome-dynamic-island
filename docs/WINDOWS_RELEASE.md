@@ -12,7 +12,7 @@
 | Острів із трьома персонажами | [Шпалери V7](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.1/fairy-lagoon-v7-wallpaper-windows.zip) | `FairyLagoon-V7-Windows/Start-Wallpaper.cmd` |
 | Змінити сцену та рухи | [Blender-джерела V7](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.1/fairy-lagoon-v7-blender-sources.zip) | Відкрити `.blend` у Blender. |
 
-[Код проєкту](https://github.com/endrymagolas-wq/gnome-dynamic-island/archive/refs/tags/windows-v0.4.0-beta.2.zip) · [SHA256SUMS](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.2/SHA256SUMS) · [Відео](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.1/island-desktop-windows-demo.mp4)
+[Код проєкту](https://github.com/endrymagolas-wq/gnome-dynamic-island/archive/refs/tags/windows-v0.4.0-beta.2.zip) · [SHA256SUMS](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.2/SHA256SUMS) · [Відео, 41 с](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.2/island-desktop.mp4)
 
 [Відповідні джерела нативних бібліотек AirPlay](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.1/cortiva-airplay-native-corresponding-sources-0.4.0-beta.1.zip) доступні окремим asset; їх не потрібно завантажувати для звичайного запуску. Джерела UxPlay і локальний патч уже є в приймачі.
 
