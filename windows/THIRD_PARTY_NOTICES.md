@@ -1,6 +1,6 @@
 # Third-party notices
 
-- Linux design and behavior: `endrymagolas-wq/gnome-dynamic-island`, commit `5adf521`.
+- Linux design and behavior: `endrymagolas-wq/island-desktop`, commit `5adf521`.
   GPL-3.0-or-later; full license in `LICENSE`.
 - NAudio 2.2.1 by Mark Heath and contributors: MIT.
   https://github.com/naudio/NAudio/tree/v2.2.1 The complete copyright/license

@@ -1,6 +1,6 @@
 # Island Desktop · Windows 0.4.0
 
-Native Windows port of the island in `endrymagolas-wq/gnome-dynamic-island`, based on
+Native Windows port of the island in `endrymagolas-wq/island-desktop`, based on
 `5adf521` (Fairy Lagoon V6). C# / WPF, Windows media sessions, Core Audio and a bundled
 UxPlay / GStreamer AirPlay receiver.
 GPL-3.0-or-later. The Linux extension and the existing Lively wallpaper are separate components.

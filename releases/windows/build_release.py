@@ -60,7 +60,7 @@ def notices(source,dst):
         if (source/'docs'/name).is_file():
             copy(source/'docs'/name,dst/'docs'/name)
             guide=dst/'docs'/name
-            guide.write_text(guide.read_text(encoding='utf-8').replace('../windows/README.md','https://github.com/endrymagolas-wq/gnome-dynamic-island/blob/'+TAG+'/windows/README.md').replace('../README.md','https://github.com/endrymagolas-wq/gnome-dynamic-island/blob/'+TAG+'/README.md'),encoding='utf-8')
+            guide.write_text(guide.read_text(encoding='utf-8').replace('../windows/README.md','https://github.com/endrymagolas-wq/island-desktop/blob/'+TAG+'/windows/README.md').replace('../README.md','https://github.com/endrymagolas-wq/island-desktop/blob/'+TAG+'/README.md'),encoding='utf-8')
 
 def scripts(source,dst,names):
     for name in names:copy(source/'releases/windows'/name,dst/name)
@@ -131,7 +131,7 @@ def blender(source,dst):
     (dst/'EDITABLE.md').write_text('''# Editable Fairy Lagoon V7\n\nOpen art/island/resort-v7.blend in Blender 4.5 LTS. The enlarged beach,\nthree scattered personal nooks and furniture are editable 3D objects.\nImages used by the scene are packed in the file; it requires no private cache.\nThe accepted camera is retained for alignment with the video water.\n\nresort-v7-actions.blend contains the rig, tea and lying/scratch actions.\nresort-v6.blend is the base used by tools/build_resort_v7_organic.py.\nRun rebuild scripts from this extracted project root into a NEW output folder.\nRendering requires Blender 4.5 LTS; packaging rendered layers requires Pillow.\nThe complete published repository includes runtime tests and the retained water.\nAsset provenance and licenses are in licenses/ASSET_SOURCES.md and art/thirdparty/.\n''',encoding='utf-8')
 
 def readme(dst,component):
-    common='''Requires Windows x64 (Windows 10 build 19041+ / Windows 11). Extract the WHOLE\nZIP to a writable folder and keep its subfolders together. Run launchers as a\nnormal user; firewall setup is a separate optional administrator action.\nNo installed app pins, credentials, pairing keys, personal screenshots or settings\nare included. Settings are generated in your LOCALAPPDATA at first use.\n\nSource: https://github.com/endrymagolas-wq/gnome-dynamic-island/tree/windows-v0.4.0-beta.1\nLicenses retain their own terms; see THIRD_PARTY_NOTICES.md and licenses/.\n'''
+    common='''Requires Windows x64 (Windows 10 build 19041+ / Windows 11). Extract the WHOLE\nZIP to a writable folder and keep its subfolders together. Run launchers as a\nnormal user; firewall setup is a separate optional administrator action.\nNo installed app pins, credentials, pairing keys, personal screenshots or settings\nare included. Settings are generated in your LOCALAPPDATA at first use.\n\nSource: https://github.com/endrymagolas-wq/island-desktop/tree/windows-v0.4.0-beta.1\nLicenses retain their own terms; see THIRD_PARTY_NOTICES.md and licenses/.\n'''
     texts={
      'island':'''Run IslandDesktop.exe (or Start-Desktop.cmd). .NET is bundled.\nThe island, native media controls, top navigation, dock and tray are included.\nAirPlay and the Lively wallpaper are separate optional downloads. To add\nAirPlay, copy the complete receiver/ folder from Cortiva-AirPlay-Windows into\nthis folder, then use the island's AirPlay controls. Do not simultaneously run\nStart-AirPlay.cmd. Stop-Desktop.cmd closes this package and restores the taskbar.\n''',
      'airplay':'''Run Start-AirPlay.cmd. A console shows your locally generated four-digit\nPIN. Select Cortiva Island in AirPlay on a phone/Mac in the same local network.\nThe console must remain open; closing it terminates the receiver. No island\nGUI is provided in this standalone component. Native runtime and exact\nUxPlay source/patch/build recipe are included. No .NET/Python/Lively install\nis needed. Enable-AirPlay-Firewall.ps1 can be run explicitly as administrator\nif required; -Remove reverses only this folder's LocalSubnet rules.\nDo not start it while another island/standalone receiver is listening.\nYouTube AirPlay works for compatible non-DRM streams; Google Cast is not provided.\n''',
@@ -142,7 +142,7 @@ def readme(dst,component):
     (dst/'START_HERE.txt').write_text('Island Desktop / Fairy Lagoon '+VERSION+'\n\n'+texts[component]+'\n'+common,encoding='utf-8')
 
 def package_manifest(dst,component):
-    info={'version':VERSION,'tag':TAG,'component':component,'packageId':'island-'+VERSION+'-'+component,'architecture':'win-x64','source':'https://github.com/endrymagolas-wq/gnome-dynamic-island/tree/'+TAG}
+    info={'version':VERSION,'tag':TAG,'component':component,'packageId':'island-'+VERSION+'-'+component,'architecture':'win-x64','source':'https://github.com/endrymagolas-wq/island-desktop/tree/'+TAG}
     (dst/'release.json').write_text(json.dumps(info,indent=2)+'\n')
     if (dst/'wallpaper').exists():(dst/'wallpaper/release.json').write_text(json.dumps(info,indent=2)+'\n')
     files={p.relative_to(dst).as_posix():{'bytes':p.stat().st_size,'sha256':sha(p)} for p in sorted(dst.rglob('*')) if p.is_file() and p.name!='package-manifest.json' and not any(a.lower() in DENIED_PARTS for a in p.relative_to(dst).parts) and p.suffix.lower() not in ('.pdb','.pyc','.log')}

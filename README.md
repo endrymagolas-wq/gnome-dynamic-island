@@ -4,15 +4,15 @@
 
 The Windows edition brings the top bar, dock and media controls together in Cortiva Ink. Add AirPlay to play music and supported YouTube video from your iPhone or iPad, or Fairy Lagoon V7 for three little companions with their own places to work and relax. The original GNOME edition includes a coordinated Ubuntu desktop appearance.
 
-[![Watch the 41-second video: every part of Island Desktop and how to use it](docs/images/site/video-poster.jpg)](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.2/island-desktop.mp4)
+[![Watch the 41-second video: every part of Island Desktop and how to use it](docs/images/site/video-poster.jpg)](https://github.com/endrymagolas-wq/island-desktop/releases/download/windows-v0.4.0-beta.2/island-desktop.mp4)
 
 *41 seconds, 1080p, with music. Every scene shows what to click and what happens. The panels are the real Windows application; the lagoon is the shipped V7 render.*
 
-[Watch the video](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.2/island-desktop.mp4) · [Downloads](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/tag/windows-v0.4.0-beta.2) · [Windows quick start, українською](docs/WINDOWS_RELEASE.md) · [GNOME guide](docs/DESKTOP.md)
+[Watch the video](https://github.com/endrymagolas-wq/island-desktop/releases/download/windows-v0.4.0-beta.2/island-desktop.mp4) · [Downloads](https://github.com/endrymagolas-wq/island-desktop/releases/tag/windows-v0.4.0-beta.2) · [Windows quick start, українською](docs/WINDOWS_RELEASE.md) · [GNOME guide](docs/DESKTOP.md)
 
 ## Downloads
 
-Take everything in one download, or only the parts you want. Every Windows package is portable: extract it and start the file named below. Nothing is installed system-wide. All packages are in release **[windows-v0.4.0-beta.2](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/tag/windows-v0.4.0-beta.2)**; unchanged components are served from beta 1.
+Take everything in one download, or only the parts you want. Every Windows package is portable: extract it and start the file named below. Nothing is installed system-wide. All packages are in release **[windows-v0.4.0-beta.2](https://github.com/endrymagolas-wq/island-desktop/releases/tag/windows-v0.4.0-beta.2)**; unchanged components are served from beta 1.
 
 ### Full Windows desktop
 
@@ -20,13 +20,13 @@ Take everything in one download, or only the parts you want. Every Windows packa
 
 Island, top bar, dock, media controls, AirPlay receiver and the Fairy Lagoon V7 wallpaper, set up to work together. .NET and Python are included; the wallpaper needs [Lively Wallpaper](https://www.rocksdanister.com/lively/).
 
-**[Download Full Windows desktop · 514 MB](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.2/island-desktop-windows-full-0.4.0-beta.2.zip)** · start `IslandDesktop-Windows-Full/Start-Desktop.cmd`
+**[Download Full Windows desktop · 514 MB](https://github.com/endrymagolas-wq/island-desktop/releases/download/windows-v0.4.0-beta.2/island-desktop-windows-full-0.4.0-beta.2.zip)** · start `IslandDesktop-Windows-Full/Start-Desktop.cmd`
 
 ### Windows island
 
 The core application: island, top bar, dock, media, focus timer and app volume. .NET is included. No wallpaper and no AirPlay receiver.
 
-**[Download Windows island · 88 MB](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.2/island-desktop-windows-0.4.0-beta.2.zip)** · start `IslandDesktop-Windows/IslandDesktop.exe`
+**[Download Windows island · 88 MB](https://github.com/endrymagolas-wq/island-desktop/releases/download/windows-v0.4.0-beta.2/island-desktop-windows-0.4.0-beta.2.zip)** · start `IslandDesktop-Windows/IslandDesktop.exe`
 
 ![The island at the top edge: hover to open the thin bar with apps, search, calendar, language, network and sound](docs/images/site/02-island-top-bar.jpg)
 
@@ -50,7 +50,7 @@ The core application: island, top bar, dock, media, focus timer and app volume. 
 
 Your PC appears as **Cortiva Island** in the AirPlay menu of an iPhone or iPad on the same network. Music plays through the PC and the island shows its cover and progress. In YouTube, choose the cast button, then AirPlay, then Cortiva Island: the video opens in its own window, Alt + Enter for full screen. A new phone pairs once with a PIN shown in large digits in the island. The buffer can be set to 2, 5 or 8 seconds.
 
-**[Download AirPlay receiver · 81 MB](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.1/cortiva-airplay-windows-0.4.0-beta.1.zip)** · start `Cortiva-AirPlay-Windows/Start-AirPlay.cmd` · also part of the Full desktop · [firewall steps](docs/AIRPLAY_WINDOWS.md)
+**[Download AirPlay receiver · 81 MB](https://github.com/endrymagolas-wq/island-desktop/releases/download/windows-v0.4.0-beta.1/cortiva-airplay-windows-0.4.0-beta.1.zip)** · start `Cortiva-AirPlay-Windows/Start-AirPlay.cmd` · also part of the Full desktop · [firewall steps](docs/AIRPLAY_WINDOWS.md)
 
 ### Fairy Lagoon V7 wallpaper
 
@@ -58,7 +58,7 @@ Your PC appears as **Cortiva Island** in the AirPlay menu of an iPhone or iPad o
 
 A larger island with three companions. They walk, sit, sip tea, lie on the daybed and brew tea. The water moves, and morning, day, evening and night follow the PC clock. Pre-rendered color and depth animation with 12-second water loops, played by a small local host inside Lively Wallpaper. Blender is not needed to run it.
 
-**[Download Fairy Lagoon V7 · 346 MB](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.1/fairy-lagoon-v7-wallpaper-windows.zip)** · start `FairyLagoon-V7-Windows/Start-Wallpaper.cmd` · needs Lively Wallpaper · [V7 details](docs/WALLPAPER_V7.md)
+**[Download Fairy Lagoon V7 · 346 MB](https://github.com/endrymagolas-wq/island-desktop/releases/download/windows-v0.4.0-beta.1/fairy-lagoon-v7-wallpaper-windows.zip)** · start `FairyLagoon-V7-Windows/Start-Wallpaper.cmd` · needs Lively Wallpaper · [V7 details](docs/WALLPAPER_V7.md)
 
 ### Blender source
 
@@ -66,7 +66,7 @@ A larger island with three companions. They walk, sit, sip tea, lie on the daybe
 
 The editable scene, character actions and the build and render scripts behind the wallpaper. Change the island, then render new color and depth passes.
 
-**[Download Blender sources · 128 MB](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.1/fairy-lagoon-v7-blender-sources.zip)** · open the `.blend` files in Blender
+**[Download Blender sources · 128 MB](https://github.com/endrymagolas-wq/island-desktop/releases/download/windows-v0.4.0-beta.1/fairy-lagoon-v7-blender-sources.zip)** · open the `.blend` files in Blender
 
 ### GNOME edition
 
@@ -74,16 +74,16 @@ The editable scene, character actions and the build and render scripts behind th
 
 The original GNOME Shell extension: MPRIS media controls, per-app audio, focus tools, notification history and an optional coordinated desktop look. Ubuntu 24.04 with GNOME 46 on Wayland.
 
-**[Download GNOME 0.2 beta · 22 MB](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/v0.2.0-beta.1/gnome-dynamic-island-0.2.0-beta.1.zip)** · then `python3 install.py install --dry-run` and `python3 install.py install` · [GNOME guide](docs/DESKTOP.md)
+**[Download GNOME 0.2 beta · 22 MB](https://github.com/endrymagolas-wq/island-desktop/releases/download/v0.2.0-beta.1/gnome-dynamic-island-0.2.0-beta.1.zip)** · then `python3 install.py install --dry-run` and `python3 install.py install` · [GNOME guide](docs/DESKTOP.md)
 
 ### Also in the releases
 
 | Download | What it is |
 | --- | --- |
-| [Small app update](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.2/island-desktop-windows-app-update-0.4.0-beta.2.zip) | Already using beta 1? This replaces only the application and its package metadata. Close the island and follow the included `DOCK_UPDATE.md`; keep your receiver, wallpaper and runtimes. |
-| [Native dependency source](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.1/cortiva-airplay-native-corresponding-sources-0.4.0-beta.1.zip) | Exact corresponding sources and recipes for the shipped native receiver libraries, separate from the runtime bundle. |
-| [Project source archive](https://github.com/endrymagolas-wq/gnome-dynamic-island/archive/refs/tags/windows-v0.4.0-beta.2.zip) | Windows and GNOME code, installers and production scripts. UxPlay source and local changes ship with the receiver. [Checksums](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.2/SHA256SUMS). |
-| [Feature images](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.2/island-desktop-images.zip) | The nine images above at 1920×1080 PNG. |
+| [Small app update](https://github.com/endrymagolas-wq/island-desktop/releases/download/windows-v0.4.0-beta.2/island-desktop-windows-app-update-0.4.0-beta.2.zip) | Already using beta 1? This replaces only the application and its package metadata. Close the island and follow the included `DOCK_UPDATE.md`; keep your receiver, wallpaper and runtimes. |
+| [Native dependency source](https://github.com/endrymagolas-wq/island-desktop/releases/download/windows-v0.4.0-beta.1/cortiva-airplay-native-corresponding-sources-0.4.0-beta.1.zip) | Exact corresponding sources and recipes for the shipped native receiver libraries, separate from the runtime bundle. |
+| [Project source archive](https://github.com/endrymagolas-wq/island-desktop/archive/refs/tags/windows-v0.4.0-beta.2.zip) | Windows and GNOME code, installers and production scripts. UxPlay source and local changes ship with the receiver. [Checksums](https://github.com/endrymagolas-wq/island-desktop/releases/download/windows-v0.4.0-beta.2/SHA256SUMS). |
+| [Feature images](https://github.com/endrymagolas-wq/island-desktop/releases/download/windows-v0.4.0-beta.2/island-desktop-images.zip) | The nine images above at 1920×1080 PNG. |
 
 **Lively Wallpaper is an external dependency** for the wallpaper and full bundle. The core island and standalone receiver do not need it. Keep every extracted package's subfolders together. See [Windows installation](docs/INSTALL_WINDOWS.md), [AirPlay](docs/AIRPLAY_WINDOWS.md) and [V7](docs/WALLPAPER_V7.md) for setup and removal.
 
@@ -117,7 +117,7 @@ The product preview illustrates the scene and panels. Any staged media fixtures 
 
 ![Native AirPlay settings panel](docs/images/windows-v7/airplay.png)
 
-The panels above and the images in Downloads are rendered by the application itself, not screen captures. [Feature images](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.2/island-desktop-images.zip) · [raw panel screenshots](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.1/island-desktop-windows-screenshots.zip) · [the 41-second video](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.2/island-desktop.mp4) (1080p, music, no narration) · [the earlier silent demo](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.1/island-desktop-windows-demo.mp4).
+The panels above and the images in Downloads are rendered by the application itself, not screen captures. [Feature images](https://github.com/endrymagolas-wq/island-desktop/releases/download/windows-v0.4.0-beta.2/island-desktop-images.zip) · [raw panel screenshots](https://github.com/endrymagolas-wq/island-desktop/releases/download/windows-v0.4.0-beta.1/island-desktop-windows-screenshots.zip) · [the 41-second video](https://github.com/endrymagolas-wq/island-desktop/releases/download/windows-v0.4.0-beta.2/island-desktop.mp4) (1080p, music, no narration) · [the earlier silent demo](https://github.com/endrymagolas-wq/island-desktop/releases/download/windows-v0.4.0-beta.1/island-desktop-windows-demo.mp4).
 
 ## GNOME desktop
 

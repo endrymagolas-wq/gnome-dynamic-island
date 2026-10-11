@@ -6,8 +6,8 @@ complete upstream archive and all local native changes in `receiver/source/`.
 The public tag includes the Windows managed application, receiver build scripts,
 native patch, package lock file and runtime packager:
 
-- [Windows source at the exact release tag](https://github.com/endrymagolas-wq/gnome-dynamic-island/tree/windows-v0.4.0-beta.1/windows)
-- [Complete exact native dependency source archive](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.1/cortiva-airplay-native-corresponding-sources-0.4.0-beta.1.zip)
+- [Windows source at the exact release tag](https://github.com/endrymagolas-wq/island-desktop/tree/windows-v0.4.0-beta.1/windows)
+- [Complete exact native dependency source archive](https://github.com/endrymagolas-wq/island-desktop/releases/download/windows-v0.4.0-beta.1/cortiva-airplay-native-corresponding-sources-0.4.0-beta.1.zip)
 
 The native dependency source ZIP contains the official versioned MSYS2 source
 archives for every installed package that owns a shipped native binary. Shared

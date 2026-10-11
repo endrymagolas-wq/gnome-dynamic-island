@@ -10,7 +10,7 @@ Extract `cortiva-airplay-windows-0.4.0-beta.1.zip`, then open:
 Cortiva-AirPlay-Windows/Start-AirPlay.cmd
 ```
 
-The console displays the locally generated pairing PIN. Keep it open while receiving; close it to stop. The complete DLL/plugin set, notices, UxPlay source archive and local changes are included. Exact corresponding native-library sources are offered as a [separate release asset](https://github.com/endrymagolas-wq/gnome-dynamic-island/releases/download/windows-v0.4.0-beta.1/cortiva-airplay-native-corresponding-sources-0.4.0-beta.1.zip); they are not duplicated in the runtime bundle. The standalone package does not require the island, .NET, Lively or Python.
+The console displays the locally generated pairing PIN. Keep it open while receiving; close it to stop. The complete DLL/plugin set, notices, UxPlay source archive and local changes are included. Exact corresponding native-library sources are offered as a [separate release asset](https://github.com/endrymagolas-wq/island-desktop/releases/download/windows-v0.4.0-beta.1/cortiva-airplay-native-corresponding-sources-0.4.0-beta.1.zip); they are not duplicated in the runtime bundle. The standalone package does not require the island, .NET, Lively or Python.
 
 ## Integrated receiver
 
